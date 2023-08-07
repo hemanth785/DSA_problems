@@ -56,7 +56,6 @@ public class Alternate_split {
 
     Node head = createList(arr);
     alternateSplit(head);
-    // printList(head);
   }
 
   /*
