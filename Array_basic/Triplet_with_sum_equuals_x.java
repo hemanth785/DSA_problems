@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 
 public class Triplet_with_sum_equuals_x {
@@ -49,5 +51,74 @@ public class Triplet_with_sum_equuals_x {
   * Time: O(n^2 * log(n)), Space: O(1)
   * 
   */
+
+  public static boolean checkIfTripletExistsEqualsTarget(List<Integer> arr, int target){
+    int n = arr.size();
+    Collections.sort(arr);
+    System.out.println(arr);
+
+    for(int i=0; i<n; i++){
+      int num1 = arr.get(i);
+      int expectedTarget = target - num1;
+      
+      int l=i+1;
+      int r = n-1;
+      while(l<r){
+          int sum = arr.get(l) + arr.get(r);
+          if(sum == expectedTarget){
+              return true;
+          }
+          if(sum < expectedTarget){
+              l++;
+          } else {
+              r--;
+          }
+      }
+      
+    }
+    return false;
+  }
+
+
+
+
+
+
+  /*
+  * VARIATION: Triplet with closest sum
+  * https://www.hackerrank.com/contests/logicmojo-assignment-june-batch/challenges/3-sum-closest-1/problem
+  */
+  
+  public static int three_sum_close(List<Integer> arr, int target) {
+    int n = arr.size();
+    Collections.sort(arr);
+    System.out.println(arr);
+    
+    
+    int closestSum = 0;
+    int minDiff = Integer.MAX_VALUE;
+    
+    for(int i=0; i<n; i++){
+        int num1 = arr.get(i);
+        
+        int l=i+1;
+        int r = n-1;
+        while(l<r){
+            int sum = num1 + arr.get(l) + arr.get(r);
+            int diff = Math.abs(target - sum);
+            if(diff < minDiff){
+                closestSum = sum;
+                minDiff = diff;
+            }
+            if(sum < target){
+                l++;
+            } else {
+                r--;
+            }
+        }
+        
+    }
+    return closestSum;
+  }
 
 }

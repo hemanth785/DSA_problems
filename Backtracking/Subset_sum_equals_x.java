@@ -12,7 +12,7 @@ import java.util.*;
 public class Subset_sum_equals_x {
   public static void main(String[] args) {
     int arr[] = {2, 3, 8, 6, 5};
-    int target = 8;
+    int target = 2;
 
     getSubSetSumEqualToTarget(arr, target);
   } 
@@ -28,11 +28,33 @@ public class Subset_sum_equals_x {
   public static void getSubSetSumEqualToTarget(int[] arr, int target){
     List<Integer> subSet = new ArrayList<Integer>();
 
-    backTrackArrayForSubSetSum(arr, target, 0, subSet);
+    backTrackArrayForSubSetSum(arr, target, 0, 0, subSet);
   }
 
-  private static void backTrackArrayForSubSetSum(int[] arr, int target, int currentIndex, List<Integer> subSet){
-    if(target == 0){
+  //One way to do it
+  // private static void backTrackArrayForSubSetSum(int[] arr, int target, int currentIndex, List<Integer> subSet){
+  //   if(target == 0){
+  //     System.out.println(subSet);
+  //     return;
+  //   }
+
+  //   if(currentIndex >= arr.length){
+  //     return;
+  //   }
+
+  //   //reject current element for target sum
+  //   backTrackArrayForSubSetSum(arr, target, currentIndex+1, subSet); 
+
+  //   //select current element for target sum
+  //   subSet.add(arr[currentIndex]);
+  //   backTrackArrayForSubSetSum(arr, target-arr[currentIndex], currentIndex+1, subSet);
+    
+  //   subSet.remove(subSet.size()-1);
+  // }
+
+  //Another way to do it
+  private static void backTrackArrayForSubSetSum(int[] arr, int target, int currentSum, int currentIndex, List<Integer> subSet){
+    if(target == currentSum){
       System.out.println(subSet);
       return;
     }
@@ -42,11 +64,11 @@ public class Subset_sum_equals_x {
     }
 
     //reject current element for target sum
-    backTrackArrayForSubSetSum(arr, target, currentIndex+1, subSet); 
+    backTrackArrayForSubSetSum(arr, target, currentSum, currentIndex+1, subSet); 
 
     //select current element for target sum
     subSet.add(arr[currentIndex]);
-    backTrackArrayForSubSetSum(arr, target-arr[currentIndex], currentIndex+1, subSet);
+    backTrackArrayForSubSetSum(arr, target, currentSum + arr[currentIndex], currentIndex+1, subSet);
     
     subSet.remove(subSet.size()-1);
   }
