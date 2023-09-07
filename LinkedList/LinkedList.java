@@ -33,6 +33,7 @@ public class LinkedList {
     while(head != null){
       System.out.print(head.data);
       System.out.print("->");
+      head = head.next;
     }
   }
 }
