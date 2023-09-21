@@ -4,21 +4,21 @@ public class Bit_manipulation {
   public static void main(String[] args) {
     //----get i'th bit
     // int number = 6;  //6 -> 110
-    // int i = 1;   //from left side of number
+    // int i = 1;   //from right side of number
     // int res = getIthBit(number, i);
     // System.out.print("i'th bit value:  "+ res);
 
     //----set i'th bit
     // int number = 5 ;  //4 -> 101
-    // int i = 2;   //from left side of number
+    // int i = 2;   //from right side of number
     // int res = setIthBit(number, i);
     // System.out.print("value after setting i'th bit:  "+ res);
 
     //---clear i'th bit
-    // int number = 7 ;  //6 -> 111
-    // int i = 2;   //from left side of number
-    // int res = clearIthBit(number, i);
-    // System.out.print("value after clearing i'th bit:  "+ res);
+    int number = 13 ;  //6 -> 111
+    int i = 3;   //from right side of number
+    int res = clearIthBit(number, i);
+    System.out.print("value after clearing i'th bit:  "+ res);
 
     //----check if number is power of 2
     // isNumberPower2(3);
@@ -30,10 +30,10 @@ public class Bit_manipulation {
     // System.out.print("Set bits count: "+ res);
 
     //----count setBits for number from 1 to n
-    int n = 4;
-    // int res = countSetBitsFrom1toN_1(n);
-    int res = countSetBitsFrom1toN_2(n);
-    System.out.print("Set bits count: "+ res);
+    // int n = 4;
+    // // int res = countSetBitsFrom1toN_1(n);
+    // int res = countSetBitsFrom1toN_2(n);
+    // System.out.print("Set bits count: "+ res);
   }
 
   /*
@@ -81,15 +81,15 @@ public class Bit_manipulation {
 
   /*
    * clear i'th bit ==> make ith bit as '0', irrespctive of whether its 0 or 1 currently
-   * - here to set the i'th bit, we need to make use of OR operator
+   * - here to clear the i'th bit, we need to make use of OR operator
    */
   public static int clearIthBit(int number, int i){
     int helpNumber = 1;  //001 or ...0001
     helpNumber = helpNumber<<i-1;
 
-    System.out.println("helpNumber: "+helpNumber);
+    System.out.println("helpNumber: "+ ~helpNumber);
 
-    int result = number | helpNumber; //bitwise OR operator
+    int result = number | ~helpNumber; //bitwise OR operator
     return result;
   }
 

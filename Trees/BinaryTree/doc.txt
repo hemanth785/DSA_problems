@@ -1,0 +1,59 @@
+* Different types of trees
+  1. Binary tree
+  2. Ternary tree
+  3. n-ary tree
+
+* Diffrerent tree traversal
+  1. Level order traversal or (Breadth first search - BFS) - Need Queue for this
+  2. Depth first search - Need stack for this
+    a. Pre-order (Data, Left, Right)
+    b. In-order (Left, Data, Right)
+    c. Post-order (Left, Right, Data)
+
+    Note: pre, post and in order is decided based on when we are "printing the data of current node"
+    for Pre order, we are first printing the data of current node and then proceding with left and right nodes
+
+* For a tree of N nodes, there will always be (N-1) edges (line connecting 2 nodes )
+
+* Implementing binary tree using array
+  1. for ith node, 
+    - left child will be stored at index: (2*i)+1
+    - right child will be stored at index: (2*i)+2
+
+  2.  for 2nd node, 
+    - left child will be found at index: 5
+    - right child will be found at index: 6
+
+
+* PROPERTIES OF BINARY TREE (BT)
+  1. For a tree whose level starts with 0 (0,1,2), for any level = l, max number of nodex it particular level can contain = 2^left
+      ex: for level3, max number of nodes/childs we can create is = 2^3 = 8
+
+      (1,2,4,8,16.....)
+
+  2. For a tree of any height h (), max number of nodes that tree can contain is = (2^h)-1 
+      ex: for a tree of hieght 4, max number childs or nodes it can contain is = (2^4)-1 = 16-2 = 15
+
+      (1,3,7,15..... )
+
+  3. For N number of nodes, min hegith required is: h = log(N) + 1 
+
+
+* TYPES OF BINARY TREE
+  1. FULL BINARY TREE: Each node in tree has either 0 or 2 childs nodes
+  2. DEGENERATE BINARY TREE: each node in tree has 1 child only
+     a. LEFT SKEWED TREE: only left childs are present
+     b. RIGHT SKEWED TREE: only right childs are present
+
+  3. COMPLETE BINARY TREE: 
+    - all levels are filled, except for last level
+    - all leaf nodes must lean towards left
+
+  4. PERFECT BINARY TREE:
+    - all internal nodes(not leaf nodes) must have 2 child nodes
+    - all leaf nodes are at same level
+
+* BALANCED BINARY TREE
+  - A tree having height diff of every left and right child node should be less than or equal to 1
+
+

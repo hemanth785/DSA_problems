@@ -1,4 +1,6 @@
-package String.java;
+package String;
+
+import java.util.Arrays;
 
 /*
  * For a given input string, return a index at which pattern strin exists
@@ -12,9 +14,10 @@ package String.java;
 public class PatternMatch {
   public static void main(String args[]){
     String inputString = "abcdabdf";
-    String pattern = "cdab";
+    String pattern = "bdf";
 
-    int output = patternMatchUsingRabinKarp(inputString, pattern);
+    // int output = patternMatchUsingRabinKarp(inputString, pattern);
+    int output = patternMatchUsingKMP(inputString, pattern);
     System.out.println("Pattern found at: "+output);
   }
 
@@ -58,7 +61,7 @@ public class PatternMatch {
   }
 
   /*
-   * Appraoch 2: Using Rabin karp algorith (Optimized) - we can use it for other pattern matching problems
+   * Appraoch 2: Using Rabin karp algorithm (Optimized) - we can use it for other pattern matching problems
    * 
    * Time: O(n), Space: O(n)
    */
@@ -117,4 +120,58 @@ public class PatternMatch {
     }
     return -1;
   }
+
+  /*
+   * Aproach 4: Using KMP algorithm (Kruth Morris Prat)
+   */
+
+  public static int patternMatchUsingKMP(String input, String pattern){
+    int kmpPattern[] = new int[pattern.length()];
+
+    int j=0, i=1;
+    kmpPattern[0] = 0;
+    //build kmp pattern array
+    while(i<pattern.length()){
+      char iChar = pattern.charAt(i);
+      char jChar = pattern.charAt(j);
+
+      //if its matching, increment j and assign pattern value
+      if(iChar == jChar){
+        kmpPattern[i] = j+1;
+        j++;
+        i++;
+      } else {
+        if(j==0){
+          kmpPattern[i] = 0;
+          i++;
+        } else {
+          j = kmpPattern[j-1];
+        }
+      }
+    }
+
+    //search for pattern in given array
+    i=0;
+    j=0;
+    while(i<input.length() && j<pattern.length()){
+      char inputChar = input.charAt(i);
+      char patternChar = pattern.charAt(j);
+      if(inputChar == patternChar){
+        i++;
+        j++;
+      } else {
+        if(j== 0){
+          i++;
+        } else {
+          j = kmpPattern[j-1];
+        }
+      }
+    }
+
+    if(j == pattern.length()){
+      return i-pattern.length();
+    }
+    return -1;
+  }
+  
 }

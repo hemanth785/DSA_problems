@@ -1,0 +1,5 @@
+* Binary search trees are the trees which has the following properties
+  1. Each node can have max two child nodes
+  2. Value of left child node shoule be lesser or equal to current node
+  3. Value of right child node should be greater or equal to current node Value
+  

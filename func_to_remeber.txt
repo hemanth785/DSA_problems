@@ -1,0 +1,13 @@
+* Easy conversion of SET to STRING
+    HashSet<String> set = new HashSet();
+    set.add("Boston");
+    set.add("NewYork");
+    
+    String result = String.join("", set);
+
+    //Note: this will only work if the set contains strings (Not charectors or integers)
+
+
+* In HASH_MAP keys will be NOT_SORTED order
+* In TREE_MAP keys will be in SORTED order
+

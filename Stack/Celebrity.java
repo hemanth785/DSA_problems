@@ -59,7 +59,7 @@ public class Celebrity {
    * Steps-
    * 1. Store the count of how many people know each person
    * 2. Then loop over map to check if any persion has known to n-1 people
-   *    - If yes, then verify if this persion dont know any other persion than himself (Complete row for that persion should be zero)
+   *    - If yes, then verify if this persion dont know any other persion than himself (Complete row for that person should be zero)
    *      - If yes, Return the celebirty
    * else 
    *   No celebrity found
@@ -115,8 +115,8 @@ public class Celebrity {
    * 
    * - Store all persions in the stack
    * - Pop 2 people from stack at a time and check, until 1 or 0 element left in stack
-   *  - if a knows b and b dont know a, then b could be celebrity
-   *  - if b knows a and a dont know b, then a could be celebrity
+   *  - if a knows b and b dont know a, then b could be celebrity - push b back to stack
+   *  - if b knows a and a dont know b, then a could be celebrity - push a back to stack
    * 
    * -If any element left in stack, verify that is the celebrity by
    *  - check if he knows to everyone
