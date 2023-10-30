@@ -1,0 +1,805 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Largest_contagious_sum",
+      "request": "launch",
+      "mainClass": "Largest_contagious_sum",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Element_appears_once",
+      "request": "launch",
+      "mainClass": "Array_advanced.Element_appears_once",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "FindTwoNonRepeatedNumber",
+      "request": "launch",
+      "mainClass": "Array_advanced.FindTwoNonRepeatedNumber",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "First_missing_positive",
+      "request": "launch",
+      "mainClass": "Array_advanced.First_missing_positive",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Left_side_less_right_side_more",
+      "request": "launch",
+      "mainClass": "Array_advanced.Left_side_less_right_side_more",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Pascals_triangle",
+      "request": "launch",
+      "mainClass": "Array_advanced.Pascals_triangle",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Rainwater_tapping",
+      "request": "launch",
+      "mainClass": "Array_advanced.Rainwater_tapping",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "SearchInSortedRotated",
+      "request": "launch",
+      "mainClass": "Array_advanced.SearchInSortedRotated",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Bubble_sort",
+      "request": "launch",
+      "mainClass": "Array_sorting.Bubble_sort",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Insertion_sort",
+      "request": "launch",
+      "mainClass": "Array_sorting.Insertion_sort",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Merge_sort",
+      "request": "launch",
+      "mainClass": "Array_sorting.Merge_sort",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Quick_sort",
+      "request": "launch",
+      "mainClass": "Array_sorting.Quick_sort",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Selection_sort",
+      "request": "launch",
+      "mainClass": "Array_sorting.Selection_sort",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Brackets",
+      "request": "launch",
+      "mainClass": "Backtracking.Brackets",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Knights_tour",
+      "request": "launch",
+      "mainClass": "Backtracking.Knights_tour",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "N_Queens",
+      "request": "launch",
+      "mainClass": "Backtracking.N_Queens",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PossibleExpressionsHR",
+      "request": "launch",
+      "mainClass": "Backtracking.PossibleExpressionsHR",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PrintPermutationOfNumbers",
+      "request": "launch",
+      "mainClass": "Backtracking.PrintPermutationOfNumbers",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Print_all_binary",
+      "request": "launch",
+      "mainClass": "Backtracking.Print_all_binary",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Rat_in_maze",
+      "request": "launch",
+      "mainClass": "Backtracking.Rat_in_maze",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Subset_sum_equals_x",
+      "request": "launch",
+      "mainClass": "Backtracking.Subset_sum_equals_x",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Sudoku",
+      "request": "launch",
+      "mainClass": "Backtracking.Sudoku",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Tower_of_hanoi",
+      "request": "launch",
+      "mainClass": "Backtracking.Tower_of_hanoi",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Complement",
+      "request": "launch",
+      "mainClass": "BitManipulation_extra.Complement",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "EvenOrOdd",
+      "request": "launch",
+      "mainClass": "BitManipulation_extra.EvenOrOdd",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "FindithBit",
+      "request": "launch",
+      "mainClass": "BitManipulation_extra.FindithBit",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Candies",
+      "request": "launch",
+      "mainClass": "DynamicProgramming.Candies",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "LCSPrint",
+      "request": "launch",
+      "mainClass": "DynamicProgramming.LCSPrint",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Find_bitonic_point",
+      "request": "launch",
+      "mainClass": "Find_bitonic_point",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Find_majority_element",
+      "request": "launch",
+      "mainClass": "Find_majority_element",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Find_missing_element",
+      "request": "launch",
+      "mainClass": "Find_missing_element",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Find_repeated_and_missing_number",
+      "request": "launch",
+      "mainClass": "Find_repeated_and_missing_number",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Find_subarray_sum_equuals_x",
+      "request": "launch",
+      "mainClass": "Find_subarray_sum_equuals_x",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Find_two_repeated_element",
+      "request": "launch",
+      "mainClass": "Find_two_repeated_element",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "MaxHeapImplementation",
+      "request": "launch",
+      "mainClass": "Heap.MaxHeapImplementation",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "MinHeapImplementation",
+      "request": "launch",
+      "mainClass": "Heap.MinHeapImplementation",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "KthLargest",
+      "request": "launch",
+      "mainClass": "Heap.PriorityQueue.KthLargest",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "SortKSortedArray",
+      "request": "launch",
+      "mainClass": "Heap.PriorityQueue.SortKSortedArray",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "TopKfrequentItems",
+      "request": "launch",
+      "mainClass": "Heap.PriorityQueue.TopKfrequentItems",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Add_two_numbers",
+      "request": "launch",
+      "mainClass": "LinkedList.Add_two_numbers",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Alternate_split",
+      "request": "launch",
+      "mainClass": "LinkedList.Alternate_split",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "BasicOperations",
+      "request": "launch",
+      "mainClass": "LinkedList.BasicOperations",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Check_for_palindrome",
+      "request": "launch",
+      "mainClass": "LinkedList.Check_for_palindrome",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "ClondeRandomPointerLL",
+      "request": "launch",
+      "mainClass": "LinkedList.ClondeRandomPointerLL",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Detect_loop",
+      "request": "launch",
+      "mainClass": "LinkedList.Detect_loop",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Find_middle_element",
+      "request": "launch",
+      "mainClass": "LinkedList.Find_middle_element",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "First_node_in_Circular_LL",
+      "request": "launch",
+      "mainClass": "LinkedList.First_node_in_Circular_LL",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Flatten_LL",
+      "request": "launch",
+      "mainClass": "LinkedList.Flatten_LL",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Get_kth_node_from_end",
+      "request": "launch",
+      "mainClass": "LinkedList.Get_kth_node_from_end",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Intersect_point_in_LL",
+      "request": "launch",
+      "mainClass": "LinkedList.Intersect_point_in_LL",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Merge_sort(1)",
+      "request": "launch",
+      "mainClass": "LinkedList.Merge_sort",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Merge_two_sorted_LL",
+      "request": "launch",
+      "mainClass": "LinkedList.Merge_two_sorted_LL",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Next_greater_node_on_right",
+      "request": "launch",
+      "mainClass": "LinkedList.Next_greater_node_on_right",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "ReverseKGroupNodes",
+      "request": "launch",
+      "mainClass": "LinkedList.ReverseKGroupNodes",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "ReverseLL",
+      "request": "launch",
+      "mainClass": "LinkedList.ReverseLL",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Bit_manipulation",
+      "request": "launch",
+      "mainClass": "Maths.Bit_manipulation",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Flip_all_bits",
+      "request": "launch",
+      "mainClass": "Maths.Flip_all_bits",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "GCD_of_two_numbers",
+      "request": "launch",
+      "mainClass": "Maths.GCD_of_two_numbers",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Prime_numbers",
+      "request": "launch",
+      "mainClass": "Maths.Prime_numbers",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "RecursiveDigitSum",
+      "request": "launch",
+      "mainClass": "Maths.RecursiveDigitSum",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "SumVsXor",
+      "request": "launch",
+      "mainClass": "Maths.SumVsXor",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Swap_two_numbers",
+      "request": "launch",
+      "mainClass": "Maths.Swap_two_numbers",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Max_diff_in_array",
+      "request": "launch",
+      "mainClass": "Max_diff_in_array",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Pair_with_sum_equals_x",
+      "request": "launch",
+      "mainClass": "Pair_with_sum_equals_x",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "CirculerQueueFromArray",
+      "request": "launch",
+      "mainClass": "Queue.CirculerQueueFromArray",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "GasStation",
+      "request": "launch",
+      "mainClass": "Queue.GasStation",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "SlidingWindowMax",
+      "request": "launch",
+      "mainClass": "Queue.SlidingWindowMax",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "StackUsingOneQueue",
+      "request": "launch",
+      "mainClass": "Queue.StackUsingOneQueue",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Rotation_of_array",
+      "request": "launch",
+      "mainClass": "Rotation_of_array",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Search_in_sorted_rotated_array",
+      "request": "launch",
+      "mainClass": "Search_in_sorted_rotated_array",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Separate_0_and_1",
+      "request": "launch",
+      "mainClass": "Separate_0_and_1",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "BalancedBrackets",
+      "request": "launch",
+      "mainClass": "Stack.BalancedBrackets",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "EqualStacks",
+      "request": "launch",
+      "mainClass": "Stack.EqualStacks",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "InfixToPostfix1",
+      "request": "launch",
+      "mainClass": "Stack.InfixToPostfix1",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "InfixToPrefix2",
+      "request": "launch",
+      "mainClass": "Stack.InfixToPrefix2",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PostfixEvaluation",
+      "request": "launch",
+      "mainClass": "Stack.PostfixEvaluation",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PostfixToInfix3",
+      "request": "launch",
+      "mainClass": "Stack.PostfixToInfix3",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PostfixToPrefix5",
+      "request": "launch",
+      "mainClass": "Stack.PostfixToPrefix5",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PrefixToInfix4",
+      "request": "launch",
+      "mainClass": "Stack.PrefixToInfix4",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PrefixToPostfix6",
+      "request": "launch",
+      "mainClass": "Stack.PrefixToPostfix6",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "StackFromArray",
+      "request": "launch",
+      "mainClass": "Stack.StackFromArray",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "StackFromLL",
+      "request": "launch",
+      "mainClass": "Stack.StackFromLL",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "StockSpan",
+      "request": "launch",
+      "mainClass": "Stack.StockSpan",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "IsomorphicStrings",
+      "request": "launch",
+      "mainClass": "String.IsomorphicStrings",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PatternMatch",
+      "request": "launch",
+      "mainClass": "String.PatternMatch",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "RevereseWordsInString",
+      "request": "launch",
+      "mainClass": "String.RevereseWordsInString",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "StringToInteger",
+      "request": "launch",
+      "mainClass": "String.StringToInteger",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "SwapsNeededToBalanceParanthesis",
+      "request": "launch",
+      "mainClass": "String.SwapsNeededToBalanceParanthesis",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Sum_closest_to_zero",
+      "request": "launch",
+      "mainClass": "Sum_closest_to_zero",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "DeleteNode",
+      "request": "launch",
+      "mainClass": "Trees.BinarySearchTree.DeleteNode",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "InsertNode",
+      "request": "launch",
+      "mainClass": "Trees.BinarySearchTree.InsertNode",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "LowestCommenAncestorBST",
+      "request": "launch",
+      "mainClass": "Trees.BinarySearchTree.LowestCommenAncestorBST",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "TreeImplementation",
+      "request": "launch",
+      "mainClass": "Trees.BinarySearchTree.TreeImplementation",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "CheckBalanced",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.CheckBalanced",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "CheckCousinNodes",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.CheckCousinNodes",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "ConstructFromPreAndInorder",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.ConstructFromPreAndInorder",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "DeleteNode(1)",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.DeleteNode",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "FindDiameter",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.FindDiameter",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "FlattenBinaryTree",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.FlattenBinaryTree",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "InsertNode(1)",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.InsertNode",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "InvertTree",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.InvertTree",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "IsTreesIdentical",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.IsTreesIdentical",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "LevelOfGivenNode",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.LevelOfGivenNode",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "LowestCommenAncestorBT",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.LowestCommenAncestorBT",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "MaxDepth",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.MaxDepth",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "MaxPathSum",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.MaxPathSum",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PathToTarget",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.PathToTarget",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PrintInZigZag",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.PrintInZigZag",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PrintInZigZag2",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.PrintInZigZag2",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "PrintViews",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.PrintViews",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "TreeImplementation(1)",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.TreeImplementation",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "VerticalTraversal",
+      "request": "launch",
+      "mainClass": "Trees.BinaryTree.VerticalTraversal",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    },
+    {
+      "type": "java",
+      "name": "Triplet_with_sum_equuals_x",
+      "request": "launch",
+      "mainClass": "Triplet_with_sum_equuals_x",
+      "projectName": "LogicMojo_DSA_Problems_bf7b1d4d"
+    }
+  ]
+}

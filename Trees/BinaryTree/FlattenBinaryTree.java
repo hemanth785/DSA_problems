@@ -1,14 +1,12 @@
 package Trees.BinaryTree;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
 import java.util.Queue;
-import java.util.TreeMap;
-import java.util.HashMap;
 
-public class PrintViews {
+/*
+ * link: https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
+ */
+public class FlattenBinaryTree {
   public static class TreeNode {
     int data;
     TreeNode left = null;
@@ -54,7 +52,7 @@ public class PrintViews {
   *                   / \
   *                  9  12
   */
-  public static TreeNode build() {
+  public static TreeNode build(){
     TreeNode root = new TreeNode(1);
 
     root.left = new TreeNode(2);
@@ -76,51 +74,62 @@ public class PrintViews {
     TreeNode root = build();
     BFS(root);
 
-    //print topView
-    topView(root);
+    flattenRecursive(root);
+
+
+    System.out.println("Atfer flattening---");
+    BFS(root);
+  }
+  
+  /*  Solution 1  -Recursive---- */
+
+  public static void flattenRecursive(TreeNode root) {
+    flatternRecursive(root);
   }
 
-  public static void leftView(TreeNode root) {
-    // TODO: tip: print first node in level order traversal
-    // Output: 1,2,4,9
-  }
-
-  public static void rightView(TreeNode root) {
-    // TODO: tip: print last node in level order traversal
-    // Output: 1,5,7,12
-  }
-
-  // TODO: tip: print first node in vertical order traversal------
-  public static void topView(TreeNode root) {
-    // Output: 4,2,1,5,7
-    Map<Integer, List<Integer>> verticalMap = new TreeMap<>();
-    recursiveTraversalSimple(root, verticalMap, 0, 0);
-    for (Map.Entry entry : verticalMap.entrySet()) {
-      List<Integer> row = (List<Integer>) entry.getValue();
-      // int value = entry.getValue().get(0);
-      System.out.print(row.get(0) + " ");
-    }
-  }
-
-  public static void recursiveTraversalSimple(TreeNode cur, Map<Integer, List<Integer>> verticalMap, int col, int row) {
+  public static TreeNode flatternRecursive(TreeNode cur) {
     if (cur == null) {
-      return;
+      return null;
+    }
+    if (cur.left != null) {
+      // store right tree in temp until we flattern left tree completely
+      TreeNode tempRight = cur.right;
+      cur.right = cur.left;
+      cur.left = null;
+
+      // flatten left to right moved node, further
+      cur = flatternRecursive(cur.right);
+
+      // flattern remaining right tree stored in temp
+      if (tempRight != null) {
+        cur.right = tempRight;
+        cur = flatternRecursive(cur.right);
+      }
+      return cur;
     }
 
-    if (!verticalMap.containsKey(col)) {
-      verticalMap.put(col, new ArrayList<Integer>());
+    if (cur.right != null) {
+      return flatternRecursive(cur.right);
     }
-    verticalMap.get(col).add(cur.data);
-
-    recursiveTraversalSimple(cur.left, verticalMap, col - 1, row + 1);
-    recursiveTraversalSimple(cur.right, verticalMap, col + 1, row + 1);
+    return cur;
   }
 
-  //--------------
+  /*Solution 2: Iterative approach */
 
-  public static void bottomView(TreeNode root) {
-    // TODO: tip: print first node in vertical order traversal
-    // Output: 4,9,6,3,12,7
+  public static void flatternIterative(TreeNode root){
+    while(root != null){
+      if(root.left != null){
+        TreeNode cur = root;
+        TreeNode tempRight = cur.right;
+        cur.right = cur.left;
+        cur.left = null;
+
+        while(cur.right != null){
+            cur=cur.right;
+        }
+        cur.right = tempRight;
+      }
+      root = root.right;
+    }
   }
-
 }

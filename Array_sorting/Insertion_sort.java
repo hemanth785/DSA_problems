@@ -48,4 +48,19 @@ public class Insertion_sort {
    *    That means suppose you have to sort the array elements in ascending order, 
    *    but its elements are in descending order. The worst-case time complexity of insertion sort is O(n2).
    */
+
+
+   /*My solution  */
+  void insertionSort2(int[] arr) {
+    for (int i = 1; i < arr.length; i++) {
+      int cur = i;
+      int j = i - 1;
+      while (j >= 0 && arr[cur] < arr[j]) {
+        swap(arr, cur, j);
+        cur = j;
+        j--;
+      }
+    }
+  }
+
 }

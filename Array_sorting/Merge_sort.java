@@ -13,8 +13,8 @@ public class Merge_sort {
   }
 
   public static void merge(int arr[], int l, int mid, int r){
-    int n1 = mid-l+1;
-    int n2 = r-mid;
+    int n1 = mid-l+1; //we are adding 1 here because, for 1st array we considering mid element
+    int n2 = r-mid; // here we are not adding 1 becuase, we are considering elements from mid+1
 
     int leftArr[] = new int[n1];
     int rightArr[] = new int[n2];
@@ -51,7 +51,7 @@ public class Merge_sort {
   }
 
   public static void devide(int arr[], int l, int r){
-    if(l >=  r){
+    if(l >= r){
       return;
     } 
     int mid = (l+r)/2;
@@ -60,7 +60,6 @@ public class Merge_sort {
     devide(arr, l, mid);
     devide(arr, mid+1, r);
 
-    
     merge(arr, l, mid, r);
   }
   

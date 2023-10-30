@@ -1,14 +1,23 @@
 package Trees.BinaryTree;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
-import java.util.TreeMap;
-import java.util.HashMap;
 
-public class PrintViews {
+/*
+ * Solution 1: 
+ *  TODO:  This is for binary tree (not bst)
+ *   do the recursive traversal for node p and q and store the path on the way(path1 and path2)
+ *   After the complete traver, simultanously keep removing last element from path1 and path2 and compare at any point both have same node
+ *   if same node found at any index, that is the LCA
+ *
+ *   refer 'PathToTarget' for keep track of path
+ */
+
+ /*
+  * Solution 2: using complete recursive apporache, without storing path
+  */
+public class LowestCommenAncestorBT {
   public static class TreeNode {
     int data;
     TreeNode left = null;
@@ -54,7 +63,7 @@ public class PrintViews {
   *                   / \
   *                  9  12
   */
-  public static TreeNode build() {
+  public static TreeNode build(){
     TreeNode root = new TreeNode(1);
 
     root.left = new TreeNode(2);
@@ -76,51 +85,37 @@ public class PrintViews {
     TreeNode root = build();
     BFS(root);
 
-    //print topView
-    topView(root);
+    TreeNode lca = lowestCommonAncestor(root, 9 ,12);
+    System.out.println("LCA: ");
+    System.out.println(lca.data);
   }
 
-  public static void leftView(TreeNode root) {
-    // TODO: tip: print first node in level order traversal
-    // Output: 1,2,4,9
+
+  public static TreeNode lowestCommonAncestor(TreeNode root, int p, int q) {
+    return findLCA(root, p, q);
   }
 
-  public static void rightView(TreeNode root) {
-    // TODO: tip: print last node in level order traversal
-    // Output: 1,5,7,12
-  }
-
-  // TODO: tip: print first node in vertical order traversal------
-  public static void topView(TreeNode root) {
-    // Output: 4,2,1,5,7
-    Map<Integer, List<Integer>> verticalMap = new TreeMap<>();
-    recursiveTraversalSimple(root, verticalMap, 0, 0);
-    for (Map.Entry entry : verticalMap.entrySet()) {
-      List<Integer> row = (List<Integer>) entry.getValue();
-      // int value = entry.getValue().get(0);
-      System.out.print(row.get(0) + " ");
-    }
-  }
-
-  public static void recursiveTraversalSimple(TreeNode cur, Map<Integer, List<Integer>> verticalMap, int col, int row) {
+  public static TreeNode findLCA(TreeNode cur, int p, int q) {
     if (cur == null) {
-      return;
+      return null;
+    }
+    if (cur.data == p || cur.data == q) {
+      return cur;
     }
 
-    if (!verticalMap.containsKey(col)) {
-      verticalMap.put(col, new ArrayList<Integer>());
+    TreeNode left = findLCA(cur.left, p, q);
+    TreeNode right = findLCA(cur.right, p, q);
+
+    // this one is checking - for current node does both p and q found
+    if (left != null && right != null) {
+      return cur;
+      // this 2 below one is for passing the found ancestor upwards till roo (passing
+      // ans to top)
+    } else if (left != null) {
+      return left;
+    } else if (right != null) {
+      return right;
     }
-    verticalMap.get(col).add(cur.data);
-
-    recursiveTraversalSimple(cur.left, verticalMap, col - 1, row + 1);
-    recursiveTraversalSimple(cur.right, verticalMap, col + 1, row + 1);
+    return null;
   }
-
-  //--------------
-
-  public static void bottomView(TreeNode root) {
-    // TODO: tip: print first node in vertical order traversal
-    // Output: 4,9,6,3,12,7
-  }
-
 }

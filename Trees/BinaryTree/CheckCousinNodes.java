@@ -4,12 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /*
- * Given a Binary Tree and a target key you need to find the level of target key in the given Binary Tree.
- * 
- * link: https://practice.geeksforgeeks.org/problems/level-of-a-node-in-binary-tree/1
+ * https://leetcode.com/problems/cousins-in-binary-tree/
  */
-
-public class LevelOfGivenNode {
+public class CheckCousinNodes {
   public static class TreeNode {
     int data;
     TreeNode left = null;
@@ -55,16 +52,16 @@ public class LevelOfGivenNode {
   *                   / \
   *                  9  12
   */
-  public static TreeNode build(){
+  public static TreeNode build() {
     TreeNode root = new TreeNode(1);
 
     root.left = new TreeNode(2);
     root.left.left = new TreeNode(4);
-    root.left.right = new TreeNode(3);
+    root.left.right = new TreeNode(6);
 
     root.right = new TreeNode(5);
 
-    root.right.left = new TreeNode(6);
+    root.right.left = new TreeNode(3);
     root.right.right = new TreeNode(7);
 
     root.right.left.left = new TreeNode(9);
@@ -77,19 +74,34 @@ public class LevelOfGivenNode {
     TreeNode root = build();
     BFS(root);
 
-    int target = 12;
-    // int levelOfNode = getLevelIterative(root, target);
-    int levelOfNode = getLevelRecursive(root, target);
-    System.out.println("Level of give node: "+ levelOfNode);
+    boolean isCousins = isCousins(root,4,7);
+    System.out.println("Is cousin nodes: "+ isCousins);
   }
 
   /*
-   * Solution 1: Using level order traversal, while keeping track of level number
-   * 
-   * Time: O(n), Space: O(width of tree)
+   * Solution: 
+   * for 2 nodes to be considered as cousins, it should meet follwing conditions
+   * 1. Two nodes should at the same level in the tree
+   * 2. Two nodes should not be siblings(i.e. two nodes should not have commen parent)
    */
 
-  static int getLevelIterative(TreeNode root, int data) {
+  public static boolean isCousins(TreeNode root, int x, int y) {
+    int leftLevel = getLevel(root, x);
+    int rightLevel = getLevel(root, y);
+
+    if (leftLevel == 0 || rightLevel == 0) {
+      return false;
+    }
+    if (leftLevel != rightLevel) {
+      return false;
+    }
+    if (isSiblings(root, x, y)) {
+      return false;
+    }
+    return true;
+  }
+
+  public static int getLevel(TreeNode root, int data) {
     if (root == null)
       return 0;
 
@@ -114,25 +126,15 @@ public class LevelOfGivenNode {
     return 0;
   }
 
-   /*
-    * Solution 1: Recursive approach
-    * Time: O(n), Space: O(height of tree)
-    */
-  static int level = 0;
-  static int getLevelRecursive(TreeNode node, int data) {
-    recursiveTraversal(node, data, 1);
-    return level;
-  }
-
-  static void recursiveTraversal(TreeNode node, int data, int curLevel) {
-    if (node == null) {
-      return;
+  public static boolean isSiblings(TreeNode root, int x, int y) {
+    if (root == null) {
+      return false;
     }
-    if (node.data == data) {
-      level = curLevel;
-      return;
+    if ((root.left != null && root.right != null) &&
+        ((root.left.data == x && root.right.data == y) ||
+            (root.left.data == y && root.right.data == x))) {
+      return true;
     }
-    recursiveTraversal(node.left, data, curLevel + 1);
-    recursiveTraversal(node.right, data, curLevel + 1);
+    return (isSiblings(root.left, x, y) || isSiblings(root.right, x, y));
   }
 }

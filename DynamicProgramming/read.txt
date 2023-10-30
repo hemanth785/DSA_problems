@@ -1,0 +1,7 @@
+WHEN TO USE GREEDY 
+- whenever we can optimize the global problem, by opmitmizing the local problem at each step. then we ca go ahead with this
+
+
+WHEN TO USE DYNAMIC PROGRAMMING (DP)
+ - whenever the localized optimial solution might not lead to global optimal solution, we need to use the DP
+ i.e. DP uses the approach that, for particular problem, try out all the possible solutions and pick the best

@@ -1,0 +1,12 @@
+HEAP:
+  A Heap is a special Tree-based data structure in which the tree is a complete binary tree.
+
+* OPERATIONS ON HEAP DATASTRUCTURE:
+  1. Heapify: a process of creating a heap from an array.
+  2. Insertion: process to insert an element in existing heap time complexity O(log N).
+  3. Deletion: deleting the top element of the heap or the highest priority element, and then organizing the heap and returning the element with time complexity O(log N).
+  4. Peek: to check or find the first (or can say the top) element of the heap.
+
+* TYPES OF HEAPS
+  1. Max heap: in max heap, at each level, parent node should be greater than its childs (root contains the highest value)
+  2. Min heap: in min heap, at each level, parent node should be lesser than its childs (root contains the least value)

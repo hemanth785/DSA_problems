@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 
  * Merge sort:
  * - Time: always:  [n * log(n)]
- * - Uses extra space (left and rightArray)
+ * - Uses extra space (left and right sub Array)
  * 
  * Quick sort:
  * - Time: Worst case: [n^2 * log(n)], Average case: [n * log(n)] (if we use middle or random element as pivot)
@@ -34,22 +34,22 @@ public class Quick_sort {
       partitionAndSort(arr, l, pivotIndex-1);
       partitionAndSort(arr, pivotIndex+1, r);
     }
-    
   }
 
+  // This is the most simple logic, just need to look at it once, whenever you come accross it
   public static int partition(int arr[], int l, int r){
     int i=l;
-    int j=i;
+    int j=l;
     int pivot = r;
 
     while(i<r){
-      if(arr[i]<arr[pivot]){
+      if(arr[i] < arr[pivot]){
         swap(arr, i, j);
         j++;  // move the j only when swapping. its used to mark the greater value. 
       }
       i++;
     }
-    swap(arr, i, j);
+    swap(arr, i, j); //now i is pointing to pivot element, and j is pointing to pivot index
     return j; //j is the actual pivot element
   }
 
