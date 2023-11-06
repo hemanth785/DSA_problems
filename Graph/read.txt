@@ -1,0 +1,2 @@
+POINT TO REMEMBER
+- For a graph with 'N' points/nodes, max number of edges possible is (N * (N-1)) / 2

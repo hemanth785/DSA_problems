@@ -6,6 +6,7 @@ import javafx.util.Pair;
 
 public class RottingOranges {
   
+  public int[] xMoves = { 0, 1, 0, -1 };
   public int[] yMoves = { 1, 0, -1, 0 };
 
   public boolean isSafe(int[][] grid, int m, int n, int i, int j) {

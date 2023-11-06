@@ -17,7 +17,8 @@ public class RowColumnZero {
   /*
    * Correct approach: Efficient
    * USING TWO SETS
-   * We can record the row and column numbers of each cell in the matrix that has a zero. In the next cycle, all of the cells in this recorded row and column can be set to zero.
+   * We can record the row and column numbers of each cell in the matrix that has a zero. 
+   * In the next cycle, all of the cells in this recorded row and column can be set to zero.
    */
 
   public void setZeroes(int[][] matrix) {

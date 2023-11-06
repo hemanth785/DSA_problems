@@ -16,16 +16,73 @@ public class SearchInSortedRotated {
   }
 
   /*
-   * Solution 1: Find the rotation pivot
+   * Solution 1: Find the rotation pivot using binary search (easy to understand code)
    * 
-   * Step 1: Find the position at which the array is rotated
+   * Step 1: Find the position at which the array is rotated (Bitonic point) - Using Binary search
    * Step 2: Identify whether target element lies in left search space or right search space
    *       for left:  (target >= l && target <= pivot)
    *       for right: (target >= pivot && target <= r)
    * Step 3: run binary search over the left or right search space, based on step 2
    * 
-   * Time: n * log(n), because log(n) for binary search, n for finding pivot
+   * Time: log(n) + log(n) ==> log(n)
    */
+
+   int getElementIndex(int[] arr, int target) {
+		int n = arr.length;
+	    
+		//find bitonicIndex (Log n)
+		int bitonicIndex = findBitonicPoint(arr, n);
+		int l = 0;
+		int r = n-1;
+    //if array is roated
+		if(bitonicIndex != -1){
+			if(target >= arr[0] && target <= arr[bitonicIndex]){
+				//search in left sub array
+				r = bitonicIndex;
+			} else {
+				//search in right subarray
+				l = bitonicIndex+1;
+			}
+		}
+		
+		return binarySearch(arr, l, r, target);
+	}
+	
+	int binarySearch(int[] arr, int l, int r, int target){
+		while(l<=r){
+			int mid = l + (r-l)/2;
+			if(arr[mid] == target){
+				return mid;
+			} else if(target < arr[mid]){
+				r = mid - 1;
+			} else {
+				l = mid + 1;
+			}
+		}
+		return -1;
+	}
+	
+	int findBitonicPoint(int[] arr, int n){
+		//find the bitonic point by binary search
+		int l=0;
+		int r=n-1;
+		
+		while(l<=r){
+			int mid = l + (r-l)/2;
+			//if prev element is greater than cur element, prev element is bitonic point
+			if(mid != 0 && arr[mid-1] > arr[mid]){
+				return mid-1;
+			} 
+			//if bitonic point is on left half of array, then 0th element will be greater than mid element in sorted array
+			else if(arr[0] > arr[mid]){
+				r = mid-1;
+			} else {
+				l = mid+1;
+			}
+		}
+		
+		return -1;
+	}
 
 
    /*
