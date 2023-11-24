@@ -44,7 +44,7 @@ public class InfixToPrefix2 {
   } 
 
   /*For prefix conversion
-   * - Start converting the infix from left side
+   * - Start converting the infix from right to left (Reverse order)
    * - After we reach end of infix expression, 
    * - Reverse the prefix expression for correctness
    */
@@ -60,10 +60,10 @@ public class InfixToPrefix2 {
       if(isOperand(item)){
         infixTemp += item;
 
-      } else if(item == ')'){
+      } else if(item == ')'){ //this is diff from infix to postfix
         stack.push(item);
 
-      } else if(item == '('){
+      } else if(item == '('){ //this is diff from infix to postfix
         while(!stack.isEmpty() && stack.peek() != ')'){
           infixTemp += stack.pop();
         }

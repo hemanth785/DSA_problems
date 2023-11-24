@@ -9,7 +9,7 @@ public class MergeOverlappingIntervals {
     // 1. Sort the intervals bases on their start time
     Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
 
-    // create a list to merged interval
+    // create a list to store merged interval
     List<int[]> mergedList = new ArrayList<>();
     mergedList.add(intervals[0]);
 

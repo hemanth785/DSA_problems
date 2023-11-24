@@ -91,7 +91,7 @@ public class Rainwater_tapping {
 
     int waterTapped = 0;
     while(l<=r){
-      if(height[l] < height[r]){
+      if(height[l] <= height[r]){
         if(height[l] < leftMax){
           waterTapped += leftMax - height[l];
         } else {

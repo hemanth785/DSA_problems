@@ -29,7 +29,7 @@ public class Max_diff_in_array {
 
 
   /*
-   * Solution 2: Using the left min array
+   * Solution 2: Using the left min value
    * - make leftMin as 1st element
    * - Use single loop, i=1 to n, 
    * - for each element, check the diff: a[i] - leftMin, and then store diff in maxDiff

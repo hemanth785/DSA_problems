@@ -12,8 +12,8 @@ public class Celebrity {
   /* Approach1: Bruteforce: 
    * Run a loop where ‘i’ ranges from 0 to ‘N’ - 1, and check whether the person having id ‘i’ is a celebrity or not. This can be done as follow -:
       - Initialise two boolean variables, ‘KNOWANY’ and ‘KNOWNTOALL’.
-      - Run a loop where ‘j’ ranges from 0 to ‘N’ - 1. If ‘knows(i, j)’ returns false for all ‘j’,  then set ‘KNOWANY’:= false
-      - Run a loop where ‘j’ ranges from 0 to ‘N’ - 1 and if  ‘knows(j, i)’ return true for all ‘j’ except when ‘j’ = ‘i’, then set  ‘KNOWNTOALL’:= true
+      - Run a loop where ‘j’(col) ranges from 0 to ‘N’ - 1. If ‘knows(i, j)’ returns false for all ‘j’,  then set ‘KNOWANY’= false
+      - Run a loop where ‘i’(row) ranges from 0 to ‘N’ - 1 and if  ‘knows(j, i)’ return true for all ‘j’ except when ‘j’ = ‘i’, then set  ‘KNOWNTOALL’:= true
       If ‘KNOWANY’ is ‘false’ and ‘KNOWNTOALL’ is ‘true’, then assign ‘CELEBRITY’:= ‘i’ and break the loop.
  
       Return ‘CELEBRITY’.
@@ -59,7 +59,7 @@ public class Celebrity {
    * Steps-
    * 1. Store the count of how many people know each person
    * 2. Then loop over map to check if any persion has known to n-1 people
-   *    - If yes, then verify if this persion dont know any other persion than himself (Complete row for that person should be zero)
+   *    - If yes, then verify if this persion dont know any other person than himself (Complete row for that person should be zero)
    *      - If yes, Return the celebirty
    * else 
    *   No celebrity found
@@ -113,12 +113,12 @@ public class Celebrity {
   /*
    * Approach 3: Optimized approach
    * 
-   * - Store all persions in the stack
+   * - Store all persons in the stack
    * - Pop 2 people from stack at a time and check, until 1 or 0 element left in stack
    *  - if a knows b and b dont know a, then b could be celebrity - push b back to stack
    *  - if b knows a and a dont know b, then a could be celebrity - push a back to stack
    * 
-   * -If any element left in stack, verify that is the celebrity by
+   * - If any element left in stack, verify that is the celebrity by
    *  - check if he knows to everyone
    *  - check if he dont know anybody else
    */

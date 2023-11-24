@@ -1,0 +1,44 @@
+1. INFIX to POSTFIX (a+b to ab+)
+  - loop through Infix string
+  - If we find 'operands'(a-z, 0-9), directly add it to resulting postfix string
+  - If we find '(', push it to stack
+  - If we find 'operator'(+,-,/,*), 
+    - check if any higher priority operator exists in top of stack, when compare to current operator
+      - if exists, remove it from stack top and add it to expression
+    - then push current operator to stack
+  - if we find ')', recursively pop all the operator and add it to expression until we find '(',
+    - then just remove the '(' from stack
+
+  - At last if stack is not empty, pop all the operator from the stack and add it to expression
+
+2. INFIX to PREFIX (a+b to +ab)
+  - Do the INFIX to POSTFIX with below 2 challenges
+    a. Start processing infix string from last to first
+    b. Reverse the resulting postfix expression to get, Prefix expression
+
+3.  POSTFIX to INFIX (ab+ to a+b)
+  - Traverse the Postfix string
+  - if cur char is operand(a-z), then push it to stack
+  - if cur char is operator(+,-,/,*), 
+    then 
+      a. pop last 2 operands from stack in reverse order, first b and then A
+      b. form the expression using operator and operands - a operator below
+      c. Store the expression back to stack
+
+4. PREFIX to INFIX (+ab to a+b)
+  - Do the POSTFIX to INFIX with below 2 challenges
+  a. Start processing infix string from last to first
+  b. Reverse the resulting postfix expression to get, Prefix expression
+
+5. POSTFIX to PREFIX
+  Do the Postfix to infix conversion, with the following change
+  -  but while forming expression, put the operator to the left of the operands, instead of center
+   
+   ab+ (postfix)==> a+b (infix) ==> +ab(prefix) 
+
+6. PREFIX to POSTFIX
+  Do the Postfix to infix conversion, with the following change
+  - Start processing input string from end to start
+  - but while forming expression, put the operator to the right of the operands, instead of center
+   
+  +ab(prefix) ==> a+b (infix) ==>  ab+ (postfix)

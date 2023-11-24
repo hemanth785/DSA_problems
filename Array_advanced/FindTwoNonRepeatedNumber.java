@@ -23,7 +23,7 @@ public class FindTwoNonRepeatedNumber {
     Collections.sort(arr);
     List<Integer> ans = new ArrayList<>();
 
-    for (int i = 0; i < n - 1; i = i + 2) {
+    for (int i=0; i<n-1; i=i+2) {
       if (arr.get(i) != arr.get(i + 1)) {
         ans.add(arr.get(i));
         i = i - 1;

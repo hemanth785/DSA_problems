@@ -4,7 +4,7 @@
  * 
  * output: [1,8,7]
  * 
- * Subarray: we have to find the sum for the eleemnts in order
+ * Subarray: we have to find the sum for the elements in order and together
  * i.e: [2,7,3] is not a subarray
  */
 
@@ -26,7 +26,7 @@ public class Find_subarray_sum_equuals_x {
    * 
    * - iterate over the array with two loop
    * - for each element in array, find the sum including every other element
-   * - if(summarion of(arr[i] to arr[j]) == targetSume)
+   * - if(summation of(arr[i] to arr[j]) == targetSume)
    *      return [arr[i],arr[i+1]....arr[j]]
    * 
    * Time: O(n^2)
@@ -71,6 +71,5 @@ public class Find_subarray_sum_equuals_x {
     } else {
       return new int[]{};
     }
-    
    }
 }

@@ -21,9 +21,9 @@ public class Find_repeated_and_missing_number {
   /*
    * Explanation:
    * Traverse the array. 
-   * While traversing, use the absolute value of every element as an index and make the value at this index negative to mark it visited. 
+   * While traversing, use the '(absolute value of every element - 1)' as an index and make the value at this index negative to mark it visited. 
    * If something is already marked negative then this is the repeating element. 
-   * To find the missing, traverse the array again and look for a positive value.
+   * To find the missing, traverse the array again and look for a positive value. the index at which positve value exists, that is the missing number
    */
   public static void findMissingAndDuplicateNumber(int arr[], int n ) {
     int misItem = 0;

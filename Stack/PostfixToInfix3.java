@@ -44,6 +44,7 @@ public class PostfixToInfix3 {
         if(i < postfix.length()-1){
           stack.push(expression);
         } else {
+          //do this for last char in string
           infix = a + currentChar + b;
         }
       }

@@ -87,7 +87,7 @@ public class Next_greater_node_on_right {
    * - Traverse each Node in LL
    * - For each element, 
    *   -> if Stack is empty, insert current element and its index
-   *   -> If stact is not empty, compare top element with current node value
+   *   -> If stack is not empty, compare top element with current node value
    *      -> if stackElement < curNodeValue, then store the curNodeValue in Stored position of the element stored in stack and pop that element
    *      -> if stackElement >= curNodeValue, push the curNodeValue and its index to stack
    * 

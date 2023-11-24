@@ -55,7 +55,6 @@ public class LRUCache {
           temp.next = null;
           tail = temp;
         }
-
       }
       Node node = new Node(key, value);
       cashMap.put(key, node);

@@ -18,7 +18,7 @@ class Find_majority_element {
     System.out.println("Majority number: "+res);
   }
 
-  //2. Using the hashmap. time- O(n log(n)), space- O(1)
+  //2. Use sorting. time: O(n log(n)), space: O(1)
   public static int findMajorityItem1(int arr[], int n){
     Arrays.sort(arr);  //time: n log(n)
 

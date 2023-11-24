@@ -31,3 +31,9 @@ public class StockSpan {
     return stockSpan;
   }
 }
+
+// Sstack = 100
+
+// {100, 80, 60, 70, 60, 75, 85};
+// [1,    1,  1,  2   1  4   6]
+

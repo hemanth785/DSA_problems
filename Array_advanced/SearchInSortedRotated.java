@@ -16,7 +16,7 @@ public class SearchInSortedRotated {
   }
 
   /*
-   * Solution 1: Find the rotation pivot using binary search (easy to understand code)
+   * Solution 1: Find the rotation pivot using binary search (easy to understand code - Use this)
    * 
    * Step 1: Find the position at which the array is rotated (Bitonic point) - Using Binary search
    * Step 2: Identify whether target element lies in left search space or right search space

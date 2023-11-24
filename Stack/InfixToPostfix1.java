@@ -27,7 +27,7 @@ public class InfixToPostfix1 {
   public static boolean isOperand(char operand){
     return (operand>='A' && operand<='Z') ||
             (operand>='a' && operand<='z') ||
-             (operand>='2' && operand<='9');
+             (operand>='0' && operand<='9');
   }
 
   public static String infixToPostfix(String infix){
@@ -52,6 +52,8 @@ public class InfixToPostfix1 {
         }
 
       } else {
+        //if higher priority operator is there in the top of stack, 
+        //  remove and add it to postfix, before addint current operator
         while(!stack.isEmpty() && getRank(item) <= getRank(stack.peek())){
           postFix += stack.pop();
         }
@@ -64,3 +66,7 @@ public class InfixToPostfix1 {
     return postFix;
   }
 }
+
+// input = a/b-c
+// stack: -
+// postfix: ab/c-

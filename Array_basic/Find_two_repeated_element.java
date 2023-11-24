@@ -35,7 +35,7 @@ public class Find_two_repeated_element {
 
    /*
    * Solution 3: HashMap
-   * After sorting the array, check for adjascent elements while looping
+   * Use the hashMap to store the count of each numbers
    * 
    * Time: O(n), Space: O(n)
    */
@@ -133,7 +133,10 @@ public class Find_two_repeated_element {
     }
 
     /*
-     * Solution 5: Only applies for the number ranging from 1 to n (for any number of repeating numbers)
+     * Solution 5: Efficient, mark the numbers at index as negative. 
+     * any numbers which stay as positive that index is repeated number.
+     * 
+     * Note: Only applies for the number ranging from 1 to n (for any number of repeating numbers)
      * 
      * Time: O(n), Space: O(1)
      */

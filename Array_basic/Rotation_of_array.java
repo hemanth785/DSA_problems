@@ -86,6 +86,4 @@ public class Rotation_of_array {
 
     return arr;
   }
-
-
 }
