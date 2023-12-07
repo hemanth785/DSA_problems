@@ -86,9 +86,10 @@ public class FindDiameter {
     System.out.println("Diamter of given tree is: "+diameter);
   }
 
-  static int diameter = 0;
+  static int diameter;
   public static int diameterOfBinaryTree(TreeNode root) {
-    int maxHeight = findMaxHeightAndDiameter(root);
+    diameter = 0;
+    findMaxHeightAndDiameter(root);
 
     return diameter;
   }

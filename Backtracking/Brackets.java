@@ -58,4 +58,35 @@ public class Brackets {
     backtrack(n+n, "", validBrackets, diff);
     System.out.println(validBrackets);
   }
+
+  /*
+   * Same solution: slightly diff code
+   */
+
+  List<String> resList;
+	List<String> generateParentheses(int n) {
+	    resList = new ArrayList<>();
+		
+		generateParenthesesRec(n, "", 0);
+		
+		return resList;
+	}
+	
+	void generateParenthesesRec(int n, String bracket, int balanceCount){
+		if(bracket.length() == n*2){
+			if(balanceCount == 0){
+				resList.add(bracket);
+			}
+			return;
+		}
+		
+		//open brackets
+		generateParenthesesRec(n, bracket+"(", balanceCount+1);
+		
+		//close brackets
+		// allow adding close brackets, if more than one open brackets already added
+		if(balanceCount > 0){
+			generateParenthesesRec(n, bracket+")", balanceCount-1);
+		}
+	}
 }

@@ -14,7 +14,7 @@ public class CoinChange2 {
    * - We cannot use and modify the coin change 1 code because, here we can use same coin multiple times and 
    *    there is possibility we consider the same conmbinatin again. for ex: 1112 and 1211, these 2 are same only
    * - So one approach we can use is, 
-   *   - start with one coin and call recursive function for using this coin until (1*coin1, 2*coin1...n*coin1) until total amount is less than target amoutn is given
+   *   - start with one coin and call recursive function for using this coin until (1*coin1, 2*coin1...n*coin1) until total amount is less than target amount is given
    *   - for each of these possible amount, then call recursive function for next coin (1*coin2, 2*coin2... n*coin2)
    * 
    *  - in recursive stack if any moment amount becomes 0, return 1

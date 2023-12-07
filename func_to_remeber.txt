@@ -9,5 +9,12 @@
 
 
 * In HASH_MAP keys will be NOT_SORTED order
+
 * In TREE_MAP keys will be in SORTED order
+
+* Convert CHAR to INTEGER
+   int num = 'char'-'0';
+
+* Convert  INTEGER to CHAR
+   char ch = (char) (num + '0');
 

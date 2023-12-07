@@ -1,4 +1,7 @@
 package Backtracking;
+/*
+ * Link: https://practice.geeksforgeeks.org/problems/tower-of-hanoi-1587115621/1
+ */
 
 /*
  * The main objective of the Tower of Hanoi problem is to move all the "N" number of disks 
@@ -27,7 +30,7 @@ public class Tower_of_hanoi {
     String source = "SRC";
     String spare = "SPARE";
     String destination = "DEST";
-    int n = 3;
+    int n = 2;
     printTowerOfHanoiSequence(n, source, destination, spare);
   }
 

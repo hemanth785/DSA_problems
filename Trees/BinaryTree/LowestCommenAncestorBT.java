@@ -15,7 +15,7 @@ import java.util.Queue;
  */
 
  /*
-  * Solution 2: using complete recursive apporache, without storing path
+  * Solution 2: using complete recursive apporach, without storing path
   */
 public class LowestCommenAncestorBT {
   public static class TreeNode {

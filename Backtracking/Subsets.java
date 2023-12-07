@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Subsets {
   List<List<Integer>> subsets(int[] A) {
-	    List<List<Integer>> subsetList = new ArrayList<>();
+	  List<List<Integer>> subsetList = new ArrayList<>();
 		List<Integer> subset = new ArrayList<>();
 		
 		subsetsRecursive(A, subsetList, subset, 0);

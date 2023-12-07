@@ -34,7 +34,13 @@ public class Sudoku {
       System.out.println("");
     }
   }
-
+/*
+ * Approach: 
+ * - Find the first unfilled box, from top left
+ * - Fill the appropriate value, and call this rec function
+ * - Next recursive call, find the next unfilled box using nexted for loop
+ * - Continue this untill all boxes are filled with proper values
+ */
   public static boolean solveSudokuBacktrack(char[][] board, int n){
     int row = -1;
     int col = -1;
@@ -103,5 +109,46 @@ public class Sudoku {
     }
 
     return true;
+  }
+
+
+  /*
+   * Approach 2: start with 0,0 cell and keep on filling empty cells, which backtracking
+   * 
+   * -----MY CODE-----
+   */
+
+  void sudokuSolver(char[][] sudoku) {
+    int n = 9;
+    solveSudokuRec(sudoku, n, 0, 0);
+  }
+
+  boolean solveSudokuRec(char[][] sudoku, int n, int row, int col){
+    if(row >= n){
+      return true;
+    }
+    
+    int nextCol = (col+1) % 9;
+    int nextRow = nextCol == 0 ? row+1 : row ; 
+        // System.out.println("nextRow: "+nextRow+", nextCol: "+nextCol);
+    
+    if(sudoku[row][col] == '.'){
+      for(int i=1; i<=9; i++){
+        if(isSafe(sudoku, n, row, col, (char)(i + '0'))){
+          sudoku[row][col] = (char)(i + '0');
+          if(solveSudokuRec(sudoku, n, nextRow, nextCol)){
+            return true;
+          } else {
+            sudoku[row][col] = '.';
+          }
+        }
+      }
+      return false;
+    } else {
+      if(solveSudokuRec(sudoku, n, nextRow, nextCol)){
+        return true;
+      }
+      return false;
+    }
   }
 }

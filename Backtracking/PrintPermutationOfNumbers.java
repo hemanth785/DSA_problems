@@ -6,7 +6,8 @@ import java.util.List;
 public class PrintPermutationOfNumbers {
   public static void main(String[] args) {
     int arr[] = {1,2,3};
-    printAllPermutations(arr);
+    //printAllPermutations(arr);
+    getAllPermutations("abc");
   }
 
   public static void backtrack(int[] arr, String numberPermutations, List<String> result){
@@ -19,6 +20,7 @@ public class PrintPermutationOfNumbers {
 
     for(int i=0; i<n; i++){
       char item = (char)(arr[i]+'0');
+      //checking if number is already added to the number string
       if(numberPermutations.indexOf(item) == -1){
         backtrack(arr, numberPermutations + item, result);
       }
@@ -61,3 +63,5 @@ public class PrintPermutationOfNumbers {
 //     }
 //   }
 // }
+
+  

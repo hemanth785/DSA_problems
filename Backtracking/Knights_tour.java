@@ -40,10 +40,7 @@ public class Knights_tour {
 
     } else {
       printBoard(n, board);
-    }
-
-
-    
+    }    
   }
 
   public static boolean knightTraverse(int n, int[][] board, int[] xMoves, int[] yMoves, int x, int y, int moves){
@@ -59,9 +56,8 @@ public class Knights_tour {
         board[nextMoveX][nextMoveY] = moves;
         if(knightTraverse(n, board, xMoves, yMoves, nextMoveX, nextMoveY, moves+1)){
           return true;   //for all return true loop will not run, it'll call for next move
-        } else {
-          board[nextMoveX][nextMoveY] = -1;   //for all else condition, it'll check for alternate path in given 8 possible paths
         }
+        board[nextMoveX][nextMoveY] = -1;   //for all else condition, it'll check for alternate path in given 8 possible paths
       }
     }
 

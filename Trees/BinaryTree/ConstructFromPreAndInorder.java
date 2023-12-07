@@ -44,8 +44,8 @@ public class ConstructFromPreAndInorder {
     System.out.println();
   }
   public static void main(String[] args) {
-    int preOrder[] = new int[]{3,9,20,15,7};
-    int inOrder[] = new int[]{9,3,15,20,7};
+    int preOrder[] = new int[]{1, 2, 4, 5, 7, 3, 6, 8};
+    int inOrder[] = new int[]{4, 2, 7, 5, 1, 8, 6, 3};
     TreeNode root = buildTreeFromPreOrder(preOrder, inOrder);
     BFS(root);
   }
