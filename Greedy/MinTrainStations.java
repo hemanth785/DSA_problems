@@ -1,8 +1,6 @@
 package Greedy;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /*
  * link: https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1
@@ -60,7 +58,7 @@ public class MinTrainStations {
 
   /*
    * Solution 2: Simple to understand
-   * - Create a class for each event tmiestamp class{timestamp, everntType}, then sort it.
+   * - Create a class for each event tmiestamp class{timestamp, everntType}, then sort it based on timestamp.
    * - loop through each event, if arrival is there increase count, if diparture is there decrease count
    */
   private static int ARRIVAL = 0;
@@ -75,7 +73,7 @@ public class MinTrainStations {
     }
   }
 
-  static int findPlatform(int arr[], int dep[], int n) {
+  static int findMaxPlatform(int arr[], int dep[], int n) {
     List<StationEvent> eventList = new ArrayList<>();
     for (int i = 0; i < n; i++) {
       StationEvent stationEventArr = new StationEvent(arr[i], ARRIVAL);

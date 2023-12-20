@@ -75,6 +75,14 @@ public class DeleteNode {
     BFS(root);
   }
 
+  /*
+   * Approach: 
+   * - Starting at the root, find the deepest and rightmost node in the binary tree and the node which we want to delete. 
+   * - Replace the deepest rightmost node’s data with the node to be deleted. 
+   * - Then delete the deepest rightmost node.
+   *
+   */
+
   public static TreeNode deleteNode(TreeNode root, int key){
     if(root == null){
       return root;

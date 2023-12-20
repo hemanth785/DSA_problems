@@ -9,65 +9,70 @@ public class DeleteNode {
     TreeNode left = null;
     TreeNode right = null;
 
-    TreeNode(){}
+    TreeNode() {
+    }
 
-    TreeNode(int data){
+    TreeNode(int data) {
       this.data = data;
     }
-    TreeNode(int data, TreeNode left, TreeNode right){
+
+    TreeNode(int data, TreeNode left, TreeNode right) {
       this.data = data;
       this.left = left;
       this.right = right;
     }
   }
-  public static void BFS(TreeNode root){ //level order traversal
+
+  public static void BFS(TreeNode root) { // level order traversal
     Queue<TreeNode> queue = new LinkedList<>();
     queue.add(root);
 
-    System.out.print("level-order traversal: "); 
-    while(!queue.isEmpty()){
+    System.out.print("level-order traversal: ");
+    while (!queue.isEmpty()) {
       TreeNode cur = queue.remove();
 
-      System.out.print(cur.data+", ");
-      if(cur.left != null){
+      System.out.print(cur.data + ", ");
+      if (cur.left != null) {
         queue.add(cur.left);
       }
-      if(cur.right != null){
+      if (cur.right != null) {
         queue.add(cur.right);
       }
     }
     System.out.println();
   }
-  public static TreeNode buildTreeFromArray(int[] arr){
+
+  public static TreeNode buildTreeFromArray(int[] arr) {
     TreeNode root = null;
-    for(int i=0; i<arr.length; i++){
-      if(root == null){
-        root = insertNode(root, arr[i]); 
+    for (int i = 0; i < arr.length; i++) {
+      if (root == null) {
+        root = insertNode(root, arr[i]);
       } else {
-        insertNode(root, arr[i]); 
+        insertNode(root, arr[i]);
       }
-      
+
     }
     return root;
   }
-  public static TreeNode insertNode(TreeNode root, int data){
+
+  public static TreeNode insertNode(TreeNode root, int data) {
     TreeNode curr = root;
 
-    if(curr == null){
+    if (curr == null) {
       return new TreeNode(data);
     }
 
-    while(curr != null){
-      if(data < curr.data){
+    while (curr != null) {
+      if (data < curr.data) {
 
-        if(curr.left == null){
+        if (curr.left == null) {
           curr.left = new TreeNode(data);
           return root;
         }
         curr = curr.left;
       } else {
 
-        if(curr.right == null){
+        if (curr.right == null) {
           curr.right = new TreeNode(data);
           return root;
         }
@@ -76,10 +81,10 @@ public class DeleteNode {
     }
 
     return root;
-}
+  }
 
   public static void main(String[] args) {
-    int arr[] = new int[]{10,4,8,6,7,1,3,15,12,18,11,16,17,19};
+    int arr[] = new int[] { 10, 4, 8, 6, 7, 1, 3, 15, 12, 18, 11, 16, 17, 19 };
     TreeNode root = buildTreeFromArray(arr);
 
     BFS(root);
@@ -88,8 +93,8 @@ public class DeleteNode {
     BFS(root);
   }
 
-  //Iterative function - takes time to write 
-  public static TreeNode deleteNodeIterative(TreeNode root, int key){
+  // Iterative function - takes time to write
+  public static TreeNode deleteNodeIterative(TreeNode root, int key) {
     if (root == null) {
       return root;
     }
@@ -120,7 +125,7 @@ public class DeleteNode {
             parent.right = null;
           }
 
-        //case 2: if 1 child exists, swap with child and remove child
+          // case 2: if 1 child exists, swap with child and remove child
         } else if (curr.right == null) {
           if (parent == null) { // for deleting root node
             return root.left;
@@ -145,11 +150,11 @@ public class DeleteNode {
         } else {
           // case 3: if 2 childs: find inorder successer -> swap -> remove successor
           /*
-            * Steps to find inorder successor (node value to replace the current node),
-            * - navigate to immidiate right node,
-            * - keep moving to left node, until current.left becomes null.
-            *   Now current node will be the successor node
-            */
+           * Steps to find inorder successor (node value to replace the current node),
+           * - navigate to immidiate right node,
+           * - keep moving to left node, until current.left becomes null.
+           * Now current node will be the successor node
+           */
           TreeNode successor = curr.right, successorParent = curr;
           while (successor.left != null) {
             successorParent = successor;
@@ -168,51 +173,49 @@ public class DeleteNode {
     return root;
   }
 
-  public static TreeNode deleteNodeRecursive(TreeNode curr, int key){
-    if(curr == null){
-      return curr;
+
+
+  
+  /* SIMPLE SOLUTION */
+  public static TreeNode deleteNodeRecursive(TreeNode root, int key) {
+    if (root == null) {
+      return null;
     }
 
-    if(key < curr.data){
-      curr.left = deleteNodeIterative(curr.left, key);
-    } else  if(key > curr.data){
-      curr.right = deleteNodeIterative(curr.right, key);
+    if (key < root.data) {
+      root.left = deleteNodeRecursive(root.left, key);
+    } else if (key > root.data) {
+      root.right = deleteNodeRecursive(root.right, key);
     } else {
-      // case 1: if no childs for curr, just remove
-      if(curr.left == null && curr.right == null){
+      System.out.println("hello123");
+      // case 1: if left and right nodes are null, just remove current node
+      if (root.left == null && root.right == null) {
         return null;
       }
-      // case 2: if 1 child exists, swap with child and remove child
-      else if(curr.left == null){
-        return curr.right;
-      } else if(curr.right == null){
-        return curr.left;
-      }
-      // case 3: if 2 childs: find inorder successer -> swap -> remove successor
-      /*
-       * Steps to find inorder successor (node value to replace the current node),
-       * - navigate to immidiate right node,
-       * - keep moving to left node, until current.left becomes null.
-       *   Now current node will be the successor node
-       */
-      else {
-        TreeNode successor = curr.right, successorParent = curr;
-        while (successor.left != null) {
-          successorParent = successor;
-          successor = successor.left;
-        }
 
-        if (successorParent == curr) { // if there is no left node, to the right node of key node
-          curr.right = successor.right;
-        } else {
-          successorParent.left = successor.right;
-        }
-        curr.data = successor.data;
-
-        return curr;
+      // case 2: If any one child is null, return the other node
+      if (root.left == null) {
+        return root.right;
       }
+      if (root.right == null) {
+        return root.left;
+      }
+
+      // case 3: If Both child nodes exists
+      // 1. move to the leftMost node(curNode) in rightSubTree of node to be deleted(key)
+      // 2. Assign the 'left tree' of 'keynode' to the 'cueNode'
+      // 3. Return the right node of the 'keynode'
+      TreeNode curNode = root.right;
+
+      while (curNode.left != null) {
+        curNode = curNode.left;
+      }
+
+      curNode.left = root.left;
+      return root.right;
+
     }
-    return curr;
+
+    return root;
   }
 }
-

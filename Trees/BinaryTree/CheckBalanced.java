@@ -3,6 +3,9 @@ package Trees.BinaryTree;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+ * Check if the tree is complete binary tree
+ */
 public class CheckBalanced {
   public static class TreeNode {
     int data;

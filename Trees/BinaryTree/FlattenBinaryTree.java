@@ -118,15 +118,19 @@ public class FlattenBinaryTree {
 
   public static void flatternIterative(TreeNode root){
     while(root != null){
+      //check for each right node, any left sub tree exists
       if(root.left != null){
+        //if Yes, assign the right subtree to temp and assign left sub tree as right child of cur node
         TreeNode cur = root;
         TreeNode tempRight = cur.right;
         cur.right = cur.left;
         cur.left = null;
 
+        //move till the right end of, right assigned left tree
         while(cur.right != null){
             cur=cur.right;
         }
+        //connect the right assigned left tree, to original right tree
         cur.right = tempRight;
       }
       root = root.right;

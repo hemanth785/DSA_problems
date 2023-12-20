@@ -52,7 +52,6 @@ public class MaxDepth {
 
     int height = findMaxDepthIterative(root);
     System.out.println("max dept of tree: "+height);
-
   }
 
   public static int findMaxDepthIterative(TreeNode root){ //using level order traversal

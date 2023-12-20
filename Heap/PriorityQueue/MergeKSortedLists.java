@@ -45,7 +45,6 @@ public class MergeKSortedLists {
       if (head != null) {
         pq.add(head);
       }
-
     }
 
     ListNode root = null;

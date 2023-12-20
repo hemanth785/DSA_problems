@@ -53,4 +53,38 @@ public class JobScheduling {
 
     return res;
   }
+
+
+
+/* Simple solution written at work@tech */
+class Task {
+  public int deadline, profit;
+  public Task(int deadline, int profit) {
+    this.deadline = deadline;
+    this.profit = profit;
+  }
 }
+int getMaxProfit(Task[] tasks) {
+		Arrays.sort(tasks, (a, b) -> {
+			return b.profit - a.profit;
+		});
+		
+		int days[] = new int[tasks.length+1];
+		int profit = 0;
+		for(Task task: tasks){
+			int dayToDo = task.deadline;
+			while(dayToDo > 0){
+				if(days[dayToDo] == 0){
+					days[dayToDo] = 1;
+					profit += task.profit;
+					break;
+				}
+				dayToDo--;
+			}
+		}
+		
+		return profit;
+	}
+}
+
+

@@ -85,6 +85,12 @@ public class CheckCousinNodes {
    * 2. Two nodes should not be siblings(i.e. two nodes should not have commen parent)
    */
 
+  /*
+   * Steps:
+   * 1. Get the levels of two nodes, if levels are not same, return false
+   * 2. Check if two nodes are having the same parent. if yes, return false
+   */
+
   public static boolean isCousins(TreeNode root, int x, int y) {
     int leftLevel = getLevel(root, x);
     int rightLevel = getLevel(root, y);

@@ -13,7 +13,7 @@ public class SwapNodesAtLevelK {
    * Approach: 
    * - We know that root value of tree is always 1
    * - First build the tree from the given node indexes, using the level order traversal
-   * - Then for each k value, swap the nodes at all level = 2*k, and store the iorder traversal
+   * - Then for each k value, swap the nodes at all level = 2*k, and store the inorder traversal
    * - Then return all the inOrder traversals
    */
 

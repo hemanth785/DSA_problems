@@ -109,8 +109,7 @@ public class LowestCommenAncestorBT {
     // this one is checking - for current node does both p and q found
     if (left != null && right != null) {
       return cur;
-      // this 2 below one is for passing the found ancestor upwards till roo (passing
-      // ans to top)
+      // this 2 below one is for passing the found ancestor upwards till root (passing ans to top)
     } else if (left != null) {
       return left;
     } else if (right != null) {
