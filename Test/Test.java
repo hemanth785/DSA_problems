@@ -15,42 +15,12 @@ public class Test {
       }
   }
   public static void main(String[] args) {
-    int preorder[] = {1, 2, 4, 5, 7, 3, 6, 8};
-    int inorder[] = {4, 2, 7, 5, 1, 8, 6, 3};
-    constructTree(preorder, inorder);
+    String word = "PETROL";
+    String curWord = "PETROL";
+
+    int color = 0;
+    System.out.println(color ^ 1);
   }
 
-  static int preOrderIndex = 0;
-	static Node constructTree(int[] preorder, int[] inorder) {
-		int l = 0;
-		int r = preorder.length-1;
-		return constructTree(preorder, inorder, l, r);
-	}
-	
-	static Node constructTree(int[] preorder, int[] inorder, int l, int r){
-		if(l>r){
-			return null;
-		}
-		
-	  Node node = new Node(preorder[preOrderIndex++]);
-		if(l==r){
-			return node;
-		}
-		
-		int currentNodePreIndex = getInorderIndex(inorder, l, r, node.data);
-		
-		node.left = constructTree(preorder, inorder, l, currentNodePreIndex-1);
-		node.right = constructTree(preorder, inorder, currentNodePreIndex+1, r);
-		
-		return node;
-	}
-	
-	static int getInorderIndex(int[] inorder, int l, int r, int item){
-		for(int i=l; i<=r; i++){
-			if(inorder[i] == item){
-				return i;
-			}
-		}
-		return -1;
-	}
+  
 }
