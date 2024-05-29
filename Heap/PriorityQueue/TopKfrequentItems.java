@@ -34,7 +34,7 @@ public class TopKfrequentItems {
   /*
    * Solution 2: using map and MaxHeap
    * - Use map to store the fequence of each integer
-   * - Create Max PriorityQueue with customer comparator
+   * - Create Max PriorityQueue with custom comparator
    * - store the elements from map to PQ
    * - remove k items from PQ
    */

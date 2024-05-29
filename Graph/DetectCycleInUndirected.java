@@ -7,8 +7,12 @@ public class DetectCycleInUndirected {
    * Approach: 
    * - Proceed with normal DFS traversal, while passing the parent node
    * - If at any point, if we come accross already visited node
-   *  - check that if this neighbour node is not same as parent of the current not
+   *  - check that if this neighbour node is not same as parent of the current node
    *     - if this is true, that means there is a cycle in the graph
+   * 
+   * Note: check for parent if needed because, in an undirected graph, 
+   *  when we move from node A to node B (Now A is already marked as visited), B also will have edge to A
+   *  thus visited for A will be true in this case, but its not cycle. since A is the parent(while traversig), so B having edge to A is expected
    */
 
   boolean detectCycle(int V, List<List<Integer>> adj) {

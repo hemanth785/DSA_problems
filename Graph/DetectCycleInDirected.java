@@ -54,7 +54,7 @@ public class DetectCycleInDirected {
 
   /*
    * Approach 2: Using Kahn's algorithm
-   * - Logic is that, traverse the nodes which are having the indegree is zero, while decreasing the indegree of neigbour nodes
+   * - Logic is that, traverse the nodes which are having the indegree is zero, while decreasing the indegree of neighbour nodes
    * - If any node left for processing, which is having more that 0 indefree, that means there is cycle.
    * 
    * Notes: Becuase Kahn's algorithm will not be usefull for cyclic directed graphs
@@ -93,7 +93,6 @@ public class DetectCycleInDirected {
         indegree[neighbour]--;
         if (indegree[neighbour] == 0) {
           queue.add(neighbour);
-
         }
       }
     }

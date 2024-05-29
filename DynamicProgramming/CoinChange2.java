@@ -10,45 +10,39 @@ import java.util.Arrays;
 public class CoinChange2 {
   /*
    * Approach: 
-   * - Here we have to find the number different ways in which we can form the amount
-   * - We cannot use and modify the coin change 1 code because, here we can use same coin multiple times and 
-   *    there is possibility we consider the same conmbinatin again. for ex: 1112 and 1211, these 2 are same only
-   * - So one approach we can use is, 
-   *   - start with one coin and call recursive function for using this coin until (1*coin1, 2*coin1...n*coin1) until total amount is less than target amount is given
-   *   - for each of these possible amount, then call recursive function for next coin (1*coin2, 2*coin2... n*coin2)
-   * 
-   *  - in recursive stack if any moment amount becomes 0, return 1
+   * - Here we are following approach of 'include' and 'exlude'
+   * - One thing to keep in mind is that, since coins can be used repitatively- 
+   *      so we should not decrement/increment value of index in include case
    *
    */
 
-  public int change(int amount, int[] coins) {
-    int n = coins.length;
-    int dp[][] = new int[n][amount + 1];
-    for (int[] row : dp) {
-      Arrays.fill(row, -1);
-    }
-
-    return coinsChangeMemo(coins, amount, n - 1, dp);
-  }
-
-  public int coinsChangeMemo(int[] coins, int amount, int index, int[][] dp) {
-    if (amount == 0) {
-      return 1;
-    }
-
-    if (index < 0) {
-      return 0;
-    }
-
-    if (dp[index][amount] != -1) {
-      return dp[index][amount];
-    }
-    int ways = 0;
-    // initial coinAmount is 0, because we have to consider the case of excluding the current coin
-    for (int coinAmount = 0; coinAmount <= amount; coinAmount += coins[index]) {
-      ways += coinsChangeMemo(coins, amount - coinAmount, index - 1, dp);
-    }
-    dp[index][amount] = ways;
-    return dp[index][amount];
-  }
+   int numberOfCombinations(int[] coins, int target) {
+		int dp[][] = new int[target+1][coins.length+1];
+		for(int i=0; i<target+1; i++){
+			Arrays.fill(dp[i], -1);
+		}
+	  return coinChangeMemo(coins, target, coins.length-1, dp);
+	}
+	
+	int coinChangeMemo(int coins[], int target, int index, int[][] dp){
+    //valid denominations
+		if(target == 0){
+			return 1;
+		}
+    //invalid denominations
+		if(target < 0 || index < 0){
+			return 0;
+		}
+		
+		if(dp[target][index] != -1){
+			return dp[target][index];
+		}
+                                            //here we are not decrementing index because of infinite coins available
+		int include = coinChangeMemo(coins, target-coins[index], index, dp);
+		int exclude = coinChangeMemo(coins, target, index-1, dp);
+		
+    dp[target][index] = include+exclude;
+		
+		return dp[target][index];
+	}
 }

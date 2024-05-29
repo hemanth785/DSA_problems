@@ -39,7 +39,6 @@ public class NumberOfIslands {
     queue.add(new Pair(i, j));
 
     while (!queue.isEmpty()) {
-      System.out.println("hello");
       Pair node = queue.remove();
       int x = (int) node.getKey();
       int y = (int) node.getValue();
