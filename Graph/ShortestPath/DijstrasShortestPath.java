@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 /*
  * https://www.codingninjas.com/studio/problems/dijkstra's-shortest-path_985358
  * 
- * Find the shortest path to each node, For directed weighted graph (It could be cyclic also)
+ * Find the shortest path to each node, For un-directed weighted graph (It could be cyclic also)
  * 
  * NOTE: DIJSTRA'S ALGORITHM WILL NOT WORK OF TREE HAVING "NEGATIVE" WEIGHTS
  */
@@ -43,6 +43,7 @@ public class DijstrasShortestPath {
       Pair nodePair = queue.remove();
       int curNode = nodePair.node;
       int curCost = nodePair.cost;
+
       for (Pair neighbour : adj.get(curNode)) {
         int curShortDist = curCost + neighbour.cost;
         if (shortDistance[neighbour.node] == -1) {
@@ -55,6 +56,7 @@ public class DijstrasShortestPath {
         }
       }
     }
+
     List<Integer> distanceList = new ArrayList<>();
     for (int i = 0; i < vertices; i++) {
       distanceList.add(shortDistance[i]);

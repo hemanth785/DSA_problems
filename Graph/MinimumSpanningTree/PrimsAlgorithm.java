@@ -7,6 +7,12 @@
  * More info about min spanning tree: https://www.geeksforgeeks.org/what-is-minimum-spanning-tree-mst/
  */
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.PriorityQueue;
+
 public class PrimsAlgorithm {
   /*
    * Approach: Using BFS and Priority queue
@@ -16,10 +22,11 @@ public class PrimsAlgorithm {
    * - Keep the visited array, to track visited nodes. Since we are using priority queue, 
    *      it'll make sure we approach every node in min distance in first attempt only
    * 
-   * - maintain distance array to store the previous edge cost to reach cur node (Not the cost all the way from source, in case of dijstras algo)
+   * - maintain distance array to store the previous edge cost to reach cur node (Note the cost all the way from source, in case of dijstras algo)
    * - Finally sum all the distance/cost for each node, that should be the min spanning tree cost
    */
   static int spanningTree(int V, int E, int edges[][]) {
+    
     List<List<Pair>> adj = createAdjListFromEdges(V, edges);
     int visited[] = new int[V];
     int distance[] = new int[V];

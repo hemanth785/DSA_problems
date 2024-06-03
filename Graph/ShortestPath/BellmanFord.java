@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+
 public class BellmanFord {
 
   /*
@@ -12,7 +15,7 @@ public class BellmanFord {
     int[] distance = new int[V];
     Arrays.fill(distance, 100000000);
 
-    distance[S] = 0;
+    distance[src] = 0;
 
     //Relax all the edges N-1 times, to get the shortest distance from source to all nodes
     //Note:  This for loop is enough for the bellman ford algorithm

@@ -2,6 +2,10 @@ package Graph;
 
 import java.util.*;
 
+/*
+ * Find shortest distance from src node to all other nodes, in Directed Acyclic graphs
+ */
+
 public class ShortestPathInDAG {
   public static void main(String[] args) {
     int n = 3;
@@ -39,7 +43,7 @@ public class ShortestPathInDAG {
       for (Pair neighbour : adj.get(curNode)) {
         if (shortDistance[neighbour.node] == -1) {
           shortDistance[neighbour.node] = curCost + neighbour.cost;
-        } else if (shortDistance[neighbour.node] > curCost + neighbour.cost) {
+        } else if (shortDistance[neighbour.node] > curCost + neighbour.cost) { //Here visited is not required, this condition will make sure we dont loop infinitely
           shortDistance[neighbour.node] = curCost + neighbour.cost;
         }
         queue.add(neighbour.node);

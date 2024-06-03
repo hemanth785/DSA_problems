@@ -5,11 +5,11 @@ import java.util.HashSet;
 
 public class PathExistsInDirectedGraph {
   boolean pathExists(ArrayList<Integer>[] adjList) {
-        HashSet<Integer> visited = new HashSet<>();
+    HashSet<Integer> visited = new HashSet<>();
 		int n = adjList.length;
 		
 		return dfsRec(adjList, visited, 0, n);
-    }
+  }
 	
 	boolean dfsRec(ArrayList<Integer>[] adjList, HashSet<Integer> visited, int cur, int n){
 		if(cur == n-1){

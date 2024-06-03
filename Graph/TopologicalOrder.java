@@ -75,7 +75,6 @@ public class TopologicalOrder {
     int[] indegree = new int[V];
 
     // 1. calculate the indegree of each node
-    Map<Integer, Integer> map = new HashMap<>();
     for (int i = 0; i < V; i++) {
       for (int neighbour : adj.get(i)) {
         indegree[neighbour]++;

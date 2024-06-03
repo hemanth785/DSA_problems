@@ -38,7 +38,7 @@ public class ShortestPathInBinaryMatrix {
 
         if (
           isValidDirection(n, nextX, nextY, grid) &&
-          distance[x][y] + 1 < distance[nextX][nextY]
+          distance[nextX][nextY] > distance[x][y] + 1  //this check is most important
         ) {
           distance[nextX][nextY] = distance[x][y] + 1;
           queue.add(new Pair(nextX, nextY));

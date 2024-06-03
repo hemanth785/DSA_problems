@@ -1,6 +1,6 @@
 package Graph;
 /*
- * This is basicall finding the number of disconneted components in given graph
+ * This is basically finding the number of disconneted components in given graph
  */
 public class NumberOfProvinces {
   public int findCircleNum(int[][] isConnected) {

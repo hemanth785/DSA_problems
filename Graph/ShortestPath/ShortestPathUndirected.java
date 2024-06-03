@@ -2,6 +2,11 @@ package Graph;
 
 import java.util.*;
 
+/*
+ * Problem: Find the shorted path (no of edges/nodes between) for each node from source node, 
+ * for undirected, non-weighteg graph. i.e. each edge weight would be 1 by default
+ */
+
 public class ShortestPathUndirected {
   public static void main(String[] args) {
     int n=5;
@@ -34,6 +39,7 @@ public class ShortestPathUndirected {
     int distance = 1;
     while (!queue.isEmpty()) {
       int queueSize = queue.size();
+
       for (int i = 0; i < queueSize; i++) {
         int node = queue.remove();
         for (int neighbour : adj.get(node)) {
