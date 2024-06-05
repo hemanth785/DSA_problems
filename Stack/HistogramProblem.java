@@ -11,7 +11,7 @@ import java.util.Stack;
  *
  * Output: 10
  *
- * Link: https://www.hackerrank.com/contests/logicmojo-assignment-june-batch/challenges/histogram-problem/problem
+ * Link: https://leetcode.com/problems/largest-rectangle-in-histogram/description/
  */
 public class HistogramProblem {
 

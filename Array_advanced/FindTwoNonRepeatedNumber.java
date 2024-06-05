@@ -9,9 +9,13 @@ import java.util.Map;
 public class FindTwoNonRepeatedNumber {
   public static void main(String args[]){
     int arr[] = {5, 6, 7, 8, 9, 10, 1, 2, 3};
-    int res = findTwoNonRepeated(arr);
+    int res = twoNonRepeatingNumber1(arr);
     System.out.println("Target found at index: "+res);
   }
+
+  /*
+   * NOTE: Most efficient solution for this needs to be checked Whenever got time
+   */
 
   /*
    * Solution 1: Using sort (THis works only when other numbers repeating exactly twice)

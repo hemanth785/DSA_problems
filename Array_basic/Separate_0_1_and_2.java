@@ -1,5 +1,5 @@
 /*
- * This problem is also referred as dutch national flat
+ * This problem is also referred as dutch national flag
  * i.e. sort the array having number 0,1 and 2
  * 
  * link: https://leetcode.com/problems/sort-colors/

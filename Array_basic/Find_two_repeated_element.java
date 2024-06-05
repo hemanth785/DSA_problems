@@ -146,9 +146,8 @@ public class Find_two_repeated_element {
       int res[] = new int[2];
       int index = 0;
       int length = arr.length;
-      System.out.println("length: "+length);
+
       for(int i=0; i<length; i++){
-        System.out.println("index: "+i);
         int temp_i = Math.abs(arr[i]);
         if(arr[temp_i] > 0){
           arr[temp_i] = -arr[temp_i];

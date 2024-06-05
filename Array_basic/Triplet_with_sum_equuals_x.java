@@ -44,7 +44,7 @@ public class Triplet_with_sum_equuals_x {
   * Solution 3: Sort and apply 2 pointer (like the problem - pair with sum equals zero)
   * 
   * Use 1 loop from i=0 to n-2
-  * For each element arr[i], c
+  * For each element arr[i], 
   *  check next pair of elements with sum = target - arr[i], using map (Pair_with_sum_equals_x.solution3)
   * 
   *

@@ -37,7 +37,7 @@ public class Find_bitonic_point {
   }
 
   /*
-   * Solution 1: using binary search
+   * Solution 2: using binary search
    * 
    * to find bitonic point, condition would be:  a[i-1] < a[i] > a[i+1]
    * 

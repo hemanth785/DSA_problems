@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Stack;
 
 /*
- * https://www.hackerrank.com/contests/logicmojo-assignment-june-batch/challenges/equal-stacks
+ * https://www.hackerrank.com/challenges/equal-stacks/problem
  */
 public class EqualStacks {
 
@@ -58,10 +58,12 @@ public class EqualStacks {
         sum3 = stack3.pop();
       }
     }
-    System.out.println("sum1: " + sum1 + ", sum2: " + sum2 + ", sum3: " + sum3);
+
+    //check if any of the stack has become empty
     if (stack1.empty() || stack2.empty() || stack3.empty()) {
       return 0;
     }
+
     return sum1;
   }
 
@@ -69,7 +71,7 @@ public class EqualStacks {
     int sum = 0;
     int n = h.size();
 
-    //Store the prefix sum in stack in reverse order
+    //Store the prefix sum in stack (instead of each element)
     for (int i = n - 1; i >= 0; i--) {
       sum += h.get(i);
       stack.push(sum);

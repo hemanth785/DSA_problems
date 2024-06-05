@@ -34,34 +34,34 @@ public class Element_appears_once {
   public static int element_which_repeats_once(int[] arr) {
     int n = arr.length;
     int l = 0;
-    int r = n-1;
+    int r = n - 1;
     int mid = 0;
-    
-    while(l<=r){
-        
-        mid = l + (r-l)/2;
-        int midItem = arr[mid];
-        System.out.println("l: "+l+", mid: "+mid+", r: "+r);
-        if(l==r){
-            return arr[mid];
-        }
-        
-        if(mid%2 == 0){
-            if(midItem == arr[mid+1]){
-                l = mid+2;
-            } else {
-                r = mid;
-            }
-        } else {
-              if(midItem == arr[mid-1]){
-                  l = mid+1;
-              } else {
-                  r = mid-1;
-              }
-        }
-        
+
+    while (l <= r) {
+
+      mid = l + (r - l) / 2;
+      int midItem = arr[mid];
+      System.out.println("l: " + l + ", mid: " + mid + ", r: " + r);
+      if (l == r) {
+        return arr[mid];
+      }
+
+      if (mid % 2 == 0) { // if mid is even
+          if (midItem == arr[mid + 1]) {
+            l = mid + 2;
+          } else {
+            r = mid;
+          }
+      } else {
+          if (midItem == arr[mid - 1]) {
+            l = mid + 1;
+          } else {
+            r = mid - 1;
+          }
+      }
+
     }
-    
+
     return 0;
   }
 }

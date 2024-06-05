@@ -13,6 +13,17 @@ public class BalancedBrackets {
     String brackets3 = "{{[[(())]]}}";
     System.out.println(isBalanced(brackets3));
   }
+
+  /*
+   * Steps:
+   * 1. Loop through brackecks
+   * 2. if we come accrosss opening bracket, push it to the stack
+   * 3. if come accross the closing bracket, pop the top element from stack and check opening and closing bracket matching
+   *      if its matching - continue
+   *    else 
+   *      if stack is empty or bracket does not match, return false
+   */
+  
   public static String isBalanced(String s) {
     Stack<Character> stack = new Stack<Character>();
     
@@ -21,7 +32,7 @@ public class BalancedBrackets {
         if(bracket == '[' || bracket == '{' || bracket == '('){
             stack.push(bracket);
         } else {
-            if(stack.isEmpty() || !isPair(stack.pop(),bracket)){
+            if(stack.isEmpty() || !isPair(stack.pop(), bracket)){
                 return "NO";
             }
         }

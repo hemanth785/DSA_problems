@@ -12,8 +12,8 @@ import java.util.Stack;
 
 public class PostfixToInfix3 {
   public static void main(String args[]){
-    String postfix = "abc/-ad/e-*";
-    // String postfix = "ab*c+";
+    // String postfix = "abc/-ad/e-*";
+    String postfix = "ab*c+";
     String infix = postfixToInfix(postfix);
     System.out.println("infix expression: "+ infix);
   }
@@ -30,9 +30,11 @@ public class PostfixToInfix3 {
 
     for(int i=0; i<postfix.length(); i++){
       char currentChar = postfix.charAt(i);
+
       if(isOperand(currentChar)){
         stack.push(""+currentChar);
       } else {
+
         if(stack.size() < 2){
           System.out.println("Invalid postfix expression");
           return "";

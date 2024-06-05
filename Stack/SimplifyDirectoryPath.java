@@ -1,5 +1,6 @@
 package Stack;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 /*
@@ -12,18 +13,26 @@ public class SimplifyDirectoryPath {
    * Approach: Using stack: link: https://www.youtube.com/watch?v=kVylYewnQ_k
    */
 
-  String simplifyPath(String path) {
-    String canonical = "";
+  public static void main(String[] args) {
+    String path = "/.../a/../b//c/../d/./";
+    String canonicalResult = simplifyPath(path);
+    System.out.println("canonical path: "+canonicalResult);
+  }
+
+  static String simplifyPath(String path) {
+    String result = "";
     Stack<String> stack = new Stack<>();
 
     String[] tokens = path.split("/+");
+
+    System.out.println(Arrays.toString(tokens));
 
     for (int i = 0; i < tokens.length; i++) {
       String token = tokens[i].trim();
       if (token.equals(".") || token.equals("")) {
         continue;
       }
-      if (!token.equals("..")) {
+      if (!token.equals("..")) { //if not '..', push it to stack
         stack.push(token);
       } else if (!stack.isEmpty()) {
         stack.pop();
@@ -31,10 +40,10 @@ public class SimplifyDirectoryPath {
     }
 
     while (!stack.isEmpty()) {
-      String slash = canonical == "" ? "" : "/";
-      canonical = stack.pop() + slash + canonical;
+      String slash = (result == "") ? "" : "/";
+      result = stack.pop() + slash + result;
     }
-    canonical = "/" + canonical;
-    return canonical;
+    result = "/" + result;
+    return result;
   }
 }

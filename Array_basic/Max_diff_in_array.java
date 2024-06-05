@@ -34,7 +34,7 @@ public class Max_diff_in_array {
    * - Use single loop, i=1 to n, 
    * - for each element, check the diff: a[i] - leftMin, and then store diff in maxDiff
    * - if (a[i] < leftMin), then make leftMin = a[i] 
-   * - aftet the complete loop, maxDiff will have correct value
+   * - after the complete loop, maxDiff will have correct value
    */
   public static int Solution2(int arr[], int n){
     int leftMin = arr[0];

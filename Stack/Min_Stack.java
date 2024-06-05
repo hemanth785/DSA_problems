@@ -4,6 +4,8 @@
  * Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
  */
 
+import java.util.Stack;
+
 public class Min_Stack {
 
   /*
@@ -18,7 +20,7 @@ public class Min_Stack {
     Stack<Integer> stack1;
     Stack<Integer> stack2;
 
-    public MinStack() {
+    public MinStack1() {
       stack1 = new Stack<>();
       stack2 = new Stack<>();
     }
@@ -56,6 +58,8 @@ public class Min_Stack {
    * Approach 2: Without using extra space
    * - While inserting element, if element is lesser than cur min value. itemToPush = (2*cur - min) in stack
    * - while fetching the top element from stack, if top item is lesser than min item. min = (2*min - cur)
+   * 
+   * -Note: if stack going to contain only positive numbers (excluding 0), we can use formula 'curMin - cur' formula
    */
 
   class MinStack {

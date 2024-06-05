@@ -9,3 +9,5 @@
  - for ex, in 1st iteration, find the smallest element in the array and move it to 1st position,
            in 2nd iteration, find the 2nd smallest int the array and move it to 2nd place
            Do the same this until we reach end of array
+
+

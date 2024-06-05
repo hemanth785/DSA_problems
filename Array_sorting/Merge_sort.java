@@ -60,6 +60,7 @@ public class Merge_sort {
     devide(arr, l, mid);
     devide(arr, mid+1, r);
 
+    // after deviding the list until each partition contains one element, then start merging while sorting
     merge(arr, l, mid, r);
   }
   
@@ -68,7 +69,6 @@ public class Merge_sort {
     int l=0, r=n-1;
 
     devide(arr, l, r);
-    System.out.println("hello");
 
     return arr;
   }

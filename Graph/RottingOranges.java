@@ -47,6 +47,7 @@ public class RottingOranges {
     while (!rottenOranges.isEmpty()) {
       int rottenCount = rottenOranges.size();
       boolean isOrangesToRotFound = false;
+
       while (rottenCount > 0) {
         Pair rottenOrange = rottenOranges.remove();
         int x = (int) rottenOrange.getKey();
@@ -55,9 +56,7 @@ public class RottingOranges {
         for (int i = 0; i < xMoves.length; i++) {
           int nextX = x + xMoves[i];
           int nextY = y + yMoves[i];
-          if (isSafe(grid, m, n, nextX, nextY)
-              && visited[nextX][nextY] != 1
-              && grid[nextX][nextY] == 1) {
+          if (isSafe(grid, m, n, nextX, nextY) && visited[nextX][nextY] != 1 && grid[nextX][nextY] == 1) {
             isOrangesToRotFound = true;
             visited[nextX][nextY] = 1;
             grid[nextX][nextY] = 2;
@@ -66,6 +65,7 @@ public class RottingOranges {
         }
         rottenCount--;
       }
+
       if (isOrangesToRotFound) {
         numberOfMins++;
       }

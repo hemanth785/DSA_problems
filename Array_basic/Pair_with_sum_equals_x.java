@@ -60,8 +60,6 @@ public class Pair_with_sum_equals_x {
   /*
   * Solution 3: sort the array and apply 2 pointer
   * 
-  * 
-  * 
   * Time:  O(n log(n)), Space: O(1)
   */
   public static int[] solution3(int arr[], int n, int target){

@@ -54,12 +54,13 @@ public class InfixToPostfix1 {
       } else {
         //if higher priority operator is there in the top of stack, 
         //  remove and add it to postfix, before addint current operator
-        while(!stack.isEmpty() && getRank(item) <= getRank(stack.peek())){
+        while(!stack.isEmpty() && getRank(stack.peek()) >= getRank(item)){
           postFix += stack.pop();
         }
         stack.push(item);
       }
     }
+
     while(!stack.isEmpty()){
       postFix += stack.pop();
     }

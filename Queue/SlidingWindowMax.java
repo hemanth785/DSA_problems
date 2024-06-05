@@ -5,10 +5,7 @@ import java.util.LinkedList;
 import java.util.Arrays;
 
 /*
- * You are given an array of integers nums, 
- * there is a sliding window of size k which is moving from the very left of the array to the very right. 
- * You can only see the k numbers in the window. 
- * Each time the sliding window moves right by one position.
+ * link: https://workat.tech/problem-solving/practice/sliding-window-maximum
  * 
  * Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
  * Output: [3,3,5,5,6,7]
@@ -38,6 +35,12 @@ public class SlidingWindowMax {
    * Using Double end queue or Dqueue
    * 
    * Time: O(n), Space: O(n)
+   * 
+   * Steps:
+   * 1. Add first k elements(index of elements) into dQueue from front, while removing smaller than currently adding elements int the front
+   * 2. Now note the 1st max element (which will be 1st element from rear of the queue)
+   * 3. Now remove elements which are at index less than l, and add next element, while removing smaller element (same as step 1)
+   *   - again check for max element from rear of array (continue this until we reach end of the array)
    */
   public static int[] slidingWindowOptimized(int[] nums, int k){
     int n = nums.length;
@@ -49,33 +52,32 @@ public class SlidingWindowMax {
 
     //add to dq while removing lesser elements
     while(r<k){
-        while(!dq.isEmpty() && nums[dq.getLast()] <= nums[r]){
-            dq.removeLast();
-        }
-        dq.addLast(r);
-        r++;
+      while(!dq.isEmpty() && nums[dq.getLast()] <= nums[r]){
+        dq.removeLast();
+      }
+      dq.addLast(r);
+      r++;
     }
 
-    int i = 0;
-    while(r<n){
+    int i = 0; //this is to store max item
+    while(r < n){
+      maxArray[i] = nums[dq.getFirst()];
 
-        // System.out.println("i:"+i+", l:"+l+", r:"+r);
-        // System.out.println(dq);
-        maxArray[i] = nums[dq.getFirst()];
+      //remove elements not inside window (here we are comparing indexes)
+      while(!dq.isEmpty() && dq.getFirst() <= l){
+        dq.removeFirst();
+      }
+      
+      //add to dq while removing lesser elements
+      while(!dq.isEmpty() && nums[dq.getLast()] <= nums[r]){
+        dq.removeLast();
+      }
+      dq.addLast(r);
 
-        //remove elements not inside window
-        while(!dq.isEmpty() && dq.getFirst() <= l){
-            dq.removeFirst();
-        }
-        //add to dq while removing lesser elements
-        while(!dq.isEmpty() && nums[dq.getLast()] <= nums[r]){
-            dq.removeLast();
-        }
-        dq.addLast(r);
+      l++;
+      r++;
 
-        l++;
-        r++;
-        i++;
+      i++;
     }
     //add last element
     maxArray[i] = nums[dq.getFirst()];

@@ -22,7 +22,7 @@ public class MergeOverlappingIntervals {
       // - if yes, this needs to be merged
       if (curInterval[0] <= prevInterval[1]) {
         // if endTime of cur interval is greater than, endTime of prev interval,
-        // - Then update the end time of alread inserted interval
+        // - Then update the end time of previous interval
         if (curInterval[1] > prevInterval[1]) {
           prevInterval[1] = curInterval[1];
         }

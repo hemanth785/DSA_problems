@@ -46,10 +46,10 @@ public class GasStation {
       int stationsCovered = 1;
 
       while(totalGas >= 0 && stationsCovered <= n){
-        stationsCovered += 1;
         index = (index+1)%n;
-        
         totalGas = totalGas + gas[index] - cost[index];
+        
+        stationsCovered += 1;
       }
       
       if(stationsCovered > n){

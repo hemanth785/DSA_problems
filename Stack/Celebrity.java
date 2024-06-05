@@ -152,7 +152,7 @@ public class Celebrity {
       // verify left person in the stack is celebrity
       int person = stack.pop();
 
-      // check if person known to everyone
+      // check if this person known to everyone
       for (int row = 0; row < n; row++) {
         if (person != row && M[row][person] == 0) {
           return -1;
@@ -168,6 +168,5 @@ public class Celebrity {
       return person;
     }
     return -1;
-
   }
 }

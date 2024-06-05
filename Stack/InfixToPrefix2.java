@@ -11,7 +11,8 @@ import java.util.Stack;
  */
 public class InfixToPrefix2 {
   public static void main(String args[]){
-    String infix = "*-a/bc-/akl";
+    String infix = "(a-b/c)*(a/k-l)";
+    // String infix = "(a-b/c)";
     String prefix = infixToPrefix(infix);
     System.out.println("prefix expression: "+ prefix);
   }
@@ -44,7 +45,7 @@ public class InfixToPrefix2 {
   } 
 
   /*For prefix conversion
-   * - Start converting the infix from right to left (Reverse order)
+   * - Start converting the infix to postfix from right to left (Reverse order)
    * - After we reach end of infix expression, 
    * - Reverse the prefix expression for correctness
    */

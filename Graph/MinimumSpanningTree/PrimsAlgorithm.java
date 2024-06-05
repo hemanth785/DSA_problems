@@ -26,7 +26,7 @@ public class PrimsAlgorithm {
    * - Finally sum all the distance/cost for each node, that should be the min spanning tree cost
    */
   static int spanningTree(int V, int E, int edges[][]) {
-    
+
     List<List<Pair>> adj = createAdjListFromEdges(V, edges);
     int visited[] = new int[V];
     int distance[] = new int[V];
@@ -40,14 +40,12 @@ public class PrimsAlgorithm {
     while (!queue.isEmpty()) {
       Pair pair = queue.remove();
       int node = pair.node;
-      int cost = pair.cost;
 
       //here we are marking node as visited only when processing it, 
       // since we want all the possible weights for the nodes to be present in PriorityQueue, but process only min wieghted
       visited[node] = 1;
 
       for (Pair neighbour : adj.get(node)) {
-        int u = node;
         int v = neighbour.node;
 
         //here we only check if cur edge cost is less than prev cost, no need to check of sum of cost + neighbour cost

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /*
- * https://www.hackerrank.com/contests/logicmojo-assignment-june-batch/challenges/game-of-two-stacks/problem
+ * https://www.hackerrank.com/challenges/game-of-two-stacks/problem
  */
 public class GameOfTwoStacks {
 
@@ -20,6 +20,12 @@ public class GameOfTwoStacks {
     System.out.println("Two stacks max score: "+ maxScore);
   }
 
+  /*
+   * Solution steps: (Efficient)
+   * 1. First only remove items from stack1 and store the maxScore in score1;
+   * 2. Next start putting items back to stack1 and remove items from stack 2, 
+   *      while noting the combined score (score1 + scrore 2)
+   */
   public static int twoStacks(int maxSum, List<Integer> a, List<Integer> b) {
     int sum = 0;
     int score1 = 0;

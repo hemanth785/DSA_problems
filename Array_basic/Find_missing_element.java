@@ -1,4 +1,4 @@
-/* Find the missing element in the array of size n, having n-1 elements, which only contails element values from 1 to n.
+/* Problem: Find the missing element in the array of size n, having n-1 elements, which only contails element values from 1 to n.
 
 input arr; [1,2,6,4,3,7], n=7
 output: 5

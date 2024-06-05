@@ -6,7 +6,7 @@ package Stack;
  */
 public class QueueUsingStack {
   /*
-   * Solution 1: By making enQueue operation costly
+   * Solution 1: (Using 2 stacks) By making enQueue operation costly
    * 
    * < This method makes sure that oldest entered element is always at the top of stack 1, 
    * so that deQueue operation just pops from stack1. 
@@ -50,7 +50,7 @@ public class QueueUsingStack {
   // }
 
   /*
-   * Solution 2:
+   * Solution 2: (Using 2 stacks)
    * enQueue(q,  x)
       1) Push x to stack1 (assuming size of stacks is unlimited).
         Here time complexity will be O(1)

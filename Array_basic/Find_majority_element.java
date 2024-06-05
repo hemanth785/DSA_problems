@@ -79,6 +79,17 @@ class Find_majority_element {
 
   //3. Without using hashmap, time- O(n), space- O(1)
   //NOTE: this will not work for finding max repeating array element
+  /*
+   * Solution: We know that, majority element is the one which has more count than half of entire elements
+   * That means, if we start counting majority element (and decreasing it againt any other element found), its count should survive till the end of array
+   * 
+   * 1. assume 1st element is the majority element, and initialize count as zero
+   * 2. check for next element, if it is same as current majorit element, increase count or, decrease count
+   *    - Now if count becomes zero, update the majority element as current array element
+   * 3. Now after traversing all the elements, value of majority might be the majority element
+   * 4. To confirm that, this is the majority element. count the majority element in the array
+   * 5. if count is >n/2, this is the majority element. otherwise majority element not present in array
+   */
   public static int findMajorityItem3(int arr[], int n){
     int count = 1;
     int majority = arr[0];

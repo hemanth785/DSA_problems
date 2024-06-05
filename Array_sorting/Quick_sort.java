@@ -9,7 +9,7 @@ import java.util.Arrays;
  * - Uses extra space (left and right sub Array)
  * 
  * Quick sort:
- * - Time: Worst case: [n^2 * log(n)], Average case: [n * log(n)] (if we use middle or random element as pivot)
+ * - Time: Worst case: [n^2], Average case: [n * log(n)] (if we use middle or random element as pivot)
  * - Does not use extra space
  */
 
@@ -50,7 +50,7 @@ public class Quick_sort {
       i++;
     }
     swap(arr, i, j); //now i is pointing to pivot element, and j is pointing to pivot index
-    return j; //j is the actual pivot element
+    return j; //j is the actual pivot position
   }
 
 

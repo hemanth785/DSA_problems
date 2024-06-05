@@ -86,7 +86,7 @@ public class SearchInSortedRotated {
 
 
    /*
-    * Solution 2: Optimized (Apply direct binary search)
+    * Solution 2: Optimized (Apply direct binary search) - This is also easier.
     * 
     * Step 0: find mid element, with l=0, r=n-1
     * Step 1: if (l <= mid) means left is sorted, 
