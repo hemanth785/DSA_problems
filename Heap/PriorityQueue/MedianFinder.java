@@ -42,10 +42,9 @@ public class MedianFinder {
   }
 
   public void addNum(int num) {
-    if (left.isEmpty()) {
+    if (left.isEmpty() || num < left.peek()) {
       left.add(num);
-    } else if (num < left.peek()) {
-      left.add(num);
+      
     } else {
       right.add(num);
     }

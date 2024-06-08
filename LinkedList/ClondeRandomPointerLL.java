@@ -2,6 +2,10 @@ package LinkedList;
 
 import java.util.HashMap;
 
+/*
+ * Link: https://leetcode.com/problems/copy-list-with-random-pointer/description/
+ */
+
 public class ClondeRandomPointerLL {
   public static class Node {
     int data;
@@ -58,7 +62,7 @@ public class ClondeRandomPointerLL {
 
 
   /*
-   * Solution 1: using hasmap (extra space)
+   * Solution 1: using hasmap (extra space) to store originalNode and clonedNode pair
    * 
    * Time: O(n), Space: O(n)
    */
@@ -75,28 +79,31 @@ public class ClondeRandomPointerLL {
     map.put(head, clonedHead);
 
     Node cur = head.next;
+    //1. create the duplicate list using next pointer, while inserting original and cloned node pain in Map
     while(cur != null){
-        Node node = new Node(cur.data);
-        clonedPrev.next = node;
+        Node clonedCur = new Node(cur.data);
+        clonedPrev.next = clonedCur;
 
-        map.put(cur, node);
+        map.put(cur, clonedCur);
 
-        clonedPrev = node;
+        clonedPrev = clonedCur;
         cur = cur.next;
     }
 
+    //2. Now assign random pointers to cloned list nodes
     cur = head;
-    Node clonedCurrent = clonedHead;
+    Node clonedCur = clonedHead;
     while(cur != null){
         Node randomNode = map.get(cur.random);
-        clonedCurrent.random = randomNode;
+        clonedCur.random = randomNode;
 
         cur = cur.next;
-        clonedCurrent = clonedCurrent.next;
+        clonedCur = clonedCur.next;
     }
 
     return clonedHead;
   }
+
 
   /*
    * Solution 2: Temperarily inserting cloned nodes in between original LL nodes
@@ -114,20 +121,20 @@ public class ClondeRandomPointerLL {
     //Step1: clone a node and insert between original nodes
     Node cur = head;
     while(cur != null){
-        Node node = new Node(cur.data);
+        Node clonedCur = new Node(cur.data);
 
         Node nxt = cur.next;
-        cur.next = node;
+        cur.next = clonedCur;
         if(nxt != null){
-            node.next = nxt;
+          clonedCur.next = nxt;
         }
 
         cur = nxt;
     }
+    
 
-    cur = head;
-    Node clonedHead = head.next;
     //Step2: add the random pointer to cloned Nodes
+    cur = head;
     while(cur != null){
         Node clone = cur.next;
         if(cur.random != null){
@@ -136,8 +143,9 @@ public class ClondeRandomPointerLL {
         cur = clone.next;
     }
 
-    cur = head;
     //Step3: seperate the original node and cloned nodes
+    Node clonedHead = head.next;
+    cur = head;
     while(cur != null){
         Node clone = cur.next;
         cur.next = clone.next;

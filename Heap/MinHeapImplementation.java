@@ -1,8 +1,15 @@
 package Heap;
 import java.util.Arrays;
 
-public class MinHeapImplementation {
 
+/*
+ * Problem: 
+ * Given the binary tree in array representation
+ * - Implement function to convert the binary tree array to minHeap in array format
+ * - Implement function, when new element is provided, this should be stored in minHeap fashion
+ * - Implement function, when an element is deleted, rearrangement of data should happen in minHeap fashion
+ */
+public class MinHeapImplementation {
   public static class MinHeap {
     int[] heap;
     int heapSize;
@@ -16,12 +23,14 @@ public class MinHeapImplementation {
       heap[heapSize++] = val;
       bottomUpHeapify(heap, heapSize, heapSize-1);
     }
+
     public int[] buildMaxHeap(int[] arr, int n){
-      for(int i=(n-1)/2; i>=0; i--){
+      for(int i=(n-1)/2; i>=0; i--){ //we are starting from almost middle of array because, this is where we can find (last-1) level nodes in array representation of tree
         topDownHeapify(arr, n, i);
       }
       return arr;
     }
+
     public void delete(int index){
       if(heapSize == 0 || index >= heapSize){
         return;
@@ -40,8 +49,8 @@ public class MinHeapImplementation {
     }
 
     private void topDownHeapify(int[] arr, int n, int i){
-      int left = 2*i+1;
-      int right = 2*i+2;
+      int left = 2*i+1;  // for ith node, left node will be at (2*i+1)th place in array
+      int right = 2*i+2;  // for ith node, left node will be at (2*i+2)th place in array
       int smallest = i;
       if(left < n && arr[left] < arr[smallest]){
         smallest = left;
@@ -49,7 +58,7 @@ public class MinHeapImplementation {
       if(right < n && arr[right] < arr[smallest]){
         smallest = right;
       }
-      if(smallest != i){
+      if(smallest != i){  //this condition is important
         swap(arr, i, smallest);
         topDownHeapify(arr, n, smallest);
       }

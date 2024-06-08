@@ -1,5 +1,7 @@
 package LinkedList;
 
+import Heap.PriorityQueue.MergeKSortedLists.ListNode;
+
 public class ReverseKGroupNodes {
   public static class Node {
     int data;
@@ -53,43 +55,66 @@ public class ReverseKGroupNodes {
     printList(head);
   }
 
-  public static Node reverseInKGroupsRecursive(Node head, int k){
-        
-    if(head == null || head.next ==null){
-        return head;
-    } 
-    
-    int index = 1;
+
+  public static Node reverseList(Node head){
+    if(head == null || head.next == null){
+      return head;
+    }
     Node prev = null;
     Node cur = head;
-    Node nxt = head.next;
-    
-    //reverse k grouped nodes
-    while(index <= k && cur != null && cur.next != null){
-        cur.next = prev;
-            
-        prev = cur;
-        cur = nxt;
-        nxt = nxt.next;
+    Node next = head.next;
 
-        index++;
+    while(cur != null){
+      cur.next = prev;
+      prev = cur;
+      cur = next;
+      if(next != null){
+          next = next.next;
+      }
     }
-    
-    //if pointer reached last node of list, return it
-    if(index <= k){
-        cur.next = prev;
-        return cur;
-    }
-    
-    
-    
-    Node reversedHead = reverseInKGroupsRecursive(cur, k);
-    
-    //point the tail of current reversed group to head of next reversed group
-    head.next = reversedHead;
-    
-    //prev will act has head for the current reversed group
+
     return prev;
+  }
+
+  public static Node reverseInKGroupsRecursive(Node head, int k){
+    if(head == null || head.next == null|| k == 1){
+            return head;
+    }
+    Node cur = head;
+    Node finalHead = null;
+
+    int index = 1;
+    Node curHead = head;
+    Node prevTail = null;
+    Node nextHead = null;
+
+    while(cur != null && cur.next != null){
+      cur = cur.next;
+      index++;
+
+      if(index == k){
+        nextHead = cur.next;  //to keep track of next k group head
+        cur.next = null;    //to help reverse the k nodes
+        Node reversedHead = reverseList(curHead);
+
+        if(finalHead == null){
+            finalHead = reversedHead;
+        }
+
+        if(prevTail != null){
+            prevTail.next = reversedHead;
+        }
+        prevTail = curHead;
+        curHead = nextHead;
+        cur = nextHead;
+        index=1;
+      }
+    }
+    if(prevTail != null){
+      prevTail.next = curHead;
+    }
+
+    return finalHead;
   }
 }
 

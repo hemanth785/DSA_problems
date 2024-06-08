@@ -57,7 +57,7 @@ public class Merge_sort {
 
   /*Solution */
   public static Node findMiddleRevamp(Node head) {
-    Node slow =head, fast = head;
+    Node slow=head, fast=head;
     while(fast.next!=null && fast.next.next!=null) {
         slow = slow.next;
         fast = fast.next.next;

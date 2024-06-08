@@ -22,7 +22,7 @@ public class Insertion_sort {
    * 
    * Steps:
    * - start with i+1 th element, assuming 1st element is sorted
-   * - place the current(i+1) element in correct position in the left array, starting from right side of left array
+   * - insert the current(i+1) element in correct position in the left array, starting from right side of left array
    */
 
   public static int[] insertionSort(int arr[]){
@@ -43,10 +43,10 @@ public class Insertion_sort {
   }
 
   /*
-   * - Insertion sort is best for Nearly sorted array, since its time complexity will be nearly equals: O(n)
+   * - Insertion sort is best for "Nearly sorted array", since its time complexity will be nearly equals: O(n)
    * - Array elements are required to be sorted in reverse order. 
    *    That means suppose you have to sort the array elements in ascending order, 
-   *    but its elements are in descending order. The worst-case time complexity of insertion sort is O(n2).
+   *    but its elements are in descending order. The worst-case time complexity of insertion sort is O(n^2).
    */
 
 

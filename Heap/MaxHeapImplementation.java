@@ -16,12 +16,14 @@ public class MaxHeapImplementation {
       heap[heapSize++] = val;
       bottomUpHeapify(heap, heapSize, heapSize-1);
     }
+    
     public int[] buildMaxHeap(int[] arr, int n){
       for(int i=(n-1)/2; i>=0; i--){
         topDownHeapify(arr, n, i);
       }
       return arr;
     }
+
     public void delete(int index){
       if(heapSize == 0 || index >= heapSize){
         return;

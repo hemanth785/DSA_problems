@@ -69,7 +69,13 @@ public class Alternate_split {
    * Solution 2: Optimizing for Space
    * - Modity the the existing the LL, by updating the next pointer of each node
    * 
-   * Time: O(n), Space: O(n)
+   * 1. declare 2 variables cur(head) and nxt(head.next)
+   * 2. make the next pointer of 'cur' to point to next of nxt pointer
+   *    - then make cur as nxt and move nxt ot next of next
+   * 
+   * 3. continue this until we reach end of array
+   * 
+   * Time: O(n), Space: O(1)
    */
 
   public static void alternateSplit(Node head){

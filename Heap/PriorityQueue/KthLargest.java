@@ -11,7 +11,7 @@ public class KthLargest {
   }
 
   /*
-   * Solution 1: using sorting and picking 4th element from starting
+   * Solution 1: Using sorting and picking kth element from starting
    * 
    * Time: O(n log(n)), space: O(1)
    */

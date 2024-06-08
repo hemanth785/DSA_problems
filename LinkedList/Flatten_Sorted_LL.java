@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class Flatten_LL {
+public class Flatten_Sorted_LL {
   public static class Node {
     int data;
     Node next = null;
@@ -59,11 +59,11 @@ public class Flatten_LL {
 
   public static Node flatten(Node root)
   {
-      Node cur = root;
-      Node flattenedList = null;
+    Node cur = root;
+    Node flattenedList = null;
     while(cur != null){
-        flattenedList = mergeSortedLL(flattenedList, cur);
-        cur = cur.next;
+      flattenedList = mergeSortedLL(flattenedList, cur);
+      cur = cur.next;
     }
     
     return flattenedList;

@@ -16,11 +16,11 @@ public class MergeKSortedArray {
 
   /*
    * Approach 2: Use the min heap (Optimized)
-   * - create a class have fields, array, arrayIndex and value
+   * - create a class which have fields, array, arrayIndex and value
    * - Create a PQ of the above class
    * - First store all the first elements from the given k arrays in pq
    * - then pop the top element from the pq and store it in res array
-   * - after popping, store the next element from the same array if exists from which we popped the element now (This data will be stored in class)
+   * - after popping, store the next element from the same array (if it exists) from which we popped the element now (This data will be stored in class)
    * - continue this until PQ becomes emtpy
    * 
    * Time: O(k * n * log(k)),  Aux space: O(k).  this is definately better than above 

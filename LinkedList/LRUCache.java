@@ -40,7 +40,7 @@ public class LRUCache {
   }
 
   public void put(int key, int value) {
-    if (cashMap.get(key) == null) {
+    if (cashMap.get(key) == null) { //check if key already exists
       if (cashMap.size() == capacity) {
         // remove tail
         cashMap.remove(tail.key);
@@ -76,21 +76,26 @@ public class LRUCache {
     if (current == tail) {
       tail = tail.prev;
       tail.next = null;
+      current.prev = null;
     } else {
       current.prev.next = current.next;
       current.next.prev = current.prev;
+
+      current.prev = null;
+      current.next = null;
     }
     addTohead(current);
   }
 
   public void addTohead(Node node) {
-    if (head != null) {
+    if (head == null) {
+      head = node;
+      tail = node;
+
+    } else {
       node.next = head;
       head.prev = node;
       head = node;
-    } else {
-      head = node;
-      tail = node;
     }
   }
 }

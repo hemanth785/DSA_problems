@@ -81,17 +81,19 @@ public class First_node_in_Circular_LL {
    * - if you find any node with next pointer alrady null, that the first node in CLL
    */
 
-  public static Node findFirstNodeInCLL(Node head){
-    Node firstCycle = null;
-    
+  public static int findFirstNodeInCLL(Node head){
     boolean isCycleExists = detectLoop(head);
     if(isCycleExists){
       Node cur = head;
-      while(cur != null){
-        cur = cur.next;
+      Node next = null;
+      while(cur.next != null){
+        next = cur.next;
+        cur.next = null;
+        cur = next;
       } 
-      firstCycle = cur;
-    } 
-    return firstCycle;
+      return cur.data;
+    } else {
+        return -1;
+    }
   }
 }
