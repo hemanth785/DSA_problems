@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /*
- * https://www.hackerrank.com/contests/logicmojo-assignment-june-batch/challenges/candies
+ * https://leetcode.com/problems/candy/
  * 
  * solution link: https://www.youtube.com/watch?v=gib-yC5NmuM
  */

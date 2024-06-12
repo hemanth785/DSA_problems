@@ -2,17 +2,22 @@
  * Link: https://leetcode.com/problems/word-break/
  */
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class WordBreak {
 
   /*
    * Approach 1: This problem can be solved using the DP.
    */
-  public boolean wordBreak(String s, List<String> wordDict) {
-    int n = s.length();
+  public boolean wordBreak(String str, List<String> wordDict) {
+    int n = str.length();
     Set<String> wordSet = new HashSet<>(wordDict);
     Boolean dp[] = new Boolean[n];
     Arrays.fill(dp, null);
-    return isWordPresentRecursive(s, wordSet, 0, n, dp);
+    return isWordPresentRecursive(str, wordSet, 0, n, dp);
   }
 
   public Boolean isWordPresentRecursive(String s, Set<String> wordSet, int l, int n, Boolean[] dp) {
@@ -44,7 +49,7 @@ public class WordBreak {
 
   private static final int ALPHABET_COUNT = 26;
 
-  public boolean wordBreak(String s, List<String> wordDict) {
+  public boolean wordBreak2(String s, List<String> wordDict) {
     int n = s.length();
 
     //initialize and create trie

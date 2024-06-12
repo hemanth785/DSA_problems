@@ -31,7 +31,7 @@ public class PalindromePartitioning {
 	void getPalindromes(String s, int n, int index){
 		if(index >= s.length()){
 			resList.add(new ArrayList(tempList));
-            return;
+      return;
 		}
 		
 		for(int i=index; i<n; i++){

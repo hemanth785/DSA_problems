@@ -34,10 +34,10 @@ public class View_LeftAndRightView {
     while (!queue.isEmpty()) {
       int size = queue.size();
 
-      int index = 0;
+      int leftIndex = 0;
       while (size > 0) {
         TreeNode node = queue.remove();
-        if (index == 0) {
+        if (leftIndex == 0) {
           leftView.add(node.data);
         }
         if (node.left != null) {
@@ -48,7 +48,7 @@ public class View_LeftAndRightView {
         }
 
         size--;
-        index++;
+        leftIndex++;
       }
     }
 
@@ -63,7 +63,7 @@ public class View_LeftAndRightView {
   // Right view
   int[] rightView(TreeNode root) {
     Queue<TreeNode> queue = new LinkedList<>();
-    List<Integer> leftView = new ArrayList<>();
+    List<Integer> rightView = new ArrayList<>();
 
     queue.add(root);
 
@@ -73,7 +73,7 @@ public class View_LeftAndRightView {
       while (size > 0) {
         TreeNode node = queue.remove();
         if (size == 1) {
-          leftView.add(node.data);
+          rightView.add(node.data);
         }
         if (node.left != null) {
           queue.add(node.left);
@@ -86,9 +86,9 @@ public class View_LeftAndRightView {
       }
     }
 
-    int leftViewArr[] = new int[leftView.size()];
-    for (int i = 0; i < leftView.size(); i++) {
-      leftViewArr[i] = leftView.get(i);
+    int leftViewArr[] = new int[rightView.size()];
+    for (int i = 0; i < rightView.size(); i++) {
+      leftViewArr[i] = rightView.get(i);
     }
 
     return leftViewArr;

@@ -76,10 +76,10 @@ public class MaxPathSum {
   }
 
 
-  static int maxSum = Integer.MIN_VALUE;
+  static int globalMax = Integer.MIN_VALUE;
   public static int maxPathSum(TreeNode root) {
     traverseRecursive(root);
-    return maxSum;
+    return globalMax;
   }
 
   public static int traverseRecursive(TreeNode cur) {
@@ -90,19 +90,19 @@ public class MaxPathSum {
     int rightMax = traverseRecursive(cur.right);
 
     // find max among path - only cur, cur+left, cur+right
-    int curMax = Math.max(cur.data, Math.max(cur.data + leftMax, cur.data + rightMax));
+    int localMax = Math.max(cur.data, Math.max(cur.data + leftMax, cur.data + rightMax));
     /*
-     * Here we are calculating 'curMax' seperately because, this needs to return to parent node
+     * Here we are calculating 'localMax' seperately because, this needs to return to parent node
      * So we either need to return current node and left path sum or right path sum, but not entire tree sum to parent node
      * But we can check if current tree has max sum than existing sum calculated till now 
      */
 
     // find max among this tree path(either left or right) and enitre tree itself
-    int tempAnsMax = Math.max(curMax, cur.data + leftMax + rightMax);
+    int tempAnsMax = Math.max(localMax, cur.data + leftMax + rightMax);
 
     // check if currentTree max is greater than ans
-    maxSum = Math.max(maxSum, tempAnsMax);
+    globalMax = Math.max(globalMax, tempAnsMax);
 
-    return curMax;
+    return localMax;
   }
 }

@@ -1,5 +1,3 @@
- 
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +23,7 @@ public class TopKfrequentItems {
    * solution 1: 
    * - Use map to store the frequency of each integer
    * - Then store the each map entry in the List
-   * - Sort the List item by fequency of number - use customer comparator: 
+   * - Sort the List item by fequency of number - use custom comparator: 
    * https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/
    * 
    * Time: N* log(n)

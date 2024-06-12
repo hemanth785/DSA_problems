@@ -26,8 +26,7 @@ public class BST_Iterator {
   }
 
   /*
-   * Approach: Use the same DFS appraoch, but instead of using the inbuilt
-   * callstack,
+   * Approach: Use the same DFS appraoch, but instead of using the inbuilt callstack,
    * use seperate stack to keep track of next node to process
    */
   Stack<Node> stack;
@@ -35,7 +34,8 @@ public class BST_Iterator {
   public BST_Iterator(Node root) {
     stack = new Stack<>();
 
-    // insert all the left nodes for root
+    // Insert all the left nodes of root to stack, 
+    // because 1st element in the InOrder traversal is the leftMost element in the tree
     insertLeftNodes(root);
   }
 

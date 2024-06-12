@@ -64,20 +64,18 @@ public class InorderSuccessorBST {
   }
 
   /*
-   * Approach 2: finding the successor while traversion inorder (No need to store
-   * inorder path in array)
+   * Approach 2: finding the successor while traversion inorder (No need to store inorder path in array)
    * - Traverse the given BST and if a node is found which is greater than the node p and smaller than the previously stored successor node
-   *    then update the successor node.
+   *     then update the successor node.
    * - Return the successor node as the answer.
    */
 
+  Node successor;
   Node findSuccessor2(Node root, Node p) {
     successor = null;
     findNode(root, p);
     return successor;
   }
-
-  Node successor;
 
   void findNode(Node root, Node p) {
     if (root.left != null) {

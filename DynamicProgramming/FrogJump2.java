@@ -26,10 +26,9 @@ public class FrogJump2 {
       for (int i = 1; i <= k; i++) {
         int nextIndex = curIndex - i;
         if (nextIndex >= 0) {
-          int nexStepsCost = frogJumpMemo2(n, k, nextIndex, heights, dp);
+          int nexStepsCost = Math.abs(heights[curIndex] - heights[nextIndex]) + frogJumpMemo2(n, k, nextIndex, heights, dp);
 
-          int totalStepCost = nexStepsCost + Math.abs(heights[curIndex] - heights[nextIndex]);
-          minCost = Math.min(minCost, totalStepCost);
+          minCost = Math.min(minCost, nexStepsCost);
         }
       }
       dp[curIndex] = minCost;

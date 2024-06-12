@@ -23,6 +23,7 @@ public class ConstructFromPostAndInorder {
       this.right = right;
     }
   }
+  
   public static void BFS(TreeNode root){ //level order traversal custom
     Queue<TreeNode> queue = new LinkedList<>();
     queue.add(root);

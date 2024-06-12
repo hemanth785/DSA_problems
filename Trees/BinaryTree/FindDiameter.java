@@ -74,9 +74,9 @@ public class FindDiameter {
 
   /*
    * Tip: Diameter of tree can be find out by (max number of edges between any two nodes in tree)
-   * - at each level, find the left max height and right max height
-   * - then find the sum of the leftMaxHeight and rightMaxHeight
-   * - so diameter  = max( diameter, leftMaxheight + rightMaxHeigh)
+   * - At each level, find the left max height and right max height
+   * - Then find the sum of the leftMaxHeight and rightMaxHeight
+   * - So diameter  = max( maxDiameter, leftMaxheight + rightMaxHeigh)
    */
   public static void main(String[] args) {
     TreeNode root = build();

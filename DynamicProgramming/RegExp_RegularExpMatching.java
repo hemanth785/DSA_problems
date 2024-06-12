@@ -9,7 +9,7 @@ public class RegExp_RegularExpMatching {
   /*
    * Approach: DP
    * - start from the begining of the both the array
-   * - if cur char of string and pattern match or pattern char is '.', mark the 'currentMatch' as true, else mark it as true
+   * - if cur char of string and pattern match or pattern char is '.', mark the 'currentMatch' as true, else mark it as false
    * - Now check for the if the next char in pattern is *
    *    - if yes, make recursive call for below 2 cases
    *      - 1. match the * for empty char, (thus ignoring * by incrementing j+2)
@@ -51,15 +51,15 @@ public class RegExp_RegularExpMatching {
 
     // If the next character in pattern is '*', handle the '*' wildcard character
     if (j + 1 < m && p.charAt(j + 1) == '*') {
-      // Explore both options: matching zero occurrences for * and matching current character for *
-      boolean matchZeroOccurence = isMatchMemo(s, p, i, j + 2, n, m, dp);
-      boolean matchCurrCharector = currentMatch && isMatchMemo(s, p, i + 1, j, n, m, dp);
+      // Explore both options: matching zero occurrences for * || matching current character for *
+      boolean matchZeroOccurence = isMatchMemo(s, p, i, j+2, n, m, dp);
+      boolean matchCurrCharector = currentMatch && isMatchMemo(s, p, i+1, j, n, m, dp);
 
       dp[i][j] = matchZeroOccurence || matchCurrCharector ? 1 : 0;
 
     } else if (currentMatch) {
       // If the characters match, move to the next characters in both strings
-      dp[i][j] = isMatchMemo(s, p, i + 1, j + 1, n, m, dp) ? 1 : 0;
+      dp[i][j] = isMatchMemo(s, p, i+1, j+1, n, m, dp) ? 1 : 0;
     }
 
     return dp[i][j] == 1;

@@ -113,14 +113,14 @@ public class DeleteNode {
       System.out.println("Node is not present in the tree");
       return root;
     } else if(keyNode != cur) {
-      //swap the deepest node
+      //swap the deepest node, after all traversal 'cur' will be our deepest node
       keyNode.data = cur.data;
     }
-    deleteBottomNode(root, cur);
+    deleteBottomRightNode(root, cur);
     return root;
   }
 
-  public static TreeNode deleteBottomNode(TreeNode root, TreeNode delNode){
+  public static TreeNode deleteBottomRightNode(TreeNode root, TreeNode delNode){
     if(root == null){
       return root;
     }

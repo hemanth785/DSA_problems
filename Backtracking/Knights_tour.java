@@ -35,12 +35,10 @@ public class Knights_tour {
     }
     
     //define initialize position 0,0
-    int x=0, y=0, moves=0;
-    if(!knightTraverse(n, board, xMoves, yMoves, x, y, moves+1)){
-
-    } else {
+    int x=0, y=0;
+    if(knightTraverse(n, board, xMoves, yMoves, x, y, 1)){
       printBoard(n, board);
-    }    
+    }   
   }
 
   public static boolean knightTraverse(int n, int[][] board, int[] xMoves, int[] yMoves, int x, int y, int moves){

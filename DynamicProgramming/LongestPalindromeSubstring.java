@@ -12,11 +12,11 @@ public class LongestPalindromeSubstring {
   }
 
   public void longestPalindromeMemo(String s, int l, int r, int[][] dp) {
-    if (r >= s.length()) {
+    if(r >= s.length()) {
       return;
     }
     //here we are just marking for any l and r combination we checked for palindrome
-    if (dp[l][r] == 1) {
+    if(dp[l][r] == 1) {
       return;
     }
     if (isPalindrome(s, l, r)) {

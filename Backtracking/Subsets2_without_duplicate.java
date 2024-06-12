@@ -9,7 +9,16 @@ import java.util.List;
  * 
  */
 public class Subsets2_without_duplicate {
-  List<List<Integer>> subsets(int[] A) {
+  public static void main(String[] args) {
+    int arr[] = {1, 3, 3};
+    List<List<Integer>> powerSet = subsets(arr);
+
+    for(int i=0; i<powerSet.size(); i++){
+      System.out.print(powerSet.get(i).toString()+" ");
+    }
+  }
+  static List<List<Integer>> subsets(int[] A) {
+    //here sorting of elements is necessary
 		Arrays.sort(A);
 		
 	  List<List<Integer>> subsetList = new ArrayList<>();
@@ -20,7 +29,7 @@ public class Subsets2_without_duplicate {
 		return subsetList;
 	}
 	
-	void subsetsRecursive(int[] A, List<List<Integer>> subsetList, List<Integer> subset, int index){
+	static void subsetsRecursive(int[] A, List<List<Integer>> subsetList, List<Integer> subset, int index){
 		if(index > A.length){
 			return;
 		}
@@ -34,7 +43,7 @@ public class Subsets2_without_duplicate {
 		subsetsRecursive(A, subsetList, subset, index+1);
 		subset.remove(subset.size()-1);
 			
-	  //excluding current element, (exluding duplicate also)
+	  //excluding current element, (exlude all occurence of current element): THIS IS IMPORTANT
     int nextIndex = index+1;
 		while(nextIndex < A.length && A[nextIndex] == A[index]){
 			nextIndex++;

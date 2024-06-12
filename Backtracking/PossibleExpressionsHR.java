@@ -1,7 +1,10 @@
 package Backtracking;
-/*Incomplete */
-import java.util.Arrays;
 import java.util.Vector;
+
+ /*
+  * Link: https://leetcode.com/problems/expression-add-operators/
+  * 
+  */
 
 public class PossibleExpressionsHR {
   public static void main(String[] args) {
@@ -11,7 +14,6 @@ public class PossibleExpressionsHR {
     getPossibleExpressions(str, target, expressions, 0, "", 0, "");
 
     System.out.println(expressions);
-    // System.out.println("Expressions"+ Arrays.toString(res));
   }
 
   public static void getPossibleExpressions(
@@ -26,9 +28,10 @@ public class PossibleExpressionsHR {
     if(position >= str.length()){
       return;
     }
+
     int curValue = Character.getNumericValue(str.charAt(position));
+
     if(operation != ""){
-      
       switch(operation){
         case "+": 
           curTarget = curTarget+curValue;
@@ -54,8 +57,6 @@ public class PossibleExpressionsHR {
 
       resString = resString + curValue;
 
-      System.out.println(resString);
-      System.out.println(curTarget +" : "+target);
       if(curTarget == target){
         expressions.add(resString);
         return;
@@ -63,12 +64,11 @@ public class PossibleExpressionsHR {
     } else {
       resString = curValue+"";
       curTarget = curValue;
-      System.out.println("i am here: "+ curTarget);
     }
     getPossibleExpressions(str, target, expressions, position+1, resString+"+", curTarget, "+");
     getPossibleExpressions(str, target, expressions, position+1, resString+"-", curTarget, "-");
 
-    // getPossibleExpressions(str, target, expressions, position, resString, curTarget, "*");
+    getPossibleExpressions(str, target, expressions, position+1, resString+"*", curTarget, "*");
     // getPossibleExpressions(str, target, expressions, position, resString, curTarget, "/");
   }
 }

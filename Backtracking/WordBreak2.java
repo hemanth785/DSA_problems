@@ -9,34 +9,29 @@ import java.util.Set;
  * Link: https://leetcode.com/problems/word-break-ii/description/
  */
 public class WordBreak2 {
-  List<String> resList;
+  List<String> sentenceList;
 
   public List<String> wordBreak(String str, List<String> wordDict) {
     int n = str.length();
-    resList = new ArrayList<>();
-    Set<String> wordsSet = new HashSet<>(wordDict);
-
-    wordBreakMemo(str, wordsSet, n, 0, 0, "");
-
-    return resList;
+		sentenceList = new ArrayList<>();
+	  Set<String> wordsSet = new HashSet<>(wordDict);
+		
+		wordBreakRec(str, wordsSet, n, 0, "");
+		
+		return sentenceList;
   }
 
-  void wordBreakMemo(String str, Set<String> wordsSet, int n, int l, int r, String tempRes) {
-    if (r >= n - 1) {
-      String subStr = str.substring(l, r + 1);
-      if (wordsSet.contains(subStr)) {
-        tempRes = tempRes + " " + subStr;
-        resList.add(tempRes.trim());
-      }
+  void wordBreakRec(String str, Set<String> wordsSet, int n, int index, String tempRes){
+		if(index >= n){
+      sentenceList.add(tempRes.trim());
       return;
     }
 
-    String subStr = str.substring(l, r + 1);
-    if (wordsSet.contains(subStr)) {
-      wordBreakMemo(str, wordsSet, n, r + 1, r + 1, tempRes + " " + subStr);
+    for(int i=index+1; i<=n; i++){
+      String subStr = str.substring(index, i);
+      if(wordsSet.contains(subStr)){
+        wordBreakRec(str, wordsSet, n, i, tempRes+" "+subStr);
+      }
     }
-    wordBreakMemo(str, wordsSet, n, l, r + 1, tempRes);
-
-    return;
-  }
+	}
 }

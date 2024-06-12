@@ -76,11 +76,18 @@ public class InsertNode {
     BFS(root);
   }
 
+  /*
+   * Approach:
+   * 1. traverse the tree starting from root
+   * 2. if root is null, return the new node as root node
+   * 3. traverse each node while checking if left or right child is null for any node
+   * 4. if left is empty, add newNode to the left of cur node else to the right of cur node
+   */
   public static TreeNode insertNode(TreeNode root, int data){
-    TreeNode node = new TreeNode(data);
+    TreeNode newNode = new TreeNode(data);
 
     if(root == null){
-      return node;
+      return newNode;
     }
 
     Queue<TreeNode> queue = new LinkedList<>();
@@ -89,13 +96,13 @@ public class InsertNode {
       TreeNode cur = queue.remove();
 
       if(cur.left == null){
-        cur.left = node;
+        cur.left = newNode;
         break;
       } 
       queue.add(cur.left);
 
       if(cur.right == null){
-        cur.right = node;
+        cur.right = newNode;
         break;
       }
       queue.add(cur.right);

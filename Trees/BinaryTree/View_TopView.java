@@ -40,7 +40,8 @@ public class View_TopView {
       for (Map.Entry rowEntry : col.entrySet()) {
         List<Integer> row = (List<Integer>) rowEntry.getValue();
         topView.add(row.get(0));
-        break;
+
+        break; //break is to print top data
       }
     }
 

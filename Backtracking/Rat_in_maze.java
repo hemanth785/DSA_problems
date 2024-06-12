@@ -55,8 +55,8 @@ public class Rat_in_maze {
     for(int i=0; i<direction.length; i++){
       int nextRow = row + rowMoves[i];
       int nextCol = col + colMoves[i];
-      boolean isSafe = isSafe(n, nextRow, nextCol, maze, visited);
-      if(isSafe){
+      boolean isSafe = isSafe(n, nextRow, nextCol, maze);
+      if(isSafe && visited[nextRow][nextCol] == -1){
         visited[nextRow][nextCol] = 1;
         findPathForRat(n, nextRow, nextCol, maze, visited, path+direction[i]); 
         /*
@@ -76,11 +76,10 @@ public class Rat_in_maze {
 
 
   
-  private static boolean isSafe(int n, int nextRow, int nextCol, int[][] maze, int[][] visited){
+  private static boolean isSafe(int n, int nextRow, int nextCol, int[][] maze){
     if(nextRow >= 0 && nextRow < n &&
       nextCol >= 0 && nextCol < n &&
-      maze[nextRow][nextCol] == 1 &&
-      visited[nextRow][nextCol] == -1
+      maze[nextRow][nextCol] == 1
     ) {
       return true;
     }

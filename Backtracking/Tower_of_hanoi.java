@@ -30,14 +30,14 @@ public class Tower_of_hanoi {
     String source = "SRC";
     String spare = "SPARE";
     String destination = "DEST";
-    int n = 2;
+    int n = 3;
     printTowerOfHanoiSequence(n, source, destination, spare);
   }
 
 
   /*
    * Logic here is that
-   * To move n disks to destination, first we need to move n-1 disks to Spare
+   * To move n th disks to destination, first we need to move (n-1)th disks to Spare
    * 
    * Here initial order of disks
    * 1
@@ -51,10 +51,10 @@ public class Tower_of_hanoi {
       return;
     }
 
-    //to move n disks to 'Dest'
-    printTowerOfHanoiSequence(n-1, source, spare, destination); //first we need to move 'n-1' disks from 'Src' to 'Spare' (for this step spare acts as destination for n-1 disks)
+    //to move n th disk to 'Dest'
+    printTowerOfHanoiSequence(n-1, source, spare, destination); //first we need to move '(n-1)th' disks from 'Src' to 'Spare'
     System.out.println("Move disk " +n+ " from " +source+ " to "+ destination);  //move nth(Bottom) disk from 'Src' to 'Destination'
-    printTowerOfHanoiSequence(n-1, spare, destination, source); //then move n-1 disk again from 'Spare' to 'Destination'
+    printTowerOfHanoiSequence(n-1, spare, destination, source); //then move (n-1)th disk again from 'Spare' to 'Destination'
 
     /* Actual code is written here for n=2, But once we run it, it works for any number of n */
   }

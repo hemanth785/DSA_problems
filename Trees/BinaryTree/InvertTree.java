@@ -77,8 +77,6 @@ public class InvertTree {
     TreeNode root = build();
     BFS(root);
 
-    int target = 12;
-    // int levelOfNode = getLevelIterative(root, target);
     TreeNode invertedRoot = invertTree(root);
     System.out.println("Tree after iversion--- ");
     BFS(invertedRoot);
@@ -88,7 +86,8 @@ public class InvertTree {
     if (root == null) {
       return root;
     }
-    if (!(root.left == null && root.right == null)) {
+    //if any one of left or right child is not null, then swap nodes and continue
+    if (root.left != null || root.right != null) {
       swap(root, root.left, root.right);
     }
     invertTree(root.left);

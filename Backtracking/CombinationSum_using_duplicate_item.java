@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class CombinationSum_using_duplicate_item {
 	List<List<Integer>> combinationSum(int[] A, int target) {
-	    List<List<Integer>> resList = new ArrayList<>();
+	  List<List<Integer>> resList = new ArrayList<>();
 		List<Integer> combList = new ArrayList<>();
 		
 		combinationSumRec(A, target, 0, 0, resList, combList);
@@ -18,16 +18,17 @@ public class CombinationSum_using_duplicate_item {
 		return resList;
 	}
 	
-	void combinationSumRec(int[] A, int target, int sum, int index, List<List<Integer>> resList, List<Integer> combList){
-		if(sum == target){
+	void combinationSumRec(int[] A, int target, int curSum, int index, List<List<Integer>> resList, List<Integer> combList){
+		if(curSum == target){
 			resList.add(new ArrayList<>(combList));
 			return;
 		}
-		if(sum > target || index >= A.length){
+		if(curSum > target || index >= A.length){
 			return;
 		}
-		for(int amount=sum; amount <= target; amount += A[index]){
-			int n = (amount-sum)/A[index];
+
+		for(int amount=curSum; amount <= target; amount += A[index]){
+			int n = (amount-curSum)/A[index];
 			for(int i=0; i<n; i++){
 				combList.add(A[index]);
 			}

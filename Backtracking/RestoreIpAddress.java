@@ -15,7 +15,7 @@ public class RestoreIpAddress {
 
   static List<String> ipList;
 	static List<String> restoreIPAddresses(String s) {
-	    int n = s.length();
+	  int n = s.length();
 		ipList = new ArrayList<>();
 		formIpRec(s, n, 0, 0, "");
 		
@@ -31,11 +31,10 @@ public class RestoreIpAddress {
 		}
 		for(int i=1; i<=3; i++){
 			String subStr;
-			if(index+i < n){
-				subStr = s.substring(index, index+i);
-			} else {
-				subStr = s.substring(index, n);
-			}
+			if(index+i > n){
+				break;
+			} 
+      subStr = s.substring(index, index+i);
 			
 			if(isValidIpNumber(subStr)){
 				String resString = restoredIP.equals("") ? subStr : restoredIP+"."+subStr;

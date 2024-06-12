@@ -17,9 +17,9 @@ public class MaxProductSubarray {
    * OBSERVATION---
    * The optimal approach is based on the below observation
    * - If all elements in array in positive, then result will be product of whole array
-   * - If array contains even number of elements, then also result will be prodcut of whole array
-   * - If array contains One negative elements, the result will be product of prefix or suffix array to that negative element
-   * - if array contains off number of negative elements, 
+   * - If array contains even number of elements, then also result will be product of whole array
+   * - If array contains One negative element, the result will be product of prefix or suffix array to that negative element
+   * - if array contains odd number of negative elements, 
    *      then result will be product of suffix or prefix array of the, negative element on either side/end of array
    * - If array contains '0', the result will be product of prefix or suffix array to that 0 (basically wherever that 0 exists, it just devides the array)
    * 

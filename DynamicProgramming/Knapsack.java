@@ -28,7 +28,7 @@ public class Knapsack {
 
     if (dp[curIndex][W] == -1) {
       int inclCurVal = 0;
-      if (W >= wt[curIndex]) {
+      if (wt[curIndex] <= W) {
         inclCurVal = val[curIndex] + knapsackMemo(W - wt[curIndex], wt, val, n, curIndex + 1, dp);
       }
       int exclCurVal = knapsackMemo(W, wt, val, n, curIndex + 1, dp);

@@ -10,6 +10,9 @@ import java.util.TreeMap;
 
 /*
  * https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
+ * 
+ * Note: For Top and Bottom view of tree, vertical traversal is needed
+ * For left and right view of tree, BFS traversal is enough
  */
 public class VerticalTraversal {
   public static class TreeNode {
@@ -125,6 +128,15 @@ public class VerticalTraversal {
    * 2. inside the same coloumn, print the nodes from row top to bottom
    * 3. inside the same row and coloumn, print the nodes in sorted order
    */
+
+   /*
+    * verticalMap stucture:
+    * verticalMap = TreeMap<cols>({
+          TreeMap<rows>({
+              ArrayList<List of items in the same cell(if exists)>
+          })
+    })
+    */
   public static List<List<Integer>> verticalTraversalProper(TreeNode root) {
         List<List<Integer>> verticalResult = new ArrayList<>();
 
@@ -133,16 +145,17 @@ public class VerticalTraversal {
         recursiveTraversalProper(root, verticalMap, 0, 0);
 
         for(Map.Entry colEntry : verticalMap.entrySet()){
-            Map<Integer, List<Integer>> colEntryMap = (Map<Integer, List<Integer>>)colEntry.getValue();
-            List<Integer> tempList = new ArrayList<>();
-            for(Map.Entry rowEntry : colEntryMap.entrySet()){
-                List<Integer> tempInnerList = (List<Integer>) rowEntry.getValue();
+            Map<Integer, List<Integer>> rowEntryMap = (Map<Integer, List<Integer>>)colEntry.getValue();
+            List<Integer> tempRowList = new ArrayList<>();
+
+            for(Map.Entry rowEntry : rowEntryMap.entrySet()){
+                List<Integer> cellItems = (List<Integer>) rowEntry.getValue();
                 //applying sorting for point number 3.
-                Collections.sort(tempInnerList);
-                tempList.addAll(tempInnerList);
+                Collections.sort(cellItems);
+                tempRowList.addAll(cellItems);
             }
 
-            verticalResult.add(tempList);
+            verticalResult.add(tempRowList);
         }
         return verticalResult;
     }
@@ -153,7 +166,7 @@ public class VerticalTraversal {
         }
 
         if(!verticalMap.containsKey(col)){
-           //inner map is <TreeMap> because to keep the row number in order, inside the coloumn - (refer point 2.)
+           //inner map is also <TreeMap> because to keep the row number in order, inside the coloumn - (refer point 2.)
             verticalMap.put(col, new TreeMap<>());
         }
         if(!verticalMap.get(col).containsKey(row)){
@@ -161,7 +174,7 @@ public class VerticalTraversal {
         }
         verticalMap.get(col).get(row).add(cur.data);
 
-        recursiveTraversalProper(cur.left, verticalMap, col-1, row+1);
+        recursiveTraversalProper(cur.left, verticalMap, col-1, row+1); //here col indexes will be negative
         recursiveTraversalProper(cur.right, verticalMap, col+1, row+1);
     }
 }

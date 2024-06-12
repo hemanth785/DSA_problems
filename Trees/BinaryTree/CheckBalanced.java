@@ -5,6 +5,10 @@ import java.util.Queue;
 
 /*
  * Check if the tree is complete binary tree
+ * 
+ * COMPLETE BINARY TREE: 
+ *  - all levels are filled, except for last level
+ *  - all leaf nodes must lean towards left
  */
 public class CheckBalanced {
   public static class TreeNode {
@@ -69,6 +73,15 @@ public class CheckBalanced {
     return root;
   }
 
+  /*
+   * Approach:
+   * 1. Call recursive function to get the maxHeight of tree
+   * 2. this recursive function while returning the height of each branch of tree
+   *      also checks if height diff between left subtree and right subtree is more than 1
+   *    - if Yes, its returns -1 and all the subsequent function calls returns -1 only
+   * Then we can conclude its not balanced
+   */
+
   public static void main(String[] args) {
     TreeNode root = build();
     BFS(root);
@@ -77,19 +90,19 @@ public class CheckBalanced {
   }
 
   public static boolean isBalanced(TreeNode root) {
-    int height = getMaxHeightOfTree(root);
+    int height = getMaxHeightDiffOfTree(root);
     if (height == -1) {
       return false;
     }
     return true;
   }
 
-  public static int getMaxHeightOfTree(TreeNode cur) {
+  public static int getMaxHeightDiffOfTree(TreeNode cur) {
     if (cur == null) {
       return 0;
     }
-    int leftHeight = getMaxHeightOfTree(cur.left);
-    int rightHeight = getMaxHeightOfTree(cur.right);
+    int leftHeight = getMaxHeightDiffOfTree(cur.left);
+    int rightHeight = getMaxHeightDiffOfTree(cur.right);
 
     if (leftHeight == -1 || rightHeight == -1 || Math.abs(leftHeight - rightHeight) > 1) {
       return -1;

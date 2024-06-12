@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class LCSPrint {
+public class LongestCommenSubsequencePrint {
   public static void main(String[] args) {
     Integer arr1[] = new Integer[]{3, 9, 8, 3, 9, 7, 9, 7, 0};
     Integer arr2[] = new Integer[]{3, 3, 9, 9, 9, 1, 7, 2, 0, 6};

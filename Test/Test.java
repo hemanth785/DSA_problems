@@ -6,9 +6,8 @@ import java.util.List;
 
 public class Test {
   public static void main(String[] args) {
-
-    int m = 3;
-    System.out.println(3%3);
+    String str = "Hemanth";
+    System.out.println(str.substring(0,1));
   }
 
   

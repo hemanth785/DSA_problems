@@ -41,7 +41,7 @@ public class KthSmallestInBST {
   int kthSmallest = 0;
 	int count = 0;
 	int findKthSmallest(Node root, int k) {
-	    kthSmallest = 0;
+	  kthSmallest = 0;
 		count = k;
 		inorder(root);
 		

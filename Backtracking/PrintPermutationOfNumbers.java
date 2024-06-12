@@ -4,36 +4,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrintPermutationOfNumbers {
+  /*
+   * Link: https://leetcode.com/problems/permutations/description/
+   */
   public static void main(String[] args) {
     int arr[] = {1,2,3};
-    //printAllPermutations(arr);
-    getAllPermutations("abc");
-  }
-
-  public static void backtrack(int[] arr, String numberPermutations, List<String> result){
-    int n = arr.length;
-    if(numberPermutations.length() == n){
-      result.add(numberPermutations);
-      return;
-    }
-    
-
-    for(int i=0; i<n; i++){
-      char item = (char)(arr[i]+'0');
-      //checking if number is already added to the number string
-      if(numberPermutations.indexOf(item) == -1){
-        backtrack(arr, numberPermutations + item, result);
-      }
-    }
+    printAllPermutations(arr);
   }
 
   public static void printAllPermutations(int[] arr){
     List<String> result = new ArrayList<>();
     String numberPermutations = "";
+    int n = arr.length;
 
-    backtrack(arr, numberPermutations, result);
+    backtrack(arr, n, numberPermutations, result);
 
     System.out.println(result.toString());
+  }
+
+  public static void backtrack(int[] arr, int n, String numberPermutations, List<String> result){
+    
+    if(numberPermutations.length() == n){
+      result.add(numberPermutations);
+      return;
+    }
+
+    for(int i=0; i<n; i++){
+      char item = (char)(arr[i]+'0');
+      //checking if number is already added to the number string
+      if(numberPermutations.indexOf(item) == -1){
+        backtrack(arr, n, numberPermutations + item, result);
+      }
+    }
   }
 }
 

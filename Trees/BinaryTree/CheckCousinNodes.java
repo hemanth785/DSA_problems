@@ -83,9 +83,7 @@ public class CheckCousinNodes {
    * for 2 nodes to be considered as cousins, it should meet follwing conditions
    * 1. Two nodes should at the same level in the tree
    * 2. Two nodes should not be siblings(i.e. two nodes should not have commen parent)
-   */
-
-  /*
+   *
    * Steps:
    * 1. Get the levels of two nodes, if levels are not same, return false
    * 2. Check if two nodes are having the same parent. if yes, return false

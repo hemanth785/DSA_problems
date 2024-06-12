@@ -38,10 +38,10 @@ public class N_Queens {
       }
     }
 
-    checkAllPositions(n, board, 0);
+    placeQueenRec(n, board, 0);
   }
 
-  private static void checkAllPositions(int n, char[][] board, int col){
+  private static void placeQueenRec(int n, char[][] board, int col){
     if(col == n){
       printBoard(n, board);
       System.out.println("-------------");
@@ -51,11 +51,11 @@ public class N_Queens {
     for(int row=0; row<n; row++){
       if(isSafe(board, n, row, col)){
         board[row][col] = 'Q';
-        checkAllPositions(n, board, col+1);
+        placeQueenRec(n, board, col+1);
         board[row][col] = '.';
       }
     }
-
+    
   }
 
 

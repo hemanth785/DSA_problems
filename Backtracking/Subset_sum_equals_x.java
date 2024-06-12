@@ -31,27 +31,6 @@ public class Subset_sum_equals_x {
     backTrackArrayForSubSetSum(arr, target, 0, 0, subSet);
   }
 
-  //One way to do it
-  // private static void backTrackArrayForSubSetSum(int[] arr, int target, int currentIndex, List<Integer> subSet){
-  //   if(target == 0){
-  //     System.out.println(subSet);
-  //     return;
-  //   }
-
-  //   if(currentIndex >= arr.length){
-  //     return;
-  //   }
-
-  //   //reject current element for target sum
-  //   backTrackArrayForSubSetSum(arr, target, currentIndex+1, subSet); 
-
-  //   //select current element for target sum
-  //   subSet.add(arr[currentIndex]);
-  //   backTrackArrayForSubSetSum(arr, target-arr[currentIndex], currentIndex+1, subSet);
-    
-  //   subSet.remove(subSet.size()-1);
-  // }
-
   //Another way to do it
   private static void backTrackArrayForSubSetSum(int[] arr, int target, int currentSum, int currentIndex, List<Integer> subSet){
     if(target == currentSum){
@@ -69,7 +48,6 @@ public class Subset_sum_equals_x {
     //select current element for target sum
     subSet.add(arr[currentIndex]);
     backTrackArrayForSubSetSum(arr, target, currentSum + arr[currentIndex], currentIndex+1, subSet);
-    
     subSet.remove(subSet.size()-1);
   }
 }

@@ -5,18 +5,19 @@ import java.util.List;
 import java.util.Queue;
 
 /*
- * Solution 1: 
+ * Link: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/
+ */
+/*
+ * Solution 1: Not recommonded
  *  TODO:  This is for binary tree (not bst)
  *   do the recursive traversal for node p and q and store the path on the way(path1 and path2)
- *   After the complete traver, simultanously keep removing last element from path1 and path2 and compare at any point both have same node
+ *   After the complete traversal, simultanously keep removing last element from path1 and path2 and compare at any point both have same node
  *   if same node found at any index, that is the LCA
  *
  *   refer 'PathToTarget' for keep track of path
  */
 
- /*
-  * Solution 2: using complete recursive apporach, without storing path
-  */
+
 public class LowestCommenAncestorBT {
   public static class TreeNode {
     int data;
@@ -90,6 +91,15 @@ public class LowestCommenAncestorBT {
     System.out.println(lca.data);
   }
 
+  /*
+  * Solution 2: 
+  * 1. Start DFS traversal from root
+  * 2. if any point curNode data equals either p or q, then return the current node
+  *     - because commen ancestor cannot be down below the current node
+  * 3. else call recurse for left and right node
+  * 4. if both p and q found in left and right node, then curNode is the LCA
+  * 5. else pass the result which is not empty, So that LCA will be calculated at parent node
+  */
 
   public static TreeNode lowestCommonAncestor(TreeNode root, int p, int q) {
     return findLCA(root, p, q);
@@ -109,7 +119,7 @@ public class LowestCommenAncestorBT {
     // this one is checking - for current node does both p and q found
     if (left != null && right != null) {
       return cur;
-      // this 2 below one is for passing the found ancestor upwards till root (passing ans to top)
+      // these 2 below one is for passing the found ancestor upwards till root (passing ans to top)
     } else if (left != null) {
       return left;
     } else if (right != null) {

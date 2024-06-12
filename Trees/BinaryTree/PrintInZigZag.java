@@ -81,6 +81,14 @@ public class PrintInZigZag {
     System.out.println(zigZag);
   }
 
+  /*
+   * Approach: Using 2 stacks
+   * 1. Initially push the root node to stack1
+   * 2. run the while loop, till any one the stack is not empty
+   * 3. if stack1 is not empty, pop elements from stack1 while adding its child nodes to stack2, till stack1 becomes empty
+   * 4. Next pop elements from stack2 while adding child nodes to stack1, until it becomes emtpy
+   * 5. Do this until both stack becomes empty
+   */
   public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
     List<List<Integer>> zigZag = new ArrayList<>();
 

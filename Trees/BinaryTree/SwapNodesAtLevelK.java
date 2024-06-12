@@ -11,7 +11,7 @@ import java.util.LinkedList;
 public class SwapNodesAtLevelK {
   /*
    * Approach: 
-   * - We know that root value of tree is always 1
+   * - We know that root level of tree is always 1
    * - First build the tree from the given node indexes, using the level order traversal
    * - Then for each k value, swap the nodes at all level = 2*k, and store the inorder traversal
    * - Then return all the inOrder traversals
@@ -56,7 +56,7 @@ public class SwapNodesAtLevelK {
     int level = 1;
     while (!queue.isEmpty()) {
       int length = queue.size();
-      System.out.println("length: " + length);
+
       while (length > 0) {
         // add left and right nodes to queue
         TreeNode cur = queue.remove();
@@ -106,7 +106,7 @@ public class SwapNodesAtLevelK {
     }
 
     for (Integer k : queries) {
-      // swap nodes at k level
+      // swap nodes at every kth level
       swapLevelOrder(root, k);
 
       // add the inorder traversal patht to result

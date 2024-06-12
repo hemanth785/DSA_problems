@@ -114,7 +114,7 @@ public class FlattenBinaryTree {
     return cur;
   }
 
-  /*Solution 2: Iterative approach */
+  /*Solution 2: Iterative approach --- Easy to understand */ 
 
   public static void flatternIterative(TreeNode root){
     while(root != null){
@@ -135,5 +135,7 @@ public class FlattenBinaryTree {
       }
       root = root.right;
     }
+
   }
+
 }

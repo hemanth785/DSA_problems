@@ -10,6 +10,7 @@ import java.util.Arrays;
 
 public class DecodeWays {
   /*
+   * Directly go for 2nd solution 
    * Working solution (Not efficient), but its using O(n^2) space for memoization
    */
   
@@ -56,32 +57,34 @@ public class DecodeWays {
    * Optimized solution: Bottom up approach
    * 
    * Approach: number of ways in which the string of size 'N' can be decoded is
-   *  - equal to  = number of ways string (n-1) can be decoded + number of ways current charected can be decoded.
+   *  - equal to  = number of ways string (n-1) can be decoded + number of ways current charector can be decoded.
    * 
    * explanation: https://www.youtube.com/watch?v=cQX3yHS0cLo
    */
 
    static int mod = 1000000007;
    int numDecodings2(String str) {
-		if (str.charAt(0) == '0') {
-			return 0;
-		}
 		int n = str.length();
 		int[] dp = new int[n + 1];
 		
 		dp[0] = 1; //this is because, we can decode string of length 0 (empty string in one way only)
-		dp[1] = 1; //This is because, string of length 1 can be decoded only in one way directly
+		dp[1] = str.charAt(0) == '0' ? 0 : 1; //This is because, string of length 1 can be decoded only in one way directly
 		
 		for (int i = 2; i <= n; i++) {
 			//for single digit
-			if (str.charAt(i - 1) > '0') {
-				dp[i] = dp[i - 1];
-			}
+			int oneDigit = Integer.valueOf(str.substring(i-1, i));
+      int twoDigit = Integer.valueOf(str.substring(i-2, i));
+
+      //consider one digit
+      if(oneDigit >= 1){
+        dp[i] = dp[i-1];
+      }
+
+      //consider 2 digit
+      if(twoDigit >= 10 && twoDigit <=26){
+        dp[i] = dp[i] + dp[i-2];
+      }
 			
-			//for double digit (The check we are doing here is whether number in range of 1 to 26 or not)
-			if (str.charAt(i - 2) == '1' || (str.charAt(i - 2) == '2' && str.charAt(i - 1) <= '6')) {
-				dp[i] = (dp[i] + dp[i - 2]) % mod;
-			}
 		}
 		return dp[n];
 	}

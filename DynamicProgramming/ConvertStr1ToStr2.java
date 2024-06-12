@@ -47,7 +47,7 @@ public class ConvertStr1ToStr2 {
       return dp[i1][i2];
     }
 
-    // if both string is equal, 0 operation required for this, so update both i1 and i2
+    // if both char is equal, 0 operation required for this, so update both i1 and i2
     if (word1.charAt(i1) == word2.charAt(i2)) {
       dp[i1][i2] = minDistanceMemo(word1, word2, i1 - 1, i2 - 1, dp);
     } else {

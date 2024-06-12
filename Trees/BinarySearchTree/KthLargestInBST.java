@@ -32,7 +32,7 @@ public class KthLargestInBST {
    *  - Define the Priority queue of size k (min priority queue), and keep on storing the inorder elements of tree
    *  - Once done, return the top element from the min priority queue (this will be the Kth largest element)
    * 
-   * Time: O(n log(n)), Space: O(n) - PQ is of size k, n because of the recursive call stack of inorder
+   * Time: O(n log(n)), Space: O(k) - PQ is of size k, n because of the recursive call stack of inorder
    */
 
   /*

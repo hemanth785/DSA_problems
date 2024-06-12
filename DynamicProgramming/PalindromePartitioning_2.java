@@ -33,8 +33,7 @@ public class PalindromePartitioning_2 {
       int minPartition = n - 1; // this is the max partitions we can get, if partitioned at each charector
 
       // check for each length of the string starting from l,
-      // - if it is palindrome, increase partition count and check for palindromes in
-      // rest of string
+      // - if it is palindrome, increase partition count and check for palindromes in rest of string
       // - calculate min partitions among all these possibilities
       for (int i = l; i < n; i++) {
         String subStr = str.substring(l, i + 1);

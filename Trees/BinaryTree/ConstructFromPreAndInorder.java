@@ -68,11 +68,14 @@ public class ConstructFromPreAndInorder {
     if (inStart > inEnd) {
       return null;
     }
-    TreeNode newNode = new TreeNode(preorder[preOrderIndex++]);
+    TreeNode newNode = new TreeNode(preorder[preOrderIndex]);
+    preOrderIndex++;
     if (inStart == inEnd) {
       return newNode;
     }
+
     int newNodeInIndex = searchInOrder(inorder, newNode.data, inStart, inEnd);
+    
     newNode.left = buildTreeRecursive(preorder, inorder, inStart, newNodeInIndex - 1);
     newNode.right = buildTreeRecursive(preorder, inorder, newNodeInIndex + 1, inEnd);
 

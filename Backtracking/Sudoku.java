@@ -35,7 +35,7 @@ public class Sudoku {
     }
   }
 /*
- * Approach: 
+ * Approach 1: 
  * - Find the first unfilled box, from top left
  * - Fill the appropriate value, and call this rec function
  * - Next recursive call, find the next unfilled box using nexted for loop
@@ -130,7 +130,6 @@ public class Sudoku {
     
     int nextCol = (col+1) % 9;
     int nextRow = nextCol == 0 ? row+1 : row ; 
-        // System.out.println("nextRow: "+nextRow+", nextCol: "+nextCol);
     
     if(sudoku[row][col] == '.'){
       for(int i=1; i<=9; i++){

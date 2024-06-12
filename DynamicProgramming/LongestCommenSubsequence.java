@@ -27,11 +27,11 @@ public class LongestCommenSubsequence {
       return 0;
     }
     if (dp[n][m] == -1) {
-      if (t1.charAt(n) != t2.charAt(m)) {
-        dp[n][m] = Math.max(lcsMemo(t1, n - 1, t2, m, dp), lcsMemo(t1, n, t2, m - 1, dp));
-      } else {
+      if (t1.charAt(n) == t2.charAt(m)) {
         dp[n][m] = 1 + lcsMemo(t1, n - 1, t2, m - 1, dp);
-      }
+      } else {
+        dp[n][m] = Math.max( lcsMemo(t1, n - 1, t2, m, dp), lcsMemo(t1, n, t2, m - 1, dp) );
+      } 
     }
     return dp[n][m];
   }

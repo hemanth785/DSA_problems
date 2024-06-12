@@ -58,6 +58,10 @@ public class InsertNode {
     return root;
   }
 
+  /*
+   * Inserting a node is same as searching a node in BST, we need to check for empty sport in tree
+   */
+
   public static TreeNode insertNode(TreeNode root, int data){
       TreeNode curr = root;
 
@@ -65,6 +69,7 @@ public class InsertNode {
         return new TreeNode(data);
       }
 
+      //DFS
       while(curr != null){
         if(data < curr.data){
 
@@ -73,8 +78,9 @@ public class InsertNode {
             return root;
           }
           curr = curr.left;
-        } else {
 
+        } else {
+          
           if(curr.right == null){
             curr.right = new TreeNode(data);
             return root;
