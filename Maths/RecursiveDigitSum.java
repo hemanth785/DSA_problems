@@ -55,7 +55,7 @@ public class RecursiveDigitSum {
   public static int digSum(int n)
   {
       if (n == 0)
-          return 0;
+        return 0;
       return (n % 9 == 0) ? 9 : (n % 9);
   }
 
@@ -78,9 +78,9 @@ public class RecursiveDigitSum {
   {
     int total = 0;
     for(int i=0; i<num.length(); i++){
-        total += Character.getNumericValue(num.charAt(i));
+      total += Character.getNumericValue(num.charAt(i));
     }
-      String totalString = ""+total;
+    String totalString = ""+total;
     if(totalString.length() == 1){
         return totalString;
     } else {

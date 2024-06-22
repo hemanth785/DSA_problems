@@ -1,4 +1,4 @@
-REAT THIS FOR TRIE INTRO
+READ THIS FOR TRIE INTRO
 https://www.geeksforgeeks.org/trie-insert-and-search/
 
 DEFINITION:

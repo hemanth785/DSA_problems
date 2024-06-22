@@ -58,10 +58,11 @@ public class GCD_of_two_numbers {
   /*
    * Solution 3: Efficient way to find GCD (Ecludian algorithm)
    * - Find the min and max element among the a and b
-   * - find the module of min and max ==> max % min = remainder
+   * - find the modulo of min and max ==> max % min = remainder
    * - if remainder == 0, then min is the GCD
    * - else make max = min, min=remainder
    * - continue loop until we find the remainder == 0
+   * - once remainder is =0, then min will be the answer
    */
 
   public static int gcd3(int a, int b){

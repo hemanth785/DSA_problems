@@ -79,6 +79,9 @@ public class BiggestBSTinBinaryTree {
 
   /*
    * -----Simple code-----
+   * 1. Declare a class named 'NodeInfo' which holds size of BST under it, and max and min values under which elements should be there
+   * 
+   * Note: If a BST subtree exists it should exists from leaf node below. otherwise it cannot exists in the middle or top of the tree
    */
 
   // Return the size of the largest sub-tree which is also a BST
@@ -97,13 +100,13 @@ public class BiggestBSTinBinaryTree {
     NodeInfo right = largestBstRec2(root.right);
 
     // if current node satisfies BST condition
-    if (left.max < root.data && right.min > root.data) {
+    if (root.data > left.max  && root.data < right.min) {
       return new NodeInfo(
           1 + left.size + right.size,
           Math.min(left.min, root.data),
           Math.max(right.max, root.data));
     }
-    // if not return [-inf, inf], so that parent cannot validate to valid BST
+    // if not return [-intMax, intMax], so that parent cannot validate to valid BST
     return new NodeInfo(Math.max(left.size, right.size), Integer.MIN_VALUE, Integer.MAX_VALUE);
   }
 }

@@ -10,22 +10,20 @@ public class SwapsNeededToBalanceParanthesis {
     int swaps = minSwaps(str);
     System.out.println("min swaps required to balance: "+swaps);
   }
-  public static int minSwaps(String s) {
+  public static int minSwaps(String str) {
     Stack<Character> stack  = new Stack<>();
 
-    for(int i=0; i<s.length(); i++){
-        char curChar = s.charAt(i);
-        if(curChar == '[' || stack.isEmpty()){
-            stack.push(curChar);
-        } else if(curChar == ']'){
-            if(stack.peek() == '['){
-              stack.pop();
-            } else {
-              stack.push(curChar);
-            }
-        }
+    for(int i=0; i<str.length(); i++){
+      char curChar = str.charAt(i);
+      if(curChar == '[' || stack.isEmpty()){
+        stack.push(curChar);
+      } else if(curChar == ']'){
+        if(stack.peek() == '['){
+          stack.pop();
+        } 
+      }
     }
 
     return stack.size()/2;
-}
+  }
 }

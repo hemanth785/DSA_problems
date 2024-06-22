@@ -176,7 +176,7 @@ public class DeleteNode {
 
 
   
-  /* SIMPLE SOLUTION */
+  /* Recursive: SIMPLE SOLUTION */
   public static TreeNode deleteNodeRecursive(TreeNode root, int key) {
     if (root == null) {
       return null;
@@ -187,7 +187,6 @@ public class DeleteNode {
     } else if (key > root.data) {
       root.right = deleteNodeRecursive(root.right, key);
     } else {
-      System.out.println("hello123");
       // case 1: if left and right nodes are null, just remove current node
       if (root.left == null && root.right == null) {
         return null;
@@ -203,7 +202,7 @@ public class DeleteNode {
 
       // case 3: If Both child nodes exists
       // 1. move to the leftMost node(curNode) in rightSubTree of node to be deleted(key)
-      // 2. Assign the 'left tree' of 'keynode' to the 'cueNode'
+      // 2. Assign the 'left tree' of 'keynode' to the 'curNode'(leftMost right subtree node)
       // 3. Return the right node of the 'keynode'
       TreeNode curNode = root.right;
 

@@ -3,6 +3,27 @@ import java.util.Arrays;
 
 public class MaxHeapImplementation {
 
+  /*
+   * Heap: 
+   * 1. Heap allows following operations
+   *    a. Insert new element
+   *    b. Remove top element (other than top heap is not ideal for deleting other elements)
+   *    c. Peek (returns top element- it'll be a max value for maxHeap)
+   * 
+   * 2. Heap is binary tree data structure which will be having complete binary tree
+   *     (only last level nodes cal be empty and we should start filling elements from left side of tree)
+   * 3. In Max heap, data will be stored in way that parent node value should be greater than both of its child nodes (reverse for minHeap)
+   * 4. If we have to insert the new node(value), we have to insert it at the bottom left empty place
+   *    - Then we to perform the "Bottom Up" heapify operation, to move this element to correct position (we need to compare with parent node:  parent(i) = (i-1)/2 )
+   * 5. Poll/delete operation deletes item from top(root) of heap, then fill this element with last item in tree(bottom right in tree or last item in array)
+   *    - Then perform "Top Down" heapify operation to move this new root element to correct position (we need to compare with both child nodes: childs(p) = 2*p+1 (left child) and 2*p+2 (right child))
+   * 
+   * Note: Both topDown and bottomUp heapify will have O( Log(n)), i.e the height of tree.
+   *      because in worst case item needs to me moved from top to the bottom of tree(or bottom to top) 
+   * 
+   * Proper explanation: https://www.youtube.com/watch?v=HqPJF2L5h9U 
+   */
+
   public static class MaxHeap {
     int[] heap;
     int heapSize;
@@ -13,59 +34,84 @@ public class MaxHeapImplementation {
     }
 
     public void insert(int val){
-      heap[heapSize++] = val;
-      bottomUpHeapify(heap, heapSize, heapSize-1);
-    }
-    
-    public int[] buildMaxHeap(int[] arr, int n){
-      for(int i=(n-1)/2; i>=0; i--){
-        topDownHeapify(arr, n, i);
-      }
-      return arr;
-    }
-
-    public void delete(int index){
-      if(heapSize == 0 || index >= heapSize){
+      if(heapSize >= heap.length){
+        System.out.println("Heap is full");
         return;
       }
-      heap[index] = heap[--heapSize];
-      topDownHeapify(heap, heapSize, index);
+      heap[heapSize++] = val;
+      bottomUpHeapify();
+
+      System.out.println(Arrays.toString(heap));
     }
 
-    public int extractMax(){
+    public void poll(){ //this will remove top element
       if(heapSize == 0){
-        return -1;
+        return;
       }
-      int topMax = heap[0];
-      delete(0);
-      return topMax;
+
+      heap[0] = heap[heapSize-1];
+      heap[heapSize-1] = 0;
+      heapSize--;
+
+      topDownHeapify();
+
+      System.out.println("del: "+Arrays.toString(heap) +" - "+ heapSize);
     }
 
-    private void topDownHeapify(int[] arr, int n, int i){
-      int left = 2*i+1;
-      int right = 2*i+2;
-      int largest = i;
-      if(left < n && arr[left] > arr[largest]){
-        largest = left;
-      }
-      if(right < n && arr[right] > arr[largest]){
-        largest = right;
-      }
-      if(largest != i){
-        swap(arr, i, largest);
-        topDownHeapify(arr, n, largest);
-      }
-
+    public int peek(){
+      return heap[0];
     }
 
-    private void bottomUpHeapify(int[] arr, int n, int i){
-      int parent = (i-1)/2;
-      //check if it is a valid parent
-      if(parent >= 0){
-        if(arr[parent] < arr[i]){
-          swap(arr, i, parent);
-          bottomUpHeapify(arr, n, parent);
+    private void bottomUpHeapify(){
+      int index = heapSize-1;
+      while(index > 0){
+        int parentIndex = index == 1 ? 0 : (index-1)/2;
+
+        if(heap[parentIndex] >= heap[index]){ //if parent is already greater, then stop here
+          return;
         }
+
+        //swap current node val with parent node val
+        swap(heap, index, parentIndex);
+        index = parentIndex;
+      }
+    }
+
+    /*
+     * Approach: 
+     * - Start from root node, get its left and right child nodes using formula
+     * - Check if leftNode exists (If left node is null, then right node will also be null - So break here)
+     * - Check if rightNode exists (If right node is null, then check if leftNode is greater than curNode, if yes then swap and break here)
+     *    - if right node is null means, there is no child nodes exists further
+     * - if Both child nodes exists, 
+     *   - get the child with max value
+     *   - compare max value child with currentNode
+     *   - if it is greater, swap with curNode and update the index to childNode index and continue loop
+     *   - if child node value is lesser, we can break the loop
+     */
+    private void topDownHeapify(){
+      int index = 0;
+      while(index < heapSize){
+        int leftChildInd = 2*index+1;
+        int rightChildInd = 2*index+2;
+
+        if(leftChildInd >= heapSize){ //if both left and right child is empty
+          return;
+        }
+
+        if(rightChildInd >= heapSize){ // if right child is empty
+          if(heap[leftChildInd] > heap[index]){ //if left child has more value than current node
+            swap(heap, index, leftChildInd);
+          }
+          return;
+        }
+
+        int maxChildIndex = heap[leftChildInd] > heap[rightChildInd] ? leftChildInd : rightChildInd;
+        if(heap[index] > heap[maxChildIndex]){ //if current node val is already greater than both of childs, break the loop
+          return;
+        }
+        swap(heap, index, maxChildIndex);
+        index = maxChildIndex;
       }
     }
 
@@ -75,24 +121,25 @@ public class MaxHeapImplementation {
       arr[j] = temp;
     }
   }
-  
+
+
   public static void main(String[] args) {
-    int arr[] = new int[]{1,3,4,2,11,10,20};
-    MaxHeap maxHeap = new MaxHeap(100);
+    MaxHeap maxHeap = new MaxHeap(10);
+    maxHeap.insert(10);
+    maxHeap.insert(20);
+    maxHeap.insert(30);
+    maxHeap.insert(25);
+    maxHeap.insert(12);
+    maxHeap.insert(60);
 
-    //create heap using topDownHeapify
-    // int maxHeapData[] = maxHeap.buildMaxHeap(arr, arr.length);
-    // System.out.println("Meax heap:");
-    // System.out.println(Arrays.toString(maxHeapData));
+    maxHeap.poll();
+    System.out.println(maxHeap.peek());
+    maxHeap.poll();
+    System.out.println(maxHeap.peek());
 
-    //create heap using bottomUpHeapify
-    for(int item: arr){
-      maxHeap.insert(item);
-    }
-    for(int i=0; i<maxHeap.heapSize; i++){
-      System.out.println(maxHeap.heap[i]);
-    }
+    maxHeap.insert(55);
+    maxHeap.insert(8);
 
-    /* Note: we might get diff result in BottomUpHeapify and TopDownHeapify */
+    maxHeap.poll();
   }
 }

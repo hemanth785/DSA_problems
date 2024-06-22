@@ -3,9 +3,10 @@ import java.util.Arrays;
 
 
 /*
+ * Note: Check maxHeap implementation for simpler code
  * Problem: 
- * Given the binary tree in array representation
- * - Implement function to convert the binary tree array to minHeap in array format
+ * Given the binary tree in array representation (NOte)
+ * - Implement function to convert the binary tree array to minHeap in array format (check convertArrayToMax heap probelm)
  * - Implement function, when new element is provided, this should be stored in minHeap fashion
  * - Implement function, when an element is deleted, rearrangement of data should happen in minHeap fashion
  */

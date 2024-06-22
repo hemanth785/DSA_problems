@@ -2,6 +2,10 @@ package Maths;
 
 import java.util.Arrays;
 
+/*
+ * Problem: Check if the number is prime or not
+ */
+
 public class Prime_numbers {
   public static void main(String[] args) {
     int number = 30;

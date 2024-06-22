@@ -10,7 +10,7 @@ public class IsPerfectSquare {
 
   /*
    * Approach 2: Withouth Using the Math.sqrt method
-   * Starting from 1, find the sqaure of each number until n, 
+   * Starting from 1, find the sqaure of each number until n/2, 
    * 
    * Time: O(n)
    */
@@ -29,7 +29,6 @@ public class IsPerfectSquare {
 		while(l<=r){
 			int mid = l + (r-l)/2;
 			long square = (long)mid * (long)mid;
-      // System.out.println("mid: "+mid+ ", square: "+square);
 			if(square == num){
 				return true;
 			} else if(square < num){

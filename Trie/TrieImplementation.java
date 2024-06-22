@@ -1,7 +1,7 @@
 public class TrieImplementation {
   private static final int  ALPHABET_COUNT = 26;
   public static class TrieNode{
-    TrieNode[] childNodes = new TrieNode[ALPHABET_COUNT];
+    TrieNode childNodes[] = new TrieNode[ALPHABET_COUNT];
     boolean isEndOfWord;
     //initialize all the child with null values
     TrieNode(){
@@ -19,7 +19,7 @@ public class TrieImplementation {
       char charector = word.charAt(i);
       int index = charector - 'a';
       /* 
-        here we are not actually storing the charectors, 
+        here we are not actually storing the charactors, 
         we are just filling the index of charector with new node, indication this charector exists
         we can do this because at particular index (from 0-25), only one charector can exists from a-z
       */

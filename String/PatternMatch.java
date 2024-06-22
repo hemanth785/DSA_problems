@@ -3,7 +3,7 @@ package String;
 import java.util.Arrays;
 
 /*
- * For a given input string, return a index at which pattern strin exists
+ * For a given input string, return a index at which pattern string exists
  * Input: 
  * String = "abcdabdc";
  * pattern = "dab";
@@ -25,7 +25,7 @@ public class PatternMatch {
    * Solution 1: Bruteforce
    * Using sliding window technique
    * 
-   * time: O(n*m), Space: O(1)
+   * Time: O(n*m), Space: O(1)
    * where m is the size of pattern
    */
 
@@ -106,7 +106,7 @@ public class PatternMatch {
        *  - 34-1 =>  phash = 33
        * step 2: device resulting number by prime numer used, i.e. 3
        *  - 33/3 = 11
-       * step 3: add the next charector ascii value to pHash, i.e d (4)
+       * step 3: add the next charector ascii value to sHash, i.e d (4)
        *  - 11 + 4*(3^2) = 45
        * 
        * new pHas = 45

@@ -189,7 +189,6 @@ public class Bit_manipulation {
     return (int)((Math.pow(2, x-1) * x) + (n-Math.pow(2,x)+1) + (countSetBitsFrom1toN_2(n - (int)Math.pow(2,x))));
   }
 
-  
 
 }
 

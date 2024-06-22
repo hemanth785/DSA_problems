@@ -29,10 +29,9 @@ public class NextGreaterNumber {
 
 		if(idx != -1){
 			//find the next greater element to idx element
-			int nextMaxItem = Integer.MIN_VALUE;
 			int nextMaxIndex = -1;
 			for(int i=idx+1; i<n; i++){
-				if(arr[i] > arr[idx] && arr[i] > nextMaxItem){
+				if(arr[i] > arr[idx]){
 					nextMaxIndex = i;
 				}
 			}

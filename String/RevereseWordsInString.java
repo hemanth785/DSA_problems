@@ -16,7 +16,7 @@ public class RevereseWordsInString {
   }
 
   /*
-   * Solution using stack
+   * Solution 1: using stack
    */
   public static String reverseUsingStack(String input){
     Stack<String> stack = new Stack<>();
@@ -45,6 +45,10 @@ public class RevereseWordsInString {
     return output;
   }
 
+
+  /*
+   * Solution 2: Without stack
+   */
   public static String reverseWithoutStack(String input){
     String output = "";
     String word = "";

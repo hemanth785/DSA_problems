@@ -6,9 +6,8 @@ import java.util.List;
 
 public class Test {
   public static void main(String[] args) {
-    String str = "Hemanth";
-    System.out.println(str.substring(0,1));
+    int index = 6;
+    int parentIndex = index == 1 ? 0 : (index-1)/2;
+    System.out.println(parentIndex);
   }
-
-  
 }
