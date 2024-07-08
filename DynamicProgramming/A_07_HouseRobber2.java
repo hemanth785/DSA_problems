@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Link: https://leetcode.com/problems/house-robber-ii/description/
  */
 
-public class HouseRobber2 {
+public class A_07_HouseRobber2 {
   public int rob(int[] nums) {
     int n = nums.length;
     if(n == 1){
@@ -15,11 +15,11 @@ public class HouseRobber2 {
     int dp[] = new int[n+1];
     Arrays.fill(dp, -1);
 
-    //robbing starting from 1st house to (n-1)th house
+    //robbing starting from 1st house to (n-1)th house. i.e leaving last house
     int first = robCirularHouseDp(nums, n-1, dp, 0);
 
     Arrays.fill(dp, -1);
-    //robbing starting from 2nd house to nth house
+    //robbing starting from 2nd house to nth house (Here we are leaving the 1st house from where we are starting)
     int second = robCirularHouseDp(nums, n, dp, 1);
 
     return Math.max(first, second);

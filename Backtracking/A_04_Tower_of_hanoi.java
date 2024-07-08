@@ -25,7 +25,7 @@ package Backtracking;
  * Move disk 1 from DEST to SPARE
  */
 
-public class Tower_of_hanoi {
+public class A_04_Tower_of_hanoi {
   public static void main(String[] args) {
     String source = "SRC";
     String spare = "SPARE";

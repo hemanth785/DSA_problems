@@ -9,7 +9,7 @@ import java.util.List;
  * 
  * solution link: https://www.youtube.com/watch?v=gib-yC5NmuM
  */
-public class Candies {
+public class A_01_Candies {
   public static void main(String args[]){
     Integer arr[] = new Integer[]{2, 4, 2, 6, 1, 7, 8, 9, 2, 1};
     List<Integer> list = Arrays.asList(arr);
@@ -26,17 +26,16 @@ public class Candies {
     
     //move from left to right, checking for higher score condition
     for(int i=1; i<n; i++){
-        if(arr.get(i) > arr.get(i-1)){
-            candies[i] = candies[i-1] + 1;
-        }
+      if(arr.get(i) > arr.get(i-1)){
+        candies[i] = candies[i-1] + 1;
+      }
     }
     
     //move from right to left, checking for higher score condition
     for(int i=n-2; i>=0; i--){
-        System.out.println("i: "+i+", candies:"+candies[i]);
-        if(arr.get(i) > arr.get(i+1) && candies[i] <= candies[i+1]){
-            candies[i] = candies[i+1] + 1;
-        }
+      if(arr.get(i) > arr.get(i+1) && candies[i] <= candies[i+1]){
+        candies[i] = candies[i+1] + 1;
+      }
     }
     
     //count the candies

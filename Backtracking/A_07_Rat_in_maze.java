@@ -20,16 +20,16 @@ package Backtracking;
  *  and DDRDRR, when printed in sorted order 
  *  we get DDRDRR DRDDRR.
  */
-public class Rat_in_maze {
+public class A_07_Rat_in_maze {
   static int[] rowMoves = {0, 1, 0, -1};
   static int[] colMoves = {1, 0, -1, 0};
   static char[] direction = {'R', 'D', 'L', 'U'}; //Rat has 4 possible moves at each position in maze
 
   public static void main(String[] args) {
-    int[][] maze =  {{1, 0, 0, 0},
+    int[][] maze =  { {1, 0, 0, 0},
                       {1, 1, 1, 1}, 
                       {1, 1, 0, 1},
-                      {0, 1, 1, 1}};
+                      {0, 1, 1, 1} };
     int n = maze.length;
     
     //possible moves for a rat in maze at each position

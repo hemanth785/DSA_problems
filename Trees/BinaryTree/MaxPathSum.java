@@ -105,4 +105,16 @@ public class MaxPathSum {
 
     return localMax;
   }
+
+
+  /*
+   * This also works - But code is duplicate
+   * 
+   * //Here we are checking all 4 scenarios - root | root+left | root+right | root+left+right
+   * int curMax = Math.max(root.val, Math.max(root.val + leftSum, Math.max(root.val+rightSum, root.val+ leftSum+rightSum)));
+   * maxSum = Math.max(maxSum, curMax);
+   *
+   * //here we are checking only 3 conditions - root | root+left | root + right
+   * return Math.max(root.val, Math.max(root.val + leftSum, root.val + rightSum));
+   */
 }

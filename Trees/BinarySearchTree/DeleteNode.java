@@ -204,13 +204,13 @@ public class DeleteNode {
       // 1. move to the leftMost node(curNode) in rightSubTree of node to be deleted(key)
       // 2. Assign the 'left tree' of 'keynode' to the 'curNode'(leftMost right subtree node)
       // 3. Return the right node of the 'keynode'
-      TreeNode curNode = root.right;
+      TreeNode leftMostRightNode = root.right;
 
-      while (curNode.left != null) {
-        curNode = curNode.left;
+      while (leftMostRightNode.left != null) {
+        leftMostRightNode = leftMostRightNode.left;
       }
 
-      curNode.left = root.left;
+      leftMostRightNode.left = root.left;
       return root.right;
 
     }

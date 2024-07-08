@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Frog jump with max k steps allowed
  * link: https://www.codingninjas.com/studio/problems/minimal-cost_8180930?leftPanelTab=1
  */
-public class FrogJump2 {
+public class A_05_FrogJump2 {
   public static int minimizeCost(int n, int k, int[] height) {
     int dp[] = new int[n + 1];
     Arrays.fill(dp, -1);
@@ -25,11 +25,12 @@ public class FrogJump2 {
       int minCost = Integer.MAX_VALUE;
       for (int i = 1; i <= k; i++) {
         int nextIndex = curIndex - i;
-        if (nextIndex >= 0) {
-          int nexStepsCost = Math.abs(heights[curIndex] - heights[nextIndex]) + frogJumpMemo2(n, k, nextIndex, heights, dp);
-
-          minCost = Math.min(minCost, nexStepsCost);
+        if(nextIndex < 0){
+          break;
         }
+          
+        int nexStepsCost = Math.abs(heights[curIndex] - heights[nextIndex]) + frogJumpMemo2(n, k, nextIndex, heights, dp);
+        minCost = Math.min(minCost, nexStepsCost);
       }
       dp[curIndex] = minCost;
     }

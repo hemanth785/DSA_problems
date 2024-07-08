@@ -9,7 +9,7 @@ import java.util.*;
  * output: {2,5}, {7}
  */
 
-public class Subset_sum_equals_x {
+public class A_10_Subset_sum_equals_x {
   public static void main(String[] args) {
     int arr[] = {2, 3, 8, 6, 5};
     int target = 2;
@@ -42,7 +42,7 @@ public class Subset_sum_equals_x {
       return;
     }
 
-    //reject current element for target sum
+    //ignore current element for target sum
     backTrackArrayForSubSetSum(arr, target, currentSum, currentIndex+1, subSet); 
 
     //select current element for target sum

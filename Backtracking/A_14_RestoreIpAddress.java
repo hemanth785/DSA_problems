@@ -6,7 +6,7 @@ import java.util.List;
 /*
  * Link: https://workat.tech/problem-solving/practice/restore-ip-addresses
  */
-public class RestoreIpAddress {
+public class A_14_RestoreIpAddress {
   public static void main(String[] args) {
     List<String> validIpList = restoreIPAddresses("25525511135");
     System.out.println("Valid IP address list");

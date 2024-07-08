@@ -18,7 +18,7 @@ public class MaximiseMeetings {
   /*
    * Approach 2: give priority to the meeting which ends early
    * 
-   * - sort meeting based on their end time
+   * - sort meeting based on their 'end time'
    * - loop through each meeting while keep end time of last meeting,
    * - if start time of cur meeting is grater than, end time of last meeting. increase meeting count.
    * 

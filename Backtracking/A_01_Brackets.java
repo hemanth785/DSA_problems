@@ -10,7 +10,7 @@ import java.util.*;
  * invalid brackets: ))((, (()(), etc
  */
 
-public class Brackets {
+public class A_01_Brackets {
   public static void main(String[] args) {
     int n = 3;
     formBrackets(n);

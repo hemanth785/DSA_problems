@@ -8,7 +8,7 @@ import java.util.Set;
 /*
  * Link: https://leetcode.com/problems/word-break-ii/description/
  */
-public class WordBreak2 {
+public class A_16_WordBreak2 {
   List<String> sentenceList;
 
   public List<String> wordBreak(String str, List<String> wordDict) {

@@ -3,7 +3,7 @@ package Backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrintPermutationOfNumbers {
+public class A_03_PrintPermutationOfNumbers {
   /*
    * Link: https://leetcode.com/problems/permutations/description/
    */

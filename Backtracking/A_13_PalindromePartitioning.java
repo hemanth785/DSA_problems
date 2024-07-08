@@ -7,7 +7,7 @@ import java.util.List;
  * link: https://workat.tech/problem-solving/practice/palindromic-partitioning
  */
 
-public class PalindromePartitioning {
+public class A_13_PalindromePartitioning {
   /*
    * Approach: 
    * - Start from the 0th index, and check for each substring till size of n whether its a palindrome, 
@@ -19,7 +19,7 @@ public class PalindromePartitioning {
 	List<String> tempList;
 	
 	List<List<String>> getPartitions(String s) {
-	    resList = new ArrayList<>();
+	  resList = new ArrayList<>();
 		tempList = new ArrayList<>();
 		
 		int n = s.length();
@@ -36,6 +36,7 @@ public class PalindromePartitioning {
 		
 		for(int i=index; i<n; i++){
 			String subStr = s.substring(index, i+1);
+      
 			if(isPalindrome(subStr)){
 				tempList.add(subStr);
 				getPalindromes(s, n, i+1);

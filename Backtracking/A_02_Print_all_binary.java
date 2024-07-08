@@ -23,7 +23,7 @@ import java.util.*;
  * 111
  * 
  */
-public class Print_all_binary {
+public class A_02_Print_all_binary {
   public static void main(String[] args) {
     int n = 3;
     printAllBinary(n);

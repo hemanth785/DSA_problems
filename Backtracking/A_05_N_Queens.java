@@ -12,7 +12,7 @@ package Backtracking;
  */
 
 
-public class N_Queens {
+public class A_05_N_Queens {
   public static void main(String[] args) {
     int n = 5;
 
@@ -44,7 +44,6 @@ public class N_Queens {
   private static void placeQueenRec(int n, char[][] board, int col){
     if(col == n){
       printBoard(n, board);
-      System.out.println("-------------");
       return;
     }
 

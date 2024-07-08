@@ -8,7 +8,7 @@ import java.util.List;
  * link: https://workat.tech/problem-solving/practice/subsets-ii
  * 
  */
-public class Subsets2_without_duplicate {
+public class A_11_Subsets2_without_duplicate {
   public static void main(String[] args) {
     int arr[] = {1, 3, 3};
     List<List<Integer>> powerSet = subsets(arr);
@@ -38,14 +38,14 @@ public class Subsets2_without_duplicate {
 			return;
 		}
 		
-		//including current element, (including duplicate also)
+		//including current element
 		subset.add(A[index]);
 		subsetsRecursive(A, subsetList, subset, index+1);
 		subset.remove(subset.size()-1);
 			
 	  //excluding current element, (exlude all occurence of current element): THIS IS IMPORTANT
     int nextIndex = index+1;
-		while(nextIndex < A.length && A[nextIndex] == A[index]){
+		while(nextIndex < A.length && A[index] == A[nextIndex]){
 			nextIndex++;
 		}
 		subsetsRecursive(A, subsetList, subset, nextIndex);

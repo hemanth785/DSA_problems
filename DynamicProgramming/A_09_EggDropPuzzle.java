@@ -5,7 +5,7 @@ import java.util.Arrays;
  * link: https://workat.tech/problem-solving/practice/egg-dropping
  */
 
-public class EggDropPuzzle {
+public class A_09_EggDropPuzzle {
 
   /*
    * Approach: DP with memoization
@@ -43,16 +43,16 @@ public class EggDropPuzzle {
     // calculate number of attempts required, if we start from each floor
     for (int i=1; i<=n; i++) {
       // if egg broken, check for the floors below current floor, with one less egg
-      int breakCase = eggDropMemo(k - 1, i - 1, dp);
+      int breakCase = 1+eggDropMemo(k - 1, i - 1, dp);
 
-      // if egg broken, check for the floors above current floor, with same eggs(k)
-      int notBreakCase = eggDropMemo(k, n - i, dp);
+      // if egg is not broken, check for the floors above current floor, with same eggs(k)
+      int notBreakCase = 1+eggDropMemo(k, n - i, dp);
 
       // consider the scenario with max attempts required
-      int maxTimeOfBothScenario = 1 + Math.max(breakCase, notBreakCase);
+      int maxAttemptsAmongBothScenario = Math.max(breakCase, notBreakCase);
 
       // find min attempts among all the floors as starting point
-      minAttempts = Math.min(minAttempts, maxTimeOfBothScenario);
+      minAttempts = Math.min(minAttempts, maxAttemptsAmongBothScenario);
     }
     dp[n][k] = minAttempts;
     return minAttempts;

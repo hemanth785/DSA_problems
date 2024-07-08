@@ -17,7 +17,7 @@ import java.util.Arrays;
  *   56  43  52   3  22  13  24   5
  *   51  46  55  44  53   4  21  12
  */
-public class Knights_tour {
+public class A_06_Knights_tour {
   public static void main(String[] args) {
     int n = 3; //it can be given in terms of n X m also
     printKnightMoves(n);

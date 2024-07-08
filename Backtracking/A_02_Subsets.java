@@ -6,7 +6,7 @@ import java.util.List;
 /*
  * link: https://workat.tech/problem-solving/practice/subsets
  */
-public class Subsets {
+public class A_02_Subsets {
   List<List<Integer>> subsets(int[] A) {
 	  List<List<Integer>> subsetList = new ArrayList<>();
 		List<Integer> subset = new ArrayList<>();

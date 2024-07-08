@@ -3,7 +3,7 @@ package DynamicProgramming;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
-public class Fibonacci {
+public class A_03_Fibonacci {
   public int fib(int n) {
     int dp[] = new int[n + 1];
     Arrays.fill(dp, -1);

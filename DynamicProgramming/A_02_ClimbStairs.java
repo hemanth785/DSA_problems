@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Link: https://leetcode.com/problems/climbing-stairs/description/
  */
 
-public class ClimbStairs {
+public class A_02_ClimbStairs {
   public int climbStairs(int n) {
     int dp[] = new int[n + 1];
     Arrays.fill(dp, -1);

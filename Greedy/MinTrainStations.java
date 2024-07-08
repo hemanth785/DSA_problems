@@ -58,7 +58,7 @@ public class MinTrainStations {
 
   /*
    * Solution 2: Simple to understand
-   * - Create a class for each event tmiestamp class{timestamp, everntType}, then sort it based on timestamp.
+   * - Create a class for each event timestamp class{timestamp, everntType}, then sort it based on timestamp.
    * - loop through each event, if arrival is there increase count, if diparture is there decrease count
    */
   private static int ARRIVAL = 0;

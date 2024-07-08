@@ -9,7 +9,7 @@ import java.util.Map;
  * https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
  */
 
-public class LetterCombinationOfPhoneNumber {
+public class A_15_LetterCombinationOfPhoneNumber {
   static void fillAlphsForNumbers(Map<Character, String> numAlphaMap){
 		numAlphaMap.put('2', "abc");
 		numAlphaMap.put('3', "def");

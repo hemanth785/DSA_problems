@@ -8,7 +8,7 @@ package Backtracking;
  * 3. Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
  * The '.' character indicates empty cells.
  */
-public class Sudoku {
+public class A_09_Sudoku {
   public static void main(String[] args) {
     char board[][] = {
       {'5','3','.','.','7','.','.','.','.'},
@@ -113,7 +113,7 @@ public class Sudoku {
 
 
   /*
-   * Approach 2: start with 0,0 cell and keep on filling empty cells, which backtracking
+   * Approach 2: start with 0,0 cell and keep on filling empty cells, with backtracking
    * 
    * -----MY CODE-----
    */

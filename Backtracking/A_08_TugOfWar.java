@@ -3,7 +3,7 @@ package Backtracking;
 /*
  * Link: https://workat.tech/problem-solving/practice/tug-of-war
  */
-public class TugOfWar {
+public class A_08_TugOfWar {
 
   /*
    * Approach: 

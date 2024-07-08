@@ -5,7 +5,7 @@ import java.util.Arrays;
 /*
  * Link: https://leetcode.com/problems/house-robber/
  */
-public class HouseRobber {
+public class A_06_HouseRobber {
   public int rob(int[] nums) {
     int n = nums.length;
     int dp[] = new int[n + 1];
@@ -15,7 +15,7 @@ public class HouseRobber {
 
   /*
    * approach: 
-   * - starting from 1st index, if we are includeing the current house then next house to rob in 1+2, i.e 3
+   * - starting from 1st index, if we are includeing the current house then next house to rob in i+2, i.e 3
    * - if we are excluding current house, then we can rob adhascent house to current house
    */
   public int robHouseDp(int[] nums, int n, int[] dp, int curIndex) {
@@ -28,6 +28,7 @@ public class HouseRobber {
 
       // this is skipping current house, and starting from next house
       int profit2 = robHouseDp(nums, n, dp, curIndex + 1);
+
       dp[curIndex] = Math.max(profit1, profit2);
     }
     return dp[curIndex];
