@@ -5,6 +5,12 @@
  /*
   * Approach: Problem is sovled suing Prim's algorithm, only diff is while creating the adj list form the points given
   */
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.PriorityQueue;
+
 public class MinCostToConnectPoints {
   public int minCostConnectPoints(int[][] points) {
     int V = points.length;

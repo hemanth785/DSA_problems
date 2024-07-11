@@ -1,7 +1,5 @@
 package String;
 
-import java.util.Arrays;
-
 /*
  * For a given input string, return a index at which pattern string exists
  * Input: 
@@ -66,7 +64,7 @@ public class PatternMatch {
    * Time: O(n), Space: O(n)
    */
   public static int patternMatchUsingRabinKarp(String input, String pattern){
-    //first calculate the hash value for pattern and initial substtrin of pattern lenghth
+    //first calculate the hash value for pattern and initial substtring of pattern lenghth
     int n = input.length();
     int k = pattern.length();
 
@@ -83,8 +81,8 @@ public class PatternMatch {
     while(r < n){
       System.out.println("pHash: "+pHash+", sHash: "+sHash);
       if(pHash == sHash){
-        //if hash is matched, we need to verify by comparing charectors
-        //Hash value might not be 100% unique all the times
+        // if hash is matched, we need to verify by comparing charactors
+        // Hash value might not be 100% unique all the times
         int i = l;
         int j = 0;
 

@@ -65,7 +65,7 @@ public class RecursiveDigitSum {
    * 
    * for num = 123, k=3
    * Step 1: find superDigit for 123, i.e '6'
-   * Step 2: repeat the sum of 123 k times, instead of 123 itself, then it becomes '666'
+   * Step 2: repeat the superdigit of 123 k times, instead of 123 itself, then it becomes '666'
    * Step 3: find superDigit for '666', until it becomes single digit. i.e. 9
    */
   public static int superDigit3(String num, int k) {

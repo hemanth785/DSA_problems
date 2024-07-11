@@ -41,14 +41,14 @@ public class PrimsAlgorithm {
       Pair pair = queue.remove();
       int node = pair.node;
 
-      //here we are marking node as visited only when processing it, 
+      // here we are marking node as visited only when processing it, 
       // since we want all the possible weights for the nodes to be present in PriorityQueue, but process only min wieghted
       visited[node] = 1;
 
       for (Pair neighbour : adj.get(node)) {
         int v = neighbour.node;
 
-        //here we only check if cur edge cost is less than prev cost, no need to check of sum of cost + neighbour cost
+        //check if cur edge cost is less than prev cost assigned to neighbour node
         if (visited[v] != 1 && neighbour.cost < distance[v]) {
           distance[v] = neighbour.cost;
           queue.add(new Pair(v, distance[v]));

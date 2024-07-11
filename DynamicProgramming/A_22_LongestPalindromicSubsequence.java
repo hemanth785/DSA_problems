@@ -1,22 +1,15 @@
-package String;
+package DynamicProgramming;
 
 import java.util.Arrays;
 
-public class InsertMinToMakePalindrome {
+public class A_22_LongestPalindromicSubsequence {
   /*
-   * Approach:
-   * - we can identify the min chars to insert to make a string palindrome is that
-   * - First identify the Longest palindromic sub sequence(Refere DP section: LongestPalindromicSubsequence.java)
-   * - Once we find the length of longest palindromic in the string, then we have to insert the remaining chars in respective positions
-   * 
-   * i.e: minInsertionToMakePalidrome = (size of given string) - (longest palinromic subsequence length)
+   * Aproach: Trick
+   * - What we can do is that, we can create a new string by reversing the given string
+   * - Then find the longest commen subsequence between those strings 
+   *      (because palindrome is the string if read it from front or back it'll be same)
+   * - This longest commen subsequence is actually the longest palindromic string
    */
-  int minCharactersToBeInserted(String s) {
-    int lcs = longestPalindromeSubseq(s);
-
-    return s.length() - lcs;
-  }
-
   public int longestPalindromeSubseq(String s) {
     // create another string which is reversal of given string
     String reversedStr = reverseString(s);
@@ -39,8 +32,8 @@ public class InsertMinToMakePalindrome {
         dp[n][m] = 1 + longestCommenSubsequence(t1, t2, n - 1, m - 1, dp);
       } else {
         dp[n][m] = Math.max(
-          longestCommenSubsequence(t1, t2, n - 1, m, dp),
-          longestCommenSubsequence(t1, t2, n, m - 1, dp));
+            longestCommenSubsequence(t1, t2, n - 1, m, dp),
+            longestCommenSubsequence(t1, t2, n, m - 1, dp));
       }
     }
     return dp[n][m];

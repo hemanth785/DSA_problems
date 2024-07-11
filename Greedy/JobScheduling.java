@@ -1,9 +1,9 @@
 package Greedy;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /*
  * link: https://practice.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1
@@ -34,6 +34,8 @@ public class JobScheduling {
     /*
      * Start processing jobs with higher profit and try to schedule these jobs on the deadline date of job
      * - if that slot is not available, keep check if any previous slot is available for current job.
+     * 
+     * NOte: check 2nd solution for simpler code (But logic is same)
      */
     for(Job job: arr){
       int deadlineSlot = job.deadline;

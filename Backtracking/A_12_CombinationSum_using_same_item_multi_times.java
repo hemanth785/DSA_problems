@@ -18,38 +18,23 @@ public class A_12_CombinationSum_using_same_item_multi_times {
 		return resList;
 	}
 	
-	public void combinationSumRec(int[] candidates, int sumReq, int index, List<List<Integer>> result, List<Integer> tempRes){
-    if(sumReq == 0){        
-        result.add(new ArrayList<>(tempRes));
+	public void combinationSumRec(int candidates[], int target, int index, List<List<Integer>> result, List<Integer> tempRes) {
+    if (target == 0) {
+      result.add(new ArrayList<>(tempRes));
       return;
     }
-    if(sumReq < 0){
-      return;
-    }
-    if(index >= candidates.length){
+    if (target < 0 || index >= candidates.length) {
       return;
     }
 
-    int count = 0;
     int curItem = candidates[index];
 
-    //for the given reqSum, check all these options - sumReq = 8, index = 0, arr = [2, 4]
-    // 1st iteration - [], recCall(nextItem)
-    // 1st iteration - [2], recCall(nextItem)
-    // 2nd iteration - [2, 2], recCall(nextItem)
-    // 2nd iteration - [2, 2, 2], recCall(nextItem)
-    //...... 
-    for(int amount=sumReq; amount>=0; amount = amount-curItem){
-      combinationSumRec(candidates, amount, index+1, result, tempRes);
+    // include same item multiple times, because we are not updating index here
+    tempRes.add(curItem);
+    combinationSumRec(candidates, target - curItem, index, result, tempRes);
+    tempRes.remove(tempRes.size() - 1);
 
-      tempRes.add(curItem); //we are adding the item to temp array after the 1st call, because we want to consider the case 'Not considering the current element'
-
-      count++;
-    }
-
-    //remove the frequency of item added, so that we can check for another combination
-    for(int i=0; i<count; i++){
-      tempRes.remove(tempRes.size()-1);
-    }
+    // include current coin
+    combinationSumRec(candidates, target, index + 1, result, tempRes);
   }
 }

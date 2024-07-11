@@ -44,18 +44,20 @@ public class MaxHeapImplementation {
       System.out.println(Arrays.toString(heap));
     }
 
-    public void poll(){ //this will remove top element
+    public int poll(){ //this will remove top element
       if(heapSize == 0){
-        return;
+        return -1;
       }
 
+      int pollItem = heap[0];
       heap[0] = heap[heapSize-1];
       heap[heapSize-1] = 0;
       heapSize--;
 
       topDownHeapify();
-
       System.out.println("del: "+Arrays.toString(heap) +" - "+ heapSize);
+
+      return pollItem;
     }
 
     public int peek(){
@@ -110,6 +112,7 @@ public class MaxHeapImplementation {
         if(heap[index] > heap[maxChildIndex]){ //if current node val is already greater than both of childs, break the loop
           return;
         }
+        
         swap(heap, index, maxChildIndex);
         index = maxChildIndex;
       }
