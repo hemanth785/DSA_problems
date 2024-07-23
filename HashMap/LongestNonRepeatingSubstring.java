@@ -1,47 +1,49 @@
 package HashMap;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 /*
  * link: https://workat.tech/problem-solving/practice/longest-substring-without-repeat
  */
 public class LongestNonRepeatingSubstring {
   
+
   /*
-   * Approach: Using map to store previous occurance of charector
-   * Steps:
-   *   - Initialize an array to store the previous occurrence of all the characters.
-   *   - Initialize the start point to 0.
-   *   - Traverse the array fromi = 0 to i = n and for every character check the index of the previous occurrence of the character. If the previous occurrence is greater than or equal to start, then update start to previous occurrence + 1.
-   *   - Store the current index of the character in the array as the previous occurrence.
-   *   - Update the maximum value of longest substring to max(longest substring, i - start + 1).
+   * Approach: 2 pointer and Set
+   * - Initialize 2 pointers, initially both starting at 0
+   *    - one for marking start of substring, and another for end
+   * - Start adding the chatacters to HashSet (if char is not present in the Set), while incrementing b pointer. 
+   *    - while adding also calculate the size of string (this can be get by size of Hashset - since set contains only distinct items)
+   * - if Set already contains char at pointer b, then keep on removing the char at pointer a, until this duplicate charactors remove
+   * - Run this loop until b pointer reaches end of string
    * 
    * Time: O(n), space: O(n)
    */
-  int longestSubstringWithoutRepeat(String s) {
-		if(s.equals("")){
-            return 0;
+
+  public int lengthOfLongestSubstring(String s) {
+    if (s.equals("")) {
+      return 0;
     }
     int n = s.length();
-    Map<Character, Integer> map = new HashMap<>();
-		
-		int startIndex = 0;
-		int maxLen = 0;
-		for(int i=0; i<n; i++){
-			char ch = s.charAt(i);
-			if(map.containsKey(ch)){
-				maxLen = Math.max(i-startIndex, maxLen);
-				
-				if(map.get(ch)+1 > startIndex){
-					startIndex = map.get(ch)+1;
-				}
-			}
-            
-			map.put(ch, i);
-		}
-    maxLen = Math.max(n-startIndex, maxLen);
 
-		return maxLen == 0 ? n-startIndex : maxLen;
-	}
+    Set<Character> set = new HashSet<>();
+    int a = 0;
+    int b = 0;
+    int maxLen = 0;
+
+    while (b < s.length()) {
+      char ch = s.charAt(b);
+      if (!set.contains(ch)) {
+        set.add(ch);
+        maxLen = Math.max(set.size(), maxLen);
+        b++;
+      } else {
+        set.remove(s.charAt(a));
+        a++;
+      }
+    }
+
+    return maxLen;
+  }
 }

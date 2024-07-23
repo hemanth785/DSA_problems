@@ -12,6 +12,13 @@
 
 * In TREE_MAP keys will be in SORTED order
 
+* Easy way to Traverse HashMap (Java 8 and above)
+    1. custom_map.forEach((key, value) -> System.out.println(key+" - "+value));
+                    OR
+    2. t_map.forEach((key, value) -> {
+            System.out.println(key+" - "+value);
+        });
+
 * Convert CHAR to INTEGER
    int num = 'char'-'0';
 

@@ -1,0 +1,47 @@
+1. when we apply bitwise (&) of any number with 1, the number ramains same
+    010010101
+  & 000000000
+  ------------
+    010010101
+
+2. Any number XOR with 1 gives, compliment of that number
+3. Any number XOR with 0 gives, the same number
+
+   a^1 = ~a (~ => complement)
+   a^0 = a
+   a^a = 0
+
+4. complimant of number (~)
+   ~101101 => 010010
+
+5. Whenever we left shift number by 1, the value of number is doubled
+   10 << 1 ==> 1010 << 1 ==> 10100 i.e 20
+
+   So:  10 << 1 ==> 10 * 2^1
+   to generalize: a << b ==> a * 2^b   | this is a usefull thing to remember
+
+6. whenever we right shift number by 1, the value of number is halved
+   20 >> 1 ==> 10100 >> 1 ==> 1010 i.e. 10
+
+   So: 20 >> 1 ==> 10 / 2^1
+   to generalize: a >> b ==> a / 2^b   | this is a usefull thing to remember
+
+
+7. 1's and 2's complement (Shortcut: https://www.youtube.com/watch?v=pXIfEklKsOQ)
+
+8. How many numbers(max value possible) are there in n bit binary number
+   i.e 2^(n) numbers.
+
+   For 8 bit number, there are 2^(8) ==> 256
+
+9. Find the range of number or Maximum value of number represented using n bit binary
+   Ans: For n bit binay, the maximum value of number that can be represented is: 2^(n-1), 
+        because Most significant bit(left one) is used to denote sign(positive(0) or negative(1)) of number
+
+        i.e: for 8 bit number, max value that can be represented is 2^(8-1) => 128 (actually its 127, because 0 is included)
+
+  Formula to find the range of numbers for n bit binary is: n^(n-1) - 2^(n-1) -1  
+    for 8 bit: -(2^7) to (2^7)-1 ==> -128 to 127
+   
+
+
