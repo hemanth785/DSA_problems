@@ -5,7 +5,7 @@ import java.util.Arrays;
 /*
  * Link: https://leetcode.com/problems/product-of-array-except-self/
  */
-public class A05ProductExceptSelf {
+public class A05_ProductExceptSelf {
   /*
    * Appraoch: Using prefix and suffix prod arrays
    * - Create prefix prod array, which hold prod of elements upto previous element

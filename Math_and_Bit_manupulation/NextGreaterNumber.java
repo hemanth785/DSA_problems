@@ -5,6 +5,7 @@ import java.util.List;
 
 /*
  * Link: https://leetcode.com/problems/next-permutation/
+ * hackerrank link: https://www.hackerrank.com/contests/logicmojo-assignment-june-batch/challenges/next-greater-element-with-same-set-of-digits/problem
  * 
  * Approach:
  * - From the right side of array, check any element arr[i] such that, arr[i] > arr[i-1]
@@ -58,4 +59,56 @@ public class NextGreaterNumber {
 			swap(arr, i, j);
 		}
 	}
+
+
+  // HACKER RANK
+  public static int nge_func(int n) {
+    // added digits to list, reverse order
+    List<Integer> digits = new ArrayList<>();
+    while (n > 0) {
+      int digit = n % 10;
+      digits.add(digit);
+      n = n / 10;
+    }
+
+    int prevDigit = digits.get(0);
+    boolean isFound = false;
+    for (int i = 1; i < digits.size(); i++) {
+      int curDigit = digits.get(i);
+
+      // check at any digit from least significant position, next least signigicatn is greater.
+      if (curDigit < prevDigit) {
+        isFound = true;
+        digits.set(i, prevDigit);
+        digits.set(i - 1, curDigit);
+
+        // to make the adjusted number is smallest possible, push all the higher digits to last of number
+        i = i - 1;
+        while (i >= 1) {
+          if (digits.get(i) > digits.get(i - 1)) {
+            int temp = digits.get(i);
+            digits.set(i, digits.get(i - 1));
+            digits.set(i - 1, temp);
+          }
+          i--;
+        }
+        break;
+      }
+      prevDigit = curDigit;
+    }
+
+    if (isFound) {
+      int greaterNumber = 0;
+      for (int i = digits.size() - 1; i >= 0; i--) {
+        if (greaterNumber > Integer.MAX_VALUE / 10 || (greaterNumber == Integer.MAX_VALUE / 10 && digits.get(i) > 7)) {
+          return -1;
+        }
+        greaterNumber = (greaterNumber * 10) + digits.get(i);
+      }
+      return greaterNumber;
+    } else {
+      return -1;
+    }
+
+  }
 }
