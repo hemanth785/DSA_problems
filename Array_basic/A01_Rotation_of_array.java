@@ -7,7 +7,7 @@
 
 import java.util.Arrays;
 
-public class Rotation_of_array {
+public class A01_Rotation_of_array {
   public static void main(String[] args) {
     int arr[] = {4,7,2,1,9,10,12};
     int d = 3;

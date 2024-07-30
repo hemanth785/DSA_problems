@@ -5,15 +5,18 @@ import java.util.Vector;
 
  /*
   * Link: https://leetcode.com/problems/expression-add-operators/
-  * 
   */
+
+/*
+ * Solution link: https://www.youtube.com/watch?v=WcgjFrZceU8
+ */
 
 public class A_12_PossibleExpressionsHR {
   public static void main(String[] args) {
     String str = "3258";  //2+8, 5*2, 5+3+2
     int target = 10;
     Vector<String> expressions = new Vector<String>();
-    getPossibleExpressions(str, target, expressions, 0, "", 0, "");
+    getPossibleExpressions(str, target);
 
     System.out.println(expressions);
   }
@@ -34,37 +37,39 @@ public class A_12_PossibleExpressionsHR {
    *  - then we need to calculate product for new number(6) with prev prod(8), that becomes = 48
    *  - then add or subract the disconnected expression(expression where + or i exists) value = 48+3 = 51
    */
-  List<String> result = new ArrayList<>();
-    public List<String> addOperators(String num, int target) {
-        operatorRec(num, target, 0, "", 0l, 0l);
-        return result;
+
+  static List<String> result = new ArrayList<>();
+
+  public static List<String> getPossibleExpressions(String num, int target) {
+    operatorRec(num, target, 0, "", 0l, 0l);
+    return result;
+  }
+
+  public static void operatorRec(String num, int target, int index, String curExp, Long resSoFar, long prevNum) {
+    if (index == num.length()) {
+      if (resSoFar == target) {
+        result.add(curExp);
+      }
+      return;
     }
 
-    public void operatorRec(String num, int target, int index, String curExp, Long resSoFar, long prevNum){
-        if(index == num.length()){
-            if(resSoFar == target){
-                result.add(curExp);
-            }
-            return;
-        }
+    for (int k = index; k < num.length(); k++) {
+      // check for leading(left side) zero number at any stage: ex 05, 0556 etc
+      // just 0 is accepted and 40 and 406 are accepted
+      if (k != index && num.charAt(index) == '0') {
+        break;
+      }
 
-        for(int k=index; k<num.length(); k++){
-            // check for leading(left side) zero number at any stage: ex 05, 0556 etc
-            // just 0 is accepted and 40 and 406 are accepted
-            if(k!=index && num.charAt(index) == '0'){
-                break;
-            }
-
-            Long curNum = Long.parseLong(num.substring(index, k+1));
-            //if this is the first number in expression: ex: 1, 12, 123
-            if(index == 0){
-                operatorRec(num, target, k+1, curNum+"", curNum, curNum);
-            } else {
-                //Here check for possible 3 operations(+, -, *)
-                operatorRec(num, target, k+1, curExp+"+"+curNum, resSoFar+curNum, curNum);
-                operatorRec(num, target, k+1, curExp+"-"+curNum, resSoFar-curNum, -curNum);
-                operatorRec(num, target, k+1, curExp+"*"+curNum, (resSoFar-prevNum)+ (prevNum*curNum), prevNum*curNum);
-            }
-        }
+      Long curNum = Long.parseLong(num.substring(index, k + 1));
+      // if this is the first number in expression: ex: 1, 12, 123
+      if (index == 0) {
+        operatorRec(num, target, k + 1, curNum + "", curNum, curNum);
+      } else {
+        // Here check for possible 3 operations(+, -, *)
+        operatorRec(num, target, k + 1, curExp + "+" + curNum, resSoFar + curNum, curNum);
+        operatorRec(num, target, k + 1, curExp + "-" + curNum, resSoFar - curNum, -curNum);
+        operatorRec(num, target, k + 1, curExp + "*" + curNum, (resSoFar - prevNum) + (prevNum * curNum), prevNum * curNum);
+      }
     }
+  }
 }

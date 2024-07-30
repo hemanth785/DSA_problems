@@ -35,15 +35,15 @@ public class A_20_View_TopView {
 
     getTopViewDFS(root, 0, 0);
 
-    for (Map.Entry colEntry : treeMap.entrySet()) {
-      Map<Integer, List<Integer>> col = (Map<Integer, List<Integer>>) colEntry.getValue();
-      for (Map.Entry rowEntry : col.entrySet()) {
-        List<Integer> row = (List<Integer>) rowEntry.getValue();
-        topView.add(row.get(0));
+    treeMap.forEach((col, rowEntries)->{
+      //Note: For iterating row inside the cols, we are using Map.Entry instead of forEach because - forEach does not support the break; statement
+      for(Map.Entry<Integer, List<Integer>> rowEntry: rowEntries.entrySet()){
+        List<Integer> rowItems = (List<Integer>) rowEntry.getValue();
+        topView.add(rowItems.get(0));
 
-        break; //break is to print top data
-      }
-    }
+        break;
+      } 
+    });
 
     int topViewArr[] = new int[topView.size()];
     for (int i = 0; i < topView.size(); i++) {
@@ -54,6 +54,7 @@ public class A_20_View_TopView {
   }
 
   static void getTopViewDFS(TreeNode root, int col, int row) {
+    //We have to put col first for top and bottom view
     if (!treeMap.containsKey(col)) {
       treeMap.put(col, new TreeMap<>());
     }

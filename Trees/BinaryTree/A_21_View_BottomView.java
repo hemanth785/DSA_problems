@@ -38,15 +38,15 @@ public class A_21_View_BottomView {
 
     getTopViewDFS(root, 0, 0);
 
-    for (Map.Entry colEntry : treeMap.entrySet()) {
-      Map<Integer, List<Integer>> col = (Map<Integer, List<Integer>>) colEntry.getValue();
-      for (Map.Entry rowEntry : col.entrySet()) {
-        List<Integer> row = (List<Integer>) rowEntry.getValue();
-        //1* - get the last element from list (if muliple elements are there in the same col and row)
-        topView.add(row.get(row.size() - 1));
+    treeMap.forEach((col, rowEntries)->{
+      //Note: For iterating row inside the cols, we are using Map.Entry instead of forEach because - forEach does not support the break; statement
+      for(Map.Entry<Integer, List<Integer>> rowEntry: rowEntries.entrySet()){
+        List<Integer> rowItems = (List<Integer>) rowEntry.getValue();
+        topView.add(rowItems.get(rowItems.size() - 1)); //1* - get the last element from list (if muliple elements are there in the same col and row)
+
         break;
       }
-    }
+    });
 
     int topViewArr[] = new int[topView.size()];
     for (int i = 0; i < topView.size(); i++) {

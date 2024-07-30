@@ -1,4 +1,4 @@
-package Maths;
+package Math_and_Bit_manupulation;
 
 /*
  * https://www.hackerrank.com/contests/logicmojo-assignment-june-batch/challenges/recursive-digit-sum/problem
