@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class LinkedList { 
+public class A00_LinkedList { 
   public static class Node {
     int data;
     Node next = null;

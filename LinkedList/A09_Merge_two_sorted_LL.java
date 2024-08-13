@@ -1,9 +1,12 @@
 package LinkedList;
 /*
- * Given Pointer/Reference to the head of the linked list, the task is to Sort the given linked list using Merge Sort.
- * Note: If the length of linked list is odd, then the extra node should go in the first list while splitting.
+ * You are given the heads of two sorted linked lists list1 and list2.
+ * Merge the two lists into one sorted list. 
+ * The list should be made by splicing together the nodes of the first two lists.
+ * 
+ * https://leetcode.com/problems/merge-two-sorted-lists/submissions/
  */
-public class Merge_sort {
+public class A09_Merge_two_sorted_LL {
   public static class Node {
     int data;
     Node next = null;
@@ -48,22 +51,31 @@ public class Merge_sort {
 
   //-----------
   public static void main(String args[]){
-    int arr[] = {3, 7, 5, 9, 2, 6, 7, 2, 4};
+    int arr1[] = {2, 5, 8, 9};
+    int arr2[] = {1, 3, 4, 7};
 
-    Node head = createList(arr);
-    head = mergeSort(head);
+    Node head1 = createList(arr1);
+    Node head2 = createList(arr2);
+
+    Node head = mergeSortedLL(head1, head2);
+
     printList(head);
   }
 
-  /*Solution */
-  public static Node findMiddleRevamp(Node head) {
-    Node slow=head, fast=head;
-    while(fast.next!=null && fast.next.next!=null) {
-        slow = slow.next;
-        fast = fast.next.next;
-    }
-    return slow;
-  }
+  /*
+   * Solution 1: Extra space required
+   * - iterate over both the lists simultaniously, 
+   * - While comparing the each node, insert the node in ascending order new LL
+   * 
+   * Time: O(n), Space: O(n)
+   */
+
+
+  /*
+   * Solution 2: Update the links in the same given LL
+   * 
+   * Time: O(n), Space: O(1)
+   */
 
   public static Node mergeSortedLL(Node head1, Node head2){
     if(head1 == null){
@@ -73,17 +85,18 @@ public class Merge_sort {
         return head1;
     }
 
-    Node head = null;  
+    Node mergedHead = null;  
 
+    //identify the head node of merged list
     if(head1.data < head2.data){
-      head = head1;
+      mergedHead = head1;
       head1 = head1.next;
     } else {
-      head = head2;
+      mergedHead = head2;
       head2 = head2.next;
     }
 
-    Node cur = head;
+    Node cur = mergedHead;
     while(head1 != null && head2 != null){
       if(head1.data < head2.data){
         cur.next = head1;
@@ -102,25 +115,6 @@ public class Merge_sort {
       cur.next = head2;
     }
 
-    return head;
-  }
-
-/*
- * Time: O(n*Log(n)), space: O(n), size fo the recursive stack
- */
-  public static Node mergeSort(Node head){
-    if(head == null || head.next == null){
-      return head;
-    }
-    Node mid = findMiddleRevamp(head);
-    Node midNext = mid.next;
-    mid.next = null;
-
-    Node firstHalf = mergeSort(head);
-    Node secondHalf = mergeSort(midNext);
-
-    head = mergeSortedLL(firstHalf, secondHalf);
-
-    return head;
+    return mergedHead;
   }
 }

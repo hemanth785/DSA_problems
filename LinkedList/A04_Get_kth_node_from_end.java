@@ -11,7 +11,7 @@ package LinkedList;
  * https://practice.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1
  */
 
-public class Get_kth_node_from_end {
+public class A04_Get_kth_node_from_end {
   public static class Node {
     int data;
     Node next = null;

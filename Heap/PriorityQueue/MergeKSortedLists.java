@@ -38,31 +38,38 @@ public class MergeKSortedLists {
    * 
    * Time: O(N log k), this is definitely better solution than above
    */
-  public ListNode mergeKLists(ListNode[] lists) {
-    PriorityQueue<ListNode> pq = new PriorityQueue<>(Comparator.comparingInt(p -> p.data));
-
-    for (ListNode head : lists) {
-      if (head != null) {
-        pq.add(head);
+  
+   public ListNode mergeKLists(ListNode[] lists) {
+    int n = lists.length;
+    PriorityQueue<ListNode> pq = new PriorityQueue<>((a, b) -> a.data - b.data);
+    for (int i = 0; i < n; i++) {
+      if (lists[i] != null) {
+        pq.add(lists[i]);
       }
     }
 
-    ListNode root = null;
-    ListNode cur = null;
+    //edge case
+    if (pq.size() == 0) {
+      return null;
+    }
+
+    //populate the result head node
+    ListNode resHead = pq.poll();
+    if (resHead.next != null) {
+      pq.add(resHead.next);
+    }
+
+    ListNode cur = resHead;
     while (!pq.isEmpty()) {
-      ListNode top = pq.remove();
-      if (root == null) {
-        root = top;
-        cur = top;
-      } else {
-        cur.next = top;
-        cur = cur.next;
+      ListNode node = pq.poll();
+      if (node.next != null) {
+        pq.add(node.next);
       }
-      if (top.next != null) {
-        pq.add(top.next);
-      }
+
+      cur.next = node;
+      cur = cur.next;
     }
 
-    return root;
+    return resHead;
   }
 }

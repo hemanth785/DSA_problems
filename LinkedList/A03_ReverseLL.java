@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class ReverseLL {
+public class A03_ReverseLL {
   public static class Node {
     int data;
     Node next = null;

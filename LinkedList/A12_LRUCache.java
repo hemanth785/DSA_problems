@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.util.HashMap;
 
-public class LRUCache {
+public class A12_LRUCache {
   static class Node {
     int key;
     int val;
@@ -24,7 +24,7 @@ public class LRUCache {
   Node tail;
   HashMap<Integer, Node> cashMap = new HashMap<>();
 
-  public LRUCache(int capacity) {
+  public A12_LRUCache(int capacity) {
     this.capacity = capacity;
   }
 

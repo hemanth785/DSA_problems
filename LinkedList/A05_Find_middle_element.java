@@ -6,7 +6,7 @@ package LinkedList;
  * 
  * https://leetcode.com/problems/middle-of-the-linked-list/description/
  */
-public class Find_middle_element {
+public class A05_Find_middle_element {
   public static class Node {
     int data;
     Node next = null;

@@ -1,6 +1,9 @@
 package LinkedList;
 
-public class PartitionLL {
+/*
+ * Link: https://leetcode.com/problems/partition-list/description/
+ */
+public class A13_PartitionLL {
   public static class ListNode {
     int data;
     ListNode next = null;
@@ -19,6 +22,15 @@ public class PartitionLL {
     }
   }
 
+  /*
+   * Approach: Using 2 linked lists
+   * - Create head of 2 linked list (and also 2 tail pointers) -initially all of then is null
+   * - For each node of original list, check its value against key
+   *      - if it is less than the key, then assign it to head1 and tail1(if its empty) or add it as the next pointer of tail1 and move tail pointer
+   *      - else assign it to head2 and tail2 (if its empty) or add it as the next pointer of tail2 and move tail pointer
+   * - At the end, if tail1 is not empty, then point thhis tail1 to head2 node
+   * - If tail2.next is not empty, make next pointer of tail2 is null
+   */
   public ListNode partition(ListNode head, int key) {
     if (head == null) {
       return head;

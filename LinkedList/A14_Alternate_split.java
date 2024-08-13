@@ -6,7 +6,7 @@ package LinkedList;
  * 
  * https://practice.geeksforgeeks.org/problems/split-singly-linked-list-alternatingly/1
  */
-public class Alternate_split {
+public class A14_Alternate_split {
   public static class Node {
     int data;
     Node next = null;
@@ -94,6 +94,5 @@ public class Alternate_split {
 
     printList(head1);
     printList(head2);
-
   }
 }

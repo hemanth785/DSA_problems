@@ -2,7 +2,7 @@ package LinkedList;
 
 import Heap.PriorityQueue.MergeKSortedLists.ListNode;
 
-public class ReverseKGroupNodes {
+public class A16_ReverseKGroupNodes {
   public static class Node {
     int data;
     Node next = null;
@@ -76,9 +76,9 @@ public class ReverseKGroupNodes {
     return prev;
   }
 
-  public static Node reverseInKGroupsRecursive(Node head, int k){
-    if(head == null || head.next == null|| k == 1){
-            return head;
+  public static Node reverseInKGroupsRecursive(Node head, int k) {
+    if (head == null || head.next == null || k == 1) {
+      return head;
     }
     Node cur = head;
     Node finalHead = null;
@@ -88,29 +88,30 @@ public class ReverseKGroupNodes {
     Node prevTail = null;
     Node nextHead = null;
 
-    while(cur != null && cur.next != null){
+    while (cur != null && cur.next != null) {
       cur = cur.next;
       index++;
 
-      if(index == k){
-        nextHead = cur.next;  //to keep track of next k group head
-        cur.next = null;    //to help reverse the k nodes
+      if (index == k) {
+        nextHead = cur.next; // to keep track of next k group head
+        cur.next = null; // to help reverse the k nodes
         Node reversedHead = reverseList(curHead);
 
-        if(finalHead == null){
-            finalHead = reversedHead;
+        if (finalHead == null) {
+          finalHead = reversedHead;
         }
 
-        if(prevTail != null){
-            prevTail.next = reversedHead;
+        if (prevTail != null) {
+          prevTail.next = reversedHead;
         }
+        
         prevTail = curHead;
         curHead = nextHead;
         cur = nextHead;
-        index=1;
+        index = 1;
       }
     }
-    if(prevTail != null){
+    if (prevTail != null) {
       prevTail.next = curHead;
     }
 

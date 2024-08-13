@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Link: https://leetcode.com/problems/copy-list-with-random-pointer/description/
  */
 
-public class ClondeRandomPointerLL {
+public class CloneRandomPointerLL {
   public static class Node {
     int data;
     Node next = null;
@@ -114,47 +114,46 @@ public class ClondeRandomPointerLL {
    */
 
   public Node copyRandomList2(Node head) {
-    if(head == null){
-        return head;
+    if (head == null) {
+      return head;
     }
-    
-    //Step1: clone a node and insert between original nodes
+
+    // Step1: clone a node and insert between original nodes
     Node cur = head;
-    while(cur != null){
-        Node clonedCur = new Node(cur.data);
+    while (cur != null) {
+      Node clonedCur = new Node(cur.data);
 
-        Node nxt = cur.next;
-        cur.next = clonedCur;
-        if(nxt != null){
-          clonedCur.next = nxt;
-        }
+      Node nxt = cur.next;
+      cur.next = clonedCur;
+      if (nxt != null) {
+        clonedCur.next = nxt;
+      }
 
-        cur = nxt;
+      cur = nxt;
     }
-    
 
-    //Step2: add the random pointer to cloned Nodes
+    // Step2: add the random pointer to cloned Nodes
     cur = head;
-    while(cur != null){
-        Node clone = cur.next;
-        if(cur.random != null){
-            clone.random = cur.random.next;
-        }
-        cur = clone.next;
+    while (cur != null) {
+      Node clone = cur.next;
+      if (cur.random != null) {
+        clone.random = cur.random.next;
+      }
+      cur = clone.next;
     }
 
-    //Step3: seperate the original node and cloned nodes
+    // Step3: seperate the original node and cloned nodes
     Node clonedHead = head.next;
     cur = head;
-    while(cur != null){
-        Node clone = cur.next;
-        cur.next = clone.next;
-        if(cur.next != null){
-            clone.next = cur.next.next;
-        }
-        cur = cur.next;
+    while (cur != null) {
+      Node clone = cur.next;
+      cur.next = clone.next;
+      if (cur.next != null) {
+        clone.next = cur.next.next;
+      }
+      cur = cur.next;
     }
-    
+
     return clonedHead;
   }
 

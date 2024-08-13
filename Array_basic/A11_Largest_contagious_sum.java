@@ -9,7 +9,7 @@ public class A11_Largest_contagious_sum {
    * Explanation: The subarray [4,-1,2,1] has the largest sum 6.
    */
   public static void main(String[] args) {
-    int arr[] = {-2,1,-3,4,-1,2,1,-5,4};
+    int arr[] = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
     System.out.println(largestContiguousSum(arr));
   }
 
@@ -21,16 +21,16 @@ public class A11_Largest_contagious_sum {
    * - At the end you should have maxSubarray sum
    */
 
-  static int largestContiguousSum(int[] arr){
-		int maxSum = Integer.MIN_VALUE;
-		int sum = 0;
-		for(int i=0; i<arr.length; i++){
-			sum = sum + arr[i];
-			maxSum = Math.max(maxSum, sum);
-			if(sum <= 0){
-				sum = 0;
-			}
-		}
-		return maxSum;
-	}
+  static int largestContiguousSum(int[] arr) {
+    int maxSum = Integer.MIN_VALUE;
+    int sum = 0;
+    for (int i = 0; i < arr.length; i++) {
+      sum = sum + arr[i];
+      maxSum = Math.max(maxSum, sum);
+      if (sum <= 0) {
+        sum = 0;
+      }
+    }
+    return maxSum;
+  }
 }

@@ -3,7 +3,7 @@ package LinkedList;
  * Given head, the head of a linked list, determine if the linked list has a cycle in it.
  * https://leetcode.com/problems/linked-list-cycle/
  */
-public class Detect_loop {
+public class A06_Detect_loop {
   public static class Node {
     int data;
     Node next = null;

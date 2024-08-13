@@ -33,54 +33,47 @@ public class HistogramProblem {
    *
    * Time: O(n), Space: O(n)
    */
-  public static int histo(List<Integer> arr) {
-    int n = arr.size();
-    int leftContMax[] = new int[n];
-    int rightContMax[] = new int[n];
+  
+  public int largestRectangleArea(int[] heights) {
+    int n = heights.length;
+    int leftCont[] = new int[n];
+    int rightCont[] = new int[n];
 
     Stack<Integer> stack = new Stack<>();
+    int prevCount = 0;
 
-    //create left contagious max array
-    for (int i = 0; i < n; i++) {
-      int count = 1;
-      if (stack.isEmpty()) {
-        stack.push(i);
-        leftContMax[i] = count;
+    //create left contagious array
+    for(int i=0; i<n; i++){
+      int curHeight = heights[i];
+      int res = 1;
 
-        continue;
+      while(!stack.isEmpty() && curHeight <= heights[stack.peek()]){
+        res += leftCont[stack.pop()];
       }
-
-      while (!stack.isEmpty() && arr.get(i) <= arr.get(stack.peek())) {
-        count += leftContMax[stack.pop()];
-      }
+      
       stack.push(i);
-      leftContMax[i] = count;
+      leftCont[i] = res;
     }
 
-    //create right contagious max array
     stack = new Stack<>();
-    for (int i = n - 1; i >= 0; i--) {
-      int count = 1;
-      if (stack.isEmpty()) {
-        stack.push(i);
-        rightContMax[i] = count;
-        continue;
+    //create right contagious array
+    for(int i=n-1; i>=0; i--){
+      int curHeight = heights[i];
+      int res = 1;
+
+      while(!stack.isEmpty() && curHeight <= heights[stack.peek()]){
+          res += rightCont[stack.pop()];
       }
 
-      while (!stack.isEmpty() && arr.get(i) < arr.get(stack.peek())) {
-        count += rightContMax[stack.pop()];
-      }
       stack.push(i);
-      rightContMax[i] = count;
+      rightCont[i] = res;
     }
 
     int maxArea = 0;
-    for (int i = 0; i < n; i++) {
-      int area = arr.get(i) * (leftContMax[i] + rightContMax[i] - 1); //subtracting 1 because, in both left and right cases, we included the ith count (that become duplicate ith histogram count)
-
-      if (area > maxArea) {
-        maxArea = area;
-      }
+    //calculate area for each histogram
+    for(int i=0; i<n; i++){
+      int area = (leftCont[i] + rightCont[i] - 1) * heights[i];
+      maxArea = Math.max(maxArea, area);
     }
 
     return maxArea;

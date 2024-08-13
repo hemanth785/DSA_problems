@@ -11,7 +11,7 @@ import java.util.Arrays;
  * Input: 3 -> 6 -> 2-> 9
  * Output: [6, 9, 9, 0]
  */
-public class Next_greater_node_on_right {
+public class A10_Next_greater_node_on_right {
   public static class Node {
     int data;
     Node next = null;

@@ -2,7 +2,7 @@ package LinkedList;
 /*
  * Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
  */
-public class Check_for_palindrome {
+public class A11_Check_for_palindrome {
   public static class Node {
     int data;
     Node next = null;
@@ -86,14 +86,14 @@ public class Check_for_palindrome {
   /*
    * Solution 1: Bruteforce
    * - Reverse the given linkedlist and store it seperately
-   * - Interate both the linkedlist simultaniously, while comparing each element
+   * - Iterate both the linkedlist simultaniously, while comparing each element
    * - at each iteration, if value of node1 and node2 is same, then it is a palindrome
    */
 
   /*
    * Solution 2: using stack
-   * - iterate through the list to find out the length of the list(wheter to find its even length or odd length)
-   * - traverse till mid of the list, while pusing each node value to the stack
+   * - iterate through the list to find out the length of the list (wheter to find its even length or odd length)
+   * - traverse till mid of the list, while pushing each node value to the stack
    * - Note: If length of list is odd, dont add middle element, otherwise add it
    * - While traversing from middle of list to end, pop each element and compare it with node value at that iteration
    */

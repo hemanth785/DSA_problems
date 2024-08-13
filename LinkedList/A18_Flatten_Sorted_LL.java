@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class Flatten_Sorted_LL {
+public class A18_Flatten_Sorted_LL {
   public static class Node {
     int data;
     Node next = null;
@@ -77,17 +77,17 @@ public class Flatten_Sorted_LL {
         return head1;
     }
 
-    Node head = null;  
+    Node mergedHead = null;  
 
     if(head1.data < head2.data){
-      head = head1;
+      mergedHead = head1;
       head1 = head1.bottom;
     } else {
-      head = head2;
+      mergedHead = head2;
       head2 = head2.bottom;
     }
 
-    Node cur = head;
+    Node cur = mergedHead;
     while(head1 != null && head2 != null){
       if(head1.data < head2.data){
         cur.bottom = head1;
@@ -106,6 +106,6 @@ public class Flatten_Sorted_LL {
       cur.bottom = head2;
     }
 
-    return head;
+    return mergedHead;
   }
 }

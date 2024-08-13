@@ -6,7 +6,7 @@ package LinkedList;
  * 
  * https://leetcode.com/problems/add-two-numbers/
  */
-public class Add_two_numbers {
+public class A02_Add_two_numbers {
   public static class Node {
     int data;
     Node next = null;

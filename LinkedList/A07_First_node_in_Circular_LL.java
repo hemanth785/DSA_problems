@@ -4,7 +4,7 @@ package LinkedList;
  * Given a singly linked list of N nodes. Find the first node of the loop if the linked list has a loop. 
  * If a loop is present return the node data of the first node of the loop else return -1.
  */
-public class First_node_in_Circular_LL {
+public class A07_First_node_in_Circular_LL {
   public static class Node {
     int data;
     Node next = null;

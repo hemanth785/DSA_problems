@@ -5,7 +5,7 @@ package LinkedList;
  * 
  * https://leetcode.com/problems/intersection-of-two-linked-lists/
  */
-public class Intersect_point_in_LL {
+public class A08_Intersect_point_in_LL {
   public static class Node {
     int data;
     Node next = null;
