@@ -1,9 +1,6 @@
 package Heap.PriorityQueue;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
-
-
 
 public class MergeKSortedLists {
   public static class ListNode {
