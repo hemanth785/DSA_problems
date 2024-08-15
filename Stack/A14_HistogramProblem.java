@@ -13,7 +13,7 @@ import java.util.Stack;
  *
  * Link: https://leetcode.com/problems/largest-rectangle-in-histogram/description/
  */
-public class HistogramProblem {
+public class A14_HistogramProblem {
 
   /*
    * Solution 1: Bruteforce

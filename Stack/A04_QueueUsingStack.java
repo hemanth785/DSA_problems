@@ -4,7 +4,7 @@ package Stack;
  * 
  * Implement the Queue using 2 stacks
  */
-public class QueueUsingStack {
+public class A04_QueueUsingStack {
   /*
    * Solution 1: (Using 2 stacks) By making enQueue operation costly
    * 

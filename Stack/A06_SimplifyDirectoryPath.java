@@ -7,7 +7,7 @@ import java.util.Stack;
  * Link: https://workat.tech/problem-solving/practice/simplify-directory-path
  * Given a string 'path' representing the absolute path of a file in a Unix-like file system, simplify it.
  */
-public class SimplifyDirectoryPath {
+public class A06_SimplifyDirectoryPath {
 
   /*
    * Approach: Using stack: link: https://www.youtube.com/watch?v=kVylYewnQ_k
@@ -24,8 +24,6 @@ public class SimplifyDirectoryPath {
     Stack<String> stack = new Stack<>();
 
     String[] tokens = path.split("/+");
-
-    System.out.println(Arrays.toString(tokens));
 
     for (int i = 0; i < tokens.length; i++) {
       String token = tokens[i].trim();

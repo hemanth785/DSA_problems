@@ -6,7 +6,7 @@ import java.util.Stack;
  * Output: abc/-ad/e-*
  */
 
-public class PrefixToPostfix6 {
+public class A22_PrefixToPostfix6 {
   public static void main(String args[]){
     String prefix = "*-a/bc-/akl";
     String postfix = prefixToPostfix(prefix);
@@ -26,8 +26,8 @@ public class PrefixToPostfix6 {
   } 
 
   /*
-   * Do the Postfix to infix conversion, but while forming expression, 
-   * put the operator to the right of the operands, instead of center
+   * Do the Postfix to infix conversion from the end of given expression, 
+   * but while forming expression, put the operator to the right of the operands, instead of center
    * 
    * ab+ (postfix)==> a+b (infix) ==> +ab(prefix) 
    */

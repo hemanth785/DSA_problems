@@ -7,7 +7,7 @@ import java.util.Stack;
  * Output : Prefix :  *-A/BC-/ADL
  */
 
-public class PostfixToPrefix5 {
+public class A21_PostfixToPrefix5 {
   public static void main(String args[]){
     String postfix = "abc/-ad/e-*";
     String infix = postfixToPrefix(postfix);

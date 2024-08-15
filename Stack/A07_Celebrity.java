@@ -7,7 +7,7 @@ import java.util.Stack;
 /*
  * https://practice.geeksforgeeks.org/problems/the-celebrity-problem/1
  */
-public class Celebrity {
+public class A07_Celebrity {
   
   /* Approach1: Bruteforce: 
    * Run a loop where ‘i’ ranges from 0 to ‘N’ - 1, and check whether the person having id ‘i’ is a celebrity or not. This can be done as follow -:

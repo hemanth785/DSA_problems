@@ -10,7 +10,7 @@ package Stack;
 
 import java.util.Stack;
 
-public class PrefixToInfix4 {
+public class A18_PrefixToInfix4 {
   public static void main(String args[]){
     String prefix = "*-a/bc-/akl";
     String infix = prefixToInfix(prefix);

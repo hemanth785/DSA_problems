@@ -10,7 +10,7 @@ package Stack;
 
 import java.util.Stack;
 
-public class PostfixToInfix3 {
+public class A17_PostfixToInfix3 {
   public static void main(String args[]){
     // String postfix = "abc/-ad/e-*";
     String postfix = "ab*c+";

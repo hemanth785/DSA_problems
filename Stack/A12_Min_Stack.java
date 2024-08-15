@@ -6,7 +6,7 @@
 
 import java.util.Stack;
 
-public class Min_Stack {
+public class A12_Min_Stack {
 
   /*
    * Approach 1: Using 2 stacks

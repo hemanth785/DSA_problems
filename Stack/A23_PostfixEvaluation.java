@@ -5,7 +5,7 @@ import java.util.Stack;
  * Input: 2 3 1 * + 9 -
  * Output: -4
  */
-public class PostfixEvaluation {
+public class A23_PostfixEvaluation {
   public static void main(String args[]){
     String postfix = "231*+9-";
     int res = evaluatePostfix(postfix);

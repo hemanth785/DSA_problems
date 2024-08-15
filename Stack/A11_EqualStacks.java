@@ -6,7 +6,7 @@ import java.util.Stack;
 /*
  * https://www.hackerrank.com/challenges/equal-stacks/problem
  */
-public class EqualStacks {
+public class A11_EqualStacks {
 
   public static void main(String args[]) {
     int arr[] = { 5, 6, 7, 8, 9, 10, 1, 2, 3 };

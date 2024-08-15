@@ -9,7 +9,7 @@ import java.util.Stack;
  * Input: (A – B/C) * (A/K-L)
  * Output: *-A/BC-/AKL
  */
-public class InfixToPrefix2 {
+public class A16_InfixToPrefix2 {
   public static void main(String args[]){
     String infix = "(a-b/c)*(a/k-l)";
     // String infix = "(a-b/c)";

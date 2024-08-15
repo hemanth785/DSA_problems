@@ -2,7 +2,7 @@ package Stack;
 
 import java.util.Stack;  
 
-public class BalancedBrackets {
+public class A03_BalancedBrackets {
   public static void main(String args[]){
     String brackets = "[{()}]";
     System.out.println(isBalanced(brackets));

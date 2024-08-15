@@ -1,6 +1,6 @@
 package Stack;
 
-public class StackFromLL {
+public class A02_StackFromLL {
   public static class Node {
     int data;
     Node next = null;

@@ -1,7 +1,7 @@
 package Stack;
 import java.util.Stack;  
 
-public class InfixToPostfix1 {
+public class A15_InfixToPostfix1 {
   public static void main(String args[]){
     // String infix = "(a+b)*(c+d)";
     String infix = "(a-b/c)*(a/k-l)";
@@ -52,7 +52,7 @@ public class InfixToPostfix1 {
         }
 
       } else {
-        //if higher priority operator is there in the top of stack, 
+        //first check if higher priority operator is there in the top of stack, 
         //  remove and add it to postfix, before addint current operator
         while(!stack.isEmpty() && getRank(stack.peek()) >= getRank(item)){
           postFix += stack.pop();

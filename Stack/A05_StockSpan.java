@@ -7,7 +7,7 @@ import java.util.Arrays;
  * https://leetcode.com/problems/online-stock-span/description/
  */
 
-public class StockSpan {
+public class A05_StockSpan {
 
   public static void main(String args[]){
     int stockPrices[] = new int[]{100, 80, 60, 70, 60, 75, 85}; 
@@ -19,18 +19,17 @@ public class StockSpan {
    * 
    * Storing each price of stack and comparing it with top element of existing stack
    */
-  public static int[] calculateSpan(int price[], int n)
-  {
+  public static int[] calculateSpan(int price[], int n) {
     int[] stockSpan = new int[n];
     Stack<Integer> stack = new Stack<Integer>();
-    
-    for(int i=0; i<n; i++){
-        int span = 1;
-        while(!stack.empty() && price[stack.peek()] <= price[i]){
-            span += stockSpan[stack.pop()];
-        }
-        stockSpan[i] = span;
-        stack.push(i);
+
+    for (int i = 0; i < n; i++) {
+      int span = 1;
+      while (!stack.empty() && price[stack.peek()] <= price[i]) {
+        span += stockSpan[stack.pop()];
+      }
+      stockSpan[i] = span;
+      stack.push(i);
     }
     return stockSpan;
   }

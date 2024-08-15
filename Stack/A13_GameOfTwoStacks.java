@@ -7,7 +7,7 @@ import java.util.List;
 /*
  * https://www.hackerrank.com/challenges/game-of-two-stacks/problem
  */
-public class GameOfTwoStacks {
+public class A13_GameOfTwoStacks {
 
   public static void main(String[] args) {
     Integer arr1[] = {1, 2, 3, 4, 5};
@@ -31,7 +31,7 @@ public class GameOfTwoStacks {
     int score1 = 0;
     int score2 = 0;
 
-    //find score for 1st stack
+    // find score for 1st stack
     for (int i = 0; i < a.size(); i++) {
       int item = a.get(i);
       if ((sum + item) > maxSum) {
@@ -42,7 +42,7 @@ public class GameOfTwoStacks {
     }
     int maxScore = score1;
 
-    //find score while including the 2nd stack
+    // find score while including the 2nd stack
     for (int i = 0; i < b.size(); i++) {
       int item = b.get(i);
       sum += item;

@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Link: https://leetcode.com/problems/copy-list-with-random-pointer/description/
  */
 
-public class CloneRandomPointerLL {
+public class A17_CloneRandomPointerLL {
   public static class Node {
     int data;
     Node next = null;
