@@ -3,7 +3,7 @@ package Trees.BinarySearchTree;
 import java.util.*;
 
 /*
- * Link: https://workat.tech/problem-solving/practice/binary-search-tree-iterator
+ * Link: https://leetcode.com/problems/binary-search-tree-iterator/
  */
 public class A_09_BST_Iterator {
   public static class Node {
@@ -44,25 +44,21 @@ public class A_09_BST_Iterator {
   }
 
   public Node next() {
-    Node curNode = stack.pop();
-
-    Node rightNode = curNode.right;
-    if (rightNode != null) {
-      stack.push(rightNode);
-
-      // insert all the left nodes of next right node
-      Node rightLeftnode = rightNode.left;
-      insertLeftNodes(rightLeftnode);
+    if (stack.isEmpty()) {
+      return null;
     }
 
-    return curNode;
-  }
+    Node root = stack.pop();
 
-  // helper function
-  private void insertLeftNodes(Node cur) {
+    //insert all the left subtree nodes of right child of current node
+    Node cur = root.right;
     while (cur != null) {
       stack.push(cur);
       cur = cur.left;
     }
+
+    return root;
   }
+
+
 }

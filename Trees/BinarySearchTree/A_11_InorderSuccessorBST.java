@@ -75,8 +75,8 @@ public class A_11_InorderSuccessorBST {
    *       thats why we put the condition after the leftSubtree recursion call
    */
 
-   boolean pFound;
 
+  boolean pFound;
   Node findSuccessor2(Node root, Node p) {
     pFound = false;
     return findSuccessor2(root, p);
@@ -103,6 +103,37 @@ public class A_11_InorderSuccessorBST {
     }
 
     return findSuccessorDFS(root.right, p);
+  }
+
+
+  // Much simpler code
+  Node successor = null;
+  boolean keyfound = false;
+
+  public Node inorderSuccessor(Node root, Node x) {
+    successor = null;
+    keyfound = false;
+
+    inorderSuccessorRec(root, x);
+
+    return successor;
+  }
+
+  public void inorderSuccessorRec(Node root, Node x) {
+    if (root == null) {
+      return;
+    }
+
+    inorderSuccessorRec(root.left, x);
+
+    if (root == x) {
+      keyfound = true;
+    } else if (keyfound && successor == null) {
+      successor = root;
+      return;
+    }
+
+    inorderSuccessorRec(root.right, x);
   }
 
 }

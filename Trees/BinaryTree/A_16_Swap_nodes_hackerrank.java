@@ -44,7 +44,7 @@ public class A_16_Swap_nodes_hackerrank {
     TreeNode root = new TreeNode(1);
     queue.add(root);
     
-    //create a tree from indexes
+    //create a tree from indexes, using BFS
     for(List<Integer> nodes: indexes){
       Integer leftNodeVal = nodes.get(0);
       Integer rightNodeVal = nodes.get(1);

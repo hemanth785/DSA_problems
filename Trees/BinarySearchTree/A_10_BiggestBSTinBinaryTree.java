@@ -21,63 +21,6 @@ public class A_10_BiggestBSTinBinaryTree {
     }
   }
 
-  /*
-   * My Code:
-   */
-
-  static class NodeInfo {
-    int min = 0, max = 0, size = 0;
-
-    public NodeInfo(int size, int min, int max) {
-      this.size = size;
-      this.min = min;
-      this.max = max;
-    }
-  }
-
-  // Return the size of the largest sub-tree which is also a BST
-  static int largestBst1(Node root) {
-    NodeInfo rootNode = largestBstRec(root);
-
-    return rootNode.size;
-  }
-
-  static NodeInfo largestBstRec1(Node root) {
-    if (root == null) {
-      return null;
-    }
-
-    NodeInfo left = largestBstRec1(root.left);
-    NodeInfo right = largestBstRec1(root.right);
-
-    // do the processing
-    if (left == null && right == null) {
-      return new NodeInfo(1, root.data, root.data);
-    }
-    if (right == null) {
-      if (root.data > left.max) {
-        return new NodeInfo(left.size + 1, left.min, root.data);
-      } else {
-        return new NodeInfo(left.size, Integer.MIN_VALUE, Integer.MAX_VALUE);
-      }
-    }
-    if (left == null) {
-      if (root.data < right.min) {
-        return new NodeInfo(right.size + 1, root.data, right.max);
-      } else {
-        return new NodeInfo(right.size, Integer.MIN_VALUE, Integer.MAX_VALUE);
-      }
-    }
-
-    // if current node satisfies BST condition
-    if (left.max < root.data && right.min > root.data) {
-      return new NodeInfo(1 + left.size + right.size, left.min, right.max);
-    }
-
-    return new NodeInfo(Math.max(left.size, right.size), Integer.MIN_VALUE, Integer.MAX_VALUE);
-  }
-
-
 
   /*
    * -----Simple code-----
@@ -86,31 +29,45 @@ public class A_10_BiggestBSTinBinaryTree {
    * Note: If a BST subtree exists it should exists from leaf node below. otherwise it cannot exists in the middle or top of the tree
    */
 
-  // Return the size of the largest sub-tree which is also a BST
-  static int largestBst2(Node root) {
-    NodeInfo rootNode = largestBstRec2(root);
+  static class TreeInfo {
+    int size, min, max;
 
-    return rootNode.size;
+    TreeInfo(int size, int min, int max) {
+      this.size = size;
+      this.min = min;
+      this.max = max;
+    }
   }
 
-  static NodeInfo largestBstRec2(Node root) {
+  // Return the size of the largest sub-tree which is also a BST
+  static int largestBst(Node root) {
+    TreeInfo treeInfo = largestBstRec(root);
+    return treeInfo.size;
+  }
+
+  static TreeInfo largestBstRec(Node root) {
     if (root == null) {
-      return new NodeInfo(0, Integer.MAX_VALUE, Integer.MIN_VALUE);
+      return new TreeInfo(0, Integer.MAX_VALUE, Integer.MIN_VALUE);
     }
 
-    NodeInfo left = largestBstRec2(root.left);
-    NodeInfo right = largestBstRec2(root.right);
+    TreeInfo leftTree = largestBstRec(root.left);
+    TreeInfo rightTree = largestBstRec(root.right);
 
     // if current node satisfies BST condition
     // left.max -> indicates the max value among all the nodes from left sub tree
     // right.max -> indicates the min value among all the nodes from right sub tree
-    if (root.data > left.max  && root.data < right.min) {
-      return new NodeInfo(
-          1 + left.size + right.size,
-          Math.min(left.min, root.data),
-          Math.max(right.max, root.data));
+    if (root.data > leftTree.max && root.data < rightTree.min) {
+      return new TreeInfo(
+          1 + leftTree.size + rightTree.size,
+          Math.min(root.data, leftTree.min),
+          Math.max(root.data, rightTree.max));
+    } else {
+      // return [-intMax, intMax], so that parent cannot validate to valid BST (i.e
+      // these values dont let the condition at line 107 to satisfy)
+      return new TreeInfo(
+          Math.max(leftTree.size, rightTree.size),
+          Integer.MIN_VALUE,
+          Integer.MAX_VALUE);
     }
-    // if not return [-intMax, intMax], so that parent cannot validate to valid BST (i.e these values dont let the condition at line 107 to satisfy)
-    return new NodeInfo(Math.max(left.size, right.size), Integer.MIN_VALUE, Integer.MAX_VALUE);
   }
 }

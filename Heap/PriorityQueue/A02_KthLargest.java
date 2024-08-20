@@ -2,7 +2,7 @@ package Heap.PriorityQueue;
 
 import java.util.PriorityQueue;
 
-public class KthLargest {
+public class A02_KthLargest {
   public static void main(String[] args) {
     int arr[] = new int[]{6,5,3,2,8,10,9};
     int k = 3;

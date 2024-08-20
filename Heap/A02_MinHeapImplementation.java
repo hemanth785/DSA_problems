@@ -10,7 +10,7 @@ import java.util.Arrays;
  * - Implement function, when new element is provided, this should be stored in minHeap fashion
  * - Implement function, when an element is deleted, rearrangement of data should happen in minHeap fashion
  */
-public class MinHeapImplementation {
+public class A02_MinHeapImplementation {
   public static class MinHeap {
     int[] heap;
     int heapSize;

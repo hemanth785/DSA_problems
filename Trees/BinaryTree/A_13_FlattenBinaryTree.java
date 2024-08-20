@@ -120,6 +120,7 @@ public class A_13_FlattenBinaryTree {
     while(root != null){
       //check for each right node, any left sub tree exists
       if(root.left != null){
+        
         //if Yes, assign the right subtree to temp and assign left sub tree as right child of cur node
         TreeNode cur = root;
         TreeNode tempRight = cur.right;

@@ -1,7 +1,11 @@
 package Heap;
 import java.util.Arrays;
 
-public class MaxHeapImplementation {
+public class A01_MaxHeapImplementation {
+
+/*
+ * Note: HERE WE NEED TO THINK INTERMS OF ARRAY, BECAUSE THAT WILL BE EASIER
+ */
 
   /*
    * Heap: 
@@ -11,7 +15,7 @@ public class MaxHeapImplementation {
    *    c. Peek (returns top element- it'll be a max value for maxHeap)
    * 
    * 2. Heap is binary tree data structure which will be having complete binary tree
-   *     (only last level nodes cal be empty and we should start filling elements from left side of tree)
+   *     (only last level nodes can be empty and we should start filling elements from left side of tree)
    * 3. In Max heap, data will be stored in way that parent node value should be greater than both of its child nodes (reverse for minHeap)
    * 4. If we have to insert the new node(value), we have to insert it at the bottom left empty place
    *    - Then we to perform the "Bottom Up" heapify operation, to move this element to correct position (we need to compare with parent node:  parent(i) = (i-1)/2 )

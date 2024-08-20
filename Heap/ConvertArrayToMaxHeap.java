@@ -10,9 +10,12 @@ public class ConvertArrayToMaxHeap {
 
     System.out.println("before heapify: "+ Arrays.toString(arr));
 
-    //We to apply topDownHeapify opertaion starting from parent nodes of last but one level till root node (because last level nodes will not have any child nodes)
-    // Here we are running complete heapify operation nearly n/2 times
-    // Time: N * log(N) 
+    /*
+     * We have to apply topDownHeapify opertaion starting "from parent nodes of last but one level till root node" (because last level nodes will not have any child nodes)
+     * Here we are running complete heapify operation nearly n/2 times
+     * - Time: N * log(N) 
+     */
+   
     for(int i=heapSize/2; i>=0; i--){
       topDownHeapify(arr, heapSize, i);
     }

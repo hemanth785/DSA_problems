@@ -26,17 +26,17 @@ import java.util.PriorityQueue;
    *  - if cur_item is less than top item in left PQ, insert it into left pq
    *  - if cur_item is greater than top item in left PQ, insert it into right pq
    *  - then balance the queue, if size diff is greater than 1
-   * -
+   * 
    * - while fetching the median element,
    *  - if right is emtpy, return left top element
    *  - if one queue has more element, requrn top element from that queue
    *  - if both queue is having same items, return average of top item of the both the queue
    */
-public class MedianFinder {
+public class A08_MedianFinder {
   PriorityQueue<Integer> right;
   PriorityQueue<Integer> left;
 
-  public MedianFinder() {
+  public A08_MedianFinder() {
     right = new PriorityQueue<>(); // min pq
     left = new PriorityQueue<>(Comparator.reverseOrder()); // max pq
   }

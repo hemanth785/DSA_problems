@@ -5,11 +5,11 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class MaxPQUsingHeap {
+public class A01_ {
 	List<Integer> heap;
   int heapSize = 0;
 
-  MaxPQUsingHeap() {
+  A01_() {
     heap = new ArrayList<>();
   }
 
@@ -75,11 +75,9 @@ public class MaxPQUsingHeap {
   }
 
   private void swap(int i, int j) {
-
     int temp = heap.get(i);
     heap.add(i, heap.get(j));
     heap.add(j, temp);
   }
-
   
 }

@@ -3,11 +3,11 @@ package String;
 import java.util.Stack;
 
 /*
- * Reverese a order of words in string
+ * Reverse a order of words in string
  * Input: "this is a DSA course";
  * Output: "course DSA a is this";
  */
-public class A_01_RevereseWordsInString {
+public class A_01_ReverseWordsInString {
   public static void main(String args[]){
     String input = "this is a DSA course";
     // String output = reverseUsingStack(input);

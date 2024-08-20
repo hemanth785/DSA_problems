@@ -1,6 +1,6 @@
 package LinkedList;
 
-import Heap.PriorityQueue.MergeKSortedLists.ListNode;
+import Heap.PriorityQueue.A05_MergeKSortedLinkedLists.ListNode;
 
 public class A16_ReverseKGroupNodes {
   public static class Node {

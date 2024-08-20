@@ -3,7 +3,10 @@ package String;
 import java.util.HashMap;
 import java.util.Map;
 
-public class A_04_IsomorphicStrings {
+/*
+ * Link: https://leetcode.com/problems/isomorphic-strings/
+ */
+public class A_02_IsomorphicStrings {
   public static void main(String[] args) {
     String s = "paper";
     String t = "title";

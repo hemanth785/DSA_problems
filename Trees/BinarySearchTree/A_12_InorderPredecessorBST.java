@@ -41,10 +41,10 @@ public class A_12_InorderPredecessorBST {
 			return null;
 		}
 		
-		Node leftFound = findSuccessor2(root.right, p);
+		Node rightFound = findSuccessor2(root.right, p);
 		
-		if(leftFound != null){
-			return leftFound;
+		if(rightFound != null){
+			return rightFound;
 		}
 		
 		if(pFound){

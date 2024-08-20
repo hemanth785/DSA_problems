@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
  * 
  * link: https://leetcode.com/problems/top-k-frequent-elements/description/
  */
-public class TopKfrequentItems {
+public class A07_TopKfrequentItems {
   public static void main(String[] args) {
     int arr[] = new int[]{2,2,2,5,5,7,7,9,4};
     int k = 2;

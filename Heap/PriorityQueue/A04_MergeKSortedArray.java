@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 /*
  * Link: https://workat.tech/problem-solving/practice/merge-k-sorted-arrays
  */
-public class MergeKSortedArray {
+public class A04_MergeKSortedArray {
   /*
    * Approach 1: add all the elements to single array, and then sort the complete array
    * 
@@ -16,7 +16,7 @@ public class MergeKSortedArray {
 
   /*
    * Approach 2: Use the min heap (Optimized)
-   * - create a class which have fields, array, arrayIndex and value
+   * - create a class which have fields - array, arrayIndex and value
    * - Create a PQ of the above class
    * - First store all the first elements from the given k arrays in pq
    * - then pop the top element from the pq and store it in res array
@@ -36,6 +36,7 @@ public class MergeKSortedArray {
 			this.value = value;
 		}
 	}
+	
 	int[] mergeKArrays(int[][] arr) {
 		int k = arr.length;
 		

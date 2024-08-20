@@ -2,12 +2,16 @@ package String;
 
 import java.util.Arrays;
 
-public class InsertMinToMakePalindrome {
+/*
+ * Link: https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/description/
+ */
+
+public class A_05_InsertMinToMakePalindrome {
   /*
    * Approach:
-   * - we can identify the min chars to insert to make a string palindrome is that
-   * - First identify the Longest palindromic sub sequence(Refere DP section: LongestPalindromicSubsequence.java)
-   * - Once we find the length of longest palindromic in the string, then we have to insert the remaining chars in respective positions
+   * - we can identify the min chars to insert to make a string palindrome by doing following steps
+   * - First identify the Longest palindromic sub sequence (Refer DP section: LongestPalindromicSubsequence.java)
+   * - Once we find the length of longest palindromic in the string, then we have to insert the remaining chars in respective positions to make complete string as palindrome
    * 
    * i.e: minInsertionToMakePalidrome = (size of given string) - (longest palinromic subsequence length)
    */

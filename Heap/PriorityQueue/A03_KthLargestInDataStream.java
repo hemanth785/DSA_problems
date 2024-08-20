@@ -5,11 +5,11 @@ import java.util.PriorityQueue;
 /*
  * Link: https://workat.tech/problem-solving/practice/kth-largest-from-data-stream
  */
-public class KthLargestInDataStream {
+public class A03_KthLargestInDataStream {
   PriorityQueue<Integer> pq;
   int k = 0;
 
-  public KthLargestInDataStream(int k) {
+  public A03_KthLargestInDataStream(int k) {
     this.k = k;
     pq = new PriorityQueue<>();
   }

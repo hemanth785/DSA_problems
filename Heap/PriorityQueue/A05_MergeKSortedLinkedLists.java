@@ -2,7 +2,7 @@ package Heap.PriorityQueue;
 
 import java.util.PriorityQueue;
 
-public class MergeKSortedLists {
+public class A05_MergeKSortedLinkedLists {
   public static class ListNode {
     int data;
     ListNode next = null;

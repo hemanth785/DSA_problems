@@ -10,19 +10,19 @@ import java.util.PriorityQueue;
  * 
  * Solution explanation: https://www.youtube.com/watch?v=Q9006pUcypI
  */
-public class TaskScheduler {
+public class A08_TaskScheduler {
   /*
    * Approach:
    * - We know that, 
    *    - In best case min num of intervals will be  -> number of tasks itself (Here no empty idle slots required)
    *    - In worst case min num of intervals will be -> no of idle slots + number of tasks
    * 
-   * - TO find the answer, first get the count of all the diff tasks
+   * - To find the answer, first get the count of all the diff tasks
    * - Now pick the task with highest fequency
-   * - then calculate the 'idle slots' count, assuming that only this task need to be excecuted considering interval n
-   *    - i.e idle slots = [(max freq task count - 1) * n], where n is interval time, and its count -1 becauses intervals will be between the tasks.
+   * - Then calculate the 'idle slots' count, assuming that only this task need to be excecuted considering interval n
+   *    - i.e idle slots = [(max freq task count - 1) * n], where n is interval time, and its count is '-1' because intervals will be between the tasks.
    * - Now start filling this idle slots with other tasks
-   *   - Note that we can only fill (max freq task count - 1) idle slots with the single task
+   *    - Note that we can only fill (max freq task count - 1) idle slots with the single task
    * 
    * - Once we fill all tasks, check if idle count has become zero (or negative)
    *    - If yes, that means we have filled all idle slots with given task, in this case (number of tasks) is the answer
@@ -50,7 +50,7 @@ public class TaskScheduler {
     // now fill these idle slots with next lower frequency tasks
     // if at any point, idleSlots count becomes or zero or less than 0, 
     // we can return the tasks size as answer
-    while(pq.size() > 0){
+    while(!pq.isEmpty()){
       int tasksCanFillIdles = Math.min(maxFreq - 1, pq.poll());
       idleSlots = idleSlots - tasksCanFillIdles;
     }

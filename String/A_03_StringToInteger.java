@@ -1,5 +1,9 @@
 package String;
 
+/*
+ * Link: https://leetcode.com/problems/string-to-integer-atoi/description/
+ */
+
 public class A_03_StringToInteger {
   public static void main(String args[]){
     String str = "+-25";
@@ -13,6 +17,7 @@ public class A_03_StringToInteger {
       return 0;
     }
     int i = 0;
+
     // remove leading whitespaces
     while (i < n && s.charAt(i) == ' ') {
       i++;
@@ -20,17 +25,20 @@ public class A_03_StringToInteger {
 
     boolean neg = false;
     if (i < n && (s.charAt(i) == '-' || s.charAt(i) == '+')) {
-      if (s.charAt(i) == '-')
+      if (s.charAt(i) == '-'){
         neg = true;
+      }
       i++;
     }
 
     int baseAns = 0;
+    //run the loop until digits found, at any moment non-digit char found, exit loop.
     while (i < n && s.charAt(i) >= '0' && s.charAt(i) <= '9') {
       int val = s.charAt(i) - '0';
       if ((baseAns > Integer.MAX_VALUE / 10) || (baseAns == Integer.MAX_VALUE / 10 && val > 7)) {
-        if (neg)
+        if (neg){
           return Integer.MIN_VALUE;
+        }
         return Integer.MAX_VALUE;
       }
       baseAns = 10 * baseAns + val;
