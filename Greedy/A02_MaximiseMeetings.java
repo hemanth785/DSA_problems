@@ -7,7 +7,7 @@ import java.util.List;
 /*
  * link: https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1
  */
-public class MaximiseMeetings {
+public class A02_MaximiseMeetings {
   /*
    * Approach 1: give priority to short duration meetings
    * 

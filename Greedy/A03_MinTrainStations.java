@@ -5,7 +5,7 @@ import java.util.*;
 /*
  * link: https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1
  */
-public class MinTrainStations {
+public class A03_MinTrainStations {
 
   /*
    * Solution 1: Little complex code

@@ -8,7 +8,7 @@ import java.util.List;
 /*
  * link: https://practice.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1
  */
-public class JobScheduling { 
+public class A04_JobScheduling { 
   class Job {
     int id, profit, deadline;
 

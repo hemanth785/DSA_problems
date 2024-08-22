@@ -9,7 +9,7 @@ import java.util.List;
  * Link: https://practice.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1
  * 
  */
-public class FractionalKnapsack {
+public class A01_FractionalKnapsack {
   class Item {
     int value, weight;
 
