@@ -3,7 +3,7 @@ package Graph;
 import java.util.*;
 
 /*
- * Find shortest distance from src node to all other nodes, in Directed Acyclic(Non cyclic) graphs
+ * Find shortest distance from src node to all other nodes, in Directed Acyclic(Non cyclic) "weighted" graphs
  */
 
 public class A_02_ShortestPathInDAG {
@@ -47,7 +47,11 @@ public class A_02_ShortestPathInDAG {
 
         } else if (curCost + neighbour.cost < shortDistance[neighbour.node]) { //Here visited is not required, this condition will make sure we dont loop infinitely
           shortDistance[neighbour.node] = curCost + neighbour.cost;
-          queue.add(neighbour.node);
+          queue.add(neighbour.node); 
+          /* Here we are adding this neighbour node again,
+           becuase this neighbour node distance is decreased, so there might be possinilty that, 
+           neghbour's adjascent nodes distance also might decrease
+           */
         }
         
       }

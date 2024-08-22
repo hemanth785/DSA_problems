@@ -15,17 +15,17 @@ public class A_04_BellmanFord {
     int[] distance = new int[V];
     Arrays.fill(distance, 100000000);
 
-    distance[src] = 0;
+    distance[src] = 0; //This is important
 
-    //Relax all the edges N-1 times, to get the shortest distance from source to all nodes
+    //Relax all the edges N-1 times(where N is number of vertices), to get the shortest distance from source to all nodes
     //Note:  This for loop is enough for the bellman ford algorithm
-    for (int i = 0; i < V - 1; i++) {
+    for (int i = 1; i <= V - 1; i++) {
       for (List<Integer> edge : edges) {
         int u = edge.get(0);
         int v = edge.get(1);
         int dist = edge.get(2);
 
-        if (distance[u] != 100000000 && distance[u] + dist < distance[v]) {
+        if (distance[u] != 100000000 && (distance[u] + dist) < distance[v]) {
           distance[v] = distance[u] + dist;
         }
       }

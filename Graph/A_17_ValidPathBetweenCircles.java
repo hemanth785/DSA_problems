@@ -7,8 +7,6 @@ import java.util.Queue;
  * link: https://www.interviewbit.com/problems/valid-path/
  */
 public class A_17_ValidPathBetweenCircles {
-  static int adjX[] = {0, 1, 0, -1};
-	static int adjY[] = {1, 0, -1, 0};
 	
 	static int dirX[] = {0, 1, 0, -1, 1, 1, -1, -1};
 	static int dirY[] = {1, 0, -1, 0, 1, -1, 1, -1};
@@ -47,6 +45,12 @@ public class A_17_ValidPathBetweenCircles {
     System.out.println(hasValidPath(n, m, r, circles)); 
   }
 
+
+  /*
+   *  Approach: 
+   * - loop through each cell, and check if this cell is falling under any of cicle area
+   * - 
+   */
 	static boolean hasValidPath(int n, int m, int r, Circle[] circles) {
     if(n == 0 || m == 0){
       return false;

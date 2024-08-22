@@ -33,7 +33,7 @@ public class A_15_SteppingNumbers {
       return;
     }
 
-    // Note: Here we are not checking for cur<begin,
+    // Note: Here we are not checking for cur<begin for invalidating,
     // because, if number is less than begin, there is a possibility after adding another digit to it, it can become valid number
     // Therefore, if number is lesser than given range, we don't add it to list, but we continue exploring further numbers formed with it.
 

@@ -25,6 +25,16 @@ public class PrimsAlgorithm {
    * - maintain distance array to store the previous edge cost to reach cur node (Note the cost all the way from source, in case of dijstras algo)
    * - Finally sum all the distance/cost for each node, that should be the min spanning tree cost
    */
+  public static class Pair {
+    int node;
+    int cost;
+
+    Pair(int node, int cost) {
+      this.node = node;
+      this.cost = cost;
+    }
+  }
+  
   static int spanningTree(int V, int E, int edges[][]) {
 
     List<List<Pair>> adj = createAdjListFromEdges(V, edges);
@@ -77,14 +87,5 @@ public class PrimsAlgorithm {
     return adj;
   }
 
-  public static class Pair {
-
-    int node;
-    int cost;
-
-    Pair(int node, int cost) {
-      this.node = node;
-      this.cost = cost;
-    }
-  }
+  
 }

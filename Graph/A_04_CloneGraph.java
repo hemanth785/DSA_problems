@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 /*
- * Link: https://leetcode.com/problems/clone-graph/description/
+ * Link: https://www.geeksforgeeks.org/problems/clone-graph
  */
 
 class Node {

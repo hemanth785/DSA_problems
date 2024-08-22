@@ -16,8 +16,8 @@ public class A_14_WordSearchMatrix {
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < m; j++) {
         char firstChar = word.charAt(0);
-        if (firstChar == board[i][j]) {   //consider only when first char of word matches with current board charector
-          if (traverseDFS(board, n, m, i, j, word, firstChar + "", visited)) {
+        if(firstChar == board[i][j]){   //consider only when first char of word matches with current board charector
+          if(traverseDFS(board, n, m, i, j, word, firstChar + "", visited)){
             return true;
           }
         }

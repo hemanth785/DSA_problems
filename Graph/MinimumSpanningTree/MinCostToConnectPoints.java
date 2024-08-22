@@ -30,7 +30,6 @@ public class MinCostToConnectPoints {
     while (!queue.isEmpty()) {
       Pair pair = queue.remove();
       int node = pair.node;
-      int cost = pair.cost;
 
       //here we are marking node as visited only when processing it,
       // since we want all the possible weights for the nodes to be present in PriorityQueue, but process only min wieghted
@@ -56,7 +55,7 @@ public class MinCostToConnectPoints {
   }
 
   /*
-   * Only creating adj matrix has additional logic, rest all from Prim's algo code
+   * Only creating adj list has additional logic, rest all from Prim's algo code
    */
   public static List<List<Pair>> createAdjListFromEdges(int n, int[][] points) {
     List<List<Pair>> adj = new ArrayList<>();
