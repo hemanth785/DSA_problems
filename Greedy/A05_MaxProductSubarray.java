@@ -1,10 +1,10 @@
-package DynamicProgramming;
+package Greedy;
 /*
  * Link: https://workat.tech/problem-solving/practice/max-product-subarray/
  * 
  * solution link: https://www.youtube.com/watch?v=hnswaLJvr6g
  */
-public class A_18_MaxProductSubarray {
+public class A05_MaxProductSubarray {
   /*
    * Naive/Bruteforce approach - O(n^2)
    * 
