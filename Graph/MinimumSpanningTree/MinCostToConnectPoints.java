@@ -36,7 +36,6 @@ public class MinCostToConnectPoints {
       visited[node] = 1;
 
       for (Pair neighbour : adj.get(node)) {
-        int u = node;
         int v = neighbour.node;
 
         //here we only check if cur edge cost is less than prev cost, no need to check of sum of cost + neighbour cost

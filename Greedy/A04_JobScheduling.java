@@ -38,14 +38,15 @@ public class A04_JobScheduling {
      * NOte: check 2nd solution for simpler code (But logic is same)
      */
     for(Job job: arr){
-      int deadlineSlot = job.deadline;
-      while(deadlineSlot > 0 && slotsFilled[deadlineSlot] == true){
-        deadlineSlot--;
+      int jobCompletionTime = job.deadline;
+      while(jobCompletionTime > 0 && slotsFilled[jobCompletionTime] == true){
+        jobCompletionTime--;
       }
-      if(deadlineSlot > 0){ //check if its valid slot
+
+      if(jobCompletionTime > 0){ //check if its valid slot
         profit += job.profit;
         jobCount++;
-        slotsFilled[deadlineSlot] = true;
+        slotsFilled[jobCompletionTime] = true;
       }
     }
 
