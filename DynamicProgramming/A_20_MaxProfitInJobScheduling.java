@@ -2,12 +2,14 @@
  * LInk: https://leetcode.com/problems/maximum-profit-in-job-scheduling/
  */
 
+import java.util.Arrays;
+
 class A_20_MaxProfitInJobScheduling{
 	/*
 	 * Approach: Using DP (This may seem like greedy problem, but its not)
-	 * - First merge all 3 arrays in array of objects
+	 * - First merge all 3 arrays in to array of objects
 	 * - Sort the jobs based on start or end time
-	 * - Then apply include/notInclude recursive approach
+	 * - Then apply include/exlude recursive approach
 	 * - To add the DP on index, we have to add one more element in include segment
 	 *   - For include case, instead of directly calling next index function, we have to call the next eligible task (based on startTime of next task and end time of current task)
 	 */
@@ -47,17 +49,17 @@ class A_20_MaxProfitInJobScheduling{
 		if(dp[index] != -1){
 			return dp[index];
 		}
-		Job job = jobs[index];
+		Job curJob = jobs[index];
 
 		// 1. include case
 		int includeProfit = 0;
-		if(job.startTime >= timeToStartNextTask){
+		if(curJob.startTime >= timeToStartNextTask){
 			int nextIndex = index+1;
 			//find next possible task to execute
-			while(nextIndex < n && job.endTime > jobs[nextIndex].startTime){
+			while(nextIndex < n && jobs[nextIndex].startTime < curJob.endTime ){
 				nextIndex++;
 			}
-			includeProfit = job.profit + maxProfitJobsMemo(jobs, n, job.endTime, nextIndex, dp);
+			includeProfit = curJob.profit + maxProfitJobsMemo(jobs, n, curJob.endTime, nextIndex, dp);
 		}
 
 		// 2. exclude case

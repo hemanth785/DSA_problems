@@ -30,7 +30,7 @@ public class A_23_PalindromePartitioning_2 {
     if (isPalindrome(str.substring(l, n))) {
       dp[l] = 0;
     } else {
-      int minPartition = n - 1; // this is the max partitions we can get, if partitioned at each charector
+      int minPartition = n - 1; // this is the max partitions we can get, if partitioned at each charactor
 
       // check for each length of the string starting from l,
       // - if it is palindrome, increase partition count and check for palindromes in rest of string

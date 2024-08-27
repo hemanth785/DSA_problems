@@ -27,7 +27,7 @@ public class A_02_Subsets {
 		subsetsRecursive(A, subsetList, subset, index+1);
 		subset.remove(subset.size()-1);
 			
-	    //excluding current element
+	  //excluding current element
 		subsetsRecursive(A, subsetList, subset, index+1);
 	}
 }

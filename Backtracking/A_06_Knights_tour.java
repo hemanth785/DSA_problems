@@ -31,7 +31,7 @@ public class A_06_Knights_tour {
     //initialize a board to record the sequence of moves of knights, and mark all positions as not visited (-1)
     int board[][] = new int[n][n];
     for(int i=0; i<n; i++){
-      Arrays.fill(board[i], -1); //Array.fill only work for 1 dimensional array
+      Arrays.fill(board[i], -1); // Array.fill only work for 1 dimensional array
     }
     
     //define initialize position 0,0
@@ -52,9 +52,11 @@ public class A_06_Knights_tour {
       boolean isSafe = isSafe(n, nextMoveX, nextMoveY, board);
       if(isSafe){
         board[nextMoveX][nextMoveY] = moves;
+
         if(knightTraverse(n, board, xMoves, yMoves, nextMoveX, nextMoveY, moves+1)){
           return true;   //for all return true loop will not run, it'll call for next move
         }
+        
         board[nextMoveX][nextMoveY] = -1;   //for all else condition, it'll check for alternate path in given 8 possible paths
       }
     }

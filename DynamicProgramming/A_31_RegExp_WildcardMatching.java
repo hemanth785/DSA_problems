@@ -5,7 +5,14 @@ import java.util.Arrays;
 /*
  * Link: https://leetcode.com/problems/wildcard-matching/
  */
-public class A_27_RegExp_WildcardMatching {
+public class A_31_RegExp_WildcardMatching {
+  /*
+   * NOTE: In this problem, astercis (*) mactches for following
+   * - An empty char -  ""
+   * - Sequence of same chars - "aaaaa"
+   * - Sequence of different chars - "abcdc"
+   */
+  
   /*
    * Approach: 
    * - If we come across charector other than asterics, we match one charector in both string
@@ -15,7 +22,7 @@ public class A_27_RegExp_WildcardMatching {
    *        - matching empty char for that asteric
    *    -> Then we need to return true, if any one case returns true
    */
-  public boolean isMatch(String s, String p) {
+  public static  boolean isMatch(String s, String p) {
     int n = s.length();
     int m = p.length();
 
@@ -26,7 +33,7 @@ public class A_27_RegExp_WildcardMatching {
     return isMatchMemo(s, p, s.length() - 1, p.length() - 1, dp);
   }
 
-  public boolean isMatchMemo(String s, String p, int i, int j, int[][] dp) {
+  public static boolean isMatchMemo(String s, String p, int i, int j, int[][] dp) {
     // base case
     if (i < 0 && j < 0) {
       return true;
@@ -70,5 +77,9 @@ public class A_27_RegExp_WildcardMatching {
       dp[i][j] = result ? 1 : 0;
     }
     return dp[i][j] == 1;
+  }
+
+  public static void main(String[] args) {
+    System.out.println(isMatch("abc", "a*"));
   }
 }

@@ -78,12 +78,12 @@ public class A_26_DecodeWays {
 
       //consider one digit
       if(oneDigit != 0){
-        dp[i] = dp[i-1];
+        dp[i] = dp[i-1]; //if we can decode by using only one digit, then number of ways is equal to prev digit
       }
 
       //consider 2 digit
       if(twoDigit >= 10 && twoDigit <=26){
-        dp[i] = dp[i] + dp[i-2];
+        dp[i] = dp[i] + dp[i-2]; //if we can docode it using 2 digit also, we need to add one more possibility by considering (i-2) digit possibilities
       }
 			
 		}

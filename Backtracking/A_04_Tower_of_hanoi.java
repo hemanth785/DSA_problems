@@ -52,7 +52,7 @@ public class A_04_Tower_of_hanoi {
     }
 
     //to move n th disk to 'Dest'
-    printTowerOfHanoiSequence(n-1, source, spare, destination); //first we need to move '(n-1)th' disks from 'Src' to 'Spare'
+    printTowerOfHanoiSequence(n-1, source, spare, destination); //first we need to move '(n-1)th' disk from 'Src' to 'Spare'
     System.out.println("Move disk " +n+ " from " +source+ " to "+ destination);  //move nth(Bottom) disk from 'Src' to 'Destination'
     printTowerOfHanoiSequence(n-1, spare, destination, source); //then move (n-1)th disk again from 'Spare' to 'Destination'
 

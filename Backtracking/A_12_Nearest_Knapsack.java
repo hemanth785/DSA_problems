@@ -14,7 +14,6 @@ public class A_12_Nearest_Knapsack {
   }
 
   static int coinChangeMemo(List<Integer> arr, int target, int sumSoFar, int index, int prevSum) {
-    // System.out.println("sum so far: "+sumSoFar+", prevSum: "+prevSum);
     
     // valid combinations
     if (sumSoFar == target) {

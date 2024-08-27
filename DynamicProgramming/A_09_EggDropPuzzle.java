@@ -58,8 +58,64 @@ public class A_09_EggDropPuzzle {
     return minAttempts;
   }
 
+
+
   /*
    * Approach we can also solve it using, DP with Binary search
    * Link here: https://leetcode.com/problems/super-egg-drop/solutions/4445104/c-java-solution-explained-using-dp-binary-search/
    */
+
+   public int superEggDrop(int k, int n) {
+    int dp[][] = new int[n + 1][k + 1];
+    for (int i = 0; i <= n; i++) {
+      Arrays.fill(dp[i], -1);
+    }
+    return eggDropMemo(k, n, dp);
+  }
+
+  int eggDropMemoBinary(int k, int n, int dp[][]) {
+    // base case - if one egg is there, answer will be number of floors
+    if(k == 1) {
+      return n;
+    }
+    // base case - if floor is one, then there is only one possibility
+    if(n == 1) {
+      return 1;
+    }
+
+    if(dp[n][k] != -1) {
+      return dp[n][k];
+    }
+
+    if(n < 1) {
+      return 0;
+    }
+
+    int minAttempts = Integer.MAX_VALUE;
+
+    int start = 0;
+    int end = n;
+
+    //we are using binary search instead of lenear search
+    while(start <= end) {
+      int mid = (start + end) / 2;
+
+      int breakCase = eggDropMemoBinary(k - 1, mid - 1, dp);
+      int notBreakCase = eggDropMemoBinary(k, n - mid, dp);
+
+      int maxTimeOfBothScenario = 1 + Math.max(breakCase, notBreakCase);
+
+      minAttempts = Math.min(minAttempts, maxTimeOfBothScenario);
+
+      // if break case has min attempts required, then we have to look up the current floor
+      if(breakCase < notBreakCase) {
+        start = mid + 1;
+      } else {
+        end = mid - 1;
+      }
+    }
+    // System.out.println("minAttempts: "+minAttempts+", n: "+n+", k"+k);
+    dp[n][k] = minAttempts;
+    return minAttempts;
+  }
 }

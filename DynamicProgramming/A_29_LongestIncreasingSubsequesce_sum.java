@@ -3,7 +3,7 @@ package DynamicProgramming;
 import java.util.Arrays;
 
 //this is same as LongestIncreasingSubsequesce, but here we need to consider the sum of values of each elements instead of count
-public class LongestIncreasingSubsequesce_sum {
+public class A_29_LongestIncreasingSubsequesce_sum {
 
 //My solution: Simple
   /*

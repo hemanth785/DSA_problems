@@ -69,6 +69,14 @@ public class A_12_PossibleExpressionsHR {
         operatorRec(num, target, k + 1, curExp + "+" + curNum, resSoFar + curNum, curNum);
         operatorRec(num, target, k + 1, curExp + "-" + curNum, resSoFar - curNum, -curNum);
         operatorRec(num, target, k + 1, curExp + "*" + curNum, (resSoFar - prevNum) + (prevNum * curNum), prevNum * curNum);
+
+        /*
+         * Note: How to identify, what to send in prevNum value for next recursive call
+         * Its simple: while calculating resSoFar, rightHandSide of expression (operand) after the operator, should be passed as prevNum
+         * - In case of [resSoFar + curNum] -> right hand side is positive curNum
+         * - In case of [resSoFar - curNum] -> right hand side is negative curNum
+         * - In case of [resSoFar - prevNum) + (prevNum * curNum)] -> right hand side is positive (prevNum * curNum)
+         */
       }
     }
   }

@@ -135,19 +135,18 @@ public class A_09_Sudoku {
       for(int i=1; i<=9; i++){
         if(isSafe(sudoku, n, row, col, (char)(i + '0'))){
           sudoku[row][col] = (char)(i + '0');
+          
           if(solveSudokuRec(sudoku, n, nextRow, nextCol)){
             return true;
-          } else {
-            sudoku[row][col] = '.';
           }
+
+          sudoku[row][col] = '.';
         }
       }
       return false;
+
     } else {
-      if(solveSudokuRec(sudoku, n, nextRow, nextCol)){
-        return true;
-      }
-      return false;
+      return solveSudokuRec(sudoku, n, nextRow, nextCol);
     }
   }
 }

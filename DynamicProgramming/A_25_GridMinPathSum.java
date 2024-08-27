@@ -21,7 +21,7 @@ public class A_25_GridMinPathSum {
     }
     // invalid path
     if (n < 0 || m < 0) {
-      return -1;
+      return Integer.MAX_VALUE;
     }
 
     if (dp[n][m] != -1) {
@@ -31,13 +31,8 @@ public class A_25_GridMinPathSum {
     int topMove = minPathSumMemo(grid, n - 1, m, dp);
     int leftMove = minPathSumMemo(grid, n, m - 1, dp);
 
-    if (topMove == -1) {
-      dp[n][m] = grid[n][m] + leftMove;
-    } else if (leftMove == -1) {
-      dp[n][m] = grid[n][m] + topMove;
-    } else {
-      dp[n][m] = grid[n][m] + Math.min(leftMove, topMove);
-    }
+    dp[n][m] = grid[n][m] + Math.min(topMove, leftMove);
+
     return dp[n][m];
   }
 }

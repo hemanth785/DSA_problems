@@ -7,6 +7,14 @@ import java.util.Arrays;
  */
 public class RegExp_RegularExpMatching {
   /*
+   * NOTE: In this problem, astercis (*) mactches for following
+   * - An empty char -  "" ,    * will not be at the beginning of string
+   * - sequence of preceding char - If in pattern 'a*' is there, it can match a, aa, aaa...
+   * - sequence of preceding char - If in pattern '.*' is there, it can match combination of charactors like 'abgkljs'
+   */
+
+
+  /*
    * Approach: DP
    * - start from the begining of the both the array
    * - if cur char of string and pattern match or pattern char is '.', mark the 'currentMatch' as true, else mark it as false

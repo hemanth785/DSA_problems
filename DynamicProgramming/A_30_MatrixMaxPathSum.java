@@ -1,6 +1,6 @@
 package DynamicProgramming;
 
-public class MaxPathSumMatrix {
+public class A_30_MatrixMaxPathSum {
   public static void main(String[] args) {
     int M[][]={
       { 12, 22, 5, 0,  20,  18 },
@@ -13,7 +13,7 @@ public class MaxPathSumMatrix {
     System.out.println(maxSum);
   }
   static int findMaxPath(int[][] M) {
-	    int n = M.length;
+	  int n = M.length;
 		int m = M[0].length;
 		
 		int maxPathSum = Integer.MIN_VALUE;
