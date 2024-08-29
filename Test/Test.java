@@ -8,37 +8,35 @@ import java.util.Map;
 
 public class Test {
   public static void main(String[] args) {
-    
-    Integer arr1[] = {3, 4, 4, 4, 8};
-    int k = 9;
-    List<List<Integer>> edges = new ArrayList<>();
-    List<Integer> result = bfs(k, k, edges, k);
-    System.out.println(result);
+    System.out.println(numDistinct("babgbag", "bag"));
   }
 
-  public static List<Integer> bfs(int n, int m, List<List<Integer>> edges, int s) {
-       List<Integer> distances = new ArrayList<>();
-       for(int i=1; i<=n; i++){
-            distances.add(i, -1);
-       }
-       Map<Integer, List<Integer>> adjList = getAdjList(edges, n);
-       System.out.println(adjList.toString());
-        
-       return distances;
+  public static int numDistinct(String s, String t) {
+      return numDistinctMemo(s, t, 0, 0);
+  }
+
+  public static int numDistinctMemo(String s, String t, int i, int j) {
+    if(i == s.length() && j == t.length()){
+        return 1;
+    } 
+    if(j >= t.length()){
+        return 1;
     }
-    
-    public static Map<Integer, List<Integer>> getAdjList(List<List<Integer>> edges, int n){
-        Map<Integer, List<Integer>> adjList = new HashMap<>();
-        for(int i=1; i<=n; i++){
-            adjList.put(i, new ArrayList<>());
-        }
-        for(List<Integer> edge: edges){
-            int u = edge.get(0);
-            int v = edge.get(1);
-            adjList.get(u).add(v);
-        }
-        
-        return adjList;
+    if(i >= s.length()){
+        return 0;
     }
+
+      int sChar = s.charAt(i);
+      int tChar = t.charAt(j);
+
+      int include = 0;
+      if (sChar == tChar) {
+          include = numDistinctMemo(s, t, i + 1, j + 1);
+      }
+
+      int exclude = numDistinctMemo(s, t, i + 1, j);
+
+      return include + exclude;
+  }
 
 }

@@ -39,7 +39,7 @@ public class A_02_ShortestUniquePrefix {
 				cur.childNodes[index] = new TrieNode();
 			}
 			cur = cur.childNodes[index];
-			cur.frequency = cur.frequency+1;
+			cur.frequency = cur.frequency+1; //its importart to add the frequency in the next node
 		}
 		cur.endOfWord = true;
 	}

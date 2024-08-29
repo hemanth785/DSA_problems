@@ -20,7 +20,7 @@ import java.util.List;
  *        This is the worst care complexity, when all words have totally different charectors
  */
 
-public class A_05_WorkBreak2 {
+public class A_06_WorkBreak2 {
   public int adjX[] = { 0, 1, 0, -1 };
   public int adjY[] = { 1, 0, -1, 0 };
   List<String> result;
@@ -75,6 +75,8 @@ public class A_05_WorkBreak2 {
 
   private void traverseDFS(char[][] board, int n, int m, int x, int y, String curWord, int visited[][], int maxWordLen, TrieNode cur) {
     char ch = board[x][y];
+
+    //check if 1st char of cell matching with any word in trie
     int index = ch - 'a';
     if (cur.childNodes[index] == null) {
       return;

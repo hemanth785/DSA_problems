@@ -3,12 +3,13 @@ public class A_01_TrieImplementation {
   public static class TrieNode{
     TrieNode childNodes[] = new TrieNode[ALPHABET_COUNT];
     boolean isEndOfWord;
-    //initialize all the child with null values
-    TrieNode(){
-      for(int i=0; i<ALPHABET_COUNT; i++){
-        childNodes[i] = null;
-      }
-    }
+
+    //initialize all the child with null values, NOTE:without this also works
+    // TrieNode(){
+    //   for(int i=0; i<ALPHABET_COUNT; i++){
+    //     childNodes[i] = null;
+    //   }
+    // }
   }
 
   private static TrieNode root;
