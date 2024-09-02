@@ -58,7 +58,7 @@ public class A_22_LongestPalindromicSubsequence {
    * - Then start processing for size of substring starting from 2 to n (k)
    * - at any stage if k==2 (substring of size 2) and item at i and j are equal (such as aa or bb), fill that cell as 2 (because those are palindrome with fixed size 2)
    * - for any other k values, check if item at i and j are same
-   *   - if Yes - mark that cell as 2 + dp[i+1][j-1], 2+ because we got 2 chars which contributes to making palindrome
+   *   - if Yes - mark that cell as 2 + dp[i+1][j-1], 2+ because we got 2 more chars which contributes to making palindrome considering the previous palindrome
    *   - If No - mark that cell as Math.max( dp[i+1][j], dp[i][j-1]) - Exploring other 2 possibilities, once exluding starting char and other exluding end char
    *     
    */
