@@ -9,7 +9,7 @@ import java.util.Map;
 /*
  * Link: https://leetcode.com/problems/group-anagrams/
  */
-public class GroupAnagrams {
+public class A03_GroupAnagrams {
   /*
    * Approach: Using sort and hashMap
    * - For each string, sort it and check if sorted string(key) exists in hashMap

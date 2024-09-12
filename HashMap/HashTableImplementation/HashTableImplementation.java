@@ -16,9 +16,9 @@ public class HashTableImplementation {
 
   /*
    * Appraoch:
-   * - We need to use two data structures here - ArrayList and LinkedList
+   * - We need to use two data structures here - ArrayList and LinkedList, 
    *      Arraylist - To store the buckets
-   *      LinkedList - To store the collision elements
+   *      LinkedList - To store the collision elements (Here collision is handled with)
    * - We need to implement the hashing function, which gives the index of bucket where the data needs to be stored
    * - At each bucket, we are storing the data in nodes (linkedList), because we might have to store multiple elements at same bucketIndex
    */

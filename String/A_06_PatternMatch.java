@@ -107,9 +107,9 @@ public class A_06_PatternMatch {
        * pHash = 34, a=1, b=2, c=3, new char d = 4
        * step 1: remove left side charector ascii value
        * - 34-1 => phash = 33
-       * step 2: device resulting number by prime numer used, i.e. 3 (This is required
-       * because we are decrementing power 3 values by 1, for all char values. (a*3^1
-       * + b*3^2) becomes (a*3^0 + b*3^1))
+       * step 2: devide resulting number by prime numer used, i.e. 3 (This is required
+       * because we are decrementing power 3 values by 1, for all char values. 
+       * (a*3^1 + b*3^2) becomes (a*3^0 + b*3^1))
        * - 33/3 = 11
        * step 3: add the next charector ascii value to sHash, i.e d (4)
        * - 11 + 4*(3^2) = 45
@@ -117,6 +117,8 @@ public class A_06_PatternMatch {
        * new pHas = 45
        */
       if (r < n) {
+        //Note: here we are deviding by 3, because after removing leftMost char value, we need to shift all existing chars to one position left. 
+        // as shown at line number - 112
         sHash = (sHash - input.charAt(l)) / 3 + (input.charAt(r) * (int) Math.pow(3, k - 1));
       }
 
@@ -158,51 +160,56 @@ public class A_06_PatternMatch {
    */
 
   public static int patternMatchUsingKMP(String input, String pattern){
-    int kmpPattern[] = new int[pattern.length()];
+    int n = input.length();
+    int k = pattern.length();
+    if (k > n) {
+      return -1;
+    }
 
-    int j=0, i=1;
+    if (n == k) {
+      return input.equals(pattern) ? 0 : -1;
+    }
+
+    int kmpPattern[] = new int[k];
     kmpPattern[0] = 0;
-    //build kmp pattern array
-    while(i<pattern.length()){
-      char iChar = pattern.charAt(i);
-      char jChar = pattern.charAt(j);
+    int i = 0;
+    int j = 1;
 
-      //if its matching, increment j and assign pattern value
-      if(iChar == jChar){
-        kmpPattern[i] = j+1;
-        j++;
+    while (j < k) {
+      if (pattern.charAt(i) == pattern.charAt(j)) {
+        kmpPattern[j] = i + 1;
         i++;
+        j++;
       } else {
-        if(j==0){
-          kmpPattern[i] = 0;
-          i++;
+        if (i == 0) {
+          kmpPattern[j] = 0;
+          j++;
         } else {
-          j = kmpPattern[j-1];
+          i = kmpPattern[i - 1];
         }
       }
     }
 
-    //search for pattern in given array
-    i=0;
-    j=0;
-    while(i<input.length() && j<pattern.length()){
-      char inputChar = input.charAt(i);
-      char patternChar = pattern.charAt(j);
-      if(inputChar == patternChar){
-        i++;
-        j++;
+    int pi = 0;
+    int si = 0;
+
+    while (pi < k && si < n) {
+      if (pattern.charAt(pi) == input.charAt(si)) {
+        pi++;
+        si++;
       } else {
-        if(j== 0){
-          i++;
+        if (pi == 0) {
+          si++;
         } else {
-          j = kmpPattern[j-1];
+          pi = kmpPattern[pi - 1];
         }
       }
     }
 
-    if(j == pattern.length()){
-      return i-pattern.length();
+    if (pi >= k) {
+      return si - k;
     }
+
     return -1;
   }
   

@@ -8,35 +8,45 @@ import java.util.Map;
 
 public class Test {
   public static void main(String[] args) {
-    System.out.println(numDistinct("babgbag", "bag"));
+    System.out.println();
   }
 
-  public static int numDistinct(String s, String t) {
-      return numDistinctMemo(s, t, 0, 0);
-  }
+  public static int twoStacks(int maxSum, List<Integer> a, List<Integer> b) {
+    int n1 = a.size();
+    int n2 = b.size();
 
-  public static int numDistinctMemo(String s, String t, int i, int j) {
-    if(i == s.length() && j == t.length()){
-        return 1;
-    } 
-    if(j >= t.length()){
-        return 1;
-    }
-    if(i >= s.length()){
-        return 0;
-    }
+    int maxScore = 0;
+    int score1 = 0;
+    int score2 = 0;
+    int sum = 0;
 
-      int sChar = s.charAt(i);
-      int tChar = t.charAt(j);
+    for(int i=0; i<n1; i++){
+      if(sum + a.get(i) <= maxSum){
+        sum += a.get(i);
+        score1++;
 
-      int include = 0;
-      if (sChar == tChar) {
-          include = numDistinctMemo(s, t, i + 1, j + 1);
+      } else {
+        break;
       }
+    }
 
-      int exclude = numDistinctMemo(s, t, i + 1, j);
+    maxScore = score1;
 
-      return include + exclude;
+    for(int i=0; i<n2; i++){
+      sum += b.get(i);
+      
+      while(score1 > 0 && sum > maxSum){
+        sum -= a.get(--score1);
+      }
+      if(sum <= maxSum){
+        score2++;
+        maxScore = Math.max(maxScore, score1+score2);
+      } else {
+        break;
+      }
+    }
+        
+    return maxScore;
   }
 
 }

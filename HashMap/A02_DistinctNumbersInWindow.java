@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DistinctNumbersInWindow {
+public class A02_DistinctNumbersInWindow {
   public static void main(String[] args) {
     int arr[] = {1, 1, 2, 1, 4, 6, 5};
     int k = 3;
@@ -25,7 +25,7 @@ public class DistinctNumbersInWindow {
    */
   public static int[] distintNumbersInWindow(int[] A, int k) {
 		int n = A.length;
-	    Map<Integer, Integer> map = new HashMap<>();
+	  Map<Integer, Integer> map = new HashMap<>();
 		
 		int res[] = new int[n-(k-1)];
 		int count = 0;

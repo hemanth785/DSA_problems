@@ -6,7 +6,7 @@ import java.util.Set;
 /*
  * link: https://workat.tech/problem-solving/practice/longest-substring-without-repeat
  */
-public class LongestNonRepeatingSubstring {
+public class A08_LongestNonRepeatingSubstring {
   
 
   /*

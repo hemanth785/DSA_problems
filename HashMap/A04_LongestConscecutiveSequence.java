@@ -6,7 +6,7 @@ import java.util.HashSet;
 /*
  * Link: https://leetcode.com/problems/longest-consecutive-sequence/
  */
-public class LongestConscecutiveSequence {
+public class A04_LongestConscecutiveSequence {
   /*
    * Appraoch: (Naive) using sorting
    */
