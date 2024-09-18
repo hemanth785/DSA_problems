@@ -13,7 +13,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class PrimsAlgorithm {
+public class A01_PrimsAlgorithm {
   /*
    * Approach: Using BFS and Priority queue
    * - Take any node as source node - add it to priority queue
@@ -56,12 +56,12 @@ public class PrimsAlgorithm {
       visited[node] = 1;
 
       for (Pair neighbour : adj.get(node)) {
-        int v = neighbour.node;
 
-        //check if cur edge cost is less than prev cost assigned to neighbour node
-        if (visited[v] != 1 && neighbour.cost < distance[v]) {
-          distance[v] = neighbour.cost;
-          queue.add(new Pair(v, distance[v]));
+        //Check if cur edge cost is less than prev cost assigned to neighbour node: 
+        //Here we are finding, from which node reaching current not is cheaper
+        if (visited[neighbour.node] != 1 && neighbour.cost < distance[neighbour.node]) {
+          distance[neighbour.node] = neighbour.cost;
+          queue.add(new Pair(neighbour.node, neighbour.cost));
         }
       }
     }

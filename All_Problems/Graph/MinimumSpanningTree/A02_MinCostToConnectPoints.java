@@ -6,12 +6,13 @@
   * Approach: Problem is sovled suing Prim's algorithm, only diff is while creating the adj list form the points given
   */
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class MinCostToConnectPoints {
+public class A02_MinCostToConnectPoints {
   public int minCostConnectPoints(int[][] points) {
     int V = points.length;
     List<List<Pair>> adj = createAdjListFromEdges(V, points);
@@ -41,7 +42,7 @@ public class MinCostToConnectPoints {
         //here we only check if cur edge cost is less than prev cost, no need to check of sum of cost + neighbour cost
         if (visited[v] != 1 && neighbour.cost < distance[v]) {
           distance[v] = neighbour.cost;
-          queue.add(new Pair(v, distance[v]));
+          queue.add(new Pair(v, neighbour.cost));
         }
       }
     }

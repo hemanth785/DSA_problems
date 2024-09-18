@@ -1,7 +1,7 @@
 package Graph.DisjointSet;
 
 /*
- * Link: https://www.geeksforgeeks.org/problems/connecting-the-graph
+ * Link: https://www.geeksforgeeks.org/problems/connecting-the-graph/1
  */
 public class A03_ConnectingTheGraph {
   static class DisjointSet {

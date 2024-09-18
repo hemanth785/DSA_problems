@@ -12,7 +12,7 @@ import java.util.PriorityQueue;
  * 
  * Find the shortest path to each node, For un-directed weighted graph (It could be cyclic also)
  * 
- * NOTE: DIJSTRA'S ALGORITHM WILL NOT WORK OF TREE HAVING "NEGATIVE" WEIGHTS
+ * NOTE: DIJSTRA'S ALGORITHM WILL NOT WORK FOR TREE HAVING "NEGATIVE" WEIGHTS
  */
 public class A_03_DijstrasShortestPath {
   public static void main(String[] args) {
