@@ -1,17 +1,10 @@
-package Trees.BinarySearchTree;
+package PrePlaced.BinaryTree;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/*
- * NOTE: This works for Binary tree as well
- */
-
-/*
- * link: https://workat.tech/problem-solving/practice/serialize-and-deserialize-bst
- */
-public class A_08_SerializeAndDeserialize {
+public class A10_Serialize_and_Deserialize {
   public static class TreeNode {
     int data;
     TreeNode left = null;
@@ -31,15 +24,13 @@ public class A_08_SerializeAndDeserialize {
     }
   }
 
-
   /*
-   * Approach 1: 
+   * Approach 1:
    * - We can serialize using (Inorder and Preorder) or (Inorder and Post order)
    * - Restore tree using the any one of the above methos
    * 
    * Note: This uses twice the extra space as size of tree
    */
-
 
   /*
    * Approach 2: Using Preorder traversal (Queue) with filling empty nodes as -1
@@ -53,13 +44,13 @@ public class A_08_SerializeAndDeserialize {
     String leftString = serialize(root.left);
     String rightString = serialize(root.right);
 
-    return root.data + "," + leftString + "," + rightString; //this is where preorder is applied
+    return root.data + "," + leftString + "," + rightString; // this is where preorder is applied
   }
 
   // Decodes your encoded data to tree.
   public TreeNode deserialize(String data) {
     Queue<String> preOrderQ = new LinkedList<>();
-    preOrderQ.addAll(Arrays.asList(data.split(",")));  //remember this
+    preOrderQ.addAll(Arrays.asList(data.split(","))); // remember this
 
     return contructBSTFromPre(preOrderQ);
   }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class Traversals {
+public class A01_Traversals {
   public static void main(String[] args) {
     
   }

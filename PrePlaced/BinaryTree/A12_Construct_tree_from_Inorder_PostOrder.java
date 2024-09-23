@@ -1,9 +1,6 @@
-package Trees.BinaryTree;
+package PrePlaced.BinaryTree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
-public class A_15_ConstructFromPostAndInorder {
+public class A12_Construct_tree_from_Inorder_PostOrder {
   
   public static class TreeNode {
     int data;

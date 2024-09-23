@@ -1,14 +1,9 @@
-package Trees.BinaryTree;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+package PrePlaced.BinaryTree;
 
 /*
  * https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
  */
-
-public class A_14_ConstructFromPreAndInorder {
+public class A11_Construct_tree_from_Inorder_PreOrder {
   public static class TreeNode {
     int data;
     TreeNode left = null;
