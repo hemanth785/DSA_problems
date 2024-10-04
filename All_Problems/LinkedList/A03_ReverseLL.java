@@ -11,11 +11,6 @@ public class A03_ReverseLL {
         this.data = data;
         this.next = null;
     }
-
-    Node(int data, Node next) {
-        this.data = data;
-        this.next = next;
-    }
   }
 
   private static Node createList(int arr[]){
@@ -67,6 +62,7 @@ public class A03_ReverseLL {
       next = next.next;
     }
     cur.next = prev;
+
     return cur;
   }
 }

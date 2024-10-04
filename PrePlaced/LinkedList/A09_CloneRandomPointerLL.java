@@ -1,4 +1,4 @@
-package LinkedList;
+package PrePlaced.LinkedList;
 
 import java.util.HashMap;
 
@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Link: https://leetcode.com/problems/copy-list-with-random-pointer/description/
  */
 
-public class A17_CloneRandomPointerLL {
+public class A09_CloneRandomPointerLL {
   public static class Node {
     int data;
     Node next = null;
