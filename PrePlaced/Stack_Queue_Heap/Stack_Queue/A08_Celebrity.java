@@ -1,4 +1,4 @@
-package Stack;
+package PrePlaced.Stack_Queue_Heap.Stack_Queue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import java.util.Stack;
 /*
  * https://practice.geeksforgeeks.org/problems/the-celebrity-problem/1
  */
-public class A07_Celebrity {
+public class A08_Celebrity {
   
   /* Approach1: Bruteforce: 
    * Run a loop where ‘i’ ranges from 0 to ‘N’ - 1, and check whether the person having id ‘i’ is a celebrity or not. This can be done as follow -:

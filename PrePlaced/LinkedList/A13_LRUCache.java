@@ -1,8 +1,8 @@
-package LinkedList;
+package PrePlaced.LinkedList;
 
 import java.util.HashMap;
 
-public class A12_LRUCache {
+public class A13_LRUCache {
   static class Node {
     int key;
     int val;
@@ -24,7 +24,7 @@ public class A12_LRUCache {
   Node tail;
   HashMap<Integer, Node> cashMap = new HashMap<>();
 
-  public A12_LRUCache(int capacity) {
+  public A13_LRUCache(int capacity) {
     this.capacity = capacity;
   }
 
@@ -40,7 +40,7 @@ public class A12_LRUCache {
   }
 
   public void put(int key, int value) {
-    if (cashMap.get(key) == null) { //check if key does not exists
+    if (cashMap.get(key) == null) { //check if key already exists
       if (cashMap.size() == capacity) {
         // remove tail
         cashMap.remove(tail.key);

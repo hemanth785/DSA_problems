@@ -1,8 +1,8 @@
-package LinkedList;
+package PrePlaced.Stack_Queue_Heap.Stack_Queue;
 
 import java.util.HashMap;
 
-public class A12_LRUCache {
+public class A09_LRUCache {
   static class Node {
     int key;
     int val;
@@ -24,7 +24,7 @@ public class A12_LRUCache {
   Node tail;
   HashMap<Integer, Node> cashMap = new HashMap<>();
 
-  public A12_LRUCache(int capacity) {
+  public A09_LRUCache(int capacity) {
     this.capacity = capacity;
   }
 
