@@ -1,8 +1,8 @@
-package Array_advanced;
+
 /*
  * LInk: https://leetcode.com/problems/koko-eating-bananas/
  */
-public class A09_KokoEatingBananas {
+public class A08_KokoEatingBananas {
   /*
    * Approach: Using binary search (Efficient) - O(n * log(n)), 
    *    it's not log(n) because, for each k value, we need to loop through entire array for calculating total hours

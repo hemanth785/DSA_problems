@@ -1,6 +1,8 @@
-// Link: https://workat.tech/problem-solving/practice/matrix-search
+package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Matrix;
 
-public class MatrixSearch {
+// Link: https://leetcode.com/problems/search-a-2d-matrix/
+
+public class A05_MatrixSearch {
   /*
    * Approach 1: Lenear searching
    */

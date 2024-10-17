@@ -45,13 +45,13 @@ public class A11_TaskScheduler_Hard {
     //first calculate the idle slots required based on highest frequence tasks
     int maxFreq = pq.poll();
 
-    int idleSlots = (maxFreq - 1) * n;
+    int idleSlots = (maxFreq - 1) * n; //where n is the cooldown time for single task to execute continuously
 
     // now fill these idle slots with next lower frequency tasks
     // if at any point, idleSlots count becomes or zero or less than 0, 
     // we can return the tasks size as answer
     while(!pq.isEmpty()){
-      int tasksCanFillIdles = Math.min(maxFreq - 1, pq.poll());
+      int tasksCanFillIdles = Math.min(maxFreq - 1, pq.poll()); //Note: Here the goal is to check whether we are able to utilize all the idle slots for all the tasks
       idleSlots = idleSlots - tasksCanFillIdles;
     }
 

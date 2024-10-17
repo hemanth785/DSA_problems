@@ -44,7 +44,6 @@ public class A10_MedianFinder_Hard {
   public void addNum(int num) {
     if (left.isEmpty() || num < left.peek()) {
       left.add(num);
-      
     } else {
       right.add(num);
     }

@@ -1,10 +1,12 @@
+package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Matrix;
+
 import java.util.HashSet;
 import java.util.Set;
 
 /*
  * link: https://leetcode.com/problems/set-matrix-zeroes/description/
  */
-public class RowColumnZero {
+public class A04_RowColumnZero {
   /*
    * Naive approach: Wrong
    * One naive solution that comes to mind is to scan the 2D matrix and, if a zero is found, 

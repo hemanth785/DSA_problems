@@ -1,5 +1,4 @@
-package Math_and_Bit_manupulation;
-public class SquareRoot {
+public class A03_SquareRoot {
 
   /*
    * Approach 2: Using binary search
