@@ -28,7 +28,6 @@ public class A_06_Jump_game_2 {
     int minJumps = jump_rec(arr, n, 0, dp);
 
     return minJumps == Integer.MAX_VALUE ? -1 : minJumps;
-
   }
 
   public static int jump_rec(int[] arr, int n, int index, int dp[]) {

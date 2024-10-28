@@ -1,6 +1,4 @@
-package Array_advanced;
-
-import java.util.Arrays;
+package PrePlaced.Arrays_Strings.Arrays;
 
 /*
  * Link: https://leetcode.com/problems/container-with-most-water/
@@ -50,32 +48,5 @@ public class A07_Container_with_more_water {
     }
 
     return maxArea;
-  }
-
-   /*
-   * Appraoch: (Space-Efficient than above) Storing prefix and suffix prod in input and output arrays (Approach is same as above)
-   * - Since output array is not considered for extra space, we can use that to store prefix and suffix prod
-   * - Iterate through start of array once to store prefix prod in output array
-   * - Iterate through end of array while calaculating and storign result in output array, while storing postfix prod in input array
-   * 
-   * Time: O(n),   Space: O(1)
-   */
-  public int[] productExceptSelfEfficient(int[] nums) {
-    int n = nums.length;
-    int output[] = new int[n];
-    Arrays.fill(output, 1);
-
-    //Store the prefix product in output array
-    for(int i=1; i<n; i++){
-      output[i] = nums[i-1] * output[i-1];
-    }
-
-    //Store the postfix product in input array and store final ans in output array
-    for(int i=n-2; i>=0; i--){
-      output[i] = output[i] * nums[i+1];
-      nums[i] = nums[i] * nums[i+1];
-    }
-
-    return output;
   }
 }

@@ -1,5 +1,6 @@
 package Array_sorting;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class A04_Merge_sort {
@@ -22,59 +23,51 @@ public class A04_Merge_sort {
     return arr;
   }
 
-  public static void devide(int arr[], int l, int r){
-    if(l >= r){
+  public static void devide(int arr[], int low, int high){
+    if (low >= high){
       return;
     } 
-    int mid = (l+r)/2;
 
-    // System.out.println(l +", "+mid+", "+r);
-    devide(arr, l, mid);
-    devide(arr, mid+1, r);
-
-    // after deviding the list until each partition contains one element, then start merging while sorting
-    merge(arr, l, mid, r);
+    int mid = (low + high) / 2 ;
+    devide(arr, low, mid);  // left half
+    devide(arr, mid + 1, high); // right half
+    
+    merge(arr, low, mid, high);  // merging sorted halves
   }
 
-  public static void merge(int arr[], int l, int mid, int r){
-    int n1 = mid-l+1; //we are adding 1 here because, for 1st array we considering mid element
-    int n2 = r-mid; // here we are not adding 1 becuase, we are considering elements from mid+1
+  public static void merge(int arr[], int low, int mid, int high){
+    ArrayList<Integer> temp = new ArrayList<>(); // temporary array
+    int left = low;      // starting index of left half of arr
+    int right = mid + 1;   // starting index of right half of arr
 
-    int leftArr[] = new int[n1];
-    int rightArr[] = new int[n2];
+    //storing elements in the temporary array in a sorted manner//
 
-    //Store left and right array elements in temporary array
-    for(int i=0; i<n1; i++){
-      leftArr[i] = arr[i+l];
-    }
-
-    for(int i=0; i<n2; i++){
-      rightArr[i] = arr[i+mid+1];
-    }
-
-    int i=0;
-    int j=0;
-    int k=l;
-
-    //compare and add elements
-    while(i<n1 && j<n2){
-      if(leftArr[i] < rightArr[j]){
-        arr[k++] = leftArr[i++];
+    while (left <= mid && right <= high) {
+      if (arr[left] <= arr[right]) {
+        temp.add(arr[left]);
+        left++;
       } else {
-        arr[k++] = rightArr[j++];
+        temp.add(arr[right]);
+        right++;
       }
     }
 
-    //add leftover elements into original array
-    while(i<leftArr.length){
-      arr[k++] = leftArr[i++];
+    // if elements on the left half are still left
+    while (left <= mid) {
+      temp.add(arr[left]);
+      left++;
     }
-    while(j<rightArr.length){
-      arr[k++] = rightArr[j++];
+
+    //  if elements on the right half are still left
+    while (right <= high) {
+      temp.add(arr[right]);
+      right++;
+    }
+
+    // transfering all elements from temporary to arr
+    for (int i = low; i <= high; i++) {
+      arr[i] = temp.get(i - low);
     }
   }
-
-  
-  
   
 }

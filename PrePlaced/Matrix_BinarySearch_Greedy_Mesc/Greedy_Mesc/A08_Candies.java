@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import java.util.List;
  * 
  * solution link: https://www.youtube.com/watch?v=gib-yC5NmuM
  */
-public class A_01_Candies {
+public class A08_Candies {
   public static void main(String args[]){
     Integer arr[] = new Integer[]{2, 4, 2, 6, 1, 7, 8, 9, 2, 1};
     List<Integer> list = Arrays.asList(arr);

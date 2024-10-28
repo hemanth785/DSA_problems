@@ -1,3 +1,4 @@
+package PrePlaced.Arrays_Strings.Arrays;
 
 /*
 Find the majority element, element which repeats for more than n/2 times (Where n is the size of array) in an array
@@ -9,7 +10,7 @@ This is same as finding majority in elections
 */
 import java.util.*;
 
-class A08_Find_majority_element {
+class A12_Find_majority_element {
   public static void main(String[] args) {
     int arr[] = {5,2,8,6,8,8,4,8,8};
     // int res = findMajorityItem1(arr, arr.length);

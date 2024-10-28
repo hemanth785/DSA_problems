@@ -1,8 +1,8 @@
-package Greedy;
+package PrePlaced.Arrays_Strings.Arrays;
 /*
  * Link: https://leetcode.com/problems/maximum-subarray/
  */
-public class A06_MaxSumSubarray {
+public class A09_MaxSumSubarray {
   public int maxSubArray(int[] nums) {
     int n = nums.length;
     int maxSum = Integer.MIN_VALUE;
