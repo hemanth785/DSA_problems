@@ -1,4 +1,4 @@
-package Backtracking;
+package PrePlaced.Recursion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
  * 
  * hint: This is same as the coin change 2 in DP, here we need to print the combinations (denominations)
  */
-public class A_12_CombinationSum_using_same_item_multi_times {
+public class A04_CombinationSum_1 {
 	List<List<Integer>> combinationSum(int[] candidates, int target) {
 	  List<List<Integer>> resList = new ArrayList<>();
 		List<Integer> combList = new ArrayList<>();

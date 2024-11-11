@@ -1,0 +1,13 @@
+Problem: 
+You have a 3- and a 5-liter water container – each container has no markings except for that which gives us its total volume. 
+We also have a running tap. We must use the containers and the tap in such a way that we measure out exactly 4 liters of water. 
+How can this be done?
+
+Solution:
+Step 1: First 5 lit container full
+Step 2: Transfer water from 5ltr to 3ltr until 3 ltr full
+Step 3: Now only 2ltr left in 5 ltr container, so emtpy 3 ltr container and tranfer those 2 ltr from 5L container to 3L container
+Step 4: Now fill 5L container until full
+Step 5: Transfer water from 5L to 3L container, until it becomes full
+          - Since 3L container already contains 2ltrs of water, so only 1ltr will be transfered
+          - That means 4L of water will be left in 5L container
