@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package DP;
 
 import java.util.Arrays;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
  * https://leetcode.com/problems/coin-change/description/
  */
 
-public class A_16_CoinsChange {
+public class A05_CoinsChange {
   public int coinChange(int[] coins, int amount) {
     int n = coins.length;
     int dp[][] = new int[n + 1][amount + 1];

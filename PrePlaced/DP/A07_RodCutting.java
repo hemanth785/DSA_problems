@@ -1,9 +1,9 @@
-package DynamicProgramming;
+package DP;
 /*
  * link: https://workat.tech/problem-solving/practice/rod-cutting/
  * link: https://www.naukri.com/code360/problems/rod-cutting-problem_800284
  */
-public class A_10_RodCutting {
+public class A07_RodCutting {
   int maximumProfit(int n, int[] prices) {
     int dp[][] = new int[n + 1][prices.length + 1];
 
