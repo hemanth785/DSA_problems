@@ -1,11 +1,11 @@
-package DynamicProgramming;
+package DP;
 
 import java.util.Arrays;
 
 /*
  * Link: https://leetcode.com/problems/wildcard-matching/
  */
-public class A_31_RegExp_WildcardMatching {
+public class A27_RegExp_WildcardMatching {
   /*
    * NOTE: In this problem, astercis (*) mactches for following
    * - An empty char -  ""
@@ -72,7 +72,7 @@ public class A_31_RegExp_WildcardMatching {
       //if pattern char is a '*', then check for 2 possibilites.
       boolean ignoreAstericCase = isMatchMemo(s, p, i, j - 1, dp);  //1. matching asteric for empty char, so decrement pattern index only
       boolean considerAstericCase = isMatchMemo(s, p, i - 1, j, dp); /* 2. matching asteric for current char in string, here decrement string index only, 
-                                                                        because the same asteric we need to check for preceding charector also in the next recursive call */
+                                                                            because the same asteric we need to check for preceding charector also in the next recursive call */
 
       boolean result = ignoreAstericCase || considerAstericCase;
       dp[i][j] = result ? 1 : 0;
