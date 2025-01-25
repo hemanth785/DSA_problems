@@ -1,5 +1,7 @@
 package PrePlaced.Arrays_Strings.Arrays;
 
+import java.util.Arrays;
+
 /*
  * Link: https://www.naukri.com/code360/problems/merge-two-sorted-arrays-without-extra-space_6898839
  */
@@ -11,21 +13,45 @@ public class A15_Merge_2_sorted_array_without_extra_space {
    */
 
   /*
-   * Approach 2: Swap and sort - (We can use inbuild sort method while writing code for this)
+   * Approach 2 (Optimal -1): Swap and sort - (We can use inbuild sort method while writing code for this)
+   * NOTE: ----THIS SOLUTION IS ALSO ACCEPTED AS OPTIMAL IN INTERVIEW----
    * - left pointer will point to last item of first array
    * - Right pointer will point to beginning of 2nd array
    * - If leftPointer element is greater than rightPointer element, 
    *      - Swap both element
-   * - decrement leftPointer and increment rightPointer
-   * - exit iteration, once any of the pointer overflow
+   *      - decrement leftPointer and increment rightPointer
+   * - exit iteration, once any of the pointer overflow or if we come accorss element which are in correct order (left < right)
    * - Now we have all the smaller items in left array & all the bigger elements in right array
-   * - Now start there left and right subarray individually
+   * - Now sort the left and right subarray individually
    * 
    * Time: O(n*log(n) + m*log(m))     Space: O(1)
    */
 
+  void merge(int arr1[], int arr2[], int n, int m){
+    int l = n-1;
+    int r = 0;
+
+    while(l >= 0 && r < m){
+      if(arr1[l] > arr2[r]){
+        //swap
+        int temp = arr1[l];
+        arr1[l] = arr2[r];
+        arr2[r] = temp;
+
+        l--;
+        r++;
+      }
+      else {
+        break;
+      }
+    }
+
+    Arrays.sort(arr1);
+    Arrays.sort(arr2);
+  }
+
   /*
-   * Approach 3: Gap method, which uses shell short
+   * Approach 3 (Optimal -2): Gap method, which uses shell short
    * - find a gap, gap = Math.ceil( (n+m)/2 )
    * - define 2 variables l= 0, and r= l+gap
    * - iterate over array, will right pointer reaches end

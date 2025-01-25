@@ -61,6 +61,9 @@ public class A11_NextGreaterNumber {
 	}
 
 
+
+
+  
   // HACKER RANK
   public static int nge_func(int n) {
     // added digits to list, reverse order

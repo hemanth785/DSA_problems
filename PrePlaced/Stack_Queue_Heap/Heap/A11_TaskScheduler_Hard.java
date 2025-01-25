@@ -60,6 +60,10 @@ public class A11_TaskScheduler_Hard {
       return tasks.length;
     }
 
-    return idleSlots + tasks.length;
+    return idleSlots + tasks.length; //this is important
+  }
+
+  public static void main(String[] args) {
+    
   }
 }

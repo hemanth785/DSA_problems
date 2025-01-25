@@ -32,6 +32,8 @@ public class A05_KthLargest {
    * - Iterate over the input array while storing it in minHeap
    * - Whenever heap size crosses k, remove top element
    * - Once we reach end of input array, top element in minHeap is the kth Largest
+   * 
+   * Time: O(n log(k))
    */
   public static int findKthLargest(int[] nums, int k) {
     PriorityQueue<Integer> pq = new PriorityQueue<>();

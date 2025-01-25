@@ -25,7 +25,6 @@ public class A_20_LongestCommenSubsequencePrint {
     System.out.println(resList);
   }
 
-  public static String dp[][];
   public static List<Integer> longestCommonSubsequence(List<Integer> a, List<Integer> b) {
     String dp[][] = new String[a.size() + 1][b.size() + 1];
     for (int i = 0; i < a.size() + 1; i++) {

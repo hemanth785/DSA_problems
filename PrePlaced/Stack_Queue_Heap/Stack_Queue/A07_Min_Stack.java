@@ -1,4 +1,4 @@
-package PrePlaced.Stack_Queue_Heap.Stack_Queue;
+package Stack_Queue;
 /*
  * Minimum stack problem: https://leetcode.com/problems/min-stack/description/
  *

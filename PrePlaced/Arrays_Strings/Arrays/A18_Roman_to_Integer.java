@@ -7,7 +7,11 @@ import java.util.Map;
  * Link: https://leetcode.com/problems/roman-to-integer
  */
 public class A18_Roman_to_Integer {
-  public Map<Character, Integer> getRomanMap(){
+  public static void main(String[] args) {
+    System.out.println(romanToInt("MCMXCIV"));
+  }
+
+  public static Map<Character, Integer> getRomanMap(){
 		Map<Character, Integer> romanMap = new HashMap<>();
 		romanMap.put('I', 1);
 		romanMap.put('V', 5);
@@ -20,7 +24,7 @@ public class A18_Roman_to_Integer {
 		return romanMap;
 	}
 
-  public int romanToInt(String s) {
+  public static int romanToInt(String s) {
     int ans = 0;
     int prev = 0;
     Map<Character, Integer> romanMap = getRomanMap();
@@ -33,9 +37,10 @@ public class A18_Roman_to_Integer {
       } else {
         ans = ans + number;
       }
+      System.out.println("ans: "+ans);
       prev = number;
     }
   
-  return ans;
+    return ans;
   }
 }

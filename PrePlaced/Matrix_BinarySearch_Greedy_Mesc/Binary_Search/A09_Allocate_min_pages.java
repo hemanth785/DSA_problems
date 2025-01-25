@@ -10,13 +10,13 @@ class A09_Allocate_min_pages{
 
   /*
    * Approach: Using binary search
-   * - For binary search, find we need to find the min and max value.
+   * - For binary search, first we need to find the min and max value.
    * - To assume l value, we need to assume best case. that is one student will get only one book. 
    *      - So in this case, max pages assinged to any student will be the pages in biggest book
    * - For 'r' pointer value, we need to assume worst, that case all books will be assinged to single student
    *      - in that case max pages assigned to that student is, sum of all the pages of all the books
    * 
-   * Time: O(n * log(n))
+   * Time: O(n^2 * log(n))
    */
 
 
@@ -40,8 +40,7 @@ class A09_Allocate_min_pages{
     int maxPagesPerStudent = 0;
 
     while (l <= r) {
-      int mid = (l + r) / 2; // here mid represents the max number of pages that can be assigned to single
-                             // student
+      int mid = (l + r) / 2; // here mid represents the max number of pages that can be assigned to single student
       boolean isPossible = isPossibleToAssign(mid, arr, n, m);
 
       if (isPossible) {

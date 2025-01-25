@@ -1,4 +1,4 @@
-package PrePlaced.Stack_Queue_Heap.Stack_Queue;
+package Stack_Queue;
 
 import java.util.Stack;
 import java.util.Arrays;

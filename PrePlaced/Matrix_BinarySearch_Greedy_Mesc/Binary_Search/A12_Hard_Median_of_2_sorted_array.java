@@ -2,7 +2,7 @@
  * Link: https://leetcode.com/problems/median-of-two-sorted-arrays/
  */
 
-public class A12_Median_of_2_sorted_array {
+public class A12_Hard_Median_of_2_sorted_array {
   public double findMedianSortedArrays(int[] nums1, int[] nums2) {
     int n1 = nums1.length;
     int n2 = nums2.length;

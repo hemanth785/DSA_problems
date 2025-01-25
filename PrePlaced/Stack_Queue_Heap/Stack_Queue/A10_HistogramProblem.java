@@ -1,4 +1,4 @@
-package PrePlaced.Stack_Queue_Heap.Stack_Queue;
+package Stack_Queue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -85,7 +85,7 @@ public class A10_HistogramProblem {
    *    - we can calculate area while removing the item from stack
    * 
    * Steps:
-   * - keep adding item to stack, while checking condition, if curHeight is less than stack.top() item height
+   * - keep adding item to stack, while checking condition, if curHeight is less than stack.top()
    * - If above condition satisfies, then we know that - for stack top item, current item is the next small item
    * - prev small item for stack top item is, next item in the stack
    * 
@@ -104,15 +104,13 @@ public class A10_HistogramProblem {
     int maxArea = 0;
     Stack<Integer> stack = new Stack<>();
 
-    stack.push(0);
-
-    for(int i=1; i<=n; i++){
+    for(int i=0; i<=n; i++){
       while(!stack.isEmpty() && (i==n || heights[i] < heights[stack.peek()])){
-        int cur = stack.pop();
+        int top = stack.pop();
 
         int nextSmallIndex = i;
         int prevSmallIndex = stack.isEmpty() ? -1 : stack.peek();
-        int area = heights[cur] * (nextSmallIndex - prevSmallIndex - 1);
+        int area = heights[top] * (nextSmallIndex - prevSmallIndex - 1);
 
         maxArea = Math.max(maxArea, area);
       }

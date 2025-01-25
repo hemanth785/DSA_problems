@@ -10,7 +10,7 @@ public class A10_Aggressive_cows {
    * - We know that in worst case min distance we can keep between 2 cows is '1', so this is the value for 'low' pointer
    * - In best case, min distance we can keep between cows is, distance b/w 1st and last stall, so this value for 'high' value
    * - So using these 2 values, find a mid value and check for the feasibility of placing all the cows,
-   * - If its feasible, save teh current result and check by increasign the minDistance value
+   * - If its feasible, save the current result and check by increasign the minDistance value
    * - If its not feasible, check again by decreasing the minDistance value for each cow.
    * 
    * Time: O(n * log(n))

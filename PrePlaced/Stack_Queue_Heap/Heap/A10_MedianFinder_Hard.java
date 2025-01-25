@@ -14,7 +14,7 @@ import java.util.PriorityQueue;
   * - whenever we need to find median, 
      -  sort the array, and return the middle element (avaerage of 2 items, if array of even length)   
      
-     Time: O(n log(n))
+     Time: O(n^2 log(n))
   */
 
 

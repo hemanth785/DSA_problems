@@ -1,4 +1,4 @@
-package PrePlaced.Stack_Queue_Heap.Stack_Queue;
+package Stack_Queue;
 
 public class A01_StackFromArray {
   public static void main(String args[]){

@@ -20,7 +20,7 @@ public class A16_Merge_sort_inversion_count {
    * Approach 2: Using Merge sort  
    * - we know that, while sorting using merge sort we devide array into two halves at every iteration
    * - So while merging to sorted array, 
-   *      we can calcuate the number of inversions for each eleemnt on left subarray, by comparing against right subarray elemnt
+   *      we can calcuate the number of inversions for each eleemnt on left subarray, by comparing against right subarray element
    * 
    * Logic: For any element on left, if we found one element which is lesser. (it forms inversion pair with current element)
    *    we can conlude that it also forms pair with rest of the elements on left subarray.

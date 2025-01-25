@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Link: https://leetcode.com/problems/shortest-common-supersequence/
  */
 
-public class A29_Shortest_common_supersequence {
+public class A28_Shortest_common_supersequence {
   /*
    * Approach: Using LCS and DP
    * - First find the longest commen subsequence

@@ -16,7 +16,7 @@ public class A03_Triplet_sum_with_duplicate {
     int prev = Integer.MIN_VALUE;
 		for(int i=0; i<n-2; i++){
       if(prev != A[i]){
-          getPairEqualToSum(A, i+1, n-1, triplets, A[i]);
+        getPairEqualToSum(A, i+1, n-1, triplets, A[i]);
       }
       prev = A[i];
 		}
@@ -40,6 +40,7 @@ public class A03_Triplet_sum_with_duplicate {
 				prev = A[l];
 				l++;
 				r--;
+				
 			} else if(A[l] + A[r] < sumNeeded){
 				l++;
 			} else {

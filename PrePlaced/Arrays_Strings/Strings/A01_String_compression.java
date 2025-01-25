@@ -27,7 +27,6 @@ public class A01_String_compression {
         }
         count = 1;
       }
-
     }
 
     compressed.add(chars[n-1]);

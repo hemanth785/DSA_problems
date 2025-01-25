@@ -53,8 +53,8 @@ public class A01_MaxHeapImplementation {
         return -1;
       }
 
-      int pollItem = heap[0];
-      heap[0] = heap[heapSize-1];
+      int pollItem = heap[0]; 
+      heap[0] = heap[heapSize-1]; //when we delete top/root item, first move last element to root
       heap[heapSize-1] = 0;
       heapSize--;
 
@@ -77,7 +77,7 @@ public class A01_MaxHeapImplementation {
           return;
         }
 
-        //swap current node val with parent node val
+        //otherwise swap current node val with parent node val
         swap(heap, index, parentIndex);
         index = parentIndex;
       }
