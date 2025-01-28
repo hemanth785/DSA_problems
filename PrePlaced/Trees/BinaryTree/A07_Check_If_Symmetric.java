@@ -43,6 +43,7 @@ public class A07_Check_If_Symmetric {
       return false;
     }
 
-    return isSymmetricRec(left.left, right.right) && isSymmetricRec(right.left, left.right);
+    //This is important
+    return isSymmetricRec(left.left, right.right) && isSymmetricRec(right.left, left.right); 
   }
 }

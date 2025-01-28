@@ -1,5 +1,8 @@
 package PrePlaced.BinaryTree;
 
+/*
+ * Link: https://leetcode.com/problems/diameter-of-binary-tree/description/
+ */
 public class A05_DiameterOfTree {
   public static class TreeNode {
     int data;

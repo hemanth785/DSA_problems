@@ -41,7 +41,7 @@ public class A20_Morris_inorder_traversal {
 
     while (cur != null) {
       if (cur.left == null) {
-        inorder.add(cur.val);
+        inorder.add(cur.data);
         cur = cur.right;
 
       } else {
@@ -58,7 +58,7 @@ public class A20_Morris_inorder_traversal {
         } else {
           // remove the existing link and move to right subtree
           leftRightNode.right = null;
-          inorder.add(cur.val);
+          inorder.add(cur.data);
           cur = cur.right;
         }
 

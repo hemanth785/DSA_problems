@@ -30,9 +30,9 @@ public class A06_InorderPredecessorBST {
    *  we need to  traverse Right node -> root node (or logic) -> left node  
    * 
   */
-  boolean pFound;
+  boolean keyFound;
 	Node findPredecessor(Node root, Node p) {
-		pFound = false;
+		keyFound = false;
 	    return findSuccessor2(root, p);
 	}
 	
@@ -47,14 +47,13 @@ public class A06_InorderPredecessorBST {
 			return rightFound;
 		}
 		
-		if(pFound){
+		if(keyFound){
 			return root;
 		}
 		
 		if(root == p){
-			pFound = true;
+			keyFound = true;
 		}
-		
 		
 		return findSuccessor2(root.left, p);
 	}

@@ -34,8 +34,8 @@ public class A03_Check_for_BST {
       return true;
     }
 
-    if (root.val > min && root.val < max) {
-      return isBST(root.left, min, root.val) && isBST(root.right, root.val, max);
+    if (root.data > min && root.data < max) {
+      return isBST(root.left, min, root.data) && isBST(root.right, root.data, max);
     } else {
       return false;
     }

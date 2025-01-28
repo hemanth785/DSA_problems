@@ -97,7 +97,7 @@ public class A05_InorderSuccessorBST {
 
     if (root == x) {
       keyfound = true;
-    } else if (keyfound && successor == null) {
+    } else if(keyfound && successor == null) {
       successor = root;
       return;
     }
