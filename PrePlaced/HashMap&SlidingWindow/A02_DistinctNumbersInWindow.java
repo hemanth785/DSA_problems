@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Link: https://www.naukri.com/code360/problems/count-distinct-element-in-every-k-size-window_920336
+ */
+
 public class A02_DistinctNumbersInWindow {
   public static void main(String[] args) {
     int arr[] = {1, 1, 2, 1, 4, 6, 5};
@@ -46,7 +50,7 @@ public class A02_DistinctNumbersInWindow {
 		int r=k;
 		int i=1;
 		while(r<n){
-			//removing left item from windows
+			//removing left item from window
 			if(map.get(A[l]) == 1){
 				map.remove(A[l]);
 				count--;

@@ -3,7 +3,7 @@ package HashMap.HashTableImplementation;
 import java.util.ArrayList;
 
 public class HashTableImplementation {
-  static class HashNode<K, V>{ //here we are mentioning K and V custom types, because we dont know what is the type of key and value we'll get
+  static class HashNode<K, V> { //here we are mentioning K and V custom types, because we dont know what is the type of key and value we'll get
     K key;
     V val;
     HashNode<K, V> next=null;

@@ -33,7 +33,7 @@ public class A12_Longest_Subarray_With_sum_k {
   /*
    * Approach 2: Buteforce - Using HashMap to store prefix sums index
    * 
-   * - Initiate prefixSum hashmap to store the index of firsr occurance prefix sum
+   * - Initiate prefixSum hashmap to store the index of first occurance prefix sum
    * - Start with first element while calculating sum with every element
    * - each stage check if any prefixSum exists for (sumSoFar - k), if it exists compare the maxLength with - (index - map.get(sumSoFar - k))
    * - Update the sumSoFar index in the hashMap (If it does not already exists)
@@ -43,24 +43,27 @@ public class A12_Longest_Subarray_With_sum_k {
    */
 
   public int lenOfLongestSubarr(int[] nums, int k) {
-      Map<Integer, Integer> prefSumMap = new HashMap<>();
-      prefSumMap.put(0, -1);
+    Map<Integer, Integer> prefSumMap = new HashMap<>();
+    prefSumMap.put(0, -1);
 
-      int n = nums.length;
-      int sum = 0;
-      int len = 0;
+    int n = nums.length;
+    int sum = 0;
+    int len = 0;
 
-      for(int i=0; i<n; i++){
-        sum += nums[i];
-        
-        if(prefSumMap.containsKey(sum-k)){
-          len = Math.max(len, i-prefSumMap.get(sum-k));
-        }
-        if(!prefSumMap.containsKey(sum)){
-          prefSumMap.put(sum, i);
-        }
+    for(int i=0; i<n; i++){
+      sum += nums[i];
+      
+      if(prefSumMap.containsKey(sum-k)){
+        len = Math.max(len, i-prefSumMap.get(sum-k));
       }
-
-      return len;
+      if(!prefSumMap.containsKey(sum)){
+        prefSumMap.put(sum, i);
+      }
     }
+
+    return len;
+  }
+
+
+
 }

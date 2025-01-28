@@ -28,6 +28,7 @@ public class A01_ReverseLL {
     Node prev = null;
     Node cur = head;
     Node next = head.next;
+    
     while(next != null){
       cur.next = prev;
       

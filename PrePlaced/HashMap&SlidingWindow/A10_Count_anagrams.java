@@ -9,6 +9,9 @@ import java.util.Map;
 public class A10_Count_anagrams {
   /*
    * Approach: This logic is similar problem /HashMap/A06_PermuatationInString.java
+   * 
+   * There we have to just return, if pattern exists
+   * Here we have to return the count
    */
   int search(String pat, String txt) {
     if (pat.length() > txt.length()) {
@@ -76,7 +79,6 @@ public class A10_Count_anagrams {
 
       r++;
       l++;
-
     }
 
     return anagramsCount;

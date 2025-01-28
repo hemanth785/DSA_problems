@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /*
- * LInk: https://leetcode.com/problems/time-based-key-value-store
+ * Link: https://leetcode.com/problems/time-based-key-value-store
  */
 public class A01_TimeBasedKeyValueStore {
 
@@ -19,22 +19,22 @@ public class A01_TimeBasedKeyValueStore {
      * - We are using TreeMap here because, treeMap sorts the records based on keys (in our case its timestamp) 
      *    and that'll be usefull when fetching records for particular timestamp or the latest timestamp
      */
-    Map<String, TreeMap<Integer, String>> timMap = new HashMap<>();
+    Map<String, TreeMap<Integer, String>> timeMap = new HashMap<>();
 
     public TimeMap() {
-      timMap = new HashMap<>();
+      timeMap = new HashMap<>();
     }
 
     public void set(String key, String value, int timestamp) {
-      if (!timMap.containsKey(key)) {
-        timMap.put(key, new TreeMap<>(Collections.reverseOrder()));
+      if (!timeMap.containsKey(key)) {
+        timeMap.put(key, new TreeMap<>(Collections.reverseOrder()));
       }
-      TreeMap<Integer, String> values = timMap.get(key);
+      TreeMap<Integer, String> values = timeMap.get(key);
       values.put(timestamp, value);
     }
 
     public String get(String key, int timestamp) {
-      TreeMap<Integer, String> values = timMap.get(key);
+      TreeMap<Integer, String> values = timeMap.get(key);
       if (values == null) {
         return "";
       }

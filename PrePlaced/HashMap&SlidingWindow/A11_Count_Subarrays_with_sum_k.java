@@ -31,7 +31,7 @@ public class A11_Count_Subarrays_with_sum_k {
   }
 
   /*
-   * Approach 2: Buteforce - Using HashMap to store prefix sums count
+   * Approach 2: Using HashMap to store prefix sums count
    * 
    * - Initiate prefixSum hashmap to store the count of all teh prefix sum occured so far
    * - Start with first element while calculating sum with every element

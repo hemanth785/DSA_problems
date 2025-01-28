@@ -30,6 +30,8 @@ public class A11_Reverse_K_Group_Nodes {
         ListNode next = cur.next;
         cur.next = null;
         ListNode curHead = reverseList(prevHead);
+
+        //this only executes once
         if(resHead == null){
           resHead = curHead;
         }
@@ -42,6 +44,7 @@ public class A11_Reverse_K_Group_Nodes {
         prevHead = next;
         cur = next;
         tempK = 1;
+
       } else {
         cur = cur.next;
         tempK++;

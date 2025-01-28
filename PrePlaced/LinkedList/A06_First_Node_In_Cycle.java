@@ -85,7 +85,7 @@ public class A06_First_Node_In_Cycle {
    * - Now when, 'Slow pointer' at the first node of cycle, by covering L1 distance from head
    * - At this time, 'Fast pointer' at a distance of 'L1' ahead of 'slow pointer' (Considering cyclic movement)
    * - Considering the direction in which fast pointer has to travel to reach slow pointer, 
-   *    - Now the distance between 'fast pointer' and 'slow pointer', can be defined as d
+   *    - Now the distance between 'fast pointer' and 'slow pointer', can be defined as 'd'
    * 
    * - Now from above observations we can conclude that, L2 = L1 + d  ----- eq-1
    *                                                     L2 - d = L1  ----- eq-2

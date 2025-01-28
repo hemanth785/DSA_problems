@@ -12,6 +12,8 @@ public class A17_FindKLengthSubtringWithDistinctCharactors {
     System.out.println("result: "+result);
   }
 
+
+  
   static int findKLengthDistinctSubtrings(String str, int k){
     int n = str.length();
     int count = 0;
