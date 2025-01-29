@@ -27,7 +27,7 @@ public class A02_Diaganal_traversal {
 
     //print top left part of matrix diagonal (1st half)
     while(row < n){
-      int tempRow = row;
+      int prevStartRow = row;
     
       while(row >=0 && col < m){
         res[k++] = mat[row][col];
@@ -37,14 +37,14 @@ public class A02_Diaganal_traversal {
       }
 
       col = 0;
-      row = tempRow+1;
+      row = prevStartRow+1;
     }
 
     //print bottom right part of diagonal
     col = 1;
     row = n-1;
     while(col < m){
-      int tempCol = col;
+      int prevStartCol = col;
 
       while(row >=0 && col < m){
         res[k++] = mat[row][col];
@@ -54,7 +54,7 @@ public class A02_Diaganal_traversal {
       }
 
       row = n-1;
-      col = tempCol + 1;
+      col = prevStartCol + 1;
     }
 
     return res;

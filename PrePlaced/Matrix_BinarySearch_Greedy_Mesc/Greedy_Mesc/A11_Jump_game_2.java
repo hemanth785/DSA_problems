@@ -25,13 +25,16 @@ public class A11_Jump_game_2 {
    */
   public int jump(int[] nums) {
     int n = nums.length;
-    int jumps = 0;
-    int l = 0;
-    int r = 0;
+    if(n == 1){
+      return 0;
+    }
 
+    int jumps = 1; //if 2 items are there, then atleast one jump is required
+    int farthest = nums[0];
+    int l = 1;
+    int r = farthest;
+    
     while(r < n-1){ 
-      int farthest = 0;
-
       for(int i=l; i<=r; i++){
         farthest = Math.max(farthest, i+nums[i]);
       }

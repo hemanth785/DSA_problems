@@ -7,7 +7,7 @@ public class A05_MatrixSearch {
    * Approach 1: Lenear searching
    */
 
-  /*Approach 2: Copy matrix into lenear arraya nd apply binary search */
+  /* Approach 2: Copy matrix into lenear array nd apply binary search */
 
   /*
    * Approach 3: Apply binary search directly on matrix

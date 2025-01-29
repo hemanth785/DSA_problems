@@ -21,12 +21,10 @@ public class A03_Diagonal_Zigzag {
       //up case
       if(up){
         while(row > 0 && col < m-1){
-          System.out.println(up+" - row: "+row+", col: "+col);
           res[k++] = mat[row][col];
           row--;
           col++;
         }
-        System.out.println(up+" - row: "+row+", col: "+col);
         res[k++] = mat[row][col];
 
         if(col == m-1){
@@ -38,12 +36,10 @@ public class A03_Diagonal_Zigzag {
       //down case
       } else {
         while(col > 0 && row < n-1){
-          System.out.println(up+" - row: "+row+", col: "+col);
           res[k++] = mat[row][col];
           row++;
           col--;
         }
-        System.out.println(up+" - row: "+row+", col: "+col);
         res[k++] = mat[row][col];
         if(row == n-1){
           col++;
