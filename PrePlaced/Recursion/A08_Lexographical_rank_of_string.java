@@ -8,8 +8,8 @@ public class A08_Lexographical_rank_of_string {
    * Approach 1: 
    * If we take the word “rank”, 
    *  Total number of letters in the string - 4 
-      For the first character , ‘r’ , there are 3 words smaller than ‘r’ , in the alphabetical order. So , for r - 3*3! 
-      Now , for a - every word is greater than ‘a’ , so it will be 0*0! 
+      For the first character , ‘r’ , there are 3 chars smaller than ‘r’ , in the alphabetical order. So, for r - 3*3! 
+      Now , for 'a' - every word is greater than ‘a’ , so it will be 0*0! 
       For n , - 1*2! 
       For k , - 0*0! 
       Adding them all - 3*3! + 0 + 1*2! + 0 = 20
@@ -64,13 +64,6 @@ public class A08_Lexographical_rank_of_string {
    * 
    * Time: O(n)
    */
-
-  static long factorial(int num){
-    if(num <= 1){
-      return num;
-    }
-    return num * factorial(num-1);
-  }
 
   static void populateInitialCount(int[] count, String str){
     for(char ch: str.toCharArray()){

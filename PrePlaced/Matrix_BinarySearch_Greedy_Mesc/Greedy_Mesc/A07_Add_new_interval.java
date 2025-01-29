@@ -1,4 +1,4 @@
-package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
+package Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,7 @@ import java.util.List;
 public class A07_Add_new_interval {
   /*
    * Approach: 
+   * - While iterating through each existing interval
    * - check if new interval in occuring before current interval, 
    *    - if yes, then add new interval and rest of the existing intervals and break
    * - else check if new interval is happening after the current interval,

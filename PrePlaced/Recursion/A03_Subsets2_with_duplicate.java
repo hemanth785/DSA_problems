@@ -5,10 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 /*
- * link: https://workat.tech/problem-solving/practice/subsets-ii
+ * Given an array of integers A, return all possible subsets. The array might contain duplicates.
  * 
+ * link: https://workat.tech/problem-solving/practice/subsets-ii
  */
-public class A03_Subsets2_without_duplicate {
+public class A03_Subsets2_with_duplicate {
   public static void main(String[] args) {
     int arr[] = {1, 3, 3};
     List<List<Integer>> powerSet = subsets(arr);

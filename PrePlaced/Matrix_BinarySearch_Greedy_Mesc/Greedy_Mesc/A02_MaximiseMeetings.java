@@ -1,4 +1,4 @@
-package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
+package Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,13 +48,13 @@ public class A02_MaximiseMeetings {
     });
 
     int meetingCount = 0;
-    int curMeetingEndTime = -1;
+    int prevMeetingEndTime = -1;
     for (Meeting meeting : meetingList) {
       int endTime = meeting.end;
       int startTime = meeting.start;
       
-      if (curMeetingEndTime < startTime) {
-        curMeetingEndTime = endTime;
+      if (startTime > prevMeetingEndTime) {
+        prevMeetingEndTime = endTime;
         meetingCount++;
       }
     }

@@ -1,14 +1,17 @@
-package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
+package Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Link: https://leetcode.com/problems/my-calendar-ii/
+ */
 public class A06_My_Calendar_2 {
   /*
    * Approach: Using 2 lists
    * - One list for storing the calendar events
    * - 2nd list for storing overlapping intervals (Intervals having double booking)
-   * - Before adding new event, check if this new event overlaps with, overlaping interls
+   * - Before adding new event, check if this new event overlaps with, overlaping intervals
    *    - If Yes, return false
    * - Then check if this new event, overlaps with already exisiting calendar events
    *    - If Yes, then add the overlapping intervals to overlapping intervals list

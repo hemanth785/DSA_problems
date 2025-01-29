@@ -1,4 +1,4 @@
-package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
+package Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
 
 /*
  * Link: https://leetcode.com/problems/jump-game/

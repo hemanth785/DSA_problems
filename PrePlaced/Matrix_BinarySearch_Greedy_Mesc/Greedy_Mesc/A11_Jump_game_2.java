@@ -1,4 +1,4 @@
-package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
+package Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
 
 /*
  * Link: https://leetcode.com/problems/jump-game-ii/
@@ -15,7 +15,7 @@ public class A11_Jump_game_2 {
    * Approach 2: Using Greedy approach
    * - initialize 2 pointer, l and r as '0'
    * - for each position, calculate lowest and farthest we can reach from current range
-   * - for each iteration, loop through left and right pointer, which calculating farthest point form current range
+   * - for each iteration, loop through left and right pointer, which calculating farthest point from current range
    * - aftre traversal, mark l as r+1, and r=farthest | ans also increment jump count after traversinng each range
    * 
    * - once r reaches end of array, stop iteration. and return jump count

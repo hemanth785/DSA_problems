@@ -1,4 +1,4 @@
-package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
+package Matrix_BinarySearch_Greedy_Mesc.Greedy_Mesc;
 /*
  * https://leetcode.com/problems/gas-station/
  * 
