@@ -1,4 +1,4 @@
-package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Matrix;
+package Matrix_BinarySearch_Greedy_Mesc.Matrix;
 /*
  * Link: https://leetcode.com/problems/diagonal-traverse/
  */

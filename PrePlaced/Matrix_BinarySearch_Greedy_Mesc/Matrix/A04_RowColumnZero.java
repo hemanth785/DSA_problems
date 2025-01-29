@@ -1,4 +1,4 @@
-package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Matrix;
+package Matrix_BinarySearch_Greedy_Mesc.Matrix;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package PrePlaced.Matrix_BinarySearch_Greedy_Mesc.Matrix;
+package Matrix_BinarySearch_Greedy_Mesc.Matrix;
 
 public class A06_Search_in_row_column_sorted_matrix {
   /*
