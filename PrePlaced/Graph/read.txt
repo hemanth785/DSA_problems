@@ -1,0 +1,35 @@
+POINT TO REMEMBER
+- For a graph with 'N' points/nodes, max number of edges possible is (N * (N-1)) / 2
+
+
+
+1. Shortest path in undirected non-weighted graph: BFS with visited map
+
+2. Shortest path in Directed acyclic graph: BFS without visited map
+
+3. Shortest path in Weighted, non negative graph (without negative weights): DIJSTRA'S ALGORITHM 
+      (Dijstra's is same as ALGO 2, but instead of using normal queue, we use PriorityQueue optimization)
+
+      Note: Dijstras works for both Undirected & Directed graph, but not with negative weights.
+
+SPANNING TREE:
+A spanning tree is defined as a tree-like subgraph of a connected, undirected graph that includes all the vertices of the graph. 
+Or, to say in Layman’s words, it is a subset of the edges of the graph that forms a tree (acyclic) where every node of the graph is a part of the tree.
+
+
+BELMANFORD ALGORITHM:
+The Bellman–Ford algorithm is like a guide that helps you find the shortest path from one city to all 
+other cities, even if some roads have negative lengths. It’s like a GPS for computers, 
+useful for figuring out the quickest way to get from one point to another in a network. 
+
+Bellman-Ford is a single source shortest path algorithm that determines the shortest path between
+ a given source vertex and every other vertex in a graph. This algorithm can be used on both 
+ weighted and unweighted graphs.
+
+A Bellman-Ford algorithm is also guaranteed to find the shortest path in a graph, 
+similar to Dijkstra’s algorithm. Although Bellman-Ford is slower than Dijkstra’s algorithm, 
+it is capable of handling graphs with negative edge weights, which makes it more versatile. 
+The shortest path cannot be found if there exists a negative cycle in the graph. 
+If we continue to go around the negative cycle an infinite number of times, then the cost of the path 
+will continue to decrease (even though the length of the path is increasing). As a result, 
+Bellman-Ford is also capable of detecting negative cycles, which is an important feature.
