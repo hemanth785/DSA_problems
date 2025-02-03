@@ -2,40 +2,67 @@ package Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Test {
-  private static final int  INITIAL_SIZE = 1<<4; //16
-  private static final int MAXIMUM_CAPACITY = 1 << 30;
-
-  //This function used to get the next 2 power number for given capacity
-  private static int tableSizeFor(int cap) {
-    int n = cap - 1;
-    System.out.println("n-0: "+n);
-    n |= n >>> 1;
-    System.out.println("n-1: "+n);
-    n |= n >>> 2;
-    System.out.println("n-2: "+n);
-    n |= n >>> 4;
-    System.out.println("n-3: "+n);
-    n |= n >>> 8;
-    System.out.println("n-4: "+n);
-    n |= n >>> 16;
-    System.out.println("n-5: "+n);
-
-    return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
-  }
-
+  
   public static void main(String[] args) {
-    int size = tableSizeFor(8);
-    System.out.println("tableSize: "+size);
+    int[] prices = {2, 8, 11, 14, 15, 19, 21};
+    int maxProfit = cutRod(prices, 7);
+    System.out.println("maxProfit: "+maxProfit);
+    // System.out.println("tableSize: "+size);
 
-    // int n = 14;
-    // System.out.println("n: "+n);
-    // System.out.println(n >>> 2);
   }
+
+
+  static class SizeValue {
+		int size;
+    int price;
+		double pricePerLen;
+
+		SizeValue(int size, int price, double pricePerLen){
+			this.size = size;
+      this.price = price;
+			this.pricePerLen = pricePerLen;
+		}
+	}
+
+	public static int cutRod(int price[], int rodLen) {
+		List<SizeValue> sizeValList = new ArrayList<>();
+		for(int i=0; i<price.length; i++){
+			sizeValList.add(new SizeValue(i+1, price[i], (double)price[i]/(i+1)));
+		}
+
+		Collections.sort(sizeValList, (a, b) -> {
+			if(a.pricePerLen > b.pricePerLen){
+				return -1;
+			} else {
+				return 0;
+			}
+		});
+
+    int maxProfit = 0;
+    for(SizeValue item: sizeValList){
+      while(rodLen >= item.size){
+        maxProfit += item.price;
+        rodLen = rodLen - item.size;
+      }
+
+      if(rodLen == 0){
+        break;
+      } 
+    }
+
+		for(SizeValue item: sizeValList){
+      System.out.println("size: "+ item.size+ " - "+item.price+ " - "+item.pricePerLen);
+    }
+
+
+		return maxProfit;
+	}
 
 }
 
