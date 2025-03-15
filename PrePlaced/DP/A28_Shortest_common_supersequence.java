@@ -14,7 +14,7 @@ public class A28_Shortest_common_supersequence {
    * - here l points to str1 chars, r points to str2 chars and k points to commen chars between then
    * - initially make l, r, k as '0'
    * - move l until char at l matches with 1st char of lcs, while adding these chars to result string
-   * - move r until char at l matches with 1st char of lcs, while adding these chars to result string
+   * - move r until char at r matches with 1st char of lcs, while adding these chars to result string
    * - once both l and r matches to char in lcs, append that char to result string and update all the pointers
    * - If at any point, k exausts. add teh remaining chars from str1 and str2 to result list and return it
    * 

@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class A27_RegExp_WildcardMatching {
   /*
-   * NOTE: In this problem, astercis (*) mactches for following
+   * NOTE: In this problem, astercis (*) matches for following
    * - An empty char -  ""
    * - Sequence of same chars - "aaaaa"
    * - Sequence of different chars - "abcdc"

@@ -14,11 +14,11 @@ import java.util.List;
  * - Then loop though each cell in matrix, 
  *    - Check if the char at cell is in the root node of trie, 
  *    - If Yes, continue search for next char in all 4 direction of matrix, with respect to next node in trie
- *    - If we reach endOfWord, then decrement the eow value in trie and add this word to result list
+ *    - If we reach endOfWord, then decrement the row value in trie and add this word to result list
  *    - At any point cur char is not matching cur node in trie, break the loop
  * - Continue this process for all cells in matrix
  * 
- * Time:  O(n*m*(total number of charectors in all words))
+ * Time:  O(n*m*(total number of characters in all words))
  *        This is the worst care complexity, when all words have totally different charectors
  */
 

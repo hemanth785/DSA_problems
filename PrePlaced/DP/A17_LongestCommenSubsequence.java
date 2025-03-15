@@ -37,29 +37,6 @@ public class A17_LongestCommenSubsequence {
   }
 
 
-
-  /*Tabulation DP */
-  public static int longestCommonSubsequenceTabulation(String text1, String text2) {
-    int n = text1.length();
-    int m = text2.length();
-
-    int dp[][] = new int[n+1][m+1];
-
-    for(int i=0; i<=n; i++){
-        for(int j=0; j<=m; j++){
-            
-            if(i!=0 && j!=0){
-                if(text1.charAt(i-1) != text2.charAt(j-1)){
-                    dp[i][j] = Math.max(dp[i][j-1], dp[i-1][j]);
-                } else {
-                    dp[i][j] = 1+dp[i-1][j-1];
-                }
-            }
-        }
-    }
-    return dp[n][m];
-  }
-
   //Tabulation 
   public int longestCommonSubsequenceTab(String text1, String text2) {
     int n = text1.length();

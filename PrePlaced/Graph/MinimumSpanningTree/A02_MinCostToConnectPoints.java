@@ -3,7 +3,7 @@
  */
 
  /*
-  * Approach: Problem is sovled suing Prim's algorithm, only diff is while creating the adj list form the points given
+  * Approach: Problem is sovled using Prim's algorithm, only diff is while creating the adj list form the points given
   */
 
 import java.util.ArrayList;

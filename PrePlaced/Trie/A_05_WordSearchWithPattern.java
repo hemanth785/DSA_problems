@@ -39,6 +39,7 @@ public class A_05_WordSearchWithPattern {
     if (i >= word.length()) {
       return cur.endOfWord;
     }
+    
     char ch = word.charAt(i);
     if (ch != '.') {
       int index = ch - 'a';

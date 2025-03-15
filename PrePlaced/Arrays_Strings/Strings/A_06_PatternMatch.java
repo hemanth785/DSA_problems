@@ -87,12 +87,6 @@ public class A_06_PatternMatch {
     int l = 0;
     int r = k;
 
-    if (pHash == sHash) {
-      if (confirmPatternMatch(input, pattern, l, r)) {
-        return l;
-      }
-    }
-
     while (r < n) {
       if (pHash == sHash) {
         // if hash is matched, we need to verify by comparing charactors

@@ -86,6 +86,7 @@ public class A04_AccountsMerge {
       String email = entry.getKey().toString();
       int index = (int) entry.getValue();
 
+      //group email ids under common ultimate parent
       mergedAccounts.get(ds.findUltimateParent(index)).add(email);
     }
 

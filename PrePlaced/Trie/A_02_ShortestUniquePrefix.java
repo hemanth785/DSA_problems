@@ -58,7 +58,7 @@ public class A_02_ShortestUniquePrefix {
 				return "";
 			}
 			cur = cur.childNodes[index];
-			if(cur.frequency == 1){
+			if(cur.frequency == 1){    //Note: check frequency after incrementing 'cur' pointer
 				return prefix;
 			}
 		}

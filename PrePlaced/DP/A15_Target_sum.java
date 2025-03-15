@@ -38,6 +38,9 @@ public class A15_Target_sum {
    * Approach: Using DP
    * 
    * Time: O(n), Space: O(n*totalSum), Aux space(recursion stack): O(n)
+   * 
+   * Note: Here 'totalSum' is just a buffer used to avoid negative numbers, 
+   * because dp[] index wont support negative numbers
    */
   
   public int findTargetSumWaysDP(int[] nums, int target) {

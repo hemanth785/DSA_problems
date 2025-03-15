@@ -1,7 +1,7 @@
 package PrePlaced.Trie;
 
 /*
- * Link: https://www.naukri.com/code360/problems/longest-common-prefix_2090383
+ * Link: https://leetcode.com/problems/longest-common-prefix/
  */
 class A_07_LongestStringWithPrefix{
   /*
@@ -73,6 +73,5 @@ class A_07_LongestStringWithPrefix{
 		}
 
 		root.endOfWord = true;
-		root.wordCount += 1;
 	}
 }

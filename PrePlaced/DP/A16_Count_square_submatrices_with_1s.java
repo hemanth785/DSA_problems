@@ -51,13 +51,15 @@ public class A16_Count_square_submatrices_with_1s {
   /*
    * Approach 2: DP Tabulation
    * - create a DP matrix of size same as given matrix
-   * - Fill 1st row and 1st column of dp matrix with same elements as given matrix (each cell in dp matrix signifies number of square matrix till that point as bottom right)
+   * - Fill 1st row and 1st column of dp matrix with same elements as given matrix (each cell in dp matrix signifies
+   *       number of square matrix till that point as bottom right)
    * - Then iterate through each cell, while calculating square matrix based on already calculated square matrix in previous cells
    * - i.e 
    *    Step 1: Check if current cell has 1 (If it has 0, directly fill 0)
    *    Step 2: If it has '1', then take min count among - top, left, top-left cells and add 1 to it
    *    Continue this for all the other cells
-   * - Loop through each cell of DP matrix to calculate the total number of square matrix with 1
+   * 
+   * - Imp: Loop through each cell of DP matrix to calculate the total number of square matrix with 1
    * 
    * Time: O(n*m), Space: O(n*m)
    */

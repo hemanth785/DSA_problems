@@ -11,7 +11,8 @@ public class A23_InsertMinToMakePalindrome {
    * Approach:
    * - we can identify the min chars to insert to make a string palindrome by doing following steps
    * - First identify the Longest palindromic sub sequence (Refer DP section: LongestPalindromicSubsequence.java)
-   * - Once we find the length of longest palindromic in the string, then we have to insert the remaining chars in respective positions to make complete string as palindrome
+   * - Once we find the length of longest palindromic in the string, then we have to insert the remaining chars 
+   *    in respective positions to make complete string as palindrome
    * 
    * i.e: minInsertionToMakePalidrome = (size of given string) - (longest palinromic subsequence length)
    */

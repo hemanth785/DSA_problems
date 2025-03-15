@@ -2,6 +2,8 @@ package DP;
 /*
  * link: https://workat.tech/problem-solving/practice/rod-cutting/
  * link: https://www.naukri.com/code360/problems/rod-cutting-problem_800284
+ * 
+ * Note: Greedy approach will not work here (Tested and not working)
  */
 public class A07_RodCutting {
   int maximumProfit(int n, int[] prices) {
@@ -32,4 +34,5 @@ public class A07_RodCutting {
     dp[rodLength][peiceLength] = Math.max(include, exclude);
     return dp[rodLength][peiceLength];
   }
+  
 }

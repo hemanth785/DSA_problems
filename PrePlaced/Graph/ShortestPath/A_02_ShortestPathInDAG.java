@@ -41,19 +41,17 @@ public class A_02_ShortestPathInDAG {
       int curCost = shortDistance[curNode];
 
       for (Pair neighbour : adj.get(curNode)) {
-        if (shortDistance[neighbour.node] == -1) {
+        if (shortDistance[neighbour.node] == -1 || curCost + neighbour.cost < shortDistance[neighbour.node]) {
+         
           shortDistance[neighbour.node] = curCost + neighbour.cost;
           queue.add(neighbour.node);
 
-        } else if (curCost + neighbour.cost < shortDistance[neighbour.node]) { //Here visited is not required, this condition will make sure we dont loop infinitely
-          shortDistance[neighbour.node] = curCost + neighbour.cost;
-          queue.add(neighbour.node); 
           /* Here we are adding this neighbour node again,
            becuase this neighbour node distance is decreased, so there might be possinilty that, 
            neghbour's adjascent nodes distance also might decrease
            */
-        }
-        
+
+        } 
       }
     }
     return shortDistance;

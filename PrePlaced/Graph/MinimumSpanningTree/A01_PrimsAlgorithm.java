@@ -1,5 +1,5 @@
 /*
- * Link: https://practice.geeksforgeeks.org/problems/minimum-spanning-tree
+ * Link: https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1
  * 
  * Given a weighted, undirected and connected graph of V vertices and E edges. 
  * The task is to find the sum of weights of the edges of the Minimum Spanning Tree.

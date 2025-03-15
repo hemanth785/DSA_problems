@@ -34,7 +34,7 @@ public class A06_First_Node_In_Cycle {
    * Solution 2: Using slow and fast pointer
    * - First detect whether cycle exists or not, using the slow and fast pointer
    * - If Loop is detected, move only 'fast pointer' back to the head node
-   * - Then starting move slow and fast pointer, one step at a time, until meet at some point
+   * - Then starting move slow and fast pointer, one step at a time, until they meet at some point
    * - That meeting point will be 'First node in cycle'
    */
 

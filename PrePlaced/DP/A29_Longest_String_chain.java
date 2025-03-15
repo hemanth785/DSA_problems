@@ -14,7 +14,6 @@ public class A29_Longest_String_chain {
   /*
    * Approach: DP
    * - insert all the words in HashSet
-   * - iterate over each to check for longest chain possibility
    * - For each word, call recursive function dfs, 
    * - inside the function dfs, for the current word, try removing each charector and call for next recursive call
    * - inside the recursive call, first check if that word is exists in HashMap
@@ -42,7 +41,7 @@ public class A29_Longest_String_chain {
     }
 
     int maxChain = 1;
-    for (int i = 0; i < word.length(); i++) {
+    for (int i = 0; i<word.length(); i++) {
       String nextWord = word.substring(0, i) + word.substring(i + 1); //create next word by removing each character
       maxChain = Math.max(maxChain, 1 + dfs(nextWord, wordSet, memo));
     }
