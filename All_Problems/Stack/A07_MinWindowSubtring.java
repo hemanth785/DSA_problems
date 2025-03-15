@@ -2,6 +2,9 @@
 /*
 * Link: https://leetcode.com/problems/basic-calculator/
 */
+
+import java.util.Stack;
+
 public class A07_MinWindowSubtring{
 	/*
 	 * Approach: This is different from processing infix and postfix expressions

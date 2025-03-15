@@ -37,6 +37,8 @@ public class A06_SimplifyDirectoryPath {
       }
     }
 
+    System.out.println(stack.toString());
+
     while (!stack.isEmpty()) {
       String slash = (result == "") ? "" : "/";
       result = stack.pop() + slash + result;
