@@ -1,4 +1,4 @@
-package PrePlaced.BinaryTree;
+package Trees.BinaryTree;
 
 import java.util.*;
 

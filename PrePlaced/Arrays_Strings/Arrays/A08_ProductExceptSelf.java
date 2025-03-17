@@ -48,7 +48,7 @@ public class A08_ProductExceptSelf {
    * Appraoch: (Space-Efficient than above) Storing prefix and suffix prod in input and output arrays (Approach is same as above)
    * - Since output array is not considered for extra space, we can use that to store prefix and suffix prod
    * - Iterate through start of array once to store prefix prod in output array
-   * - Iterate through end of array while calaculating and storign result in output array, while storing postfix prod in input array
+   * - Iterate through end of array while calaculating and storing result in output array, while storing postfix prod in input array
    * 
    * Time: O(n),   Space: O(1)
    */

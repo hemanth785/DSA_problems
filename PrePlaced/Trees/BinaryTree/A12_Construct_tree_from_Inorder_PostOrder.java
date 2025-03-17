@@ -1,4 +1,4 @@
-package PrePlaced.BinaryTree;
+package Trees.BinaryTree;
 
 public class A12_Construct_tree_from_Inorder_PostOrder {
   

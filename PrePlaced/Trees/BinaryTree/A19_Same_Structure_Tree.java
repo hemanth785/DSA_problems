@@ -1,4 +1,4 @@
-package PrePlaced.BinaryTree;
+package Trees.BinaryTree;
 
 public class A19_Same_Structure_Tree {
   public static class TreeNode {

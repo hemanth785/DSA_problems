@@ -1,4 +1,4 @@
-package PrePlaced.BinaryTree;
+package Trees.BinaryTree;
 
 public class A09_Lowest_Common_Ancestor {
   public static class TreeNode {

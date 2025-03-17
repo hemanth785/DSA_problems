@@ -1,4 +1,4 @@
-package PrePlaced.Arrays_Strings.Strings;
+package Arrays_Strings.Strings;
 
 /*
  * For a given input string, return a index at which pattern string exists
@@ -169,6 +169,7 @@ public class A_06_PatternMatch {
     int i = 0;
     int j = 1;
 
+    //Create longest prefix array
     while (j < k) {
       if (pattern.charAt(i) == pattern.charAt(j)) {
         kmpPattern[j] = i + 1;
@@ -184,6 +185,7 @@ public class A_06_PatternMatch {
       }
     }
 
+    //Search pattern using LPS
     int pi = 0;
     int si = 0;
 

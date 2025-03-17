@@ -10,7 +10,7 @@
 
 import java.util.Arrays;
 
-public class A15_Sum_closest_to_zero {
+public class A16_Sum_closest_to_zero {
   public static void main(String[] args) {
     // int arr[] = {-2, 9, 6, 1, 2, -5};
     int arr[] = {-2, 9, 6, 1, 3, -4};

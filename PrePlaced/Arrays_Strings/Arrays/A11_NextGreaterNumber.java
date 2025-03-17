@@ -9,7 +9,7 @@ import java.util.List;
  * 
  * Approach:
  * - From the right side of array, check any element arr[i] such that, arr[i] > arr[i-1]
- * - save idx = i
+ * - save idx = i-1
  * - Now find the next greater element for element arr[idx], in the right side of array to idx index
  * - Now swap idx element and next greater element of idx
  * - Now Reverse the order of digits/elements from index idx+1 to n (Because this array will be in Descending order, we have to make it ascending)

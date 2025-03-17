@@ -1,4 +1,4 @@
-package PrePlaced.Arrays_Strings.Strings;
+package Arrays_Strings.Strings;
 
 import java.util.ArrayList;
 import java.util.List;

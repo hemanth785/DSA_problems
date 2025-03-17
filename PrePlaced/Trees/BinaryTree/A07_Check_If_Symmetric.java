@@ -1,4 +1,4 @@
-package PrePlaced.BinaryTree;
+package Trees.BinaryTree;
 
 /*
  * Link: https://leetcode.com/problems/symmetric-tree/

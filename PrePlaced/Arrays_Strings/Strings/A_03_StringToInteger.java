@@ -1,4 +1,4 @@
-package PrePlaced.Arrays_Strings.Strings;
+package Arrays_Strings.Strings;
 
 /*
  * Link: https://leetcode.com/problems/string-to-integer-atoi/description/

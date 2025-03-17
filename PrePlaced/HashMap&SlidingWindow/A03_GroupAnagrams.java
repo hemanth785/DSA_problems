@@ -41,4 +41,30 @@ public class A03_GroupAnagrams {
 
     return result;
   }
+
+  /*
+   * Optimized approach: Using custom Hash of each word to group strings
+   * 
+   * Solution link: https://www.geeksforgeeks.org/given-a-sequence-of-words-print-all-anagrams-together/
+   */
+
+  // Function to generate hash of word s
+  static final int MAX_CHAR = 26;
+  static String getHash(String s) {
+    StringBuilder hash = new StringBuilder();
+    int[] freq = new int[MAX_CHAR];
+    
+    // Count frequency of each character
+    for (char ch : s.toCharArray()) {
+        freq[ch - 'a']++;
+    }
+
+    // Append the frequency to construct the hash
+    for (int i = 0; i < MAX_CHAR; i++) {
+        hash.append(freq[i]);
+        hash.append("$");
+    }
+
+    return hash.toString();
+  }
 }

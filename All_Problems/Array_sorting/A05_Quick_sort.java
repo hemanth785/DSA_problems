@@ -22,7 +22,6 @@ public class A05_Quick_sort {
   }
 
   public static int[] quickSort(int arr[]){
-
     partitionAndSort(arr, 0, arr.length-1);
     return arr;
   }
@@ -57,7 +56,7 @@ public class A05_Quick_sort {
       }
       i++;
     }
-    swap(arr, i, k); //now i is pointing to pivot element, and k is pointing to pivot index
+    swap(arr, pivot, k); //now i is pointing to pivot element, and k is pointing to pivot index
     return k; //k is the actual pivot position
   }
 

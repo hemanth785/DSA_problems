@@ -1,4 +1,4 @@
-package PrePlaced.BinaryTree;
+package Trees.BinaryTree;
 
 /*
  * https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/

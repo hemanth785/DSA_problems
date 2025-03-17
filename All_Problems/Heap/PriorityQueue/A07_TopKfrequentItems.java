@@ -29,9 +29,10 @@ public class A07_TopKfrequentItems {
    * Time: N* log(n)
    */
 
+
   /*
    * Solution 2: using map and MaxHeap
-   * - Use map to store the fequence of each integer
+   * - Use map to store the fequency of each integer
    * - Create Max PriorityQueue with custom comparator
    * - store the elements from map to PQ
    * - remove k items from PQ
@@ -61,4 +62,14 @@ public class A07_TopKfrequentItems {
     }
     return res;
   }
+
+  /*
+   * Solution 3: Time efficient
+   * The idea is to utilise more space to improve the time complexity, 
+   * we store the elements based on their frequencies. 
+   * We can use the frequency of each element as index of 2D array, 
+   * where each index represents a list of elements of specific frequency. 
+   * By doing this, we reduce the need for complex sorting operations. 
+   * Instead, we can efficiently traverse the buckets from highest frequency to lowest and collect the top k most frequent elements.
+   */
 }

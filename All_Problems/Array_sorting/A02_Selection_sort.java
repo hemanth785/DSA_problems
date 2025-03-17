@@ -17,7 +17,7 @@ public class A02_Selection_sort {
    * Selection sort is about selecting the minimum element at each iteration, and placing it at correct position
    * 
    * iteration 1: i=0, find min value in array[i=1 to n], if we find min element, swap it with ith element
-   * iteration 1: i=1, find min value in array[i=2 to n], if we find min element, swap it with ith element
+   * iteration 2: i=1, find min value in array[i=2 to n], if we find min element, swap it with ith element
    * ..
    * ...
    */

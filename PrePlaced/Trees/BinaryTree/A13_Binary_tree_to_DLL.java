@@ -1,4 +1,4 @@
-package PrePlaced.BinaryTree;
+package Trees.BinaryTree;
 
 /*
  * Link: https://www.geeksforgeeks.org/problems/binary-tree-to-dll/1
