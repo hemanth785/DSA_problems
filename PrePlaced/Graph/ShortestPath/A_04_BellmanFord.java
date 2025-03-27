@@ -31,7 +31,7 @@ public class A_04_BellmanFord {
       }
     }
 
-    //This N-th relaxation is to verify if any negarive weight cycle is present in the graph
+    //This N-th relaxation is to verify if any negative weight cycle is present in the graph
     for (List<Integer> edge : edges) {
       int u = edge.get(0);
       int v = edge.get(1);

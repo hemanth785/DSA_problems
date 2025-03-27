@@ -3,6 +3,18 @@
  */
 
 public class A12_Hard_Median_of_2_sorted_array {
+  /*
+   * Approach 1: virtually merging 2 arrays until we reach half of entire merged array
+   * 
+   * Time: O(n+m), Space: O(1)
+   */
+
+
+  /*
+   * Approach 2: Applying binary search directly on given arrays
+   * 
+   * Time: O(log(min(n,m))
+   */
   public double findMedianSortedArrays(int[] nums1, int[] nums2) {
     int n1 = nums1.length;
     int n2 = nums2.length;
