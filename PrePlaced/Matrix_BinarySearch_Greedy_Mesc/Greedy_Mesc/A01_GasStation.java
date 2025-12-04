@@ -28,7 +28,7 @@ public class A01_GasStation {
 
   /*
    * Solution 2: Optimized
-   * We know that, Suppost we start with station 1 and fuel becomes empty at station 3, 
+   * We know that, Suppose we start with station 1 and fuel becomes empty at station 3,
    * we can conclude that we cannot start with station 1,2,3. 
    * 
    * So that we can start with 4th station

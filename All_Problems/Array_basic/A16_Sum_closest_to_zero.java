@@ -23,7 +23,7 @@ public class A16_Sum_closest_to_zero {
 
   /*
    * Solution 1: Brute force
-   * use nested loop to calculate each item against each other elemeent
+   * Use nested loop to calculate each item against each other elemeent
    * 
    * Time: O(n^2)
    */

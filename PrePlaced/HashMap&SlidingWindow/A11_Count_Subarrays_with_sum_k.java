@@ -44,7 +44,7 @@ public class A11_Count_Subarrays_with_sum_k {
    */
 
   public int subarraySumOptimized(int[] nums, int k) {
-    //This map contain all teh prefixSums and the count of how many times that sum occured so far
+    //This map contain all the prefixSums and the count of how many times that sum occured so far
     Map<Integer, Integer> prefSumMap = new HashMap<>();
 
     prefSumMap.put(0, 1);

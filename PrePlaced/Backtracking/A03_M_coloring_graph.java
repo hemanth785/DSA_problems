@@ -50,7 +50,7 @@ public class A03_M_coloring_graph {
     ArrayList<Integer>[] adjList = new ArrayList[n];
 
     for (int i = 0; i < n; i++) {
-      ArrayList<Integer> list = new ArrayList<Integer>();
+      ArrayList<Integer> list = new ArrayList<>();
       for (int j = 0; j < n; j++) {
         if (matrix[i][j] == 1) {
           list.add(j);

@@ -14,27 +14,27 @@ public class A09_MaxProfitInStockMarket_2 {
   public int maxProfit(int[] prices) {
     int n = prices.length;
 	  int totalProfit = 0;
-		int prevBuy = Integer.MAX_VALUE;
+		int buyPrice = Integer.MAX_VALUE;
 		
 		for(int i=0; i<n-1; i++){
 			int curPrice = prices[i];
 			
 			//buy here
-			if(curPrice < prevBuy){
-				prevBuy = curPrice;
+			if(curPrice < buyPrice){
+				buyPrice = curPrice;
 				continue;
 			}
 			
 			//sell if we find peak point scenario
-			if(curPrice >= prices[i-1] && curPrice > prices[i+1]){
-				totalProfit += curPrice - prevBuy;
-				prevBuy = Integer.MAX_VALUE;
+			if(curPrice >= buyPrice && curPrice > prices[i+1]){
+				totalProfit += curPrice - buyPrice;
+				buyPrice = Integer.MAX_VALUE;
 			} 
 		}
 		
 		//sell the stock if it is unsold and price on last day is more than buy
-		if(prevBuy != Integer.MAX_VALUE && prevBuy < prices[n-1]){
-			totalProfit +=  prices[n-1] - prevBuy;
+		if(buyPrice != Integer.MAX_VALUE && buyPrice < prices[n-1]){
+			totalProfit +=  prices[n-1] - buyPrice;
 		}
 		
 		return totalProfit;

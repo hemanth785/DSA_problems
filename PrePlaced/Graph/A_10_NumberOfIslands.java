@@ -61,7 +61,7 @@ public class A_10_NumberOfIslands {
     }
   }
 
-  //Apporach 1: Using DFS
+  //Apporach 2: Using DFS
   public void traverseDFS(char[][] grid, int[][] visited, int m, int n, int i, int j) {
     visited[i][j] = 1;
 

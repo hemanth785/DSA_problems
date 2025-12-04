@@ -66,7 +66,7 @@ public class A15_Target_sum {
       }
     }
 
-    int memoVal = dp[index][sumSoFar+totalSum]; // here sumSoFar can become negative, so add totalSum (if totalSum = 5 and sumSoFar= -3, then it'll become 5-3 = 2)
+    int memoVal = dp[index][totalSum+sumSoFar]; // here sumSoFar can become negative, so add totalSum (if totalSum = 5 and sumSoFar= -3, then it'll become 5-3 = 2)
     if(memoVal != -1){
       return memoVal;
     }
@@ -74,8 +74,8 @@ public class A15_Target_sum {
     int assignPosWays = findTargetSumWaysMemo2(nums, target, index+1, sumSoFar+nums[index], dp, totalSum);
     int assignNegWays = findTargetSumWaysMemo2(nums, target, index+1, sumSoFar-nums[index], dp, totalSum);
 
-    dp[index][sumSoFar+totalSum] = assignPosWays + assignNegWays;
-    return dp[index][sumSoFar+totalSum];
+    dp[index][totalSum+sumSoFar] = assignPosWays + assignNegWays;
+    return dp[index][totalSum+sumSoFar];
   }
 }
 

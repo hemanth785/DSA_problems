@@ -16,9 +16,9 @@ public class A_02_DFS {
     dfsList.add(cur);
     visited[cur] = 1; //for dfs we can mark as visited while printing also
 
-    for (int node : adj.get(cur)) {
-      if (visited[node] != 1) {
-        dfsRecursive(V, adj, dfsList, visited, node);
+    for (int adjNode : adj.get(cur)) {
+      if (visited[adjNode] != 1) {
+        dfsRecursive(V, adj, dfsList, visited, adjNode);
       }
     }
   }

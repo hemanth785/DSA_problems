@@ -16,7 +16,7 @@ public class A11_Jump_game_2 {
    * - initialize 2 pointer, l and r as '0'
    * - for each position, calculate lowest and farthest we can reach from current range
    * - for each iteration, loop through left and right pointer, which calculating farthest point from current range
-   * - aftre traversal, mark l as r+1, and r=farthest | ans also increment jump count after traversinng each range
+   * - after traversal, mark l as r+1, and r=farthest | and also increment jump count after traversinng each range
    * 
    * - once r reaches end of array, stop iteration. and return jump count
    * 
@@ -31,7 +31,7 @@ public class A11_Jump_game_2 {
 
     int jumps = 1; //if 2 items are there, then atleast one jump is required
     int farthest = nums[0];
-    int l = 1;
+    int l = 0;
     int r = farthest;
     
     while(r < n-1){ 
@@ -47,4 +47,9 @@ public class A11_Jump_game_2 {
 
     return jumps;
   }
+
+  // [2,3,0,1,4]
+  // l=1
+  // r=2
+  // farthest = 3
 }

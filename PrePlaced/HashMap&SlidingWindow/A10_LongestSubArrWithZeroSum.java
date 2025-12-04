@@ -33,11 +33,11 @@ public class A10_LongestSubArrWithZeroSum {
    * Steps:
    * Initialize maximum length as 0.
    * Traverse the array and keep updating the sum for every i. Check if the sum is present in the hashmap or not.
-   * If the sum is not present in the hashmap then put the sum in the hash map with the index as key-value pair.
+   * If the sum is not present in the hashmap then put the sum in the hash map with the index as key(sum)-value(index) pair.
    * If the sum is present in the hashmap, take the difference between the current index and the index stored in the hashmap and update the maximum length.
 	 * 
 	 * Logic: If we come accross the same sum, which we have encountered before, 
-	 * that means b/w those 2 sums, have have elements which add upto zero
+	 * that means b/w those 2 sums, elements which are present will add upto zero.
 	 * 
 	 * If we come accross prefSum as zero, that means from starting of array to current positions, all the elements will add upto 0
    * 

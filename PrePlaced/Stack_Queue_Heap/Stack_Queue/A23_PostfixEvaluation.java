@@ -28,7 +28,7 @@ public class A23_PostfixEvaluation {
                   return -1;
                 } 
                 return a/b;
-      case '%': return a+b;
+      case '%': return a%b;
       default: return -1;
     }
   }

@@ -21,13 +21,13 @@ public class A02_Subsets {
 			subsetList.add(new ArrayList<>(subset));
 			return;
 		}
-		
-		//including current element
+
+	  	//including current element
 		subset.add(A[index]);
 		subsetsRecursive(A, subsetList, subset, index+1);
 		subset.remove(subset.size()-1);
 			
-	  //excluding current element
+	  	//excluding current element
 		subsetsRecursive(A, subsetList, subset, index+1);
 	}
 }

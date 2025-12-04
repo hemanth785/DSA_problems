@@ -12,17 +12,17 @@ public class A05_WordBreak2 {
   List<String> sentenceList;
 
   public List<String> wordBreak(String str, List<String> wordDict) {
-    int n = str.length();
-		sentenceList = new ArrayList<>();
+      int n = str.length();
+      sentenceList = new ArrayList<>();
 	  Set<String> wordsSet = new HashSet<>(wordDict);
 		
-		wordBreakRec(str, wordsSet, n, 0, "");
+      wordBreakRec(str, wordsSet, n, 0, "");
 		
-		return sentenceList;
+      return sentenceList;
   }
 
   void wordBreakRec(String str, Set<String> wordsSet, int n, int index, String tempRes){
-		if(index >= n){
+    if(index >= n){
       sentenceList.add(tempRes.trim());
       return;
     }
@@ -33,5 +33,5 @@ public class A05_WordBreak2 {
         wordBreakRec(str, wordsSet, n, i, tempRes+" "+subStr);
       }
     }
-	}
+  }
 }

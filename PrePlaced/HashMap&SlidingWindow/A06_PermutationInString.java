@@ -5,6 +5,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
+// link: https://leetcode.com/problems/permutation-in-string/description/
 public class A06_PermutationInString {
   /*
    * Approach: Using HashMap and sliding window
@@ -73,6 +74,7 @@ public class A06_PermutationInString {
       // remove prev item from window
       char lch = s2.charAt(l);
       map2.put(lch, map2.get(lch) - 1);
+
       if (map1.get(lch).equals(map2.get(lch))) { // Using .equls() becuase Integer from map is a object
         matchCount++;
       } else if (map2.get(lch) + 1 == map1.get(lch)) {

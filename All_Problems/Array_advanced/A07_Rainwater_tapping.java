@@ -61,9 +61,6 @@ public class A07_Rainwater_tapping {
       rightMaxArr[n-i-1] = Math.max(rightMaxArr[n-i], arr[n-i-1]);
     }
 
-    // System.out.println(Arrays.toString(leftMaxArr));
-    // System.out.println(Arrays.toString(rightMaxArr));
-
     int rainWaterTapped = 0; 
     for(int i=0; i<n; i++){
       rainWaterTapped += ( Math.min(leftMaxArr[i], rightMaxArr[i]) - arr[i]);

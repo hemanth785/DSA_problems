@@ -6,17 +6,17 @@ public class A_02_ShortestUniquePrefix {
    * 
    */
 
-  static int ALPHABETS = 26;
+    static int ALPHABETS = 26;
 	static TrieNode root;
 	static class TrieNode{
 		TrieNode childNodes[] = new TrieNode[ALPHABETS];
 		boolean endOfWord = false;
-		int frequency = 0;
+		int frequency = 0; //this is important for this problem
 	}
 
 	String[] getShortestUniquePrefixes(String[] words) {
 		int n = words.length;
-	  root = new TrieNode();
+	    root = new TrieNode();
 		String uniquePrefixArr[] = new String[n];
 		
 		for(String word : words){

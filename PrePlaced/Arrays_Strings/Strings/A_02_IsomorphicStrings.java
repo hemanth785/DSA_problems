@@ -26,6 +26,7 @@ public class A_02_IsomorphicStrings {
       char a = s.charAt(i);
       char b = t.charAt(i);
 
+
       if(map.get(a) != null && map.get(a) != b){
           return false;
       }

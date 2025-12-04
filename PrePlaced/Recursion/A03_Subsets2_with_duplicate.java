@@ -45,7 +45,7 @@ public class A03_Subsets2_with_duplicate {
 		subset.remove(subset.size()-1);
 			
 	  //excluding current element, (exlude all occurence of current element): THIS IS IMPORTANT
-    int nextIndex = index+1;
+        int nextIndex = index+1;
 		while(nextIndex < A.length && A[index] == A[nextIndex]){
 			nextIndex++;
 		}

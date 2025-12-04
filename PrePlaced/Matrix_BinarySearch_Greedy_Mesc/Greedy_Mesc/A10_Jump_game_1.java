@@ -16,7 +16,7 @@ public class A10_Jump_game_1 {
    * - initially mark last point as goal and start checking from last but one pointer
    * - calculate distance between goal and current pointer
    * - if current pos has jump number greater than distance, then mark current pos as goal 
-   *  - Else check for next previous position
+   *   - Else check for next previous position
    *
    * - once we exhaust iteration, check if goal has reached to 0th index.
    * 

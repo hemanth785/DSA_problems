@@ -27,7 +27,7 @@ public class A06_MergeOverlappingIntervals {
           prevInterval[1] = curInterval[1];
         }
       } else {
-        mergedList.add(curInterval);
+        mergedList.add(curInterval); //independant interval, add it to the list
         prevInterval = curInterval;
       }
     }

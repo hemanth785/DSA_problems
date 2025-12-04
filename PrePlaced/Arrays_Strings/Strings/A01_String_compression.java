@@ -37,10 +37,6 @@ public class A01_String_compression {
       }
     }
 
-    for(int i=0; i<compressed.size(); i++){
-      chars[i] = compressed.get(i);
-    }
-
     return compressed.size();
   }
 }

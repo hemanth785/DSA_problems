@@ -37,12 +37,12 @@ public class A_15_SteppingNumbers {
     // because, if number is less than begin, there is a possibility after adding another digit to it, it can become valid number
     // Therefore, if number is lesser than given range, we don't add it to list, but we continue exploring further numbers formed with it.
 
-    if (cur % 10 != 9) {
-      //if current digit is 9, we cannot increase the next digit in the number
+    //Add cur+1 as next digit
+    if (cur % 10 != 9) {         // if current digit is 9, we cannot increase the next digit in the number
       findPossibilities(result, begin, end, (cur * 10) + (cur % 10 + 1));
     }
-    if (cur % 10 != 0) {
-      //if current digit is 0, we cannot decrease the next digit in the number
+    //Add cur-1 as next digit
+    if (cur % 10 != 0) {        //if current digit is 0, we cannot decrease the next digit in the number
       findPossibilities(result, begin, end, (cur * 10) + (cur % 10 - 1));
     }
   }

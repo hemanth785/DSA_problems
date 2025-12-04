@@ -17,7 +17,7 @@ public class A01_Subset_sum_equals_x {
 			return true;
 		}
         
-    if(index >= A.length || target < 0){
+        if(index >= A.length || target < 0){
 			return false;
 		}
 

@@ -35,7 +35,7 @@ public class A07_LetterCombinationOfPhoneNumber {
 		
 		List<String> alphaList = new ArrayList<>();
 
-	  for(int i=0; i<n; i++){
+	    for(int i=0; i<n; i++){
 			char ch = digits.charAt(i);
 			alphaList.add(numAlphaMap.get(ch));
 		}

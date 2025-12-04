@@ -15,7 +15,7 @@ import java.util.Arrays;
  */
 public class A04_Left_side_less_right_side_more {
   public static void main(String[] args) {
-    int arr[] = {4, 3, 2, 1, 5, 9, 8, 7}; 
+    int arr[] = {4, 3, 2, 1, 5, 9, 8, 7};
     int res = solution2(arr);
 
     System.out.println("Result: "+res);

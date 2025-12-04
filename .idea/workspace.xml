@@ -4,29 +4,76 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de3179da-4dfc-435b-acc9-4e37f24d4aec" name="Changes" comment="" />
+    <list default="true" id="de3179da-4dfc-435b-acc9-4e37f24d4aec" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/All_Problems/Array_advanced/A04_Left_side_less_right_side_more.java" beforeDir="false" afterPath="$PROJECT_DIR$/All_Problems/Array_advanced/A04_Left_side_less_right_side_more.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/All_Problems/Array_advanced/A06_MergeOverlappingIntervals.java" beforeDir="false" afterPath="$PROJECT_DIR$/All_Problems/Array_advanced/A06_MergeOverlappingIntervals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/All_Problems/Array_advanced/A07_Container_with_more_water.java" beforeDir="false" afterPath="$PROJECT_DIR$/All_Problems/Array_advanced/A07_Container_with_more_water.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/All_Problems/Array_advanced/A07_Rainwater_tapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/All_Problems/Array_advanced/A07_Rainwater_tapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/All_Problems/Array_basic/A16_Sum_closest_to_zero.java" beforeDir="false" afterPath="$PROJECT_DIR$/All_Problems/Array_basic/A16_Sum_closest_to_zero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Arrays_Strings/Strings/A01_String_compression.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Arrays_Strings/Strings/A01_String_compression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Arrays_Strings/Strings/A_02_IsomorphicStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Arrays_Strings/Strings/A_02_IsomorphicStrings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Backtracking/A03_M_coloring_graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Backtracking/A03_M_coloring_graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Backtracking/A05_WordBreak2.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Backtracking/A05_WordBreak2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/DP/A01_Subset_sum_equals_x.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/DP/A01_Subset_sum_equals_x.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/DP/A09_MaxProfitInStockMarket_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/DP/A09_MaxProfitInStockMarket_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/DP/A15_Target_sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/DP/A15_Target_sum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Graph/A_02_DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Graph/A_02_DFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Graph/A_04_CloneGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Graph/A_04_CloneGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Graph/A_10_NumberOfIslands.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Graph/A_10_NumberOfIslands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Graph/A_15_SteppingNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Graph/A_15_SteppingNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/HashMap&amp;SlidingWindow/A06_PermutationInString.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/HashMap&amp;SlidingWindow/A06_PermutationInString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/HashMap&amp;SlidingWindow/A10_LongestSubArrWithZeroSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/HashMap&amp;SlidingWindow/A10_LongestSubArrWithZeroSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/HashMap&amp;SlidingWindow/A11_Count_Subarrays_with_sum_k.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/HashMap&amp;SlidingWindow/A11_Count_Subarrays_with_sum_k.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/LinkedList/A10_DeleteAllDuplicateItemsInList.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/LinkedList/A10_DeleteAllDuplicateItemsInList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Matrix_BinarySearch_Greedy_Mesc/Greedy_Mesc/A01_GasStation.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Matrix_BinarySearch_Greedy_Mesc/Greedy_Mesc/A01_GasStation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Matrix_BinarySearch_Greedy_Mesc/Greedy_Mesc/A07_Add_new_interval.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Matrix_BinarySearch_Greedy_Mesc/Greedy_Mesc/A07_Add_new_interval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Matrix_BinarySearch_Greedy_Mesc/Greedy_Mesc/A10_Jump_game_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Matrix_BinarySearch_Greedy_Mesc/Greedy_Mesc/A10_Jump_game_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Matrix_BinarySearch_Greedy_Mesc/Greedy_Mesc/A11_Jump_game_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Matrix_BinarySearch_Greedy_Mesc/Greedy_Mesc/A11_Jump_game_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Recursion/A02_Subsets.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Recursion/A02_Subsets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Recursion/A03_Subsets2_with_duplicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Recursion/A03_Subsets2_with_duplicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Recursion/A04_CombinationSum_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Recursion/A04_CombinationSum_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Recursion/A07_LetterCombinationOfPhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Recursion/A07_LetterCombinationOfPhoneNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Stack_Queue_Heap/Stack_Queue/A23_PostfixEvaluation.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Stack_Queue_Heap/Stack_Queue/A23_PostfixEvaluation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrePlaced/Trie/A_02_ShortestUniquePrefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/PrePlaced/Trie/A_02_ShortestUniquePrefix.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2SMj9VyxsefY9HFReuihxwnzgF4" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/hemanthharikanthtemplap/Documents/Hemanth_docs/LogicMojo/Code/Test",
-    "onboarding.tips.debug.path": "/Users/hemanthharikanthtemplap/Documents/Hemanth_docs/LogicMojo/Code/t/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/h0h0bkh/Documents/Hemanth_Docs/Coding/DSA_problems&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/hemanthharikanthtemplap/Documents/Hemanth_docs/LogicMojo/Code/t/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -41,6 +88,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -49,7 +104,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1688963195605</updated>
+      <workItem from="1758814753229" duration="46206000" />
+      <workItem from="1760424904409" duration="597000" />
+      <workItem from="1761409247742" duration="594000" />
+      <workItem from="1761629897213" duration="599000" />
+      <workItem from="1761637445387" duration="589000" />
+      <workItem from="1762331404754" duration="599000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

@@ -25,10 +25,10 @@ class A10_DeleteAllDuplicateItemsInList{
    * - Make this dummy also as the prev node
    * - iterate through list while checking for condition (head.val === head.next.val)
    * -    If any moment this condition satisfies, run a inner loop to traverse all the current duplicate item.
-   * -    Once we found the next different item, break the loop, and proint the prev pointer to next diff element
+   * -    Once we found the next different item, break the loop, and point the prev pointer to next diff element
    * -    and move head pointer
    * 
-   * - in the outer loop, if dup eleemnt not found at each step, just increment prev and head pointer
+   * - in the outer loop, if dup element not found at each step, just increment prev and head pointer
    * 
    * - at the end, just return the Dummy->next as result head 
    */

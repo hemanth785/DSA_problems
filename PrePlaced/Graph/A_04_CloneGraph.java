@@ -16,11 +16,11 @@ class Node {
 public class A_04_CloneGraph {
   Node cloneGraph(Node node) {
     Node clonedNode = new Node(node.value);
-		HashSet<Node> visited = new HashSet<>();
-		
-		cloneDFS(node, clonedNode, visited);
-		
-		return clonedNode;
+	HashSet<Node> visited = new HashSet<>();
+
+	cloneDFS(node, clonedNode, visited);
+
+	return clonedNode;
   }
 	
 	void cloneDFS(Node curNode, Node clonedNode, HashSet<Node> visited){
