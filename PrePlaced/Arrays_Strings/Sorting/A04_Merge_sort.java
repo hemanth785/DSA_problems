@@ -32,41 +32,40 @@ public class A04_Merge_sort {
     devide(arr, low, mid);  // left half
     devide(arr, mid + 1, high); // right half
     
-    merge(arr, low, mid, high);  // merging sorted halves
+    sortAndMerge(arr, low, mid, high);  // merging sorted halves
   }
 
-  public static void merge(int arr[], int low, int mid, int high){
+  public static void sortAndMerge(int arr[], int low, int mid, int high){
     ArrayList<Integer> temp = new ArrayList<>(); // temporary array
-    int left = low;      // starting index of left half of arr
-    int right = mid + 1;   // starting index of right half of arr
+    int i = low;      // starting index of left half of arr
+    int j = mid + 1;   // starting index of right half of arr
 
     //storing elements in the temporary array in a sorted manner//
-
-    while (left <= mid && right <= high) {
-      if (arr[left] <= arr[right]) {
-        temp.add(arr[left]);
-        left++;
+    while (i <= mid && j <= high) {
+      if (arr[i] <= arr[j]) {
+        temp.add(arr[i]);
+        i++;
       } else {
-        temp.add(arr[right]);
-        right++;
+        temp.add(arr[j]);
+        j++;
       }
     }
 
     // if elements on the left half are still left
-    while (left <= mid) {
-      temp.add(arr[left]);
-      left++;
+    while (i <= mid) {
+      temp.add(arr[i]);
+      i++;
     }
 
     //  if elements on the right half are still left
-    while (right <= high) {
-      temp.add(arr[right]);
-      right++;
+    while (j <= high) {
+      temp.add(arr[j]);
+      j++;
     }
 
     // transfering all elements from temporary to arr
-    for (int i = low; i <= high; i++) {
-      arr[i] = temp.get(i - low);
+    for (int k = low; k <= high; k++) {
+      arr[k] = temp.get(k - low);
     }
   }
   

@@ -46,20 +46,18 @@ public class A05_Quick_sort {
   
 
   // This is the most simple logic, just need to look at it once, whenever you come accross it
-  public static int getPivotIndex(int arr[], int l, int r){
-    int i=l;
-    int k=l;
-    int pivot = r;
+  public static int getPivotIndex(int arr[], int left, int right){
+    int k=left-1;
+    int pivot = arr[right];
 
-    while(i<pivot){
-      if(arr[i] < arr[pivot]){
-        swap(arr, i, k);
+    for(int i=left; i<right; i++){
+      if(arr[i] < pivot){
         k++;  // move the k only when swapping. its used to mark the greater value. 
+        swap(arr, i, k);
       }
-      i++;
     }
-    swap(arr, pivot, k); //now i is pointing to pivot element, and k is pointing to pivot index
-    return k; //k is the actual pivot position
+    swap(arr, k+1, right); //now i is pointing to pivot element, and k is pointing to pivot index
+    return k+1; //k is the actual pivot position
   }
 
 }
