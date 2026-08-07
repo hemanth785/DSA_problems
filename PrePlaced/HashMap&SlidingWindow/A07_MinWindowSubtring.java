@@ -7,6 +7,80 @@ import java.util.HashMap;
  */
 public class A07_MinWindowSubtring {
   /*
+   * Approach: Using int[128] and sliding window with l, r
+   * - charCount stores how many more of each char we still need in the window
+   * - requiredCount = total chars still needed to satisfy t
+   * - Step 1: Build first window using first t.length() chars of s
+   * - Step 2: Shrink while valid, then expand one char at a time and shrink again
+   *
+   * Time: O(n), Space: O(1)
+   */
+  public String minWindow2(String s, String t) {
+    if (s.length() < t.length()) {
+      return "";
+    }
+
+    int[] charCount = new int[128];
+    for (char c : t.toCharArray()) {
+      charCount[c]++;
+    }
+
+    int k = t.length();
+    int requiredCount = k;
+    int l = 0;
+    int r = 0;
+    int minWindowLen = Integer.MAX_VALUE;
+    int start = 0;
+
+    // Step 1: build first window [0 .. k-1]
+    for (r = 0; r < k; r++) {
+      if (charCount[s.charAt(r)] > 0) {
+        requiredCount--;
+      }
+      charCount[s.charAt(r)]--; //this decrements the count of the character in the window (even if the character is not in t string)
+    }
+
+    // Step 2: shrink while valid, expand while r < s.length(), then shrink once more
+    while (r < s.length()) {
+      while (requiredCount == 0) { //while the window contains all the characters in 't' string
+        if (r - l < minWindowLen) {
+          minWindowLen = r - l;
+          start = l;
+        }
+
+        //now, remove the leftmost character from the window
+        if (charCount[s.charAt(l)] >= 0) {  //if character is present in t string
+          requiredCount++;
+        }
+        charCount[s.charAt(l)]++;
+        l++;
+      }
+
+      if (charCount[s.charAt(r)] > 0) { //add the rightmost character to the window
+        requiredCount--;
+      }
+      charCount[s.charAt(r)]--;
+      r++;
+    }
+
+    // r reached end — shrink the last valid window if any
+    while (requiredCount == 0) {
+      if (r - l < minWindowLen) {
+        minWindowLen = r - l;
+        start = l;
+      }
+
+      if (charCount[s.charAt(l)] >= 0) {
+        requiredCount++;
+      }
+      charCount[s.charAt(l)]++;
+      l++;
+    }
+
+    return minWindowLen == Integer.MAX_VALUE ? "" : s.substring(start, start + minWindowLen);
+  }
+
+  /*
    * Approach: Use HashMap and Sliding window approach
    * - create 2 maps, s_map and t_map & populate both map with chars from t string, 
    *    - t_map with proper count of chars

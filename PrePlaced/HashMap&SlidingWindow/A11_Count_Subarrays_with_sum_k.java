@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class A11_Count_Subarrays_with_sum_k {
   /*
-   * Approach 1: Buteforce - Using 2 arrays
+   * Approach 1: Buteforce - Using nested loops
    * 
    * Time: O(n^2)  Space: O(1)
    */
@@ -31,9 +31,9 @@ public class A11_Count_Subarrays_with_sum_k {
   }
 
   /*
-   * Approach 2: Using HashMap to store prefix sums count
+   * Approach 2: Using HashMap to store prefix sums count (prefSum = sumSoFar - k)
    * 
-   * - Initiate prefixSum hashmap to store the count of all teh prefix sum occured so far
+   * - Initiate prefixSum hashmap to store the count of all the prefix sum occured so far
    * - Start with first element while calculating sum with every element
    * - each stage check if any prefixSum exists for (sumSoFar - k), if it exists update that prefix sum count in the result
    * - Update the sumSoFar count in the hashMap

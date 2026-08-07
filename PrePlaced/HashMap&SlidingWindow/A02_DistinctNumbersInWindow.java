@@ -29,7 +29,7 @@ public class A02_DistinctNumbersInWindow {
    */
   public static int[] distintNumbersInWindow(int[] A, int k) {
 		int n = A.length;
-	  Map<Integer, Integer> map = new HashMap<>();
+	 	Map<Integer, Integer> map = new HashMap<>();
 		
 		int res[] = new int[n-(k-1)];
 		int count = 0;
@@ -38,9 +38,9 @@ public class A02_DistinctNumbersInWindow {
 			int item = A[i];
 			if(!map.containsKey(item)){
 				count++;
-        map.put(item, 1);
+        		map.put(item, 1);
 			} else {
-        map.put(item, map.get(item)+1);
+        		map.put(item, map.get(item)+1);
 			}
 		}
 		
@@ -57,16 +57,16 @@ public class A02_DistinctNumbersInWindow {
 			} else {
 				map.put(A[l], map.get(A[l])-1);
 			}
-      l++;
+      		l++;
 			
 			//add item on the right side of window
 			if(!map.containsKey(A[r])){
 				count++;
-        map.put(A[r], 1);
+        		map.put(A[r], 1);
 			} else {
 				map.put(A[r], map.get(A[r])+1);
 			}
-      r++;
+      		r++;
 			
 			//add the count to array
 			res[i++] = count;

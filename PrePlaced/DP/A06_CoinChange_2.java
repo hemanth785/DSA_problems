@@ -25,11 +25,11 @@ public class A06_CoinChange_2 {
 	}
 	
 	int coinChangeMemo(int coins[], int target, int index, int[][] dp){
-    //valid denominations
+    	//valid denominations
 		if(target == 0){
 			return 1;
 		}
-    //invalid denominations
+    	//invalid denominations
 		if(target < 0 || index < 0){
 			return 0;
 		}
@@ -38,11 +38,11 @@ public class A06_CoinChange_2 {
 			return dp[target][index];
 		}
 		
-    //here we are not decrementing index because of infinite coins available
+    	//here we are not decrementing index because of infinite coins available
 		int include = coinChangeMemo(coins, target-coins[index], index, dp);
 		int exclude = coinChangeMemo(coins, target, index-1, dp);
 		
-    dp[target][index] = include+exclude;
+    	dp[target][index] = include+exclude;
 		
 		return dp[target][index];
 	}

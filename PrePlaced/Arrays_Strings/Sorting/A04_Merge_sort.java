@@ -23,14 +23,14 @@ public class A04_Merge_sort {
     return arr;
   }
 
-  public static void devide(int arr[], int low, int high){
+  public static void devideAndMerge(int arr[], int low, int high){
     if (low >= high){
       return;
     } 
 
     int mid = (low + high) / 2 ;
-    devide(arr, low, mid);  // left half
-    devide(arr, mid + 1, high); // right half
+    devideAndMerge(arr, low, mid);  // left half
+    devideAndMerge(arr, mid + 1, high); // right half
     
     merge(arr, low, mid, high);  // merging sorted halves
   }

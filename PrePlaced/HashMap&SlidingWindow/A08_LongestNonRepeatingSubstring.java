@@ -18,7 +18,7 @@ public class A08_LongestNonRepeatingSubstring {
    * - if Set already contains char at pointer b, then keep on removing the char at pointer a, until this duplicate charactors remove
    * - Run this loop until b pointer reaches end of string
    * 
-   * Time: O(n), space: O(n)
+   * Time: O(n), space: O(1), since the set can contain at most 26 characters (for the english alphabet)
    */
 
   public int lengthOfLongestSubstring(String s) {

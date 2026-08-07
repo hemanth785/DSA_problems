@@ -87,6 +87,7 @@ public class A02_Add_two_numbers {
       l1 = l1.next;
       l2 = l2.next;
     }
+    
     while(l1!=null) {
       sum = l1.data + carryOver;
       val = sum%10;

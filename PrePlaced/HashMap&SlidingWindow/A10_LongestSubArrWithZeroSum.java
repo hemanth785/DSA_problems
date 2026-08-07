@@ -64,4 +64,32 @@ public class A10_LongestSubArrWithZeroSum {
 		
 		return maxLen;
 	}
+
+  /*
+   * Approach 3: Same prefix-sum idea, simplified
+   * - Seed map with (0, -1) so a zero-sum subarray starting at index 0 is handled uniformly
+   * - If same prefix sum seen before → subarray between those indices sums to 0
+   * - Store only the first index for each prefix sum (earliest = longest subarray)
+   *
+   * Time: O(n), Space: O(n)
+   */
+  static int longestSubarrayWithZeroSumMap2(int[] A) {
+    Map<Integer, Integer> map = new HashMap<>();
+    map.put(0, -1);
+
+    int prefixSum = 0;
+    int maxLen = 0;
+
+    for (int i = 0; i < A.length; i++) {
+      prefixSum += A[i];
+
+      if (map.containsKey(prefixSum)) {
+        maxLen = Math.max(maxLen, i - map.get(prefixSum));
+      } else {
+        map.put(prefixSum, i);
+      }
+    }
+
+    return maxLen;
+  }
 }

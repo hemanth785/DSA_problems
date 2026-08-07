@@ -42,6 +42,13 @@ public class A12_Longest_Subarray_With_sum_k {
    * solution link: https://www.youtube.com/watch?v=yDeNqw_dAU0
    */
 
+  // trick to remember:
+  // map stores direct prefix sum, with index
+  // so, how do we know the subaary contains sum k?
+  // at any point, we subract k from sumSoFar -> lets call that sum as 'sumMinusK'
+  // if sumMinusK has to present in the map, sumSoFar after that item 'sumMinusK' should be equal to k. -> so that subarray length we'll consider at each point.
+
+
   public int lenOfLongestSubarr(int[] nums, int k) {
     Map<Integer, Integer> prefSumMap = new HashMap<>();
     prefSumMap.put(0, -1);

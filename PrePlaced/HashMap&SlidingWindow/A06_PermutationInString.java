@@ -7,6 +7,57 @@ import java.util.Map;
 
 // link: https://leetcode.com/problems/permutation-in-string/description/
 public class A06_PermutationInString {
+
+  /*
+   * Approach: Using int[26] and sliding window with l, r (SIMPLEST APPROACH)
+   * - charCount stores how many more chars we need in the current window
+   *   (positive = need more, negative = have too many, zero = matched)
+   * - Expand window with r, shrink with l when size > k
+   * - If all charCount are 0 when window size == k, permutation found
+   *
+   * Time: O(n), Space: O(1)
+   */
+  public boolean checkInclusion2(String s1, String s2) {
+    if (s1.length() > s2.length()) {
+      return false;
+    }
+
+    int[] charCount = new int[26];
+    for (char c : s1.toCharArray()) {
+      charCount[c - 'a']++;
+    }
+
+    int k = s1.length();
+    int l = 0;
+    int r = 0;
+
+    while (r < s2.length()) {
+      charCount[s2.charAt(r) - 'a']--; //add the current character to the window
+
+      if (r - l + 1 > k) {
+        charCount[s2.charAt(l) - 'a']++; //remove the leftmost character from the window
+        l++;
+      }
+
+      if (r - l + 1 == k && allZero(charCount)) { //check if the window size is equal to the size of s1 and all the characters in the window are zero
+        return true;
+      }
+
+      r++;
+    }
+
+    return false;
+  }
+
+  private boolean allZero(int[] charCount) {
+    for (int count : charCount) {
+      if (count != 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   /*
    * Approach: Using HashMap and sliding window
    * - create 2 hashmap and put values from a-z with count as 0
@@ -16,6 +67,8 @@ public class A06_PermutationInString {
    * - Now shift window while re-calculating the match count.
    * - if at any stage match count becomes 26, then return true
    * - else return false
+   * 
+   * Time: O(n), Space: O(1)
    */
   
   public boolean checkInclusion(String s1, String s2) {

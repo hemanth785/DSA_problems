@@ -72,4 +72,53 @@ public class A12_Hard_Median_of_2_sorted_array {
 
     return -1;
   }
+
+  /*
+   * Approach 4: Same binary search as Approach 2, cleaner naming
+   *
+   * Core idea — split both arrays into LEFT | RIGHT halves:
+   *
+   *   nums1: [ ... leftA | rightA ... ]
+   *   nums2: [ ... leftB | rightB ... ]
+   *
+   * Valid partition when:
+   *   max(leftA) <= min(rightB)  AND  max(leftB) <= min(rightA)
+   *
+   * Time: O(log(min(m, n))), Space: O(1)
+   */
+  public double findMedianSortedArraysClean(int[] nums1, int[] nums2) {
+    if (nums1.length > nums2.length) {
+      return findMedianSortedArraysClean(nums2, nums1);
+    }
+
+    int m = nums1.length;
+    int n = nums2.length;
+    int leftHalfSize = (m + n + 1) / 2;
+
+    int lo = 0;
+    int hi = m;
+
+    while (lo <= hi) {
+      int cutA = (lo + hi) / 2;
+      int cutB = leftHalfSize - cutA;
+
+      int maxLeftA  = cutA == 0 ? Integer.MIN_VALUE : nums1[cutA - 1];
+      int maxLeftB  = cutB == 0 ? Integer.MIN_VALUE : nums2[cutB - 1];
+      int minRightA = cutA == m ? Integer.MAX_VALUE : nums1[cutA];
+      int minRightB = cutB == n ? Integer.MAX_VALUE : nums2[cutB];
+
+      if (maxLeftA <= minRightB && maxLeftB <= minRightA) {
+        if ((m + n) % 2 == 1) {
+          return Math.max(maxLeftA, maxLeftB);
+        }
+        return (Math.max(maxLeftA, maxLeftB) + Math.min(minRightA, minRightB)) / 2.0;
+      } else if (maxLeftA > minRightB) {
+        hi = cutA - 1;
+      } else {
+        lo = cutA + 1;
+      }
+    }
+
+    return -1;
+  }
 }

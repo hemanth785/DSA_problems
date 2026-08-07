@@ -1,6 +1,6 @@
 
 /*
- * LInk: https://leetcode.com/problems/koko-eating-bananas/
+ * Link: https://leetcode.com/problems/koko-eating-bananas/
  */
 public class A08_KokoEatingBananas {
   /*

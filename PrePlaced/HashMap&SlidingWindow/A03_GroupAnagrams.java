@@ -16,7 +16,7 @@ public class A03_GroupAnagrams {
    *     - If exists add the original string to hashMap
    * - After processing all string, loop through hash map to get the grouped anagram strings
    * 
-   * Time: O(n * log(m)), space: O(n) - where m is the average size of string
+   * Time: O(n * m log(m)), space: O(n) - where m is the average size of string
    */
   
   public List<List<String>> groupAnagrams(String[] strs) {

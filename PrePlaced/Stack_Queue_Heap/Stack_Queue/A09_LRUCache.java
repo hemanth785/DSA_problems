@@ -20,6 +20,7 @@ public class A09_LRUCache {
 
   int capacity;
   int size = 0;
+
   Node head;
   Node tail;
   HashMap<Integer, Node> cashMap = new HashMap<>();
@@ -69,22 +70,23 @@ public class A09_LRUCache {
     }
   }
 
-  public void moveToHead(Node current) {
-    if (current == head) {
+  public void moveToHead(Node node) {
+    //This method remoes node from tail or middle, then calls addToHead(Node)
+    if (node == head) {
       return;
     }
-    if (current == tail) {
+    if (node == tail) {
       tail = tail.prev;
       tail.next = null;
-      current.prev = null;
+      node.prev = null;
     } else {
-      current.prev.next = current.next;
-      current.next.prev = current.prev;
+      node.prev.next = node.next;
+      node.next.prev = node.prev;
 
-      current.prev = null;
-      current.next = null;
+      node.prev = null;
+      node.next = null;
     }
-    addTohead(current);
+    addTohead(node);
   }
 
   public void addTohead(Node node) {

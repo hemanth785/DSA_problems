@@ -8,6 +8,8 @@ import java.util.HashSet;
 public class A04_LongestConscecutiveSequence {
   /*
    * Appraoch: (Naive) using sorting
+   * 
+   * Time: O(n * log(n))
    */
   public int longestConsecutive(int[] A) {
     if(A.length == 0){
@@ -38,6 +40,8 @@ public class A04_LongestConscecutiveSequence {
    *    - check if item-1 exists, if it exists that means this is not the starting point, so continue loop
    * - If item-1 not found in set, then start checking for each item+1 in set while keep incrementing length
    * - at each iteration, compare length with max length
+   * 
+   * Time: O(n), Space: O(n)
    */
 
   public int longestConsecutive2(int[] A) {
@@ -55,7 +59,6 @@ public class A04_LongestConscecutiveSequence {
 
       // check if lesser item exists in set
       if (!set.contains(item - 1)) {
-        // start removing from set
         int len = 1;
 
         while (set.contains(item + 1)) {

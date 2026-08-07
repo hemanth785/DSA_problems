@@ -94,8 +94,8 @@ public class A09_CloneRandomPointerLL {
     cur = head;
     Node clonedCur = clonedHead;
     while(cur != null){
-      Node randomNode = map.get(cur.random);
-      clonedCur.random = randomNode;
+      Node clonedRandomNode = map.get(cur.random);
+      clonedCur.random = clonedRandomNode;
 
       cur = cur.next;
       clonedCur = clonedCur.next;

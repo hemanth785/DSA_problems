@@ -30,6 +30,16 @@ public class A15_InfixToPostfix1 {
              (operand>='0' && operand<='9');
   }
 
+  /*
+   * Approach: Scan infix left to right using a stack for operators.
+   * - Operand  -> append directly to postfix
+   * - '('      -> push operators onto stack
+   * - ')'      -> pop operators from stack to postfix until '(', then discard '('
+   * - Operator -> pop stack top while rank >= current operator's rank,
+   *               then push current operator
+   * - End      -> pop all remaining operators to postfix
+   */
+
   public static String infixToPostfix(String infix){
     Stack<Character> stack = new Stack<Character>();
     String postFix = "";
